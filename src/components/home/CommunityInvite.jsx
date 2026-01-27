@@ -1,0 +1,674 @@
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { FiInstagram, FiHeart, FiStar, FiArrowRight } from 'react-icons/fi';
+import styled from 'styled-components';
+import { theme } from '../../styles/theme';
+
+const instagramPhotos = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
+    alt: "Yoga meditation pose"
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop",
+    alt: "Morning wellness routine"
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=400&fit=crop",
+    alt: "Yoga practice outdoors"
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=400&fit=crop",
+    alt: "Group yoga session"
+  },
+  {
+    id: 5,
+    image: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400&h=400&fit=crop",
+    alt: "Mindful stretching"
+  },
+  {
+    id: 6,
+    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop",
+    alt: "Community wellness"
+  }
+];
+
+const CommunityInvite = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  return (
+    <CommunitySection ref={ref}>
+      {/* Decorative leaf on left */}
+      <DecorativeLeaf className="left">
+        <svg viewBox="0 0 150 300" fill="none">
+          <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#e8f0e9" />
+          <path d="M75 30V270" stroke="#c5ddc8" strokeWidth="1.5" />
+          <path d="M75 80L40 120" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 140L45 180" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 200L50 240" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 80L110 120" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 140L105 180" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 200L100 240" stroke="#c5ddc8" strokeWidth="1" />
+        </svg>
+      </DecorativeLeaf>
+
+      {/* Golden dots decoration */}
+      <DotsDecoration className="top-left">
+        {[...Array(12)].map((_, i) => (
+          <Dot key={i} style={{ 
+            left: `${(i % 4) * 14}px`, 
+            top: `${Math.floor(i / 4) * 14}px` 
+          }} />
+        ))}
+      </DotsDecoration>
+
+      <DotsDecoration className="bottom-right">
+        {[...Array(15)].map((_, i) => (
+          <Dot key={i} style={{ 
+            left: `${(i % 5) * 14}px`, 
+            top: `${Math.floor(i / 5) * 14}px` 
+          }} />
+        ))}
+      </DotsDecoration>
+
+      <Container
+        as={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        {/* Header */}
+        <Header>
+          <motion.div variants={itemVariants}>
+            <SectionLabel>Community</SectionLabel>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <SectionTitle>Join Our Wellness Family</SectionTitle>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <SectionSubtitle>
+              Connect with like-minded souls on the path to inner peace and holistic wellbeing
+            </SectionSubtitle>
+          </motion.div>
+        </Header>
+
+        {/* Instagram Grid */}
+        <InstagramSection as={motion.div} variants={itemVariants}>
+          <InstagramGrid>
+            {instagramPhotos.map((photo, index) => (
+              <GridItem
+                key={photo.id}
+                as={motion.a}
+                href="https://www.instagram.com/cyd_bkshikha"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                style={{ '--delay': `${index * 0.1}s` }}
+              >
+                <GridImage src={photo.image} alt={photo.alt} loading="lazy" />
+                <ImageOverlay>
+                  <OverlayIcon>
+                    <FiInstagram />
+                  </OverlayIcon>
+                  <OverlayStats>
+                    <StatItem><FiHeart /> 234</StatItem>
+                  </OverlayStats>
+                </ImageOverlay>
+              </GridItem>
+            ))}
+          </InstagramGrid>
+          
+          <InstagramHandle 
+            href="https://www.instagram.com/cyd_bkshikha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiInstagram />
+            <span>@cyd_bkshikha</span>
+          </InstagramHandle>
+        </InstagramSection>
+
+        {/* Features Cards */}
+        <FeaturesGrid as={motion.div} variants={itemVariants}>
+          <FeatureCard>
+            <FeatureIconWrapper className="green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </FeatureIconWrapper>
+            <FeatureTitle>Daily Inspiration</FeatureTitle>
+            <FeatureDesc>Wellness tips, yoga motivation & emotional healing guidance every day</FeatureDesc>
+          </FeatureCard>
+
+          <FeatureCard>
+            <FeatureIconWrapper className="golden">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </FeatureIconWrapper>
+            <FeatureTitle>Supportive Circle</FeatureTitle>
+            <FeatureDesc>Connect with like-minded individuals on similar wellness journeys</FeatureDesc>
+          </FeatureCard>
+
+          <FeatureCard>
+            <FeatureIconWrapper className="mint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+              </svg>
+            </FeatureIconWrapper>
+            <FeatureTitle>Exclusive Events</FeatureTitle>
+            <FeatureDesc>Access workshops, group sessions, and special wellness challenges</FeatureDesc>
+          </FeatureCard>
+        </FeaturesGrid>
+
+        {/* CTA Section */}
+        <CTASection as={motion.div} variants={itemVariants}>
+          <CTACard>
+            <CTAContent>
+              <CTATitle>Ready to Start Your Journey?</CTATitle>
+              <CTADescription>
+                Join thousands who have transformed their lives through yoga, 
+                mindfulness, and holistic wellness practices.
+              </CTADescription>
+              <CTAButtons>
+                <InstagramButton 
+                  href="https://www.instagram.com/cyd_bkshikha" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FiInstagram />
+                  Follow on Instagram
+                </InstagramButton>
+                <JourneyButton to="/contact">
+                  Book a Session
+                  <FiArrowRight />
+                </JourneyButton>
+              </CTAButtons>
+            </CTAContent>
+            <CTADecor>
+              <svg viewBox="0 0 200 200" fill="none">
+                <circle cx="100" cy="100" r="80" stroke="#c9a227" strokeWidth="1" strokeDasharray="4 4" opacity="0.3"/>
+                <circle cx="100" cy="100" r="60" stroke="#5a8a62" strokeWidth="1" strokeDasharray="4 4" opacity="0.4"/>
+                <circle cx="100" cy="100" r="40" stroke="#c9a227" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
+              </svg>
+            </CTADecor>
+          </CTACard>
+        </CTASection>
+      </Container>
+    </CommunitySection>
+  );
+};
+
+// Styled Components
+const CommunitySection = styled.section`
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #f8f9f6 0%, #ffffff 50%, #f8f9f6 100%);
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 4rem 0;
+  }
+`;
+
+const DecorativeLeaf = styled.div`
+  position: absolute;
+  width: 120px;
+  height: 250px;
+  opacity: 0.5;
+  pointer-events: none;
+
+  &.left {
+    left: -20px;
+    top: 20%;
+    transform: rotate(-15deg);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+const DotsDecoration = styled.div`
+  position: absolute;
+  z-index: 1;
+
+  &.top-left {
+    top: 8%;
+    left: 8%;
+    width: 55px;
+    height: 45px;
+  }
+
+  &.bottom-right {
+    bottom: 10%;
+    right: 8%;
+    width: 70px;
+    height: 45px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+const Dot = styled.div`
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #c9a227;
+  border-radius: 50%;
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0 1.5rem;
+  }
+`;
+
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 3.5rem;
+`;
+
+const SectionLabel = styled.span`
+  display: inline-block;
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: #5a8a62;
+  margin-bottom: 0.75rem;
+`;
+
+const SectionTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: #2a3a2e;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+`;
+
+const SectionSubtitle = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 1.0625rem;
+  color: #6b7c6f;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+`;
+
+const InstagramSection = styled.div`
+  margin-bottom: 4rem;
+`;
+
+const InstagramGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+`;
+
+const GridItem = styled.a`
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+
+  &:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+`;
+
+const GridImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  ${GridItem}:hover & {
+    transform: scale(1.1);
+  }
+`;
+
+const ImageOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  ${GridItem}:hover & {
+    opacity: 1;
+  }
+`;
+
+const OverlayIcon = styled.div`
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+
+  svg {
+    font-size: 1.5rem;
+    color: #ffffff;
+  }
+`;
+
+const OverlayStats = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const StatItem = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: ${theme.fonts.body};
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 500;
+
+  svg {
+    font-size: 0.875rem;
+  }
+`;
+
+const InstagramHandle = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  color: #5a8a62;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  svg {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    color: #4a7a52;
+  }
+`;
+
+const FeaturesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+const FeatureCard = styled.div`
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(90, 138, 98, 0.08);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+`;
+
+const FeatureIconWrapper = styled.div`
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+
+  &.green {
+    background: linear-gradient(135deg, rgba(90, 138, 98, 0.15), rgba(90, 138, 98, 0.05));
+    color: #5a8a62;
+  }
+
+  &.golden {
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(201, 162, 39, 0.05));
+    color: #c9a227;
+  }
+
+  &.mint {
+    background: linear-gradient(135deg, rgba(142, 207, 179, 0.2), rgba(142, 207, 179, 0.08));
+    color: #5a9a72;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
+const FeatureTitle = styled.h3`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2a3a2e;
+  margin-bottom: 0.75rem;
+`;
+
+const FeatureDesc = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #6b7c6f;
+`;
+
+const CTASection = styled.div``;
+
+const CTACard = styled.div`
+  background: linear-gradient(135deg, #2a3a2e 0%, #3d5a40 100%);
+  border-radius: 28px;
+  padding: 3.5rem;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 2.5rem 2rem;
+  }
+`;
+
+const CTAContent = styled.div`
+  position: relative;
+  z-index: 2;
+  text-align: center;
+`;
+
+const CTATitle = styled.h3`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 1rem;
+`;
+
+const CTADescription = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+`;
+
+const CTAButtons = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const InstagramButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9375rem 2rem;
+  background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-family: ${theme.fonts.body};
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(131, 58, 180, 0.4);
+
+  svg {
+    font-size: 1.125rem;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(131, 58, 180, 0.5);
+  }
+`;
+
+const JourneyButton = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9375rem 2rem;
+  background: transparent;
+  color: #c9a227;
+  border: 1.5px solid #c9a227;
+  border-radius: 100px;
+  font-family: ${theme.fonts.body};
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: #c9a227;
+    color: #ffffff;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+`;
+
+const CTADecor = styled.div`
+  position: absolute;
+  right: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    animation: spin 30s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+export default CommunityInvite;

@@ -1,0 +1,312 @@
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { theme } from '../../styles/theme';
+import { FiArrowRight } from 'react-icons/fi';
+
+const classes = [
+  {
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=400&fit=crop",
+    price: "₹999",
+    title: "Online Meditation",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=500&h=400&fit=crop",
+    price: "₹1,499",
+    title: "Yoga at Home",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=500&h=400&fit=crop",
+    price: "₹2,499",
+    title: "Couple Yoga",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500&h=400&fit=crop",
+    price: "₹799",
+    title: "Morning Flow",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=500&h=400&fit=crop",
+    price: "₹1,299",
+    title: "Stress Relief",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=500&h=400&fit=crop",
+    price: "₹1,999",
+    title: "Private Session",
+  },
+];
+
+const CoachingJourney = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  return (
+    <ClassesSection ref={ref}>
+      {/* Decorative leaf */}
+      <LeafDecoration>
+        <svg viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 20C100 20 180 100 180 200C180 300 100 380 100 380" stroke="#d4e5d6" strokeWidth="1.5" fill="none"/>
+          <path d="M100 60C100 60 150 120 150 200C150 280 100 340 100 340" stroke="#d4e5d6" strokeWidth="1" fill="none"/>
+          <path d="M100 100C100 100 130 140 130 200C130 260 100 300 100 300" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+          <path d="M60 120C60 120 100 160 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+          <path d="M140 120C140 120 100 160 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+          <path d="M50 180C50 180 100 200 100 200" stroke="#d4e5d6" strokeWidth="0.6" fill="none"/>
+          <path d="M150 180C150 180 100 200 100 200" stroke="#d4e5d6" strokeWidth="0.6" fill="none"/>
+          <path d="M60 260C60 260 100 240 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+          <path d="M140 260C140 260 100 240 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+        </svg>
+      </LeafDecoration>
+
+      <Container
+        as={motion.div}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <HeaderContent>
+          <motion.div variants={itemVariants}>
+            <SectionLabel>Our Classes</SectionLabel>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <SectionTitle>Most Favorite Classes</SectionTitle>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <SectionDescription>
+              Discover our most popular yoga and wellness classes designed to 
+              nurture your mind, body, and spirit on your journey to inner peace.
+            </SectionDescription>
+          </motion.div>
+        </HeaderContent>
+
+        <ClassesGrid>
+          {classes.map((item, index) => (
+            <ClassCard
+              key={index}
+              as={motion.div}
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+            >
+              <CardImageWrapper>
+                <CardImage src={item.image} alt={item.title} loading="lazy" />
+              </CardImageWrapper>
+              <CardContent>
+                <CardPrice>{item.price}</CardPrice>
+                <CardTitle>{item.title}</CardTitle>
+                <BookNowLink to="/contact">
+                  Book Now <FiArrowRight />
+                </BookNowLink>
+              </CardContent>
+            </ClassCard>
+          ))}
+        </ClassesGrid>
+      </Container>
+    </ClassesSection>
+  );
+};
+
+// Styled Components - Exact Anayoga Style
+const ClassesSection = styled.section`
+  padding: 6rem 0;
+  background: #f8f9f6;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 4rem 0;
+  }
+`;
+
+const LeafDecoration = styled.div`
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 180px;
+  height: 400px;
+  opacity: 0.5;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+const Container = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0 1.5rem;
+  }
+`;
+
+const HeaderContent = styled.div`
+  max-width: 500px;
+  margin-bottom: 3.5rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    margin-bottom: 2.5rem;
+  }
+`;
+
+const SectionLabel = styled.span`
+  display: inline-block;
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #5a8a62;
+  margin-bottom: 0.75rem;
+`;
+
+const SectionTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  color: #2a3a2e;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+`;
+
+const SectionDescription = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7c6f;
+`;
+
+const ClassesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+`;
+
+const ClassCard = styled.div`
+  position: relative;
+  padding-bottom: 60px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+`;
+
+const CardImageWrapper = styled.div`
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 12px;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    height: 260px;
+  }
+`;
+
+const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  ${ClassCard}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+const CardContent = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  background: #ffffff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+`;
+
+const CardPrice = styled.span`
+  display: block;
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c9a227;
+  margin-bottom: 0.25rem;
+`;
+
+const CardTitle = styled.h3`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2a3a2e;
+  margin-bottom: 0.5rem;
+`;
+
+const BookNowLink = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: ${theme.fonts.body};
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #c9a227;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 0.875rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #b8911f;
+    
+    svg {
+      transform: translateX(4px);
+    }
+  }
+`;
+
+export default CoachingJourney;
