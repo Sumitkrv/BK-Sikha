@@ -343,9 +343,22 @@ const HeroSection = styled.section`
   background: linear-gradient(
     135deg,
     ${theme.colors.background} 0%,
+    rgba(206, 197, 173, 0.15) 50%,
     ${theme.colors.backgroundAlt} 100%
   );
   text-align: center;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(34, 55, 27, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -356,10 +369,10 @@ const HeroContent = styled.div`
 const Subtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
-  font-weight: 500;
-  color: ${theme.colors.accent};
+  font-weight: 600;
+  color: #cec5ad;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   margin: 0 0 1rem;
 `;
 
@@ -367,14 +380,16 @@ const HeroTitle = styled.h1`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0 0 1.5rem;
+  line-height: 1.2;
 `;
 
 const HeroDescription = styled.p`
   font-size: 1.125rem;
   line-height: 1.8;
-  color: ${theme.colors.text};
+  color: #21371a;
+  opacity: 0.85;
   margin: 0;
 `;
 
@@ -399,14 +414,15 @@ const FormTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0 0 1rem;
 `;
 
 const FormDescription = styled.p`
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: ${theme.colors.text};
+  color: #21371a;
+  opacity: 0.8;
   margin: 0 0 2.5rem;
 `;
 
@@ -426,31 +442,31 @@ const Label = styled.label`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   font-weight: 500;
-  color: ${theme.colors.text};
+  color: #21371a;
 `;
 
 const Required = styled.span`
-  color: ${theme.colors.error};
+  color: #c45e4a;
 `;
 
 const Input = styled.input`
   padding: 1rem 1.25rem;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  color: ${theme.colors.text};
+  color: #21371a;
   background: white;
-  border: 2px solid ${theme.colors.backgroundDark};
+  border: 2px solid rgba(206, 197, 173, 0.4);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: ${theme.colors.secondary};
-    box-shadow: 0 0 0 3px ${theme.colors.secondaryLight}33;
+    border-color: #22371b;
+    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
   }
 
   &::placeholder {
-    color: ${theme.colors.textLight};
+    color: rgba(33, 55, 26, 0.5);
   }
 `;
 
@@ -458,17 +474,17 @@ const Select = styled.select`
   padding: 1rem 1.25rem;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  color: ${theme.colors.text};
+  color: #21371a;
   background: white;
-  border: 2px solid ${theme.colors.backgroundDark};
+  border: 2px solid rgba(206, 197, 173, 0.4);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
   cursor: pointer;
 
   &:focus {
     outline: none;
-    border-color: ${theme.colors.secondary};
-    box-shadow: 0 0 0 3px ${theme.colors.secondaryLight}33;
+    border-color: #22371b;
+    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
   }
 `;
 
@@ -477,21 +493,21 @@ const Textarea = styled.textarea`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.7;
-  color: ${theme.colors.text};
+  color: #21371a;
   background: white;
-  border: 2px solid ${theme.colors.backgroundDark};
+  border: 2px solid rgba(206, 197, 173, 0.4);
   border-radius: ${theme.borderRadius.lg};
   resize: vertical;
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: ${theme.colors.secondary};
-    box-shadow: 0 0 0 3px ${theme.colors.secondaryLight}33;
+    border-color: #22371b;
+    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
   }
 
   &::placeholder {
-    color: ${theme.colors.textLight};
+    color: rgba(33, 55, 26, 0.5);
   }
 `;
 
@@ -501,11 +517,11 @@ const SubmitButton = styled(motion.button)`
   font-size: 1.125rem;
   font-weight: 600;
   color: white;
-  background: ${theme.colors.cta};
+  background: linear-gradient(135deg, #22371b 0%, #2d4a23 100%);
   border: none;
   border-radius: ${theme.borderRadius.full};
   cursor: pointer;
-  box-shadow: ${theme.shadows.md};
+  box-shadow: 0 4px 15px rgba(34, 55, 27, 0.3);
   transition: all ${theme.transitions.base};
   display: inline-flex;
   align-items: center;
@@ -514,8 +530,9 @@ const SubmitButton = styled(motion.button)`
   align-self: flex-start;
 
   &:hover {
-    background: ${theme.colors.ctaHover};
-    box-shadow: ${theme.shadows.lg};
+    background: linear-gradient(135deg, #2d4a23 0%, #22371b 100%);
+    box-shadow: 0 6px 20px rgba(34, 55, 27, 0.4);
+    transform: translateY(-2px);
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -533,14 +550,15 @@ const InfoCard = styled.div`
   background: white;
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
-  box-shadow: ${theme.shadows.md};
+  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.08);
+  border: 1px solid rgba(206, 197, 173, 0.2);
 `;
 
 const InfoTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0 0 2rem;
 `;
 
@@ -564,10 +582,10 @@ const MethodIcon = styled.div`
   justify-content: center;
   background: linear-gradient(
     135deg,
-    ${theme.colors.secondaryLight},
-    ${theme.colors.accentLight}
+    #22371b 0%,
+    #2d4a23 100%
   );
-  color: white;
+  color: #cec5ad;
   font-size: 1.5rem;
   border-radius: ${theme.borderRadius.lg};
 `;
@@ -582,38 +600,68 @@ const MethodLabel = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0;
 `;
 
 const MethodLink = styled.a`
   font-size: 1rem;
   font-weight: 500;
-  color: ${theme.colors.accent};
+  color: #22371b;
   text-decoration: none;
-  transition: color ${theme.transitions.base};
+  transition: all ${theme.transitions.base};
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #cec5ad;
+    transition: width 0.3s ease;
+  }
 
   &:hover {
-    color: ${theme.colors.accentDark};
+    color: #21371a;
+    
+    &::after {
+      width: 100%;
+    }
   }
 `;
 
 const MethodDescription = styled.p`
   font-size: 0.9rem;
-  color: ${theme.colors.textLight};
+  color: rgba(33, 55, 26, 0.65);
   margin: 0;
 `;
 
 const SessionInfoCard = styled.div`
   background: linear-gradient(
     135deg,
-    ${theme.colors.secondaryLight},
-    ${theme.colors.accentLight}
+    #22371b 0%,
+    #2d4a23 50%,
+    #22371b 100%
   );
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(206, 197, 173, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
 `;
 
 const SessionIcon = styled.div`
@@ -646,8 +694,8 @@ const QuoteCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: ${theme.borderRadius.xl};
-  border-left: 4px solid ${theme.colors.accent};
-  box-shadow: ${theme.shadows.sm};
+  border-left: 4px solid #cec5ad;
+  box-shadow: 0 2px 12px rgba(34, 55, 27, 0.06);
 `;
 
 const QuoteText = styled.p`
@@ -655,13 +703,14 @@ const QuoteText = styled.p`
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.6;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0 0 0.75rem;
 `;
 
 const QuoteAuthor = styled.p`
   font-size: 0.95rem;
-  color: ${theme.colors.textLight};
+  color: #cec5ad;
+  font-weight: 500;
   margin: 0;
 `;
 
@@ -683,12 +732,13 @@ const FAQItem = styled.div`
   background: ${theme.colors.background};
   padding: 2rem;
   border-radius: ${theme.borderRadius.lg};
-  border: 2px solid ${theme.colors.backgroundDark};
+  border: 2px solid rgba(206, 197, 173, 0.3);
   transition: all ${theme.transitions.base};
 
   &:hover {
-    border-color: ${theme.colors.secondaryLight};
-    box-shadow: ${theme.shadows.sm};
+    border-color: #cec5ad;
+    box-shadow: 0 4px 15px rgba(34, 55, 27, 0.08);
+    transform: translateY(-2px);
   }
 `;
 
@@ -696,14 +746,15 @@ const FAQQuestion = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
+  color: #22371b;
   margin: 0 0 0.75rem;
 `;
 
 const FAQAnswer = styled.p`
   font-size: 1rem;
   line-height: 1.7;
-  color: ${theme.colors.text};
+  color: #21371a;
+  opacity: 0.85;
   margin: 0;
 `;
 

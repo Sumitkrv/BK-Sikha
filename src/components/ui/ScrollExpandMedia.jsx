@@ -321,10 +321,10 @@ const MediaWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 16px;
+  border-radius: 24px;
   max-width: 95vw;
   max-height: 85vh;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 60px rgba(34, 55, 27, 0.35);
   overflow: hidden;
 `;
 
@@ -339,7 +339,7 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 24px;
 `;
 
 const ImageContainer = styled.div`
@@ -352,24 +352,24 @@ const MediaImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 24px;
 `;
 
 const VideoOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(34, 55, 27, 0.15) 0%, rgba(34, 55, 27, 0.35) 100%);
+  border-radius: 24px;
 `;
 
 const ScrollHint = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
-  margin-top: 1rem;
-  letter-spacing: 0.1em;
+  margin-top: 1.25rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 `;
 
@@ -388,20 +388,20 @@ const TitleWrapper = styled.div`
 
 const TitleFirstWord = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 30px rgba(34, 55, 27, 0.4);
 `;
 
 const TitleRest = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 600;
   color: #FFFFFF;
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 30px rgba(34, 55, 27, 0.4);
 `;
 
 const ExpandedContent = styled.section`

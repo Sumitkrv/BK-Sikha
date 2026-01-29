@@ -182,9 +182,20 @@ const ServicesSnapshot = () => {
 // Styled Components - Anayoga Style
 const ServicesSection = styled.section`
   padding: 8rem 0 6rem;
-  background: linear-gradient(180deg, #eef4ef 0%, #f5f9f5 50%, #ffffff 100%);
+  background: linear-gradient(180deg, #f0f4f0 0%, #f5f8f5 40%, #FAF8F5 100%);
   position: relative;
   overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(206, 197, 173, 0.4), transparent);
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 6rem 0 4rem;
@@ -235,27 +246,29 @@ const HeaderContent = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 1rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4vw, 3.25rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 `;
 
 const SectionDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  line-height: 1.8;
-  color: #6b7c6f;
+  line-height: 1.85;
+  color: #21371a;
+  opacity: 0.85;
 `;
 
 const ServicesGrid = styled.div`
@@ -279,35 +292,42 @@ const ServiceItem = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 1.5rem;
-  color: #c9a227;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.75rem;
+  color: #cec5ad;
+  transition: all 0.3s ease;
 
   svg {
     width: 100%;
     height: 100%;
   }
 
+  ${ServiceItem}:hover & {
+    color: #22371b;
+    transform: scale(1.05);
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 64px;
-    height: 64px;
+    width: 70px;
+    height: 70px;
   }
 `;
 
 const ServiceTitle = styled.h3`
   font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  color: #2a3a2e;
+  color: #22371b;
   margin-bottom: 0.75rem;
 `;
 
 const ServiceDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  line-height: 1.7;
-  color: #6b7c6f;
+  line-height: 1.75;
+  color: #21371a;
+  opacity: 0.8;
   max-width: 280px;
   margin: 0 auto;
 `;
@@ -321,22 +341,23 @@ const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
-  background: #5a8a62;
-  color: #ffffff;
+  padding: 1.125rem 3rem;
+  background: #22371b;
+  color: #FAF8F5;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(90, 138, 98, 0.25);
+  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+  letter-spacing: 0.02em;
 
   &:hover {
-    background: #4a7a52;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(90, 138, 98, 0.3);
+    background: #1a2b15;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px rgba(34, 55, 27, 0.35);
   }
 `;
 

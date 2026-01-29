@@ -1,14 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import heroImage from '../../assets/hero.png';
+import { FiPlay } from 'react-icons/fi';
+
+// HD Images from Unsplash/Pexels
+const heroImage = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=1200&fit=crop&q=80";
+const heroVideo = "https://cdn.pixabay.com/video/2022/11/07/138570-769930540_large.mp4";
 
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const prefersReducedMotion = useReducedMotion();
+  const [showVideo, setShowVideo] = useState(true);
 
   // Animation variants
   const containerVariants = {
@@ -205,8 +210,7 @@ const Hero = () => {
               animate={{ opacity: 0.6, scale: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             />
-            
-            {/* Main Image */}
+            {/* Main Image/Video */}
             <ImageWrapper
               as={motion.div}
               variants={imageVariants}
@@ -216,13 +220,34 @@ const Hero = () => {
               }}
             >
               <ImageFrame>
-                <YogaImage 
-                  src={heroImage} 
-                  alt="BK Shikha - Yogic Lifestyle & Wellness Mentor"
-                  loading="eager"
-                />
+                {showVideo ? (
+                  <VideoPlayer
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src={heroVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </VideoPlayer>
+                ) : (
+                  <>
+                    <YogaImage 
+                      src={heroImage} 
+                      alt="BK Shikha - Yogic Lifestyle & Wellness Mentor"
+                      loading="eager"
+                    />
+                    <PlayButton
+                      onClick={() => setShowVideo(true)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FiPlay />
+                    </PlayButton>
+                  </>
+                )}
                 {/* Image overlay gradient */}
-                <ImageOverlay />
+                <ImageOverlay $isVideo={showVideo} />
               </ImageFrame>
             </ImageWrapper>
           </ImageContainer>
@@ -237,10 +262,21 @@ const HeroSection = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9f6 0%, #f0f4f1 50%, #e8efe9 100%);
+  background: linear-gradient(165deg, #FAF8F5 0%, #f5f7f3 35%, #eef3ed 70%, #e6ede5 100%);
   padding: 6rem 0 4rem;
   overflow: hidden;
   position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at 80% 30%, rgba(206, 197, 173, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: auto;
@@ -313,12 +349,14 @@ const Headline = styled.div`
 const AccentHeadline = styled.span`
   display: block;
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
   font-style: italic;
-  color: #5a8a62;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
+  color: #22371b;
+  line-height: 1.1;
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.02em;
+  opacity: 0.95;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: clamp(2rem, 8vw, 2.75rem);
@@ -327,11 +365,12 @@ const AccentHeadline = styled.span`
 
 const MainHeadline = styled.h1`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 600;
-  color: #2a3a2e;
-  line-height: 1.2;
+  color: #22371b;
+  line-height: 1.1;
   margin: 0;
+  letter-spacing: -0.01em;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: clamp(2rem, 8vw, 2.75rem);
@@ -340,11 +379,13 @@ const MainHeadline = styled.h1`
 
 const Description = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 1.0625rem;
-  line-height: 1.8;
-  color: #5a6a5e;
-  margin-bottom: 2.5rem;
-  max-width: 450px;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #21371a;
+  margin-bottom: 2.75rem;
+  max-width: 460px;
+  opacity: 0.9;
+  font-weight: 400;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     margin-left: auto;
@@ -353,7 +394,7 @@ const Description = styled.p`
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 2rem;
   }
 `;
@@ -395,22 +436,30 @@ const ButtonBase = styled(Link)`
 `;
 
 const PrimaryButton = styled(ButtonBase)`
-  background-color: #5a8a62;
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(90, 138, 98, 0.25);
+  background: linear-gradient(135deg, #cec5ad 0%, #d6ceb8 100%);
+  color: #22371b;
+  box-shadow: 0 4px 20px rgba(206, 197, 173, 0.35);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 
   &:hover {
-    background-color: #4a7a52;
+    background: linear-gradient(135deg, #d6ceb8 0%, #ddd6c3 100%);
+    box-shadow: 0 8px 30px rgba(206, 197, 173, 0.45);
+    transform: translateY(-2px);
   }
 `;
 
 const SecondaryButton = styled(ButtonBase)`
   background-color: transparent;
-  color: #5a8a62;
-  border: 1.5px solid #5a8a62;
+  color: #22371b;
+  border: 2px solid rgba(34, 55, 27, 0.3);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 
   &:hover {
-    background-color: rgba(90, 138, 98, 0.08);
+    border-color: #22371b;
+    background-color: rgba(34, 55, 27, 0.05);
+    transform: translateY(-2px);
   }
 `;
 
@@ -480,11 +529,11 @@ const SmallBlob = styled.div`
   right: 15%;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #7fb88a, #95c9a1);
+  background: linear-gradient(135deg, #cec5ad, #ddd6c3);
   border-radius: 50%;
   z-index: 2;
-  opacity: 0.8;
-  filter: blur(0.5px);
+  opacity: 0.9;
+  box-shadow: 0 8px 25px rgba(206, 197, 173, 0.4);
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     width: 60px;
@@ -503,17 +552,17 @@ const TinyBlob = styled.div`
   position: absolute;
   bottom: 20%;
   left: 10%;
-  width: 40px;
-  height: 40px;
-  background: #a8d0b0;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #22371b, #3a5a34);
   border-radius: 50%;
   z-index: 2;
-  opacity: 0.6;
-  filter: blur(0.5px);
+  opacity: 0.7;
+  box-shadow: 0 6px 20px rgba(34, 55, 27, 0.3);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     bottom: 25%;
     left: 15%;
   }
@@ -559,13 +608,63 @@ const ImageOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
+  background: ${props => props.$isVideo ? 'transparent' : `linear-gradient(
     135deg,
     rgba(184, 212, 188, 0.1) 0%,
     rgba(155, 194, 160, 0.05) 50%,
     transparent 100%
-  );
+  )`};
   pointer-events: none;
+`;
+
+const VideoPlayer = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+`;
+
+const PlayButton = styled(motion.button)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 1.75rem;
+    color: #22371b;
+    margin-left: 4px;
+  }
+
+  &:hover {
+    background: #cec5ad;
+    
+    svg {
+      color: #22371b;
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 60px;
+    height: 60px;
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export default Hero;

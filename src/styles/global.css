@@ -9,12 +9,16 @@
 
 :root {
   /* Color variables for easy reference */
-  --primary: #8B7355;
+  --primary: #22371b;
+  --primary-light: #3a5a34;
   --secondary: #A8C5A4;
-  --accent: #D4A574;
+  --accent: #cec5ad;
+  --accent-light: #ddd6c3;
   --background: #FAF8F5;
-  --text: #4A4A4A;
-  --cta: #7A9B76;
+  --background-alt: #f5f7f4;
+  --text: #21371a;
+  --text-muted: rgba(33, 55, 26, 0.7);
+  --cta: #22371b;
 }
 
 html {
@@ -131,32 +135,33 @@ img {
 
 /* Selection */
 ::selection {
-  background-color: var(--accent);
-  color: white;
+  background-color: #cec5ad;
+  color: #22371b;
 }
 
 /* Scrollbar styling - subtle and elegant */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #FAF8F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-  border-radius: 6px;
+  background: #cec5ad;
+  border-radius: 5px;
+  border: 2px solid #FAF8F5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: #22371b;
 }
 
 /* Focus states - accessible and beautiful */
 *:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+  outline: 2px solid #cec5ad;
+  outline-offset: 4px;
 }
 
 /* Loading states */

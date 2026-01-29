@@ -115,25 +115,25 @@ const CarouselSection = styled.section`
 
 const SectionHeader = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding: 0 1.5rem;
 
   span {
     display: block;
     font-family: ${theme.fonts.body};
     font-size: ${theme.fontSizes.sm};
-    font-weight: ${theme.fontWeights.medium};
-    color: ${theme.colors.cta};
+    font-weight: 600;
+    color: #cec5ad;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   h2 {
     font-family: ${theme.fonts.heading};
     font-size: ${theme.fontSizes['4xl']};
-    font-weight: ${theme.fontWeights.semibold};
-    color: ${theme.colors.textDark};
+    font-weight: 500;
+    color: #22371b;
     margin: 0;
 
     @media (max-width: ${theme.breakpoints?.tablet || '768px'}) {
@@ -192,8 +192,8 @@ const ProgramCard = styled.div`
   overflow: hidden;
   width: 320px;
   height: 420px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(34, 55, 27, 0.12);
 
   @media (max-width: 768px) {
     width: 280px;
@@ -226,11 +226,11 @@ const CardContent = styled.div`
 
 const CardCategory = styled.span`
   font-family: ${theme.fonts.body};
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 600;
+  color: #cec5ad;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
 `;
 
 const CardTitle = styled.h3`

@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import heroImage from '../../assets/hero.png';
+import aboutImage from '../../assets/bkim/WhatsApp Image 2026-01-28 at 3.53.35 PM (1).jpeg';
 
 const AboutPreview = () => {
   const ref = useRef(null);
@@ -116,7 +116,7 @@ const AboutPreview = () => {
           {/* Main Image */}
           <ImageWrapper>
             <AboutImage 
-              src={heroImage} 
+              src={aboutImage} 
               alt="About BK Shikha - Yoga & Wellness"
             />
           </ImageWrapper>
@@ -125,25 +125,37 @@ const AboutPreview = () => {
         {/* Right Column - Text Content */}
         <TextColumn>
           <motion.div variants={textVariants}>
-            <SectionLabel>About Us</SectionLabel>
+            <SectionLabel>Philosophy</SectionLabel>
           </motion.div>
           
           <motion.div variants={textVariants}>
-            <SectionTitle>How We Started</SectionTitle>
+            <SectionTitle>Our Story</SectionTitle>
+          </motion.div>
+          
+          <motion.div variants={textVariants}>
+            <SubTitle>Discover the journey behind BK Shikha's wellness mission</SubTitle>
           </motion.div>
           
           <motion.div variants={textVariants}>
             <Description>
-              My journey into yoga began as a personal quest for peace amid life's chaos. 
-              What started as a simple practice on my mat transformed into a profound calling 
-              to share the ancient wisdom of yogic living with others seeking balance, 
-              clarity, and inner harmony.
+              BK Shikha is a dedicated Holistic Wellness Coach with over 12 years in Yoga and 
+              15 years in Meditation. As a certified NLP Practitioner, Gut Health Expert, and 
+              Counselor, she specializes in mind-body healing, supporting children, teenagers, 
+              and adults through stress, anxiety, emotional wellness, and relationship challenges.
             </Description>
           </motion.div>
           
           <motion.div variants={textVariants}>
-            <CTAButton to="/about">
-              Look more
+            <Description>
+              Her holistic approach combines ancient wisdom with modern science. True healing 
+              begins with the mind — when calm and balanced, the body naturally transforms, 
+              empowering long-term physical, mental, and emotional well-being.
+            </Description>
+          </motion.div>
+          
+          <motion.div variants={textVariants}>
+            <CTAButton to="/philosophy">
+              Learn about our holistic approach
             </CTAButton>
           </motion.div>
         </TextColumn>
@@ -154,13 +166,24 @@ const AboutPreview = () => {
 
 // Styled Components - Anayoga Style
 const AboutSection = styled.section`
-  padding: 6rem 0;
-  background: #f8f9f6;
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #f8f9f6 0%, #f3f5f2 50%, #eef1ec 100%);
   position: relative;
   overflow: hidden;
 
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(206, 197, 173, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -250,7 +273,7 @@ const Dot = styled.div`
   position: absolute;
   width: 6px;
   height: 6px;
-  background: #c9a227;
+  background: #cec5ad;
   border-radius: 50%;
 `;
 
@@ -265,6 +288,11 @@ const LargeBlob = styled.div`
   svg {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 15px 40px rgba(34, 55, 27, 0.2));
+  }
+
+  svg path {
+    fill: #22371b;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -286,6 +314,10 @@ const SmallBlob = styled.div`
     height: 100%;
   }
 
+  svg circle {
+    fill: #cec5ad;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 80px;
     height: 80px;
@@ -304,6 +336,11 @@ const AccentBlob = styled.div`
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  svg circle {
+    fill: #21371a;
+    opacity: 0.5;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -353,24 +390,35 @@ const SectionLabel = styled.span`
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: #5a8a62;
+  color: #22371b;
   margin-bottom: 1rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.25rem, 4vw, 3rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-size: clamp(2.5rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
   margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+`;
+
+const SubTitle = styled.h3`
+  font-family: ${theme.fonts.body};
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #21371a;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
 `;
 
 const Description = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.8;
-  color: #6b7c6f;
+  color: #21371a;
   margin-bottom: 2rem;
 `;
 
@@ -378,21 +426,24 @@ const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.75rem;
   background: transparent;
-  color: #c9a227;
-  border: 1.5px solid #c9a227;
+  color: #22371b;
+  border: 2px solid #22371b;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
 
   &:hover {
-    background: #c9a227;
-    color: #ffffff;
+    background: #22371b;
+    color: #FAF8F5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 55, 27, 0.25);
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {

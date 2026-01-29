@@ -5,7 +5,6 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
 import logoImage from '../../assets/bk.jpg';
-import { ShiftingDropDown } from '../ui/ShiftingDropDown';
 
 // Premium easing curves for luxurious motion
 const premiumEasing = {
@@ -40,6 +39,8 @@ const Header = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    // Scroll to top when route changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location]);
 
   // Lock body scroll when mobile menu is open
@@ -59,14 +60,14 @@ const Header = () => {
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
     { path: '/blog', label: 'Blog' },
-    { path: '/testimonials', label: 'Testimonials' },
+    { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Connect' },
   ], []);
 
   // Simple nav links for items without dropdown
   const simpleNavLinks = useMemo(() => [
     { path: '/', label: 'Home' },
-    { path: '/testimonials', label: 'Testimonials' },
+    { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Connect' },
   ], []);
 
@@ -160,22 +161,54 @@ const Header = () => {
               to="/"
               $isActive={location.pathname === '/'}
               aria-current={location.pathname === '/' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <NavLinkText>Home</NavLinkText>
               <NavLinkUnderline $isActive={location.pathname === '/'} />
             </NavLink>
             
-            {/* Animated Shifting Dropdown */}
-            <ShiftingDropDown isScrolled={isScrolled} />
-            
-            {/* Testimonials Link */}
+            {/* About Link */}
             <NavLink
-              to="/testimonials"
-              $isActive={location.pathname === '/testimonials'}
-              aria-current={location.pathname === '/testimonials' ? 'page' : undefined}
+              to="/about"
+              $isActive={location.pathname === '/about'}
+              aria-current={location.pathname === '/about' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <NavLinkText>Testimonials</NavLinkText>
-              <NavLinkUnderline $isActive={location.pathname === '/testimonials'} />
+              <NavLinkText>About</NavLinkText>
+              <NavLinkUnderline $isActive={location.pathname === '/about'} />
+            </NavLink>
+            
+            {/* Services Link */}
+            <NavLink
+              to="/services"
+              $isActive={location.pathname === '/services'}
+              aria-current={location.pathname === '/services' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <NavLinkText>Services</NavLinkText>
+              <NavLinkUnderline $isActive={location.pathname === '/services'} />
+            </NavLink>
+            
+            {/* Blog Link */}
+            <NavLink
+              to="/blog"
+              $isActive={location.pathname === '/blog'}
+              aria-current={location.pathname === '/blog' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <NavLinkText>Blog</NavLinkText>
+              <NavLinkUnderline $isActive={location.pathname === '/blog'} />
+            </NavLink>
+            
+            {/* Portfolio Link */}
+            <NavLink
+              to="/portfolio"
+              $isActive={location.pathname === '/portfolio'}
+              aria-current={location.pathname === '/portfolio' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <NavLinkText>Portfolio</NavLinkText>
+              <NavLinkUnderline $isActive={location.pathname === '/portfolio'} />
             </NavLink>
             
             {/* Connect Link */}
@@ -183,6 +216,7 @@ const Header = () => {
               to="/contact"
               $isActive={location.pathname === '/contact'}
               aria-current={location.pathname === '/contact' ? 'page' : undefined}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <NavLinkText>Connect</NavLinkText>
               <NavLinkUnderline $isActive={location.pathname === '/contact'} />
@@ -193,6 +227,7 @@ const Header = () => {
           <CTAButton
             to="/contact"
             className="hide-mobile"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             whileHover={prefersReducedMotion ? {} : { y: -2 }}
             whileTap={prefersReducedMotion ? {} : { y: 0, scale: 0.98 }}
             transition={{ duration: 0.2, ease: premiumEasing.smooth }}
@@ -259,6 +294,7 @@ const Header = () => {
                     animate="visible"
                     $isActive={location.pathname === link.path}
                     aria-current={location.pathname === link.path ? 'page' : undefined}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   >
                     {location.pathname === link.path && (
                       <ActiveIndicator
@@ -278,6 +314,7 @@ const Header = () => {
                 variants={mobileCTAVariants}
                 initial="hidden"
                 animate="visible"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 whileHover={prefersReducedMotion ? {} : { y: -2 }}
                 whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
               >
@@ -301,13 +338,13 @@ const HeaderWrapper = styled.header`
   z-index: ${theme.zIndex.fixed};
   background: ${(props) =>
     props.$isScrolled
-      ? 'rgba(37, 66, 41, 0.97)'
-      : 'rgba(37, 66, 41, 0.92)'};
+      ? 'rgba(34, 55, 27, 0.97)'
+      : 'rgba(33, 55, 26, 0.92)'};
   backdrop-filter: blur(${(props) => props.$isScrolled ? '16px' : '12px'});
   -webkit-backdrop-filter: blur(${(props) => props.$isScrolled ? '16px' : '12px'});
   box-shadow: ${(props) =>
     props.$isScrolled 
-      ? '0 4px 20px rgba(37, 66, 41, 0.15), 0 1px 3px rgba(37, 66, 41, 0.08)'
+      ? '0 4px 20px rgba(34, 55, 27, 0.3), 0 1px 3px rgba(34, 55, 27, 0.15)'
       : 'none'};
   transition: 
     background 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
@@ -343,7 +380,7 @@ const Logo = styled(Link)`
 `;
 
 const LogoImage = styled.img`
-  height: ${(props) => (props.$isScrolled ? '42px' : '52px')};
+  height: ${(props) => (props.$isScrolled ? '48px' : '60px')};
   width: auto;
   object-fit: contain;
   transition: 
@@ -355,7 +392,7 @@ const LogoImage = styled.img`
   }
   
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: ${(props) => (props.$isScrolled ? '38px' : '44px')};
+    height: ${(props) => (props.$isScrolled ? '42px' : '50px')};
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -374,7 +411,7 @@ const LogoText = styled.h1`
   font-family: ${theme.fonts.heading};
   font-size: ${(props) => (props.$isScrolled ? '1.375rem' : '1.5rem')};
   font-weight: 600;
-  color: #FFFFFF;
+  color: #cec5ad;
   margin: 0;
   letter-spacing: 0.04em;
   line-height: 1.1;
@@ -400,7 +437,7 @@ const LogoTagline = styled.span`
   font-size: ${(props) => (props.$isScrolled ? '0.625rem' : '0.6875rem')};
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(206, 197, 173, 0.85);
   letter-spacing: 0.06em;
   opacity: ${(props) => (props.$isScrolled ? 0.85 : 1)};
   transition: 
@@ -432,7 +469,7 @@ const NavLink = styled(Link)`
   font-size: 0.9375rem;
   font-weight: ${(props) => (props.$isActive ? 500 : 400)};
   color: ${(props) =>
-    props.$isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.85)'};
+    props.$isActive ? '#cec5ad' : 'rgba(206, 197, 173, 0.85)'};
   text-decoration: none;
   position: relative;
   padding: 0.625rem 0;
@@ -442,7 +479,7 @@ const NavLink = styled(Link)`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #FFFFFF;
+    color: #cec5ad;
   }
   
   &:focus-visible {
@@ -475,7 +512,7 @@ const NavLinkUnderline = styled.span`
   bottom: 0.25rem;
   left: 50%;
   height: 2px;
-  background: ${theme.colors.accent};
+  background: #cec5ad;
   border-radius: 1px;
   transform: translateX(-50%);
   width: ${(props) => (props.$isActive ? '70%' : '0')};
@@ -503,8 +540,8 @@ const CTAButton = styled(motion(Link))`
   align-items: center;
   justify-content: center;
   padding: 0.8125rem 1.875rem;
-  background: ${theme.colors.accent};
-  color: #2A2A2A;
+  background: #cec5ad;
+  color: #22371b;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
@@ -512,27 +549,27 @@ const CTAButton = styled(motion(Link))`
   text-decoration: none;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 2px 8px rgba(212, 165, 116, 0.3),
-    0 1px 2px rgba(212, 165, 116, 0.15);
+    0 2px 8px rgba(206, 197, 173, 0.3),
+    0 1px 2px rgba(206, 197, 173, 0.15);
   transition: 
     background 0.3s ease,
     box-shadow 0.3s ease;
   white-space: nowrap;
 
   &:hover {
-    background: ${theme.colors.accentLight};
+    background: #e0d9c7;
     box-shadow: 
-      0 6px 20px rgba(212, 165, 116, 0.4),
-      0 2px 6px rgba(212, 165, 116, 0.2);
+      0 6px 20px rgba(206, 197, 173, 0.5),
+      0 2px 6px rgba(206, 197, 173, 0.3);
   }
   
   &:focus-visible {
-    outline: 2px solid ${theme.colors.accent};
+    outline: 2px solid #cec5ad;
     outline-offset: 3px;
   }
   
   &:active {
-    background: ${theme.colors.accentDark};
+    background: #b8af97;
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -544,7 +581,7 @@ const MobileMenuButton = styled(motion.button)`
   display: none;
   background: transparent;
   border: none;
-  color: #FFFFFF;
+  color: #cec5ad;
   padding: 0.75rem;
   margin-right: -0.75rem;
   cursor: pointer;
@@ -552,11 +589,11 @@ const MobileMenuButton = styled(motion.button)`
   transition: background 0.2s ease;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(206, 197, 173, 0.15);
   }
   
   &:focus-visible {
-    outline: 2px solid ${theme.colors.accent};
+    outline: 2px solid #cec5ad;
     outline-offset: 2px;
   }
 
@@ -614,7 +651,7 @@ const MobileNavBrand = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
+  color: #22371b;
   letter-spacing: 0.04em;
   margin-bottom: 0.25rem;
 `;
@@ -640,7 +677,7 @@ const MobileNavLink = styled(Link)`
   font-size: 1.125rem;
   font-weight: ${(props) => (props.$isActive ? 500 : 400)};
   color: ${(props) =>
-    props.$isActive ? theme.colors.primary : theme.colors.text};
+    props.$isActive ? '#22371b' : '#21371a'};
   text-decoration: none;
   padding: 1rem 1rem 1rem 1.25rem;
   border-radius: ${theme.borderRadius.lg};
@@ -652,12 +689,12 @@ const MobileNavLink = styled(Link)`
     background 0.25s ease;
 
   &:hover {
-    color: ${theme.colors.primary};
-    background: rgba(139, 115, 85, 0.04);
+    color: #22371b;
+    background: rgba(206, 197, 173, 0.1);
   }
   
   &:focus-visible {
-    outline: 2px solid ${theme.colors.accent};
+    outline: 2px solid #cec5ad;
     outline-offset: -2px;
   }
   
@@ -673,7 +710,7 @@ const ActiveIndicator = styled.span`
   transform: translateY(-50%);
   width: 3px;
   height: 1.5rem;
-  background: ${theme.colors.accent};
+  background: #cec5ad;
   border-radius: 2px;
 `;
 
@@ -686,8 +723,8 @@ const MobileCTAButton = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1.125rem 2rem;
-  background: ${theme.colors.cta};
-  color: white;
+  background: #cec5ad;
+  color: #22371b;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
@@ -696,22 +733,22 @@ const MobileCTAButton = styled(Link)`
   text-align: center;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 4px 16px rgba(122, 155, 118, 0.25),
-    0 2px 4px rgba(122, 155, 118, 0.1);
+    0 4px 16px rgba(206, 197, 173, 0.25),
+    0 2px 4px rgba(206, 197, 173, 0.1);
   margin-top: auto;
   transition: 
     background 0.3s ease,
     box-shadow 0.3s ease;
 
   &:hover {
-    background: ${theme.colors.ctaHover};
+    background: #e0d9c7;
     box-shadow: 
-      0 6px 24px rgba(122, 155, 118, 0.3),
-      0 2px 6px rgba(122, 155, 118, 0.12);
+      0 6px 24px rgba(206, 197, 173, 0.3),
+      0 2px 6px rgba(206, 197, 173, 0.12);
   }
   
   &:focus-visible {
-    outline: 2px solid white;
+    outline: 2px solid #cec5ad;
     outline-offset: 3px;
   }
   

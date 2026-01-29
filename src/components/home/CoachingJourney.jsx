@@ -131,13 +131,13 @@ const CoachingJourney = () => {
 
 // Styled Components - Exact Anayoga Style
 const ClassesSection = styled.section`
-  padding: 6rem 0;
-  background: #f8f9f6;
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #f5f7f4 100%);
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -147,12 +147,16 @@ const LeafDecoration = styled.div`
   top: 0;
   width: 180px;
   height: 400px;
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  svg path {
+    stroke: #cec5ad;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -184,10 +188,11 @@ const HeaderContent = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 0.75rem;
 `;
 
@@ -195,7 +200,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 400;
-  color: #2a3a2e;
+  color: #22371b;
   line-height: 1.2;
   margin-bottom: 1rem;
 `;
@@ -204,7 +209,7 @@ const SectionDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.7;
-  color: #6b7c6f;
+  color: #21371a;
 `;
 
 const ClassesGrid = styled.div`
@@ -271,16 +276,16 @@ const CardPrice = styled.span`
   display: block;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  font-weight: 600;
-  color: #c9a227;
-  margin-bottom: 0.25rem;
+  font-weight: 700;
+  color: #22371b;
+  margin-bottom: 0.35rem;
 `;
 
 const CardTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2a3a2e;
+  color: #22371b;
   margin-bottom: 0.5rem;
 `;
 
@@ -290,10 +295,12 @@ const BookNowLink = styled(Link)`
   gap: 0.5rem;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
-  color: #c9a227;
+  font-weight: 600;
+  color: #22371b;
   text-decoration: none;
   transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
 
   svg {
     font-size: 0.875rem;
@@ -301,7 +308,7 @@ const BookNowLink = styled(Link)`
   }
 
   &:hover {
-    color: #b8911f;
+    color: #22371b;
     
     svg {
       transform: translateX(4px);

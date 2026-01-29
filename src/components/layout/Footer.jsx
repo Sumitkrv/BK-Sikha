@@ -12,7 +12,7 @@ const Footer = () => {
     { path: '/about', label: 'About BK Shikha' },
     { path: '/services', label: 'Services' },
     { path: '/blog', label: 'Wellness Insights' },
-    { path: '/testimonials', label: 'Testimonials' },
+    { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Connect' },
   ];
 
@@ -104,14 +104,6 @@ const Footer = () => {
           </CTASection>
         </FooterTop>
 
-        {/* Color Palette Display */}
-        <ColorPalette>
-          <ColorDot $color={theme.colors.primary} title="Warm Earth" />
-          <ColorDot $color={theme.colors.secondary} title="Sage Green" />
-          <ColorDot $color={theme.colors.accent} title="Golden Sand" />
-          <ColorDot $color={theme.colors.cta} title="Deep Moss" />
-        </ColorPalette>
-
         {/* Copyright */}
         <FooterBottom>
           <Copyright>
@@ -130,13 +122,14 @@ const Footer = () => {
 // Styled Components
 const FooterWrapper = styled.footer`
   background: linear-gradient(
-    135deg,
-    ${theme.colors.backgroundAlt} 0%,
-    ${theme.colors.background} 100%
+    180deg,
+    #FAF8F5 0%,
+    #f5f7f4 50%,
+    #f0f3ef 100%
   );
-  border-top: 1px solid ${theme.colors.backgroundDark};
-  padding: 4rem 0 2rem;
-  margin-top: 6rem;
+  border-top: 1px solid rgba(206, 197, 173, 0.2);
+  padding: 5rem 0 2.5rem;
+  margin-top: 0;
 `;
 
 const Container = styled.div``;
@@ -166,27 +159,28 @@ const BrandSection = styled.div`
 
 const BrandName = styled.h3`
   font-family: ${theme.fonts.heading};
-  font-size: 2rem;
-  font-weight: 700;
-  color: ${theme.colors.primary};
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #22371b;
   margin: 0;
 `;
 
 const BrandTagline = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.85rem;
-  font-weight: 500;
-  color: ${theme.colors.textLight};
+  font-weight: 600;
+  color: #cec5ad;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   margin: 0;
 `;
 
 const BrandDescription = styled.p`
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: ${theme.colors.text};
-  margin: 0.5rem 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #21371a;
+  opacity: 0.85;
+  margin: 0.75rem 0 1.75rem;
 `;
 
 const SocialLinks = styled.div`
@@ -195,22 +189,22 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled(motion.a)`
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${theme.colors.background};
-  color: ${theme.colors.primary};
+  background: rgba(206, 197, 173, 0.15);
+  color: #22371b;
   border-radius: ${theme.borderRadius.full};
   font-size: 1.25rem;
-  box-shadow: ${theme.shadows.sm};
-  transition: all ${theme.transitions.base};
+  transition: all 0.3s ease;
 
   &:hover {
-    background: ${theme.colors.primary};
-    color: white;
-    box-shadow: ${theme.shadows.md};
+    background: #22371b;
+    color: #FAF8F5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(34, 55, 27, 0.25);
   }
 `;
 
@@ -222,10 +216,10 @@ const LinksSection = styled.div`
 
 const SectionTitle = styled.h4`
   font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  color: ${theme.colors.primary};
-  margin: 0 0 0.5rem;
+  color: #22371b;
+  margin: 0 0 0.75rem;
 `;
 
 const LinksList = styled.div`
@@ -235,20 +229,23 @@ const LinksList = styled.div`
 `;
 
 const FooterLink = styled(Link)`
-  font-size: 0.95rem;
-  color: ${theme.colors.text};
+  font-size: 0.9375rem;
+  color: #21371a;
+  opacity: 0.8;
   text-decoration: none;
-  transition: color ${theme.transitions.base};
+  transition: all 0.3s ease;
 
   &:hover {
-    color: ${theme.colors.primary};
+    color: #22371b;
+    opacity: 1;
     padding-left: 0.5rem;
   }
 `;
 
 const ServiceItem = styled.p`
-  font-size: 0.95rem;
-  color: ${theme.colors.textLight};
+  font-size: 0.9375rem;
+  color: #21371a;
+  opacity: 0.7;
   margin: 0;
 `;
 
@@ -267,45 +264,23 @@ const CTAText = styled.p`
 
 const CTAButton = styled(motion(Link))`
   display: inline-block;
-  padding: 0.875rem 2rem;
-  background: ${theme.colors.cta};
-  color: white;
+  padding: 1rem 2.25rem;
+  background: #22371b;
+  color: #FAF8F5;
   font-family: ${theme.fonts.body};
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.9375rem;
+  font-weight: 600;
   text-decoration: none;
   text-align: center;
   border-radius: ${theme.borderRadius.full};
-  box-shadow: ${theme.shadows.sm};
-  transition: all ${theme.transitions.base};
+  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
 
   &:hover {
-    background: ${theme.colors.ctaHover};
-    box-shadow: ${theme.shadows.md};
-  }
-`;
-
-const ColorPalette = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0;
-  padding: 1.5rem 0;
-  border-top: 1px solid ${theme.colors.backgroundDark};
-  border-bottom: 1px solid ${theme.colors.backgroundDark};
-`;
-
-const ColorDot = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: ${(props) => props.$color};
-  box-shadow: ${theme.shadows.sm};
-  cursor: help;
-  transition: transform ${theme.transitions.base};
-
-  &:hover {
-    transform: scale(1.3);
+    background: #1a2b15;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(34, 55, 27, 0.35);
   }
 `;
 
@@ -316,7 +291,8 @@ const FooterBottom = styled.div`
 
 const Copyright = styled.p`
   font-size: 0.9rem;
-  color: ${theme.colors.textLight};
+  color: #21371a;
+  opacity: 0.7;
   margin: 0;
   display: flex;
   align-items: center;
@@ -326,7 +302,7 @@ const Copyright = styled.p`
 `;
 
 const HeartIcon = styled.span`
-  color: ${theme.colors.accent};
+  color: #cec5ad;
   display: inline-flex;
   animation: heartbeat 1.5s ease-in-out infinite;
 
@@ -335,7 +311,7 @@ const HeartIcon = styled.span`
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
   }
 `;

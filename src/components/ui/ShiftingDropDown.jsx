@@ -220,19 +220,19 @@ const About = () => {
           <AboutCardTitle>Our Story</AboutCardTitle>
           <AboutCardText>Discover the journey behind BK Shikha's wellness mission</AboutCardText>
         </AboutCard>
-        <AboutCard to="/about">
+        <AboutCard to="/philosophy">
           <AboutCardIcon>
             <FiUsers />
           </AboutCardIcon>
           <AboutCardTitle>Philosophy</AboutCardTitle>
           <AboutCardText>Learn about our holistic approach to health & wellbeing</AboutCardText>
         </AboutCard>
-        <AboutCard to="/testimonials">
+        <AboutCard to="/portfolio">
           <AboutCardIcon>
             <FiAward />
           </AboutCardIcon>
-          <AboutCardTitle>Testimonials</AboutCardTitle>
-          <AboutCardText>Real stories from our transformed community members</AboutCardText>
+          <AboutCardTitle>Portfolio</AboutCardTitle>
+          <AboutCardText>Explore our transformative programs and success stories</AboutCardText>
         </AboutCard>
       </AboutGrid>
     </DropdownContent>

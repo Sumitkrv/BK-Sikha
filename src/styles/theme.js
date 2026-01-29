@@ -4,35 +4,39 @@
 export const theme = {
   // Color Palette - Mindfully curated for wellness and trust
   colors: {
-    // Primary: Warm Earth - Grounding, natural, trustworthy
-    primary: '#8B7355',
-    primaryLight: '#A89080',
-    primaryDark: '#6B5842',
+    // Primary: Deep Forest Green - Grounding, natural, trustworthy
+    primary: '#22371b',
+    primaryLight: '#3a5a34',
+    primaryDark: '#1a2b15',
+    primaryMuted: '#21371a',
     
     // Secondary: Sage Green - Calm, healing, growth, balance
     secondary: '#A8C5A4',
     secondaryLight: '#C5DCC2',
     secondaryDark: '#8AA887',
     
-    // Accent: Golden Sand - Premium, wisdom, transformation
-    accent: '#D4A574',
-    accentLight: '#E4C09A',
-    accentDark: '#B8895F',
+    // Accent: Warm Beige - Premium, wisdom, transformation
+    accent: '#cec5ad',
+    accentLight: '#ddd6c3',
+    accentDark: '#b8af97',
+    accentMuted: 'rgba(206, 197, 173, 0.6)',
     
     // Background: Warm Cream - Peaceful, spacious, elegant
     background: '#FAF8F5',
     backgroundAlt: '#FFFFFF',
     backgroundDark: '#F5F2ED',
+    backgroundGreen: '#f0f5f0',
     
-    // Neutral: Charcoal - Sophistication, clarity, grounding
-    text: '#4A4A4A',
-    textLight: '#7A7A7A',
-    textDark: '#2A2A2A',
+    // Neutral: Deep Forest tones - Sophistication, clarity, grounding
+    text: '#21371a',
+    textLight: '#5a6b55',
+    textDark: '#22371b',
+    textMuted: 'rgba(33, 55, 26, 0.7)',
     
-    // CTA: Deep Moss - Action, vitality, nature connection
-    cta: '#7A9B76',
-    ctaHover: '#658063',
-    ctaLight: '#9AB896',
+    // CTA: Deep Forest - Action, vitality, nature connection
+    cta: '#22371b',
+    ctaHover: '#1a2b15',
+    ctaLight: '#3a5a34',
     
     // Semantic colors
     success: '#88B584',

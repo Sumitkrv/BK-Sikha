@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiInstagram, FiHeart, FiStar, FiArrowRight } from 'react-icons/fi';
-import styled from 'styled-components';
+import { FiInstagram, FiHeart, FiArrowRight } from 'react-icons/fi';
+import styled, { keyframes } from 'styled-components';
 import { theme } from '../../styles/theme';
 
 const instagramPhotos = [
@@ -67,7 +67,6 @@ const CommunityInvite = () => {
 
   return (
     <CommunitySection ref={ref}>
-      {/* Decorative leaf on left */}
       <DecorativeLeaf className="left">
         <svg viewBox="0 0 150 300" fill="none">
           <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#e8f0e9" />
@@ -81,7 +80,6 @@ const CommunityInvite = () => {
         </svg>
       </DecorativeLeaf>
 
-      {/* Golden dots decoration */}
       <DotsDecoration className="top-left">
         {[...Array(12)].map((_, i) => (
           <Dot key={i} style={{ 
@@ -106,7 +104,6 @@ const CommunityInvite = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        {/* Header */}
         <Header>
           <motion.div variants={itemVariants}>
             <SectionLabel>Community</SectionLabel>
@@ -121,44 +118,60 @@ const CommunityInvite = () => {
           </motion.div>
         </Header>
 
-        {/* Instagram Grid */}
         <InstagramSection as={motion.div} variants={itemVariants}>
-          <InstagramGrid>
-            {instagramPhotos.map((photo, index) => (
-              <GridItem
-                key={photo.id}
-                as={motion.a}
+          <InstagramContent>
+            <InstagramTextSide>
+              <InstagramBigText>INSTAGRAM</InstagramBigText>
+              <InstagramHandle 
                 href="https://www.instagram.com/cyd_bkshikha"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-                style={{ '--delay': `${index * 0.1}s` }}
               >
-                <GridImage src={photo.image} alt={photo.alt} loading="lazy" />
-                <ImageOverlay>
-                  <OverlayIcon>
-                    <FiInstagram />
-                  </OverlayIcon>
-                  <OverlayStats>
-                    <StatItem><FiHeart /> 234</StatItem>
-                  </OverlayStats>
-                </ImageOverlay>
-              </GridItem>
-            ))}
-          </InstagramGrid>
-          
-          <InstagramHandle 
-            href="https://www.instagram.com/cyd_bkshikha"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FiInstagram />
-            <span>@cyd_bkshikha</span>
-          </InstagramHandle>
+                <FiInstagram />
+                <span>@cyd_bkshikha</span>
+              </InstagramHandle>
+              <InstagramCTA>Follow for daily wellness inspiration</InstagramCTA>
+            </InstagramTextSide>
+
+            <InstagramImagesSide>
+              <InstagramGrid>
+                {instagramPhotos.map((photo, index) => (
+                  <GridItem
+                    key={photo.id}
+                    as={motion.a}
+                    href="https://www.instagram.com/cyd_bkshikha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                    style={{ '--delay': `${index * 0.1}s` }}
+                    className={`item-${index + 1}`}
+                  >
+                    <GridImage src={photo.image} alt={photo.alt} loading="lazy" />
+                    <SacredGeometry>
+                      <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.6" />
+                        <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.6" />
+                        <circle cx="50" cy="50" r="10" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.6" />
+                        <path d="M50,20 L65,35 L65,65 L50,80 L35,65 L35,35 Z" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.4" />
+                      </svg>
+                    </SacredGeometry>
+                    <ImageOverlay>
+                      <OverlayIcon>
+                        <FiInstagram />
+                      </OverlayIcon>
+                      <OverlayStats>
+                        <StatItem><FiHeart /> 234</StatItem>
+                      </OverlayStats>
+                      <ZenRipple className="ripple" />
+                    </ImageOverlay>
+                  </GridItem>
+                ))}
+              </InstagramGrid>
+            </InstagramImagesSide>
+          </InstagramContent>
         </InstagramSection>
 
-        {/* Features Cards */}
         <FeaturesGrid as={motion.div} variants={itemVariants}>
           <FeatureCard>
             <FeatureIconWrapper className="green">
@@ -198,7 +211,6 @@ const CommunityInvite = () => {
           </FeatureCard>
         </FeaturesGrid>
 
-        {/* CTA Section */}
         <CTASection as={motion.div} variants={itemVariants}>
           <CTACard>
             <CTAContent>
@@ -236,15 +248,44 @@ const CommunityInvite = () => {
   );
 };
 
+// Keyframes
+const breathe = keyframes`
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+`;
+
+const ripple = keyframes`
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+`;
+
+const rotateGeometry = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
+
+const chakraGlow = keyframes`
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.3), 0 0 40px rgba(90, 138, 98, 0.2); }
+  25% { box-shadow: 0 0 25px rgba(90, 138, 98, 0.4), 0 0 50px rgba(201, 162, 39, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(142, 207, 179, 0.4), 0 0 60px rgba(90, 138, 98, 0.3); }
+  75% { box-shadow: 0 0 25px rgba(201, 162, 39, 0.4), 0 0 50px rgba(142, 207, 179, 0.3); }
+`;
+
 // Styled Components
 const CommunitySection = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #f8f9f6 0%, #ffffff 50%, #f8f9f6 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #f8f9f7 50%, #FAF8F5 100%);
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -298,8 +339,9 @@ const Dot = styled.div`
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #c9a227;
+  background: #cec5ad;
   border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(206, 197, 173, 0.4);
 `;
 
 const Container = styled.div`
@@ -322,44 +364,139 @@ const Header = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 0.75rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
   margin-bottom: 1rem;
 `;
 
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
-  color: #6b7c6f;
-  max-width: 500px;
+  color: #21371a;
+  opacity: 0.8;
+  max-width: 520px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.75;
 `;
 
 const InstagramSection = styled.div`
   margin-bottom: 4rem;
 `;
 
+const InstagramContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  min-height: 500px;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    flex-direction: column;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+`;
+
+const InstagramTextSide = styled.div`
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    flex: none;
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+const InstagramBigText = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #22371b;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+`;
+
+const InstagramHandle = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: ${theme.fonts.body};
+  font-size: 1.125rem;
+  color: #22371b;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.875rem 1.75rem;
+  background: rgba(206, 197, 173, 0.2);
+  border-radius: 50px;
+  border: 2px solid transparent;
+
+  svg {
+    font-size: 1.375rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(131, 58, 180, 0.3);
+
+    svg {
+      transform: scale(1.1);
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    justify-content: center;
+  }
+`;
+
+const InstagramCTA = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 0.9375rem;
+  color: #21371a;
+  opacity: 0.7;
+  margin-top: 0.875rem;
+  max-width: 200px;
+  line-height: 1.65;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: none;
+  }
+`;
+
+const InstagramImagesSide = styled.div`
+  flex: 1;
+  position: relative;
+`;
+
 const InstagramGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 650px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -371,14 +508,57 @@ const InstagramGrid = styled.div`
 const GridItem = styled.a`
   position: relative;
   aspect-ratio: 1;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   transition: all 0.4s ease;
+  animation: ${breathe} 6s ease-in-out infinite;
+  animation-delay: calc(var(--delay, 0s));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+
+  &.item-1 {
+    transform: translateY(0);
+    animation-delay: 0s;
+  }
+
+  &.item-2 {
+    transform: translateY(20px);
+    animation-delay: 1s;
+  }
+
+  &.item-3 {
+    transform: translateY(0);
+    animation-delay: 2s;
+  }
+
+  &.item-4 {
+    transform: translateY(0);
+    animation-delay: 3s;
+  }
+
+  &.item-5 {
+    transform: translateY(-20px);
+    animation-delay: 4s;
+  }
+
+  &.item-6 {
+    transform: translateY(0);
+    animation-delay: 5s;
+  }
 
   &:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    animation: ${chakraGlow} 2s ease-in-out infinite;
+    border-color: rgba(201, 162, 39, 0.5);
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    &.item-2, &.item-5 {
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -390,6 +570,30 @@ const GridImage = styled.img`
 
   ${GridItem}:hover & {
     transform: scale(1.1);
+  }
+`;
+
+const SacredGeometry = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  color: #ffffff;
+  z-index: 2;
+
+  svg {
+    width: 80%;
+    height: 80%;
+    animation: ${rotateGeometry} 20s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+
+  ${GridItem}:hover & {
+    opacity: 1;
   }
 `;
 
@@ -445,24 +649,15 @@ const StatItem = styled.span`
   }
 `;
 
-const InstagramHandle = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  color: #5a8a62;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
+const ZenRipple = styled.div`
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  opacity: 0;
 
-  svg {
-    font-size: 1.25rem;
-  }
-
-  &:hover {
-    color: #4a7a52;
+  ${GridItem}:hover & {
+    animation: ${ripple} 1.2s ease-out infinite;
   }
 `;
 
@@ -482,30 +677,31 @@ const FeaturesGrid = styled.div`
 
 const FeatureCard = styled.div`
   background: #ffffff;
-  padding: 2rem;
-  border-radius: 20px;
+  padding: 2.25rem;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(90, 138, 98, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 30px rgba(34, 55, 27, 0.06);
+  border: 1px solid rgba(206, 197, 173, 0.15);
+  transition: all 0.4s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(34, 55, 27, 0.1);
   }
 `;
 
 const FeatureIconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+  width: 65px;
+  height: 65px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1.5rem;
 
   &.green {
-    background: linear-gradient(135deg, rgba(90, 138, 98, 0.15), rgba(90, 138, 98, 0.05));
+    background: linear-gradient(135deg, rgba(34, 55, 27, 0.12), rgba(34, 55, 27, 0.05));
+    color: #22371b;
     color: #5a8a62;
   }
 
@@ -527,30 +723,31 @@ const FeatureIconWrapper = styled.div`
 
 const FeatureTitle = styled.h3`
   font-family: ${theme.fonts.heading};
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #2a3a2e;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #22371b;
   margin-bottom: 0.75rem;
 `;
 
 const FeatureDesc = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  line-height: 1.7;
-  color: #6b7c6f;
+  line-height: 1.75;
+  color: #21371a;
+  opacity: 0.8;
 `;
 
 const CTASection = styled.div``;
 
 const CTACard = styled.div`
-  background: linear-gradient(135deg, #2a3a2e 0%, #3d5a40 100%);
-  border-radius: 28px;
-  padding: 3.5rem;
+  background: linear-gradient(135deg, #22371b 0%, #2d4a24 100%);
+  border-radius: 32px;
+  padding: 4rem;
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding: 2.5rem 2rem;
+    padding: 3rem 2rem;
   }
 `;
 
@@ -619,14 +816,14 @@ const JourneyButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9375rem 2rem;
+  padding: 1rem 2.25rem;
   background: transparent;
-  color: #c9a227;
-  border: 1.5px solid #c9a227;
+  color: #cec5ad;
+  border: 2px solid #cec5ad;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
 
@@ -636,8 +833,8 @@ const JourneyButton = styled(Link)`
   }
 
   &:hover {
-    background: #c9a227;
-    color: #ffffff;
+    background: #cec5ad;
+    color: #22371b;
 
     svg {
       transform: translateX(4px);

@@ -155,13 +155,13 @@ const TestimonialsPreview = () => {
 
 // Styled Components
 const TestimonialsSection = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #f8f9f6 0%, #eef4ef 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #f3f5f2 100%);
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -208,11 +208,11 @@ const DotsDecoration = styled.div`
 
 const Dot = styled.div`
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: ${theme.colors.accent};
-  opacity: 0.4;
+  background: #cec5ad;
+  opacity: 0.6;
 `;
 
 const Container = styled.div`
@@ -231,30 +231,31 @@ const Header = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: ${theme.colors.accent};
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #cec5ad;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   margin-bottom: 0.75rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 600;
-  color: ${theme.colors.primary};
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: #22371b;
   margin: 0 0 1rem;
-  line-height: 1.2;
+  line-height: 1.15;
 `;
 
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
-  color: ${theme.colors.textLight};
-  max-width: 500px;
+  color: #21371a;
+  opacity: 0.8;
+  max-width: 520px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 `;
 
 const TestimonialWrapper = styled.div`
@@ -273,19 +274,22 @@ const ViewAllButton = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  color: ${theme.colors.cta};
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #22371b;
   text-decoration: none;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2.25rem;
   border-radius: ${theme.borderRadius.full};
-  border: 2px solid ${theme.colors.cta};
+  border: 2px solid #22371b;
   transition: all 0.3s ease;
+  letter-spacing: 0.02em;
 
   &:hover {
-    background: ${theme.colors.cta};
-    color: white;
+    background: #22371b;
+    color: #FAF8F5;
     gap: 0.75rem;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 55, 27, 0.25);
   }
 
   svg {

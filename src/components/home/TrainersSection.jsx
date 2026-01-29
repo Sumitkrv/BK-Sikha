@@ -7,19 +7,19 @@ import { FiInstagram, FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 const trainers = [
   {
-    image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=500&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=800&fit=crop&q=80",
     name: "BK Shikha",
     role: "Founder & Lead Mentor",
     social: { instagram: "#", facebook: "#", linkedin: "#", twitter: "#" }
   },
   {
-    image: "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=500&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=800&fit=crop&q=80",
     name: "Priya Sharma",
     role: "Yoga Trainer",
     social: { instagram: "#", facebook: "#", linkedin: "#", twitter: "#" }
   },
   {
-    image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=500&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=800&fit=crop&q=80",
     name: "Ananya Gupta",
     role: "Meditation Guide",
     social: { instagram: "#", facebook: "#", linkedin: "#", twitter: "#" }
@@ -119,33 +119,33 @@ const TrainersSection = () => {
 
 // Styled Components - Anayoga Style
 const TrainersWrapper = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #eef4ef 0%, #e8f0e9 50%, #dfe9e0 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #f0f4f0 0%, #e8ede8 50%, #e2e9e2 100%);
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
 const BgDecoration = styled.div`
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   pointer-events: none;
 
   &.top-left {
-    top: -150px;
-    left: -150px;
-    background: radial-gradient(circle, rgba(90, 138, 98, 0.08) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(34, 55, 27, 0.06) 0%, transparent 60%);
   }
 
   &.bottom-right {
-    bottom: -150px;
-    right: -150px;
-    background: radial-gradient(circle, rgba(201, 162, 39, 0.06) 0%, transparent 70%);
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(206, 197, 173, 0.1) 0%, transparent 60%);
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -177,19 +177,20 @@ const HeaderContent = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 0.75rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
 `;
 
 const TrainersGrid = styled.div`
@@ -211,13 +212,14 @@ const TrainersGrid = styled.div`
 
 const TrainerCard = styled.div`
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(34, 55, 27, 0.08);
+  transition: all 0.4s ease;
 
   &:hover {
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(34, 55, 27, 0.15);
+    transform: translateY(-8px);
   }
 `;
 
@@ -252,14 +254,14 @@ const TrainerName = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-weight: 600;
-  color: #2a3a2e;
+  color: #22371b;
   margin-bottom: 0.25rem;
 `;
 
 const TrainerRole = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  color: #6b7c6f;
+  color: #21371a;
   margin-bottom: 1rem;
 `;
 
@@ -273,16 +275,18 @@ const SocialLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  color: #c9a227;
-  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  color: #21371a;
+  opacity: 0.5;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   border-radius: 50%;
 
   &:hover {
-    color: #b8911f;
-    background: rgba(201, 162, 39, 0.1);
+    color: #22371b;
+    opacity: 1;
+    background: rgba(206, 197, 173, 0.25);
   }
 `;
 
@@ -295,21 +299,22 @@ const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 3rem;
-  background: #c9a227;
-  color: #ffffff;
+  padding: 1.125rem 3rem;
+  background: linear-gradient(135deg, #cec5ad 0%, #d6ceb8 100%);
+  color: #22371b;
+  font-weight: 600;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+  box-shadow: 0 4px 15px rgba(206, 197, 173, 0.3);
 
   &:hover {
-    background: #b8911f;
+    background: #e0d9c7;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.4);
+    box-shadow: 0 8px 25px rgba(206, 197, 173, 0.4);
   }
 `;
 

@@ -114,12 +114,12 @@ const BlogPreview = () => {
 
 // Styled Components
 const BlogSection = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #eef4ef 0%, #f8f9f6 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #f0f4f0 0%, #f5f8f5 50%, #FAF8F5 100%);
   position: relative;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -167,20 +167,20 @@ const Header = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 0.75rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
 `;
 
 const BlogGrid = styled.div`
@@ -205,14 +205,14 @@ const BlogGrid = styled.div`
 
 const BlogCard = styled.article`
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 25px rgba(34, 55, 27, 0.06);
   transition: all 0.4s ease;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(34, 55, 27, 0.12);
   }
 `;
 
@@ -256,7 +256,7 @@ const BlogTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 500;
-  color: #2a3a2e;
+  color: #22371b;
   line-height: 1.4;
   margin-bottom: 0.75rem;
   display: -webkit-box;
@@ -268,8 +268,9 @@ const BlogTitle = styled.h3`
 const BlogExcerpt = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  line-height: 1.7;
-  color: #6b7c6f;
+  line-height: 1.75;
+  color: #21371a;
+  opacity: 0.8;
   margin-bottom: 1.25rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -280,14 +281,19 @@ const BlogExcerpt = styled.p`
 const ReadMoreLink = styled(Link)`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
-  color: #c9a227;
+  font-weight: 600;
+  color: #22371b;
   text-decoration: none;
-  transition: color 0.3s ease;
-  display: inline-block;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 
   &:hover {
-    color: #b08a1e;
+    color: #22371b;
+    border-bottom-color: #cec5ad;
   }
 `;
 

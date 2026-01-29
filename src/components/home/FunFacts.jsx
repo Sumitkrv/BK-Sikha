@@ -225,13 +225,13 @@ const Counter = ({ end, isInView }) => {
 
 // Styled Components
 const FunFactsSection = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(180deg, #f8f9f6 0%, #f0f4f1 100%);
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #FAF8F5 0%, #f5f7f4 100%);
   position: relative;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 4rem 0;
+    padding: 5rem 0;
   }
 `;
 
@@ -316,49 +316,53 @@ const TextColumn = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.02em;
-  color: #5a8a62;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cec5ad;
   margin-bottom: 0.75rem;
 `;
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 400;
-  color: #2a3a2e;
-  line-height: 1.2;
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  color: #22371b;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 `;
 
 const Description = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #6b7c6f;
-  margin-bottom: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #21371a;
+  opacity: 0.85;
+  margin-bottom: 2.25rem;
 `;
 
 const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.875rem 2.5rem;
-  background: transparent;
-  color: #c9a227;
-  border: 1.5px solid #c9a227;
+  padding: 1rem 2.75rem;
+  background: #22371b;
+  color: #FAF8F5;
+  border: none;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+  letter-spacing: 0.02em;
 
   &:hover {
-    background: #c9a227;
-    color: #ffffff;
+    background: #1a2b15;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(34, 55, 27, 0.35);
   }
 `;
 
@@ -405,8 +409,9 @@ const Dot = styled.div`
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #c9a227;
+  background: #cec5ad;
   border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(206, 197, 173, 0.4);
 `;
 
 const OrganicBlob = styled.div`
@@ -420,6 +425,11 @@ const OrganicBlob = styled.div`
   svg {
     width: 100%;
     height: 100%;
+    filter: drop-shadow(0 15px 40px rgba(34, 55, 27, 0.2));
+  }
+
+  svg path {
+    fill: #22371b;
   }
 `;
 
@@ -434,6 +444,10 @@ const AccentBlob = styled.div`
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  svg circle {
+    fill: #cec5ad;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -471,34 +485,35 @@ const PlayButton = styled.button`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.95);
+  width: 75px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.98);
   border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 45px rgba(34, 55, 27, 0.25);
   transition: all 0.3s ease;
 
   svg {
-    font-size: 1.5rem;
-    color: #3d5a40;
+    font-size: 1.75rem;
+    color: #22371b;
     margin-left: 4px;
   }
 
   &:hover {
-    background: #ffffff;
+    background: #cec5ad;
+    transform: translate(-50%, -50%) scale(1.08);
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
 
     svg {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 `;
@@ -507,8 +522,8 @@ const StatsSection = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(90, 138, 98, 0.1);
+  padding-top: 3rem;
+  border-top: 1px solid rgba(206, 197, 173, 0.4);
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -531,9 +546,9 @@ const StatItem = styled.div`
 
 const StatNumber = styled.div`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 400;
-  color: #2a3a2e;
+  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  font-weight: 500;
+  color: #22371b;
   line-height: 1;
   margin-bottom: 0.5rem;
   display: flex;
@@ -545,23 +560,24 @@ const StatNumber = styled.div`
 `;
 
 const StatSuffix = styled.span`
-  font-size: 1.25rem;
-  color: #c9a227;
-  font-weight: 500;
+  font-size: 1.5rem;
+  color: #cec5ad;
+  font-weight: 600;
   margin-left: 2px;
 `;
 
 const StatLabel = styled.div`
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2a3a2e;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #22371b;
 `;
 
 const StatSublabel = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  color: #6b7c6f;
+  color: #21371a;
+  opacity: 0.7;
 `;
 
 export default FunFacts;
