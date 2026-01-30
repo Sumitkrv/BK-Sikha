@@ -139,6 +139,13 @@ const FooterTop = styled.div`
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 3rem;
   margin-bottom: 3rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
@@ -148,6 +155,12 @@ const FooterTop = styled.div`
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 4rem;
   }
 `;
 

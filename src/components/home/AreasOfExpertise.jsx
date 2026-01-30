@@ -210,6 +210,12 @@ const ExpertiseGrid = styled.div`
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
 
   @media (max-width: 1024px) {
     gap: 40px;
@@ -218,6 +224,12 @@ const ExpertiseGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    max-width: 1400px;
+    gap: 80px;
   }
 `;
 

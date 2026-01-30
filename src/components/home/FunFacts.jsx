@@ -172,7 +172,7 @@ const FunFacts = () => {
             {/* Main Image */}
             <ImageWrapper>
               <MainImage 
-                src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&h=450&fit=crop" 
+                src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&h=900&fit=crop&q=100" 
                 alt="Yoga class in nature"
                 loading="lazy"
               />
@@ -292,6 +292,14 @@ const ContentGrid = styled.div`
   gap: 4rem;
   align-items: center;
   margin-bottom: 4rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
 
   @media (max-width: 1024px) {
     gap: 3rem;
@@ -301,6 +309,12 @@ const ContentGrid = styled.div`
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 5rem;
+    margin-bottom: 5rem;
   }
 `;
 

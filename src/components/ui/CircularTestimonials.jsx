@@ -187,11 +187,24 @@ const TestimonialsWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    padding: 0.75rem;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     flex-direction: column-reverse;
     gap: 2rem;
     padding: 1rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    max-width: 1400px;
+    gap: 5rem;
   }
 `;
 
@@ -285,10 +298,22 @@ const CircularImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    width: 160px;
+    height: 160px;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 220px;
     height: 220px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    width: 350px;
+    height: 350px;
   }
 `;
 
@@ -306,10 +331,22 @@ const CircularImage = styled(motion.div)`
     height: 100%;
     object-fit: cover;
   }
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    width: 130px;
+    height: 130px;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 180px;
     height: 180px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    width: 300px;
+    height: 300px;
   }
 `;
 

@@ -5,19 +5,19 @@ import { theme } from '../styles/theme';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiAward, FiUsers, FiHeart, FiPlay, FiX, FiStar, FiMapPin, FiCalendar, FiTarget, FiCheck, FiInstagram, FiYoutube } from 'react-icons/fi';
 
-// HD Images
+// HD Images - 4K Quality Unique Unsplash Images
 const portfolioImages = {
-  hero: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&h=1080&fit=crop&q=80",
-  corporate: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=1000&fit=crop&q=80",
-  retreat: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80",
-  workshop: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=1200&fit=crop&q=80",
-  online: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=600&fit=crop&q=80",
-  community: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&h=800&fit=crop&q=80",
-  training: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80",
-  meditation: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&h=1000&fit=crop&q=80",
-  nature: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop&q=80",
-  transform1: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=800&fit=crop&q=80",
-  transform2: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&h=800&fit=crop&q=80",
+  hero: "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=3840&h=2160&fit=crop&q=100",
+  corporate: "https://images.unsplash.com/photo-1524863479829-916d8e77f114?w=1600&h=2000&fit=crop&q=100",
+  retreat: "https://images.unsplash.com/photo-1469521669194-babb45599def?w=1600&h=1200&fit=crop&q=100",
+  workshop: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1600&h=2400&fit=crop&q=100",
+  online: "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=1600&h=1200&fit=crop&q=100",
+  community: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&h=1600&fit=crop&q=100",
+  training: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=1600&h=1200&fit=crop&q=100",
+  meditation: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1600&h=2000&fit=crop&q=100",
+  nature: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1600&h=1200&fit=crop&q=100",
+  transform1: "https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?w=1200&h=1600&fit=crop&q=100",
+  transform2: "https://images.unsplash.com/photo-1593205134161-0a17c62cf0fc?w=1200&h=1600&fit=crop&q=100",
 };
 
 const heroVideo = "https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4";
@@ -119,21 +119,21 @@ const successStories = [
   {
     name: 'Priya Sharma',
     role: 'Corporate Executive',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop',
+    image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&q=100',
     story: 'Lost 15kg and found inner peace through the 30-day transformation program. My life has completely changed.',
     transformation: '15kg weight loss',
   },
   {
     name: 'Rahul Mehta',
     role: 'Entrepreneur',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop',
+    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&q=100',
     story: 'Overcame chronic anxiety and now lead a stress-free life. The meditation techniques are life-changing.',
     transformation: 'Anxiety-free life',
   },
   {
     name: 'Anita Desai',
     role: 'Mother of 2',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&q=100',
     story: 'Found balance between motherhood and self-care. The online program fits perfectly into my busy schedule.',
     transformation: 'Work-life balance',
   },
@@ -260,11 +260,6 @@ const Portfolio = () => {
           </motion.div>
         </HeroContent>
 
-        <ScrollIndicator>
-          <ScrollText>Scroll to Explore</ScrollText>
-          <ScrollLine />
-        </ScrollIndicator>
-
         <WaveSeparator>
           <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
             <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#ffffff" />
@@ -388,7 +383,7 @@ const Portfolio = () => {
               This portfolio is not just my work — it's our collective journey toward light.
             </QuoteText>
             <QuoteAuthor>
-              <AuthorImage src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=100&h=100&fit=crop" alt="BK Shikha" />
+              <AuthorImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&q=100" alt="BK Shikha" />
               <AuthorDetails>
                 <AuthorName>BK Shikha</AuthorName>
                 <AuthorRole>Holistic Wellness Coach</AuthorRole>
@@ -773,38 +768,6 @@ const HeroSecondaryBtn = styled.button`
   &:hover {
     border-color: #cec5ad;
     color: #cec5ad;
-  }
-`;
-
-const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 10;
-`;
-
-const ScrollText = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-`;
-
-const ScrollLine = styled.div`
-  width: 1px;
-  height: 50px;
-  background: linear-gradient(to bottom, rgba(206, 197, 173, 0.8), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.5; transform: scaleY(0.8); }
   }
 `;
 

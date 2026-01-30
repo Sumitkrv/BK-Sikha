@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import aboutImage from '../../assets/bkim/WhatsApp Image 2026-01-28 at 3.53.35 PM (1).jpeg';
+import aboutImage from '../../assets/bkim/2.jpeg';
 
 const AboutPreview = () => {
   const ref = useRef(null);

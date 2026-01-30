@@ -114,12 +114,26 @@ export const theme = {
     slower: '0.8s ease-in-out',
   },
   
-  // Breakpoints - Responsive design
+  // Breakpoints - Comprehensive responsive design for all devices
   breakpoints: {
-    mobile: '768px',
-    tablet: '1024px',
-    desktop: '1280px',
-    wide: '1536px',
+    // Mobile breakpoints
+    xs: '360px',        // Extra small phones (iPhone SE, Galaxy Fold)
+    sm: '480px',        // Small phones
+    mobile: '768px',    // Mobile (phones) - max
+    
+    // Tablet breakpoints
+    md: '768px',        // Tablet start
+    tablet: '1024px',   // Tablet max
+    
+    // Desktop breakpoints
+    lg: '1024px',       // Laptop/Desktop start
+    desktop: '1280px',  // Desktop
+    xl: '1440px',       // Large desktop
+    
+    // Ultra-wide breakpoints
+    wide: '1536px',     // Wide screens
+    xxl: '1920px',      // 2K screens
+    ultra: '2560px',    // 4K screens
   },
   
   // Z-index layers

@@ -3,30 +3,15 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
+import { getAllBlogPosts } from '../../data/blogData';
 
-const blogs = [
-  {
-    id: 1,
-    title: "Have a Good Body and Soul Balance in...",
-    excerpt: "Discover how regular yoga practice can help you achieve perfect harmony between your physical body and inner peace...",
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&h=400&fit=crop",
-    slug: "/blog/body-soul-balance"
-  },
-  {
-    id: 2,
-    title: "Yoga Tips : How to Keep Yoga When...",
-    excerpt: "Learn effective strategies to maintain your yoga practice even during busy schedules and challenging times...",
-    image: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600&h=400&fit=crop",
-    slug: "/blog/keep-yoga-practice"
-  },
-  {
-    id: 3,
-    title: "Yoga Tips : The Yoga of Food and...",
-    excerpt: "Explore the connection between mindful eating, nutrition, and your yoga journey for complete wellness...",
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
-    slug: "/blog/yoga-of-food"
-  }
-];
+const blogs = getAllBlogPosts().slice(0, 3).map(post => ({
+  id: post.id,
+  title: post.title,
+  excerpt: post.excerpt,
+  image: post.image,
+  slug: post.slug
+}));
 
 const BlogPreview = () => {
   const ref = useRef(null);
@@ -100,7 +85,7 @@ const BlogPreview = () => {
               <CardContent>
                 <BlogTitle>{blog.title}</BlogTitle>
                 <BlogExcerpt>{blog.excerpt}</BlogExcerpt>
-                <ReadMoreLink to={blog.slug}>
+                <ReadMoreLink to={`/blog/${blog.slug}`}>
                   Read more
                 </ReadMoreLink>
               </CardContent>
@@ -187,6 +172,13 @@ const BlogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 100%;
+  }
 
   @media (max-width: 1024px) {
     gap: 1.5rem;
@@ -200,6 +192,11 @@ const BlogGrid = styled.div`
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 2.5rem;
   }
 `;
 

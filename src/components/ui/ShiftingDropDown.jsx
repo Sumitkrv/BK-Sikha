@@ -246,7 +246,7 @@ const Blog = () => {
       <BlogGrid>
         <BlogCard to="/blog">
           <BlogImage 
-            src="https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&auto=format&fit=crop&q=60"
+            src="https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=800&auto=format&fit=crop&q=100"
             alt="Morning Yoga Practice"
           />
           <BlogCardContent>
@@ -258,7 +258,7 @@ const Blog = () => {
         </BlogCard>
         <BlogCard to="/blog">
           <BlogImage 
-            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&auto=format&fit=crop&q=60"
+            src="https://images.unsplash.com/photo-1528319725582-ddc096101511?w=800&auto=format&fit=crop&q=100"
             alt="Meditation Benefits"
           />
           <BlogCardContent>

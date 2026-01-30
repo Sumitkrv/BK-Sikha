@@ -244,3 +244,219 @@ img {
     display: none !important;
   }
 }
+
+/* ===== COMPREHENSIVE RESPONSIVE DESIGN SYSTEM ===== */
+
+/* Mobile First - Base styles for smallest screens */
+@media (max-width: 359px) {
+  /* Extra small phones (iPhone SE, Galaxy Fold) */
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+/* Small phones (320px - 480px) */
+@media (min-width: 360px) and (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+  
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* Large phones / Small tablets (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  html {
+    font-size: 15.5px;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  .section {
+    padding: 5rem 0;
+  }
+}
+
+/* Laptops / Small desktops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    padding: 0 2.5rem;
+    max-width: 1180px;
+  }
+  
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+/* Desktops (1280px - 1535px) */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Wide screens / 2K / 4K (1536px+) */
+@media (min-width: 1536px) {
+  html {
+    font-size: 17px;
+  }
+  
+  .container {
+    max-width: 1440px;
+    padding: 0 3rem;
+  }
+  
+  .section {
+    padding: 7rem 0;
+  }
+}
+
+/* Ultra-wide screens (2K+) */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* 4K screens */
+@media (min-width: 2560px) {
+  html {
+    font-size: 20px;
+  }
+  
+  .container {
+    max-width: 1920px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch target sizes */
+  button, 
+  a, 
+  input, 
+  select, 
+  textarea {
+    min-height: 44px;
+  }
+  
+  /* Remove hover effects that don't work on touch */
+  *:hover {
+    transition-duration: 0s !important;
+  }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for high DPI */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode support (future-proofing) */
+@media (prefers-color-scheme: dark) {
+  /* Can be enabled later if needed */
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  nav, footer, .hide-print {
+    display: none !important;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .section {
+    padding: 2rem 0;
+  }
+  
+  /* Reduce hero heights in landscape */
+  [class*="HeroSection"], 
+  [class*="hero"] {
+    min-height: 80vh;
+  }
+}
+
+/* Portrait orientation on tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+
+/* Notch-safe areas for iOS devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}

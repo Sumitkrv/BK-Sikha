@@ -68,55 +68,55 @@ const Philosophy = () => {
     {
       title: 'Yoga & Breathing',
       description: 'Improve flexibility and strength with yoga, stretching exercises, and breathing techniques.',
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=800&h=600&fit=crop&q=100',
       icon: '🧘‍♀️'
     },
     {
       title: 'Meditation & Mindfulness',
       description: 'Cultivate peace and balance through meditation and mindfulness practices.',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?w=800&h=600&fit=crop&q=100',
       icon: '🪷'
     },
     {
       title: 'Mind Coaching (NLP)',
       description: 'Transform your mindset using powerful NLP tools and techniques.',
-      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?w=800&h=600&fit=crop&q=100',
       icon: '🧠'
     },
     {
       title: 'Emotional Wellness',
       description: 'Comprehensive support for stress, anxiety, and emotional well-being.',
-      image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1499728603263-13571c13a2d7?w=800&h=600&fit=crop&q=100',
       icon: '💚'
     },
     {
       title: 'Counseling Services',
       description: 'Personalized counseling for children, adolescents, and adults.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=100',
       icon: '🤝'
     },
     {
       title: 'Relationship Healing',
       description: 'Restore harmony and emotional healing in your relationships.',
-      image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop&q=100',
       icon: '❤️'
     },
     {
       title: 'Gut Health',
       description: 'Restore your well-being with natural healing therapies and gut health correction.',
-      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop&q=100',
       icon: '🌿'
     },
     {
       title: 'Weight Management',
       description: 'Guidance on nourishing your body and mind with healthy weight loss programs.',
-      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=100',
       icon: '🍊'
     },
     {
       title: 'Lifestyle Transformation',
       description: 'Deepen your practice with immersive lifestyle and habit transformation.',
-      image: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&h=300&fit=crop',
+      image: 'https://images.unsplash.com/photo-1506126279646-a697353d3166?w=800&h=600&fit=crop&q=100',
       icon: '⚖️'
     },
   ];
@@ -125,25 +125,25 @@ const Philosophy = () => {
     {
       title: 'Children & Students',
       description: 'Supporting young minds through emotional challenges, stress management, and building healthy habits early.',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop&q=100',
       emoji: '🎓'
     },
     {
       title: 'Working Professionals',
       description: 'Managing workplace stress, achieving work-life balance, and maintaining physical and mental wellness.',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop&q=100',
       emoji: '💼'
     },
     {
       title: 'Adults & Seniors',
       description: 'Navigating life transitions, relationship challenges, and maintaining vitality through holistic practices.',
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1505455184862-554165e5f6ba?w=1200&h=800&fit=crop&q=100',
       emoji: '🌟'
     },
     {
       title: 'Wellness Seekers',
       description: 'Anyone seeking digestive health, weight management, emotional balance, and a sustainable healthy lifestyle.',
-      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1200&h=800&fit=crop&q=100',
       emoji: '🧘'
     },
   ];
@@ -203,6 +203,93 @@ const Philosophy = () => {
         </WaveSeparator>
       </HeroSection>
 
+      {/* Our Story Section */}
+      <OurStorySection>
+        <Container>
+          <OurStoryGrid
+            as={motion.div}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <OurStoryImageColumn as={motion.div} variants={itemVariants}>
+              <OurStoryImageWrapper>
+                <OurStoryBlobBackground>
+                  <svg viewBox="0 0 400 500" fill="none">
+                    <path d="M320,250 C350,380 280,470 180,480 C80,490 20,400 25,280 C30,160 90,40 200,30 C310,20 290,120 320,250 Z" fill="#e8f0ea" />
+                  </svg>
+                </OurStoryBlobBackground>
+                <OurStoryImage 
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=1500&fit=crop&q=100"
+                  alt="BK Shikha - Holistic Wellness Coach"
+                  loading="lazy"
+                />
+                <OurStoryFloatingBadge
+                  as={motion.div}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.4 }}
+                >
+                  <span>12+</span>
+                  <small>Years in Yoga</small>
+                </OurStoryFloatingBadge>
+                <OurStoryFloatingBadge2
+                  as={motion.div}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.7, duration: 0.4 }}
+                >
+                  <span>15+</span>
+                  <small>Years in Meditation</small>
+                </OurStoryFloatingBadge2>
+              </OurStoryImageWrapper>
+            </OurStoryImageColumn>
+
+            <OurStoryTextColumn as={motion.div} variants={itemVariants}>
+              <SectionLabel>Our Story</SectionLabel>
+              <OurStoryTitle>Discover the Journey Behind BK Shikha's Wellness Mission</OurStoryTitle>
+              <OurStoryDescription>
+                BK Shikha is a dedicated <strong>Holistic Wellness Coach</strong> with over 12 years in Yoga 
+                and 15 years in Meditation. As a certified <strong>NLP Practitioner</strong>, <strong>Gut Health Expert</strong>, 
+                and <strong>Counselor</strong>, she specializes in mind-body healing, supporting children, teenagers, 
+                and adults through stress, anxiety, emotional wellness, and relationship challenges.
+              </OurStoryDescription>
+              <OurStoryDescription>
+                Her holistic approach combines ancient wisdom with modern science. True healing begins 
+                with the mind — when calm and balanced, the body naturally transforms, empowering 
+                long-term physical, mental, and emotional well-being.
+              </OurStoryDescription>
+              <OurStoryStats>
+                <OurStoryStat>
+                  <OurStoryStatIcon><FiHeart /></OurStoryStatIcon>
+                  <OurStoryStatText>
+                    <span>Mind-Body</span>
+                    <small>Healing Expert</small>
+                  </OurStoryStatText>
+                </OurStoryStat>
+                <OurStoryStat>
+                  <OurStoryStatIcon><FiZap /></OurStoryStatIcon>
+                  <OurStoryStatText>
+                    <span>NLP</span>
+                    <small>Certified Practitioner</small>
+                  </OurStoryStatText>
+                </OurStoryStat>
+                <OurStoryStat>
+                  <OurStoryStatIcon><FiUsers /></OurStoryStatIcon>
+                  <OurStoryStatText>
+                    <span>All Ages</span>
+                    <small>Children to Adults</small>
+                  </OurStoryStatText>
+                </OurStoryStat>
+              </OurStoryStats>
+            </OurStoryTextColumn>
+          </OurStoryGrid>
+        </Container>
+      </OurStorySection>
+
       {/* Core Philosophy Section */}
       <CoreSection>
         <Container>
@@ -240,7 +327,7 @@ const Philosophy = () => {
                   </svg>
                 </BlobBackground>
                 <MainImage 
-                  src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=500&h=600&fit=crop"
+                  src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&h=1200&fit=crop&q=100"
                   alt="Meditation and mindfulness practice"
                   loading="lazy"
                 />
@@ -455,7 +542,12 @@ const Container = styled.div`
 // Hero Section
 const HeroSection = styled.section`
   min-height: 55vh;
-  background: linear-gradient(180deg, #eef4ef 0%, #dce8de 100%);
+  background: 
+    linear-gradient(180deg, rgba(238, 244, 239, 0.92) 0%, rgba(220, 232, 222, 0.88) 100%),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop&q=100');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -466,6 +558,7 @@ const HeroSection = styled.section`
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: 45vh;
     padding: 6rem 0 4rem;
+    background-attachment: scroll;
   }
 `;
 
@@ -530,6 +623,193 @@ const WaveSeparator = styled.div`
   svg {
     width: 100%;
     height: 100%;
+  }
+`;
+
+// Our Story Section
+const OurStorySection = styled.section`
+  padding: 6rem 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 4rem 0;
+  }
+`;
+
+const OurStoryGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+`;
+
+const OurStoryImageColumn = styled.div`
+  position: relative;
+`;
+
+const OurStoryImageWrapper = styled.div`
+  position: relative;
+  padding: 2rem;
+`;
+
+const OurStoryBlobBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const OurStoryImage = styled.img`
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 200px 200px 100px 100px;
+  box-shadow: 0 25px 60px rgba(42, 58, 46, 0.15);
+`;
+
+const OurStoryFloatingBadge = styled.div`
+  position: absolute;
+  top: 15%;
+  right: 0;
+  background: linear-gradient(135deg, #5a8a62 0%, #6a9b72 100%);
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(90, 138, 98, 0.3);
+  z-index: 2;
+
+  span {
+    display: block;
+    font-family: ${theme.fonts.heading};
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  small {
+    display: block;
+    font-family: ${theme.fonts.body};
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    top: 10%;
+    right: 5%;
+    padding: 0.75rem 1rem;
+    
+    span {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const OurStoryFloatingBadge2 = styled(OurStoryFloatingBadge)`
+  top: auto;
+  bottom: 20%;
+  right: -10px;
+  background: linear-gradient(135deg, #c9a227 0%, #e0c45e 100%);
+  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    bottom: 15%;
+    right: 0;
+  }
+`;
+
+const OurStoryTextColumn = styled.div``;
+
+const OurStoryTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 400;
+  color: #2a3a2e;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+`;
+
+const OurStoryDescription = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #6b7c6f;
+  margin-bottom: 1.25rem;
+
+  strong {
+    color: #5a8a62;
+    font-weight: 600;
+  }
+`;
+
+const OurStoryStats = styled.div`
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e8f0ea;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+`;
+
+const OurStoryStat = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+`;
+
+const OurStoryStatIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e8f0ea 0%, #d8e8dc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a8a62;
+  font-size: 1rem;
+`;
+
+const OurStoryStatText = styled.div`
+  span {
+    display: block;
+    font-family: ${theme.fonts.body};
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #2a3a2e;
+    line-height: 1.2;
+  }
+
+  small {
+    display: block;
+    font-family: ${theme.fonts.body};
+    font-size: 0.8125rem;
+    color: #6b7c6f;
+    margin-top: 0.125rem;
   }
 `;
 

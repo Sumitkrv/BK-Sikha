@@ -12,28 +12,28 @@ const testimonials = [
     name: 'Priya Sharma',
     designation: 'Software Engineer',
     location: 'Bangalore',
-    src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&auto=format&fit=crop&q=100',
   },
   {
     quote: "The confidence I've gained through her NLP coaching is nothing short of miraculous. I used to doubt myself constantly, second-guess every decision. BK Shikha helped me reprogram those limiting beliefs and step into my power.",
     name: 'Anjali Verma',
     designation: 'Entrepreneur',
     location: 'Mumbai',
-    src: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=100',
   },
   {
     quote: "As a student dealing with academic pressure, family expectations, and career anxiety, I was constantly overwhelmed. BK Shikha's stress relief sessions were literally a lifesaver. She taught me breathing techniques I use every single day.",
     name: 'Rahul Mehta',
     designation: 'College Student',
     location: 'Delhi',
-    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&auto=format&fit=crop&q=100',
   },
   {
     quote: "I came to BK Shikha feeling stuck in every area of my life. Her holistic transformation program changed everything. It wasn't just about yoga poses; it was about redesigning my entire life with intention. Six months later, I'm living my dream life.",
     name: 'Kavita Singh',
     designation: 'Marketing Manager',
     location: 'Pune',
-    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=60',
+    src: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=800&auto=format&fit=crop&q=100',
   },
 ];
 

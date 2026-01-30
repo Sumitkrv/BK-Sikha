@@ -18,8 +18,8 @@ const Home = () => {
       <ScrollExpandMedia
         mediaType="video"
         mediaSrc="https://cdn.pixabay.com/video/2024/02/08/199847-912188425_large.mp4"
-        posterSrc="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&h=1080&fit=crop&q=80"
-        bgImageSrc="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop&q=80"
+        posterSrc="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=3840&h=2160&fit=crop&q=100"
+        bgImageSrc="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=3840&h=2160&fit=crop&q=100"
         title="Find Your Inner Peace"
         scrollToExpand="Scroll to begin your journey"
         textBlend={true}

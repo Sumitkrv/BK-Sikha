@@ -7,32 +7,32 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const classes = [
   {
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1512291313931-d4291c8475c4?w=1000&h=800&fit=crop&q=100",
     price: "₹999",
     title: "Online Meditation",
   },
   {
-    image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1573384666979-2b1e160d2d08?w=1000&h=800&fit=crop&q=100",
     price: "₹1,499",
     title: "Yoga at Home",
   },
   {
-    image: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1000&h=800&fit=crop&q=100",
     price: "₹2,499",
     title: "Couple Yoga",
   },
   {
-    image: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1507120878965-54b2d3939100?w=1000&h=800&fit=crop&q=100",
     price: "₹799",
     title: "Morning Flow",
   },
   {
-    image: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1528319725582-ddc096101511?w=1000&h=800&fit=crop&q=100",
     price: "₹1,299",
     title: "Stress Relief",
   },
   {
-    image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=500&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1000&h=800&fit=crop&q=100",
     price: "₹1,999",
     title: "Private Session",
   },
@@ -216,6 +216,13 @@ const ClassesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 100%;
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -226,6 +233,11 @@ const ClassesGrid = styled.div`
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 2.5rem;
   }
 `;
 

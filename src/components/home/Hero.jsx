@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { FiPlay } from 'react-icons/fi';
 
-// HD Images from Unsplash/Pexels
-const heroImage = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=1200&fit=crop&q=80";
+// HD Images from Unsplash - 4K Quality
+const heroImage = "https://images.unsplash.com/photo-1545389336-cf090694435e?w=3840&h=2160&fit=crop&q=100";
 const heroVideo = "https://cdn.pixabay.com/video/2022/11/07/138570-769930540_large.mp4";
 
 const Hero = () => {
@@ -260,6 +260,7 @@ const Hero = () => {
 // Styled Components - Enhanced Version
 const HeroSection = styled.section`
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   background: linear-gradient(165deg, #FAF8F5 0%, #f5f7f3 35%, #eef3ed 70%, #e6ede5 100%);
@@ -277,10 +278,38 @@ const HeroSection = styled.section`
     background: radial-gradient(ellipse at 80% 30%, rgba(206, 197, 173, 0.15) 0%, transparent 60%);
     pointer-events: none;
   }
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    min-height: auto;
+    padding: 5rem 0 2rem;
+  }
+  
+  /* Small phones */
+  @media (max-width: 480px) {
+    min-height: auto;
+    padding: 5.5rem 0 2.5rem;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: auto;
     padding: 7rem 0 3rem;
+  }
+  
+  /* Landscape mobile */
+  @media (max-width: 896px) and (orientation: landscape) {
+    min-height: auto;
+    padding: 5rem 0 2rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    padding: 8rem 0 6rem;
+  }
+  
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    padding: 10rem 0 8rem;
   }
 `;
 
@@ -314,6 +343,22 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   z-index: 2;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  /* Small phones */
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    padding: 0 1.25rem;
+  }
 
   @media (max-width: 1200px) {
     gap: 4rem;
@@ -329,6 +374,19 @@ const Container = styled.div`
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1.5rem;
     gap: 2.5rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    max-width: 1600px;
+    gap: 8rem;
+    padding: 0 5rem;
+  }
+  
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    max-width: 2000px;
+    gap: 10rem;
   }
 `;
 
@@ -357,9 +415,19 @@ const AccentHeadline = styled.span`
   margin-bottom: 0.15rem;
   letter-spacing: 0.02em;
   opacity: 0.95;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    font-size: clamp(3.5rem, 4vw, 5rem);
   }
 `;
 
@@ -371,9 +439,19 @@ const MainHeadline = styled.h1`
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.01em;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    font-size: clamp(3.5rem, 4vw, 5rem);
   }
 `;
 
@@ -443,9 +521,10 @@ const PrimaryButton = styled(ButtonBase)`
   letter-spacing: 0.02em;
 
   &:hover {
-    background: linear-gradient(135deg, #d6ceb8 0%, #ddd6c3 100%);
-    box-shadow: 0 8px 30px rgba(206, 197, 173, 0.45);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #22371b 0%, #2d4a23 100%);
+    color: #FAF8F5;
+    box-shadow: 0 10px 35px rgba(34, 55, 27, 0.45);
+    transform: translateY(-3px);
   }
 `;
 
@@ -457,9 +536,11 @@ const SecondaryButton = styled(ButtonBase)`
   letter-spacing: 0.02em;
 
   &:hover {
-    border-color: #22371b;
-    background-color: rgba(34, 55, 27, 0.05);
-    transform: translateY(-2px);
+    border-color: #5a8a62;
+    background: linear-gradient(135deg, #5a8a62 0%, #4a7a52 100%);
+    color: #FAF8F5;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(90, 138, 98, 0.35);
   }
 `;
 
@@ -469,6 +550,12 @@ const ImageColumn = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    order: 1;
+    min-height: 250px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     order: 1;
@@ -477,6 +564,11 @@ const ImageColumn = styled.div`
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     min-height: 320px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    min-height: 700px;
   }
 `;
 
@@ -488,6 +580,12 @@ const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    height: 280px;
+    max-width: 280px;
+  }
 
   @media (max-width: 1200px) {
     height: 500px;
@@ -503,6 +601,18 @@ const ImageContainer = styled.div`
   @media (max-width: ${theme.breakpoints.mobile}) {
     height: 350px;
     max-width: 350px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    height: 700px;
+    max-width: 700px;
+  }
+  
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    height: 800px;
+    max-width: 800px;
   }
 `;
 

@@ -8,32 +8,32 @@ import { theme } from '../../styles/theme';
 const instagramPhotos = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=800&h=800&fit=crop&q=100",
     alt: "Yoga meditation pose"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=800&fit=crop&q=100",
     alt: "Morning wellness routine"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=800&h=800&fit=crop&q=100",
     alt: "Yoga practice outdoors"
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=800&h=800&fit=crop&q=100",
     alt: "Group yoga session"
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=800&fit=crop&q=100",
     alt: "Mindful stretching"
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=800&fit=crop&q=100",
     alt: "Community wellness"
   }
 ];

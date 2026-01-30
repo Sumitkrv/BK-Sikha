@@ -5,17 +5,17 @@ import { FiArrowRight, FiClock, FiBookOpen, FiHeart, FiFeather, FiSun, FiStar, F
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
 
-// HD Images from Unsplash
+// HD Images from Unsplash - 4K Quality Unique Images
 const blogImages = {
-  featured: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=800&fit=crop&q=80",
-  yoga1: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80",
-  yoga2: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=600&fit=crop&q=80",
-  meditation: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&h=600&fit=crop&q=80",
-  mindset: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=600&fit=crop&q=80",
-  wellness: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&h=600&fit=crop&q=80",
-  lifestyle: "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=800&h=600&fit=crop&q=80",
-  nature: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop&q=80",
-  breathwork: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&h=600&fit=crop&q=80",
+  featured: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=2400&h=1600&fit=crop&q=100",
+  yoga1: "https://images.unsplash.com/photo-1573384666979-2b1e160d2d08?w=1600&h=1200&fit=crop&q=100",
+  yoga2: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=1600&h=1200&fit=crop&q=100",
+  meditation: "https://images.unsplash.com/photo-1528319725582-ddc096101511?w=1600&h=1200&fit=crop&q=100",
+  mindset: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1600&h=1200&fit=crop&q=100",
+  wellness: "https://images.unsplash.com/photo-1559595500-e15296bdbb48?w=1600&h=1200&fit=crop&q=100",
+  lifestyle: "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1600&h=1200&fit=crop&q=100",
+  nature: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1600&h=1200&fit=crop&q=100",
+  breathwork: "https://images.unsplash.com/photo-1512291313931-d4291c8475c4?w=1600&h=1200&fit=crop&q=100",
 };
 
 const Blog = () => {
@@ -71,12 +71,40 @@ const Blog = () => {
 
   const articles = [
     {
+      category: 'Yoga & Wellness',
+      title: 'Have a Good Body and Soul Balance',
+      excerpt: 'Discover how regular yoga practice can help you achieve perfect harmony between your physical body and inner peace.',
+      readTime: '8 min read',
+      date: 'January 25, 2026',
+      image: blogImages.yoga2,
+      slug: 'body-soul-balance',
+    },
+    {
+      category: 'Yoga Tips',
+      title: 'How to Keep Yoga Practice During Busy Times',
+      excerpt: 'Learn effective strategies to maintain your yoga practice even during busy schedules and challenging times.',
+      readTime: '7 min read',
+      date: 'January 20, 2026',
+      image: blogImages.yoga1,
+      slug: 'keep-yoga-practice',
+    },
+    {
+      category: 'Wellness',
+      title: 'The Yoga of Food and Mindful Eating',
+      excerpt: 'Explore the connection between mindful eating, nutrition, and your yoga journey for complete wellness.',
+      readTime: '9 min read',
+      date: 'January 15, 2026',
+      image: blogImages.wellness,
+      slug: 'yoga-of-food',
+    },
+    {
       category: 'Stress Relief',
       title: '5 Yoga Poses to Instantly Relieve Stress and Anxiety',
       excerpt: 'Discover simple yet powerful yoga poses that calm your nervous system and bring immediate peace.',
       readTime: '5 min read',
       date: 'January 22, 2026',
-      image: blogImages.yoga1,
+      image: blogImages.meditation,
+      slug: 'yoga-stress-relief',
     },
     {
       category: 'Morning Rituals',
@@ -84,7 +112,8 @@ const Blog = () => {
       excerpt: 'Learn how to design a morning practice that sets the tone for joy, productivity, and inner peace.',
       readTime: '7 min read',
       date: 'January 18, 2026',
-      image: blogImages.yoga2,
+      image: blogImages.lifestyle,
+      slug: 'mindful-morning-routine',
     },
     {
       category: 'Meditation',
@@ -92,7 +121,8 @@ const Blog = () => {
       excerpt: 'Explore the profound depths of meditation and discover techniques for achieving lasting inner calm.',
       readTime: '8 min read',
       date: 'January 15, 2026',
-      image: blogImages.meditation,
+      image: blogImages.breathwork,
+      slug: 'deep-meditation-guide',
     },
     {
       category: 'Mindset',
@@ -101,6 +131,7 @@ const Blog = () => {
       readTime: '8 min read',
       date: 'January 12, 2026',
       image: blogImages.mindset,
+      slug: 'mindset-reset',
     },
     {
       category: 'Wellness',
@@ -108,31 +139,8 @@ const Blog = () => {
       excerpt: 'Navigate challenging emotions with grace and wisdom. Discover techniques for emotional regulation.',
       readTime: '6 min read',
       date: 'January 8, 2026',
-      image: blogImages.wellness,
-    },
-    {
-      category: 'Yoga',
-      title: 'Living Yoga Beyond the Mat: Bringing Practice into Daily Life',
-      excerpt: 'Yoga is not just poses - it\'s a way of being. Integrate yogic principles into your everyday choices.',
-      readTime: '9 min read',
-      date: 'January 5, 2026',
-      image: blogImages.lifestyle,
-    },
-    {
-      category: 'Wellness',
-      title: 'The Healing Power of Nature: Forest Bathing for Wellness',
-      excerpt: 'Discover the ancient Japanese practice of Shinrin-yoku and its profound effects on mind and body.',
-      readTime: '6 min read',
-      date: 'January 2, 2026',
       image: blogImages.nature,
-    },
-    {
-      category: 'Yoga',
-      title: 'Breathwork Mastery: Pranayama for Modern Life',
-      excerpt: 'Harness the power of your breath to transform stress, boost energy, and cultivate inner peace.',
-      readTime: '7 min read',
-      date: 'December 28, 2025',
-      image: blogImages.breathwork,
+      slug: 'emotional-balance',
     },
   ];
 
@@ -218,11 +226,6 @@ const Blog = () => {
             </motion.div>
           </HeroContent>
         </Container>
-
-        <ScrollIndicator>
-          <ScrollText>Explore Articles</ScrollText>
-          <ScrollLine />
-        </ScrollIndicator>
 
         <WaveSeparator>
           <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
@@ -360,6 +363,8 @@ const Blog = () => {
                     as={motion.article}
                     variants={itemVariants}
                     whileHover={{ y: -12, transition: { duration: 0.3 } }}
+                    onClick={() => window.location.href = `/blog/${article.slug}`}
+                    style={{ cursor: 'pointer' }}
                   >
                     <ArticleImageWrapper>
                       <ArticleImage src={article.image} alt={article.title} loading="lazy" />
@@ -382,7 +387,7 @@ const Blog = () => {
                       <ArticleTitle>{article.title}</ArticleTitle>
                       <ArticleExcerpt>{article.excerpt}</ArticleExcerpt>
 
-                      <ReadMoreLink>
+                      <ReadMoreLink as={Link} to={`/blog/${article.slug}`}>
                         Continue Reading
                         <FiArrowRight />
                       </ReadMoreLink>
@@ -754,38 +759,6 @@ const StatDivider = styled.div`
   width: 1px;
   height: 40px;
   background: rgba(206, 197, 173, 0.3);
-`;
-
-const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 140px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 10;
-`;
-
-const ScrollText = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-`;
-
-const ScrollLine = styled.div`
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(206, 197, 173, 0.8), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.5; transform: scaleY(0.8); }
-  }
 `;
 
 const WaveSeparator = styled.div`
@@ -1279,6 +1252,7 @@ const ReadMoreLink = styled.div`
   font-size: 0.9375rem;
   font-weight: 500;
   color: #5a8a62;
+  text-decoration: none;
   transition: all 0.3s ease;
 
   ${ArticleCard}:hover & {

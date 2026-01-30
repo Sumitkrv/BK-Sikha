@@ -5,32 +5,32 @@ import { theme } from '../../styles/theme';
 
 const programs = [
   {
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&auto=format&fit=crop&q=100',
     category: 'Yoga',
     title: 'Morning Yoga Flow',
   },
   {
-    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&auto=format&fit=crop&q=100',
     category: 'Meditation',
     title: 'Mindful Meditation',
   },
   {
-    image: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&auto=format&fit=crop&q=100',
     category: 'Wellness',
     title: 'Holistic Healing',
   },
   {
-    image: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=1200&auto=format&fit=crop&q=100',
     category: 'Breathing',
     title: 'Pranayama Practice',
   },
   {
-    image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1540206395-68808572332f?w=1200&auto=format&fit=crop&q=100',
     category: 'Retreat',
     title: 'Weekend Wellness Retreat',
   },
   {
-    image: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1200&auto=format&fit=crop&q=100',
     category: 'Lifestyle',
     title: 'Yogic Lifestyle Coaching',
   },
@@ -157,6 +157,11 @@ const GradientOverlayLeft = styled.div`
   background: linear-gradient(90deg, ${theme.colors.background} 0%, rgba(250, 248, 245, 0) 100%);
   z-index: 10;
   pointer-events: none;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    width: 40px;
+  }
 
   @media (max-width: 768px) {
     width: 80px;
@@ -172,6 +177,11 @@ const GradientOverlayRight = styled.div`
   background: linear-gradient(270deg, ${theme.colors.backgroundDark} 0%, rgba(245, 242, 237, 0) 100%);
   z-index: 10;
   pointer-events: none;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    width: 40px;
+  }
 
   @media (max-width: 768px) {
     width: 80px;
@@ -194,10 +204,23 @@ const ProgramCard = styled.div`
   height: 420px;
   border-radius: 24px;
   box-shadow: 0 10px 40px rgba(34, 55, 27, 0.12);
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    width: 240px;
+    height: 320px;
+    border-radius: 16px;
+  }
 
   @media (max-width: 768px) {
     width: 280px;
     height: 360px;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    width: 360px;
+    height: 480px;
   }
 `;
 

@@ -221,19 +221,17 @@ const Header = () => {
               <NavLinkText>Connect</NavLinkText>
               <NavLinkUnderline $isActive={location.pathname === '/contact'} />
             </NavLink>
+            
+            {/* Desktop CTA Button */}
+            <CTAButton
+              to="/contact"
+              whileHover={prefersReducedMotion ? {} : { scale: 1.03, y: -1 }}
+              whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              Begin Your Journey
+            </CTAButton>
           </Nav>
-
-          {/* CTA Button - Premium styling with refined interactions */}
-          <CTAButton
-            to="/contact"
-            className="hide-mobile"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            whileHover={prefersReducedMotion ? {} : { y: -2 }}
-            whileTap={prefersReducedMotion ? {} : { y: 0, scale: 0.98 }}
-            transition={{ duration: 0.2, ease: premiumEasing.smooth }}
-          >
-            Begin Your Journey
-          </CTAButton>
 
           {/* Mobile Menu Toggle */}
           <MobileMenuButton
@@ -353,6 +351,21 @@ const HeaderWrapper = styled.header`
     backdrop-filter 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   padding: ${(props) => (props.$isScrolled ? '0.875rem 0' : '1.375rem 0')};
   
+  /* Safe area for notched devices */
+  padding-top: max(${(props) => (props.$isScrolled ? '0.875rem' : '1.375rem')}, env(safe-area-inset-top));
+  
+  @media (max-width: 360px) {
+    padding: ${(props) => (props.$isScrolled ? '0.5rem 0' : '0.75rem 0')};
+  }
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: ${(props) => (props.$isScrolled ? '0.625rem 0' : '1rem 0')};
+  }
+  
+  @media (min-width: ${theme.breakpoints.wide}) {
+    padding: ${(props) => (props.$isScrolled ? '1rem 0' : '1.5rem 0')};
+  }
+  
   @media (prefers-reduced-motion: reduce) {
     transition: none;
   }
@@ -459,8 +472,17 @@ const Nav = styled.nav`
   align-items: center;
   gap: 2rem;
   
+  /* Hide on tablet and below */
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+  
   @media (min-width: ${theme.breakpoints.tablet}) {
     gap: 2.5rem;
+  }
+  
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 3rem;
   }
 `;
 
@@ -540,8 +562,8 @@ const CTAButton = styled(motion(Link))`
   align-items: center;
   justify-content: center;
   padding: 0.8125rem 1.875rem;
-  background: #cec5ad;
-  color: #22371b;
+  background: #5a8a62;
+  color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
@@ -549,27 +571,30 @@ const CTAButton = styled(motion(Link))`
   text-decoration: none;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 2px 8px rgba(206, 197, 173, 0.3),
-    0 1px 2px rgba(206, 197, 173, 0.15);
+    0 2px 8px rgba(90, 138, 98, 0.3),
+    0 1px 2px rgba(90, 138, 98, 0.15);
   transition: 
     background 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
   white-space: nowrap;
 
   &:hover {
-    background: #e0d9c7;
+    background: #4a7a52;
     box-shadow: 
-      0 6px 20px rgba(206, 197, 173, 0.5),
-      0 2px 6px rgba(206, 197, 173, 0.3);
+      0 8px 24px rgba(90, 138, 98, 0.4),
+      0 4px 8px rgba(90, 138, 98, 0.2);
+    transform: translateY(-2px);
   }
   
   &:focus-visible {
-    outline: 2px solid #cec5ad;
+    outline: 2px solid #5a8a62;
     outline-offset: 3px;
   }
   
   &:active {
-    background: #b8af97;
+    background: #3d6a45;
+    transform: translateY(0);
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -597,10 +622,16 @@ const MobileMenuButton = styled(motion.button)`
     outline-offset: 2px;
   }
 
-  @media (max-width: ${theme.breakpoints.mobile}) {
+  /* Show on tablet and below */
+  @media (max-width: ${theme.breakpoints.tablet}) {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 0.5rem;
+    margin-right: -0.5rem;
   }
 `;
 
@@ -623,8 +654,8 @@ const MobileNav = styled.nav`
   position: fixed;
   top: 0;
   right: 0;
-  width: 80%;
-  max-width: 360px;
+  width: 85%;
+  max-width: 400px;
   height: 100vh;
   height: 100dvh;
   background: linear-gradient(
@@ -634,11 +665,23 @@ const MobileNav = styled.nav`
   );
   box-shadow: -8px 0 40px rgba(139, 115, 85, 0.12);
   padding: 2.5rem 2rem 3rem;
+  padding-top: max(2.5rem, env(safe-area-inset-top));
+  padding-bottom: max(3rem, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   z-index: ${theme.zIndex.modal};
   overflow-y: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  
+  @media (max-width: 360px) {
+    width: 90%;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+  
+  @media (min-width: 600px) {
+    width: 60%;
+  }
 `;
 
 const MobileNavHeader = styled.div`
@@ -723,8 +766,8 @@ const MobileCTAButton = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1.125rem 2rem;
-  background: #cec5ad;
-  color: #22371b;
+  background: #5a8a62;
+  color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
@@ -733,22 +776,22 @@ const MobileCTAButton = styled(Link)`
   text-align: center;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 4px 16px rgba(206, 197, 173, 0.25),
-    0 2px 4px rgba(206, 197, 173, 0.1);
+    0 4px 16px rgba(90, 138, 98, 0.25),
+    0 2px 4px rgba(90, 138, 98, 0.1);
   margin-top: auto;
   transition: 
     background 0.3s ease,
     box-shadow 0.3s ease;
 
   &:hover {
-    background: #e0d9c7;
+    background: #4a7a52;
     box-shadow: 
-      0 6px 24px rgba(206, 197, 173, 0.3),
-      0 2px 6px rgba(206, 197, 173, 0.12);
+      0 6px 24px rgba(90, 138, 98, 0.35),
+      0 2px 6px rgba(90, 138, 98, 0.15);
   }
   
   &:focus-visible {
-    outline: 2px solid #cec5ad;
+    outline: 2px solid #5a8a62;
     outline-offset: 3px;
   }
   

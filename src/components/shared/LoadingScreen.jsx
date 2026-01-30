@@ -1,49 +1,68 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import { theme } from '../../styles/theme';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
-  const [videoEnded, setVideoEnded] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+  const videoRef = useRef(null);
+  const hasCalledComplete = useRef(false);
 
-  useEffect(() => {
-    // Minimum loading time of 2 seconds
-    const minLoadingTimer = setTimeout(() => {
-      if (videoEnded) {
-        onLoadingComplete();
-      }
-    }, 2000);
-
-    return () => clearTimeout(minLoadingTimer);
-  }, [videoEnded, onLoadingComplete]);
-
-  const handleVideoEnd = () => {
-    setVideoEnded(true);
-    // Give a small delay before transitioning out
+  const handleComplete = () => {
+    if (hasCalledComplete.current) return;
+    hasCalledComplete.current = true;
+    setIsExiting(true);
     setTimeout(() => {
       onLoadingComplete();
-    }, 500);
+    }, 800);
   };
+
+  const handleVideoEnd = () => {
+    // Wait for the full video to finish before completing
+    handleComplete();
+  };
+
+  // Handle video load error - fallback after timeout
+  const handleVideoError = () => {
+    console.warn('Video failed to load, completing loading screen');
+    handleComplete();
+  };
+
+  // Fallback timeout in case video doesn't load or play properly (15 seconds max)
+  useEffect(() => {
+    const fallbackTimer = setTimeout(() => {
+      handleComplete();
+    }, 15000);
+
+    return () => clearTimeout(fallbackTimer);
+  }, []);
 
   return (
     <AnimatePresence>
-      <LoadingContainer
-        as={motion.div}
-        initial={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-      >
-        <VideoWrapper>
-          <LogoVideo
+      {!isExiting && (
+        <LoadingContainer
+          as={motion.div}
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        >
+          <FullScreenVideo
+            ref={videoRef}
             autoPlay
             muted
             playsInline
             onEnded={handleVideoEnd}
+            onError={handleVideoError}
+            onCanPlay={() => {
+              if (videoRef.current) {
+                videoRef.current.play().catch(() => {});
+              }
+            }}
           >
-            <source src="/src/assets/bkim/bk shikha logo animation.mp4" type="video/mp4" />
-          </LogoVideo>
-        </VideoWrapper>
-      </LoadingContainer>
+            <source src="/logo-animation.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </FullScreenVideo>
+        </LoadingContainer>
+      )}
     </AnimatePresence>
   );
 };
@@ -54,26 +73,31 @@ const LoadingContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: ${theme.colors.primary};
+  background: #000000;
   z-index: 9999;
   overflow: hidden;
 `;
 
-const VideoWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 800px;
-  max-height: 800px;
-  padding: 2rem;
-`;
-
-const LogoVideo = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+const FullScreenVideo = styled.video`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  
+  @media (max-aspect-ratio: 16/9) {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (min-aspect-ratio: 16/9) {
+    width: auto;
+    height: 100%;
+  }
 `;
 
 export default LoadingScreen;

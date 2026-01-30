@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight, FiHeart, FiStar, FiUsers, FiAward, FiCheck, FiPlay, FiTarget, FiZap, FiFeather, FiSun, FiCalendar } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
+import YogaGallery from '../components/shared/YogaGallery';
 
-// HD Images
+// HD Images - 4K Quality Unique Unsplash Images
 const aboutImages = {
-  hero: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&h=1080&fit=crop&q=80",
-  founder: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=1000&fit=crop&q=80",
-  meditation: "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=800&h=600&fit=crop&q=80",
-  yoga: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=600&fit=crop&q=80",
-  nature: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&h=600&fit=crop&q=80",
-  wellness: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&h=600&fit=crop&q=80",
-  studio: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&h=600&fit=crop&q=80",
+  hero: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=3840&h=2160&fit=crop&q=100",
+  founder: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&h=2000&fit=crop&q=100",
+  meditation: "https://images.unsplash.com/photo-1529693662653-9d480530a697?w=1600&h=1200&fit=crop&q=100",
+  yoga: "https://images.unsplash.com/photo-1506126279646-a697353d3166?w=1600&h=1200&fit=crop&q=100",
+  nature: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600&h=1200&fit=crop&q=100",
+  wellness: "https://images.unsplash.com/photo-1559595500-e15296bdbb48?w=1600&h=1200&fit=crop&q=100",
+  studio: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=2400&h=1200&fit=crop&q=100",
 };
 
 const heroVideo = "https://cdn.pixabay.com/video/2024/02/08/199847-912188425_large.mp4";
@@ -190,11 +191,6 @@ const About = () => {
           </motion.div>
         </HeroContent>
 
-        <ScrollIndicator>
-          <ScrollText>Scroll to Explore</ScrollText>
-          <ScrollLine />
-        </ScrollIndicator>
-
         <WaveSeparator>
           <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
             <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#ffffff" />
@@ -368,6 +364,9 @@ const About = () => {
         </ValuesDecor>
       </ValuesSection>
 
+      {/* Yoga Gallery Section */}
+      <YogaGallery />
+
       {/* Timeline Section */}
       <TimelineSection ref={timelineRef}>
         <Container>
@@ -540,15 +539,31 @@ const Container = styled.div`
   padding: 0 2rem;
   position: relative;
   z-index: 2;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    padding: 0 1rem;
+  }
 
   @media (max-width: 768px) {
     padding: 0 1.25rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1536px) {
+    max-width: 1500px;
+  }
+  
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    max-width: 1800px;
   }
 `;
 
 // Hero Section
 const HeroSection = styled.section`
   min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, #22371b 0%, #21371a 50%, #1a2d15 100%);
   display: flex;
   align-items: center;
@@ -556,10 +571,27 @@ const HeroSection = styled.section`
   position: relative;
   padding: 8rem 0 10rem;
   overflow: hidden;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    min-height: auto;
+    padding: 5rem 0 6rem;
+  }
 
   @media (max-width: 768px) {
     min-height: 90vh;
     padding: 6rem 0 8rem;
+  }
+  
+  /* Landscape mobile */
+  @media (max-width: 896px) and (orientation: landscape) {
+    min-height: auto;
+    padding: 4rem 0 5rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1536px) {
+    padding: 10rem 0 12rem;
   }
 `;
 
@@ -763,38 +795,6 @@ const StatDivider = styled.div`
   }
 `;
 
-const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 140px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 10;
-`;
-
-const ScrollText = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-`;
-
-const ScrollLine = styled.div`
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(206, 197, 173, 0.8), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.5; transform: scaleY(0.8); }
-  }
-`;
-
 const WaveSeparator = styled.div`
   position: absolute;
   bottom: 0;
@@ -816,9 +816,19 @@ const StorySection = styled.section`
   background: #ffffff;
   position: relative;
   overflow: hidden;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    padding: 3rem 0;
+  }
 
   @media (max-width: 768px) {
     padding: 4rem 0;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1536px) {
+    padding: 9rem 0;
   }
 `;
 
@@ -827,10 +837,21 @@ const StoryGrid = styled.div`
   grid-template-columns: 1fr 1.2fr;
   gap: 5rem;
   align-items: center;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1536px) {
+    gap: 6rem;
   }
 `;
 
@@ -844,10 +865,22 @@ const StoryImageWrapper = styled.div`
   max-width: 480px;
   margin: 0 auto;
   height: 580px;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    height: 350px;
+    max-width: 280px;
+  }
 
   @media (max-width: 768px) {
     height: 450px;
     max-width: 380px;
+  }
+  
+  /* Large screens */
+  @media (min-width: 1536px) {
+    height: 650px;
+    max-width: 550px;
   }
 `;
 

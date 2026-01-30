@@ -275,6 +275,12 @@ const ServicesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem 3rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
@@ -284,6 +290,11 @@ const ServicesGrid = styled.div`
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 5rem 4rem;
   }
 `;
 

@@ -16,15 +16,15 @@ import {
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
 
-// HD Images from Unsplash
+// HD Images from Unsplash - 4K Quality Unique Images
 const heroVideo = "https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4";
 const serviceImages = {
-  yoga: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&q=80",
-  meditation: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop&q=80",
-  mindset: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=600&fit=crop&q=80",
-  stress: "https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&h=600&fit=crop&q=80",
-  wellness: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?w=800&h=600&fit=crop&q=80",
-  confidence: "https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&h=600&fit=crop&q=80",
+  yoga: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1600&h=1200&fit=crop&q=100",
+  meditation: "https://images.unsplash.com/photo-1512291313931-d4291c8475c4?w=1600&h=1200&fit=crop&q=100",
+  mindset: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=1600&h=1200&fit=crop&q=100",
+  stress: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=1200&fit=crop&q=100",
+  wellness: "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=1600&h=1200&fit=crop&q=100",
+  confidence: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=1600&h=1200&fit=crop&q=100",
 };
 
 const Services = () => {
@@ -209,16 +209,6 @@ const Services = () => {
             </HeroButtons>
           </motion.div>
         </HeroContent>
-
-        <ScrollIndicator
-          as={motion.div}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
-        >
-          <ScrollText>Scroll to explore</ScrollText>
-          <ScrollLine />
-        </ScrollIndicator>
 
         {/* Wave Separator */}
         <WaveSeparator>
@@ -456,9 +446,19 @@ const Container = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    padding: 0 1rem;
+  }
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1.25rem;
+  }
+  
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    max-width: 1600px;
   }
 `;
 
@@ -466,11 +466,24 @@ const Container = styled.div`
 const HeroSection = styled.section`
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(135deg, #22371b 0%, #21371a 50%, #1a2d15 100%);
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    min-height: auto;
+    padding: 5rem 0 6rem;
+  }
+  
+  /* Landscape mobile */
+  @media (max-width: 896px) and (orientation: landscape) {
+    min-height: auto;
+    padding: 4rem 0 5rem;
+  }
 `;
 
 const HeroVideoWrapper = styled(motion.div)`
@@ -667,38 +680,6 @@ const HeroSecondaryBtn = styled.button`
   &:hover {
     border-color: #cec5ad;
     color: #cec5ad;
-  }
-`;
-
-const ScrollIndicator = styled.div`
-  position: absolute;
-  bottom: 140px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  z-index: 10;
-`;
-
-const ScrollText = styled.span`
-  font-family: \${theme.fonts.body};
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-`;
-
-const ScrollLine = styled.div`
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(206, 197, 173, 0.8), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.5; transform: scaleY(0.8); }
   }
 `;
 
