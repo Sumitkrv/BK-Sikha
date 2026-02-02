@@ -4,53 +4,123 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { FiX, FiChevronLeft, FiChevronRight, FiCamera, FiHeart } from 'react-icons/fi';
 
-// Import yoga gallery images - BK Shikha's personal yoga poses
-// These images should be placed in src/assets/bkim/yoga-gallery/
-// Rename your 5 yoga images to: pose1.jpg, pose2.jpg, pose3.jpg, pose4.jpg, pose5.jpg
-
+// Yoga Gallery Images - Practice in Motion
 const galleryImages = [
   {
     id: 1,
-    src: '/yoga-gallery/pose1.jpg',
-    title: 'Virabhadrasana III',
-    subtitle: 'Warrior III Pose',
-    description: 'Balance, strength, and focus in perfect harmony',
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.06 PM.jpeg',
+    title: 'Warrior Flow',
+    subtitle: 'Strength & Balance',
+    description: 'Channeling inner strength through focused alignment',
   },
   {
     id: 2,
-    src: '/yoga-gallery/pose2.jpg',
-    title: 'Virabhadrasana III',
-    subtitle: 'Flying Warrior',
-    description: 'Extending energy through every limb',
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.07 PM (1).jpeg',
+    title: 'Graceful Extension',
+    subtitle: 'Balance Pose',
+    description: 'Finding equilibrium between effort and ease',
   },
   {
     id: 3,
-    src: '/yoga-gallery/pose3.jpg',
-    title: 'Anjaneyasana',
-    subtitle: 'Crescent Lunge',
-    description: 'Opening the heart while grounding through the legs',
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.07 PM (2).jpeg',
+    title: 'Core Strength',
+    subtitle: 'Power Center',
+    description: 'Building stability from the inside out',
   },
   {
     id: 4,
-    src: '/yoga-gallery/pose4.jpg',
-    title: 'Anjaneyasana',
-    subtitle: 'Crescent Moon Pose',
-    description: 'Deep hip opener with a powerful backbend',
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.07 PM.jpeg',
+    title: 'Mindful Movement',
+    subtitle: 'Flow State',
+    description: 'Where breath meets intention',
   },
   {
     id: 5,
-    src: '/yoga-gallery/pose5.jpg',
-    title: 'Vrksasana',
-    subtitle: 'Tree Pose',
-    description: 'Finding stillness and balance within',
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.08 PM (1).jpeg',
+    title: 'Dynamic Alignment',
+    subtitle: 'Precise Practice',
+    description: 'Every detail matters in the journey',
+  },
+  {
+    id: 6,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.08 PM.jpeg',
+    title: 'Heart Opening',
+    subtitle: 'Backbend Practice',
+    description: 'Releasing tension, embracing vulnerability',
+  },
+  {
+    id: 7,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.09 PM (1).jpeg',
+    title: 'Grounded Presence',
+    subtitle: 'Foundation Work',
+    description: 'Strong roots for powerful growth',
+  },
+  {
+    id: 8,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.09 PM.jpeg',
+    title: 'Fluid Motion',
+    subtitle: 'Vinyasa Flow',
+    description: 'Moving meditation in continuous rhythm',
+  },
+  {
+    id: 9,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.10 PM (1).jpeg',
+    title: 'Inner Focus',
+    subtitle: 'Concentration',
+    description: 'The mind leads, the body follows',
+  },
+  {
+    id: 10,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.10 PM.jpeg',
+    title: 'Serene Strength',
+    subtitle: 'Calm Power',
+    description: 'Finding peace within the practice',
+  },
+  {
+    id: 11,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.11 PM (1).jpeg',
+    title: 'Deep Stretch',
+    subtitle: 'Flexibility Training',
+    description: 'Opening pathways to greater freedom',
+  },
+  {
+    id: 12,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.11 PM.jpeg',
+    title: 'Balance Mastery',
+    subtitle: 'Equilibrium',
+    description: 'Standing tall in stillness',
+  },
+  {
+    id: 13,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.12 PM (1).jpeg',
+    title: 'Peak Pose',
+    subtitle: 'Advanced Practice',
+    description: 'Reaching new heights with dedication',
+  },
+  {
+    id: 14,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.12 PM.jpeg',
+    title: 'Breath & Body',
+    subtitle: 'Pranayama Flow',
+    description: 'Uniting movement with conscious breathing',
+  },
+  {
+    id: 15,
+    src: '/yoga-gallery/WhatsApp Unknown 2026-02-02 at 10.57.49 AM/WhatsApp Image 2026-01-31 at 12.28.13 PM.jpeg',
+    title: 'Journey Within',
+    subtitle: 'Meditative Practice',
+    description: 'Where discipline meets grace',
   },
 ];
 
 const YogaGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
   const galleryRef = useRef(null);
   const isInView = useInView(galleryRef, { once: true, amount: 0.2 });
+
+  const displayedImages = showAll ? galleryImages : galleryImages.slice(0, 3);
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
@@ -114,14 +184,14 @@ const YogaGallery = () => {
             </motion.div>
 
             <MasonryGrid>
-              {galleryImages.map((image, index) => (
+              {displayedImages.map((image, index) => (
                 <GalleryItem
                   key={image.id}
                   as={motion.div}
                   variants={itemVariants}
                   className={index === 0 ? 'featured' : index === 2 ? 'tall' : ''}
                   whileHover={{ y: -8 }}
-                  onClick={() => openLightbox(image, index)}
+                  onClick={() => openLightbox(image, galleryImages.findIndex(img => img.id === image.id))}
                 >
                   <ImageWrapper>
                     <GalleryImage 
@@ -150,6 +220,36 @@ const YogaGallery = () => {
                 </GalleryItem>
               ))}
             </MasonryGrid>
+
+            {!showAll && galleryImages.length > 3 && (
+              <ViewMoreButtonWrapper
+                as={motion.div}
+                variants={itemVariants}
+              >
+                <ViewMoreButton
+                  onClick={() => setShowAll(true)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View More ({galleryImages.length - 3} more poses)
+                </ViewMoreButton>
+              </ViewMoreButtonWrapper>
+            )}
+
+            {showAll && (
+              <ViewMoreButtonWrapper
+                as={motion.div}
+                variants={itemVariants}
+              >
+                <ViewMoreButton
+                  onClick={() => setShowAll(false)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Less
+                </ViewMoreButton>
+              </ViewMoreButtonWrapper>
+            )}
           </GalleryContent>
         </Container>
 
@@ -594,6 +694,45 @@ const ImageCounter = styled.span`
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.1em;
+`;
+
+const ViewMoreButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+`;
+
+const ViewMoreButton = styled(motion.button)`
+  padding: 1rem 2.5rem;
+  font-family: ${theme.fonts.body};
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5a8a62 0%, #8ecfb3 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(90, 138, 98, 0.3);
+  transition: all 0.3s ease;
+  outline: none;
+
+  &:hover {
+    box-shadow: 0 6px 30px rgba(90, 138, 98, 0.4);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem 2rem;
+    font-size: 0.9375rem;
+  }
 `;
 
 export default YogaGallery;

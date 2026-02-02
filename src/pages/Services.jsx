@@ -17,14 +17,14 @@ import styled from 'styled-components';
 import { theme } from '../styles/theme';
 
 // HD Images from Unsplash - 4K Quality Unique Images
-const heroVideo = "https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4";
+const heroImage = "/more images/services hero.png";
 const serviceImages = {
-  yoga: "https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=1600&h=1200&fit=crop&q=100",
-  meditation: "https://images.unsplash.com/photo-1512291313931-d4291c8475c4?w=1600&h=1200&fit=crop&q=100",
-  mindset: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=1600&h=1200&fit=crop&q=100",
-  stress: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&h=1200&fit=crop&q=100",
-  wellness: "https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=1600&h=1200&fit=crop&q=100",
-  confidence: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=1600&h=1200&fit=crop&q=100",
+  yoga: "/more images/personalized yoga 2.png",
+  meditation: "/more images/mindset coaching.png",
+  mindset: "/more images/emotionall wellness 2.png",
+  stress: "/more images/stress relief.png",
+  wellness: "/more images/holistic transformation 2.png",
+  confidence: "/more images/self love.png",
 };
 
 const Services = () => {
@@ -167,11 +167,9 @@ const Services = () => {
           </svg>
         </LeafDecoration>
 
-        {/* Video Background */}
+        {/* Background Image */}
         <HeroVideoWrapper style={{ y: heroY }}>
-          <HeroVideo autoPlay muted loop playsInline>
-            <source src={heroVideo} type="video/mp4" />
-          </HeroVideo>
+          <HeroBackgroundImage src={heroImage} alt="Services Hero" />
           <VideoOverlay />
         </HeroVideoWrapper>
 
@@ -490,6 +488,13 @@ const HeroVideoWrapper = styled(motion.div)`
   position: absolute;
   inset: 0;
   z-index: 0;
+`;
+
+const HeroBackgroundImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
 `;
 
 const HeroVideo = styled.video`
@@ -820,6 +825,7 @@ const ServiceImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 50%;
   position: relative;
   z-index: 2;
 `;
@@ -1028,6 +1034,7 @@ const MiniCardImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 50%;
     transition: transform 0.5s ease;
   }
 

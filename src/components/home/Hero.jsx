@@ -6,14 +6,13 @@ import { theme } from '../../styles/theme';
 import { FiPlay } from 'react-icons/fi';
 
 // HD Images from Unsplash - 4K Quality
-const heroImage = "https://images.unsplash.com/photo-1545389336-cf090694435e?w=3840&h=2160&fit=crop&q=100";
-const heroVideo = "https://cdn.pixabay.com/video/2022/11/07/138570-769930540_large.mp4";
+const heroImage = "/yoga-gallery/ChatGPT Image Feb 1, 2026, 01_49_50 PM.png";
+const heroVideo = "/6 images/2nd Video.mp4";
 
 const Hero = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   const prefersReducedMotion = useReducedMotion();
-  const [showVideo, setShowVideo] = useState(true);
 
   // Animation variants
   const containerVariants = {
@@ -210,7 +209,7 @@ const Hero = () => {
               animate={{ opacity: 0.6, scale: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             />
-            {/* Main Image/Video */}
+            {/* Main Video */}
             <ImageWrapper
               as={motion.div}
               variants={imageVariants}
@@ -220,34 +219,17 @@ const Hero = () => {
               }}
             >
               <ImageFrame>
-                {showVideo ? (
-                  <VideoPlayer
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  >
-                    <source src={heroVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </VideoPlayer>
-                ) : (
-                  <>
-                    <YogaImage 
-                      src={heroImage} 
-                      alt="BK Shikha - Yogic Lifestyle & Wellness Mentor"
-                      loading="eager"
-                    />
-                    <PlayButton
-                      onClick={() => setShowVideo(true)}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FiPlay />
-                    </PlayButton>
-                  </>
-                )}
+                <VideoPlayer
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={heroVideo} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </VideoPlayer>
                 {/* Image overlay gradient */}
-                <ImageOverlay $isVideo={showVideo} />
+                <ImageOverlay />
               </ImageFrame>
             </ImageWrapper>
           </ImageContainer>

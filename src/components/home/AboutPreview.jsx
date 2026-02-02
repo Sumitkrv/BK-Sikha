@@ -3,7 +3,8 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import aboutImage from '../../assets/bkim/2.jpeg';
+
+const aboutImage = '/6 images/our story.jpeg';
 
 const AboutPreview = () => {
   const ref = useRef(null);
@@ -67,59 +68,71 @@ const AboutPreview = () => {
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
       >
-        {/* Left Column - Image with organic shapes */}
+        {/* Left Column - Image with premium professional design */}
         <ImageColumn as={motion.div} variants={imageVariants}>
-          {/* Golden dots decoration - top left */}
-          <DotsDecoration className="top-left">
-            {[...Array(12)].map((_, i) => (
-              <Dot key={i} style={{ 
-                left: `${(i % 4) * 12}px`, 
-                top: `${Math.floor(i / 4) * 12}px` 
-              }} />
-            ))}
-          </DotsDecoration>
+          {/* Layered background shapes for depth */}
+          <BackgroundShape className="primary" />
+          <BackgroundShape className="secondary" />
+          
+          {/* Elegant corner ornaments */}
+          <CornerOrnament className="top-left">
+            <svg viewBox="0 0 40 40" fill="none">
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#cec5ad" strokeWidth="2"/>
+              <line x1="0" y1="0" x2="0" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <circle cx="4" cy="4" r="2" fill="#cec5ad"/>
+            </svg>
+          </CornerOrnament>
+          
+          <CornerOrnament className="top-right">
+            <svg viewBox="0 0 40 40" fill="none">
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#cec5ad" strokeWidth="2"/>
+              <line x1="40" y1="0" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <circle cx="36" cy="4" r="2" fill="#cec5ad"/>
+            </svg>
+          </CornerOrnament>
+          
+          <CornerOrnament className="bottom-left">
+            <svg viewBox="0 0 40 40" fill="none">
+              <line x1="0" y1="40" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <line x1="0" y1="0" x2="0" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <circle cx="4" cy="36" r="2" fill="#cec5ad"/>
+            </svg>
+          </CornerOrnament>
+          
+          <CornerOrnament className="bottom-right">
+            <svg viewBox="0 0 40 40" fill="none">
+              <line x1="0" y1="40" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <line x1="40" y1="0" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
+              <circle cx="36" cy="36" r="2" fill="#cec5ad"/>
+            </svg>
+          </CornerOrnament>
 
-          {/* Golden dots decoration - bottom right */}
-          <DotsDecoration className="bottom-right">
-            {[...Array(12)].map((_, i) => (
-              <Dot key={i} style={{ 
-                left: `${(i % 4) * 12}px`, 
-                top: `${Math.floor(i / 4) * 12}px` 
-              }} />
-            ))}
-          </DotsDecoration>
+          {/* Decorative accent lines */}
+          <AccentLine className="vertical-left" />
+          <AccentLine className="vertical-right" />
+          <AccentLine className="horizontal-top" />
+          
+          {/* Floating badge */}
+          <FloatingBadge>
+            <svg viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="38" fill="#cec5ad" opacity="0.95"/>
+              <circle cx="40" cy="40" r="30" fill="none" stroke="#22371b" strokeWidth="1" opacity="0.3"/>
+              <text x="40" y="35" textAnchor="middle" fill="#22371b" fontSize="12" fontWeight="600">12+</text>
+              <text x="40" y="48" textAnchor="middle" fill="#22371b" fontSize="8">Years</text>
+            </svg>
+          </FloatingBadge>
 
-          {/* Large organic blob behind image */}
-          <LargeBlob>
-            <svg viewBox="0 0 500 600" preserveAspectRatio="none">
-              <path 
-                d="M380,100Q420,180,400,280Q380,380,300,450Q220,520,140,460Q60,400,80,300Q100,200,160,120Q220,40,300,60Q380,80,380,100Z" 
-                fill="#3d5a40"
+          {/* Main Image Container with premium styling */}
+          <ImageContainer>
+            <ImageBorder />
+            <ImageInnerFrame>
+              <AboutImage 
+                src={aboutImage} 
+                alt="About BK Shikha - Yoga & Wellness"
               />
-            </svg>
-          </LargeBlob>
-
-          {/* Small mint blob */}
-          <SmallBlob>
-            <svg viewBox="0 0 200 200" preserveAspectRatio="none">
-              <circle cx="100" cy="100" r="80" fill="#8ecfb3" />
-            </svg>
-          </SmallBlob>
-
-          {/* Accent blob at bottom */}
-          <AccentBlob>
-            <svg viewBox="0 0 150 150" preserveAspectRatio="none">
-              <circle cx="75" cy="75" r="60" fill="#5a8a62" opacity="0.6" />
-            </svg>
-          </AccentBlob>
-
-          {/* Main Image */}
-          <ImageWrapper>
-            <AboutImage 
-              src={aboutImage} 
-              alt="About BK Shikha - Yoga & Wellness"
-            />
-          </ImageWrapper>
+              <ImageOverlay />
+            </ImageInnerFrame>
+          </ImageContainer>
         </ImageColumn>
 
         {/* Right Column - Text Content */}
@@ -234,34 +247,138 @@ const Container = styled.div`
 
 const ImageColumn = styled.div`
   position: relative;
-  height: 550px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    height: 450px;
-    max-width: 450px;
+    height: 500px;
+    max-width: 500px;
     margin: 0 auto;
     width: 100%;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: 380px;
+    height: 420px;
   }
 `;
 
-const DotsDecoration = styled.div`
+const BackgroundShape = styled.div`
   position: absolute;
-  width: 50px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  &.primary {
+    transform: translate(-50%, -50%) rotate(-2deg);
+    width: 420px;
+    height: 520px;
+    background: linear-gradient(135deg, #1a2817 0%, #22371b 50%, #2d4a24 100%);
+    border-radius: 16px;
+    box-shadow: 
+      0 30px 80px rgba(34, 55, 27, 0.4),
+      0 15px 40px rgba(34, 55, 27, 0.3);
+  }
+
+  &.secondary {
+    transform: translate(-48%, -52%) rotate(2deg);
+    width: 410px;
+    height: 510px;
+    background: linear-gradient(135deg, rgba(206, 197, 173, 0.15) 0%, rgba(206, 197, 173, 0.08) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(206, 197, 173, 0.3);
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    &.primary {
+      width: 380px;
+      height: 480px;
+    }
+    &.secondary {
+      width: 370px;
+      height: 470px;
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    &.primary {
+      width: 320px;
+      height: 400px;
+    }
+    &.secondary {
+      width: 310px;
+      height: 390px;
+    }
+  }
+`;
+
+const CornerOrnament = styled.div`
+  position: absolute;
+  width: 40px;
   height: 40px;
-  z-index: 3;
+  z-index: 4;
+  opacity: 0.9;
 
   &.top-left {
-    top: 10%;
-    left: 5%;
+    top: 6%;
+    left: 6%;
+  }
+
+  &.top-right {
+    top: 6%;
+    right: 6%;
+  }
+
+  &.bottom-left {
+    bottom: 6%;
+    left: 6%;
   }
 
   &.bottom-right {
+    bottom: 6%;
+    right: 6%;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 30px;
+    height: 30px;
+    
+    svg {
+      line {
+        strokeWidth: 1.5;
+      }
+    }
+  }
+`;
+
+const AccentLine = styled.div`
+  position: absolute;
+  background: linear-gradient(90deg, transparent 0%, #cec5ad 50%, transparent 100%);
+  z-index: 1;
+  opacity: 0.4;
+
+  &.vertical-left {
+    left: 5%;
+    top: 15%;
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(180deg, transparent 0%, #cec5ad 50%, transparent 100%);
+  }
+
+  &.vertical-right {
+    right: 5%;
     bottom: 15%;
-    right: 15%;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, #cec5ad 50%, transparent 100%);
+  }
+
+  &.horizontal-top {
+    top: 10%;
+    right: 10%;
+    width: 80px;
+    height: 2px;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -269,102 +386,140 @@ const DotsDecoration = styled.div`
   }
 `;
 
-const Dot = styled.div`
+const FloatingBadge = styled.div`
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #cec5ad;
-  border-radius: 50%;
-`;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  z-index: 5;
+  animation: floatBadge 4s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(206, 197, 173, 0.5));
 
-const LargeBlob = styled.div`
-  position: absolute;
-  top: 5%;
-  left: 10%;
-  width: 85%;
-  height: 90%;
-  z-index: 1;
-
-  svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 15px 40px rgba(34, 55, 27, 0.2));
+  @keyframes floatBadge {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(5deg);
+    }
   }
 
-  svg path {
-    fill: #22371b;
-  }
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    left: 5%;
-    width: 90%;
-  }
-`;
-
-const SmallBlob = styled.div`
-  position: absolute;
-  top: 0;
-  right: 5%;
-  width: 120px;
-  height: 120px;
-  z-index: 2;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  svg circle {
-    fill: #cec5ad;
-  }
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 80px;
-    height: 80px;
-    right: 0;
-  }
-`;
-
-const AccentBlob = styled.div`
-  position: absolute;
-  bottom: 5%;
-  left: 15%;
-  width: 100px;
-  height: 100px;
-  z-index: 2;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  svg circle {
-    fill: #21371a;
-    opacity: 0.5;
-  }
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     width: 70px;
     height: 70px;
-    left: 10%;
+    top: -5px;
+    right: -5px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 60px;
+    height: 60px;
+    
+    text {
+      font-size: 10px;
+      
+      &:nth-child(3) {
+        y: 32;
+      }
+      
+      &:nth-child(4) {
+        y: 44;
+        font-size: 7px;
+      }
+    }
   }
 `;
 
-const ImageWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 80%;
-  z-index: 2;
-  border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+const ImageContainer = styled.div`
+  position: relative;
+  width: 400px;
+  height: 500px;
+  z-index: 3;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 360px;
+    height: 460px;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 75%;
-    height: 75%;
+    width: 300px;
+    height: 380px;
+  }
+`;
+
+const ImageBorder = styled.div`
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(135deg, #cec5ad 0%, #d4cdb3 50%, #cec5ad 100%);
+  border-radius: 24px;
+  z-index: -1;
+  box-shadow: 
+    0 8px 32px rgba(206, 197, 173, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 20px;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+  }
+`;
+
+const ImageInnerFrame = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid #FAF8F5;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.25),
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 35px 80px rgba(0, 0, 0, 0.3),
+      0 18px 40px rgba(0, 0, 0, 0.22),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-width: 4px;
+    border-radius: 16px;
+  }
+`;
+
+const ImageOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 55, 27, 0.03) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(34, 55, 27, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+
+  ${ImageInnerFrame}:hover & {
+    opacity: 0.5;
   }
 `;
 
@@ -373,6 +528,11 @@ const AboutImage = styled.img`
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  ${ImageInnerFrame}:hover & {
+    transform: scale(1.08);
+  }
 `;
 
 const TextColumn = styled.div`

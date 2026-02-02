@@ -684,6 +684,7 @@ const SessionTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 600;
+  color: white;
   margin: 0 0 1rem;
 `;
 

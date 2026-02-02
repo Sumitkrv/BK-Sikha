@@ -7,32 +7,32 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const classes = [
   {
-    image: "https://images.unsplash.com/photo-1512291313931-d4291c8475c4?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/online-meditation.jpg",
     price: "₹999",
     title: "Online Meditation",
   },
   {
-    image: "https://images.unsplash.com/photo-1573384666979-2b1e160d2d08?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/yoga-at-home.jpg",
     price: "₹1,499",
     title: "Yoga at Home",
   },
   {
-    image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/couple-yoga.jpg",
     price: "₹2,499",
     title: "Couple Yoga",
   },
   {
-    image: "https://images.unsplash.com/photo-1507120878965-54b2d3939100?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/morning-flow.jpg",
     price: "₹799",
     title: "Morning Flow",
   },
   {
-    image: "https://images.unsplash.com/photo-1528319725582-ddc096101511?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/stress-relief.jpg",
     price: "₹1,299",
     title: "Stress Relief",
   },
   {
-    image: "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1000&h=800&fit=crop&q=100",
+    image: "/classes/private-session.jpg",
     price: "₹1,999",
     title: "Private Session",
   },
@@ -278,10 +278,11 @@ const CardContent = styled.div`
   bottom: 0;
   left: 12px;
   right: 12px;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
   padding: 1.25rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 `;
 
 const CardPrice = styled.span`

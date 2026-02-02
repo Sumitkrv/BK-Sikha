@@ -8,33 +8,33 @@ import { theme } from '../../styles/theme';
 const instagramPhotos = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=800&h=800&fit=crop&q=100",
-    alt: "Yoga meditation pose"
+    image: "/6 images/ig 1.heic.jpeg",
+    alt: "Best Morning Routine Recipe"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=800&fit=crop&q=100",
-    alt: "Morning wellness routine"
+    image: "/6 images/ig 2.jpg.jpeg",
+    alt: "Create your Destiny - BK Shikha"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=800&h=800&fit=crop&q=100",
-    alt: "Yoga practice outdoors"
+    image: "/6 images/ig 6.jpg.jpeg",
+    alt: "Where do you feel tension"
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1602192509154-0b900ee1f851?w=800&h=800&fit=crop&q=100",
-    alt: "Group yoga session"
+    image: "/6 images/ig 4.jpg.jpeg",
+    alt: "Myth vs Fact - Healthy Food"
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&h=800&fit=crop&q=100",
-    alt: "Mindful stretching"
+    image: "/6 images/ig 5.jpg.jpeg",
+    alt: "Create Your Destiny"
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=800&fit=crop&q=100",
-    alt: "Community wellness"
+    image: "/6 images/ig 3.jpg.jpeg",
+    alt: "How to rewire your Mind"
   }
 ];
 

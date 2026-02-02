@@ -121,18 +121,28 @@ const Footer = () => {
 
 // Styled Components
 const FooterWrapper = styled.footer`
-  background: linear-gradient(
-    180deg,
-    #FAF8F5 0%,
-    #f5f7f4 50%,
-    #f0f3ef 100%
-  );
+  background-image: url('/more images/footer.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-top: 1px solid rgba(206, 197, 173, 0.2);
   padding: 5rem 0 2.5rem;
   margin-top: 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(34, 55, 27, 0.75);
+    z-index: 0;
+  }
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: relative;
+  z-index: 1;
+`;
 
 const FooterTop = styled.div`
   display: grid;
@@ -173,16 +183,16 @@ const BrandSection = styled.div`
 const BrandName = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
-  font-weight: 600;
-  color: #22371b;
+  font-weight: 700;
+  color: #cec5ad;
   margin: 0;
 `;
 
 const BrandTagline = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.85rem;
-  font-weight: 600;
-  color: #cec5ad;
+  font-weight: 700;
+  color: #8ecfb3;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin: 0;
@@ -190,9 +200,9 @@ const BrandTagline = styled.p`
 
 const BrandDescription = styled.p`
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.8;
-  color: #21371a;
-  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.9);
   margin: 0.75rem 0 1.75rem;
 `;
 
@@ -208,16 +218,16 @@ const SocialLink = styled(motion.a)`
   align-items: center;
   justify-content: center;
   background: rgba(206, 197, 173, 0.15);
-  color: #22371b;
+  color: #cec5ad;
   border-radius: ${theme.borderRadius.full};
   font-size: 1.25rem;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #22371b;
-    color: #FAF8F5;
+    background: #cec5ad;
+    color: #22371b;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(34, 55, 27, 0.25);
+    box-shadow: 0 8px 25px rgba(206, 197, 173, 0.25);
   }
 `;
 
@@ -230,8 +240,8 @@ const LinksSection = styled.div`
 const SectionTitle = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
-  font-weight: 600;
-  color: #22371b;
+  font-weight: 700;
+  color: #cec5ad;
   margin: 0 0 0.75rem;
 `;
 
@@ -243,22 +253,21 @@ const LinksList = styled.div`
 
 const FooterLink = styled(Link)`
   font-size: 0.9375rem;
-  color: #21371a;
-  opacity: 0.8;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #22371b;
-    opacity: 1;
+    color: #cec5ad;
     padding-left: 0.5rem;
   }
 `;
 
 const ServiceItem = styled.p`
   font-size: 0.9375rem;
-  color: #21371a;
-  opacity: 0.7;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 `;
 
@@ -270,8 +279,9 @@ const CTASection = styled.div`
 
 const CTAText = styled.p`
   font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1.6;
-  color: ${theme.colors.text};
+  color: rgba(255, 255, 255, 0.9);
   margin: 0;
 `;
 
@@ -304,8 +314,8 @@ const FooterBottom = styled.div`
 
 const Copyright = styled.p`
   font-size: 0.9rem;
-  color: #21371a;
-  opacity: 0.7;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   display: flex;
   align-items: center;

@@ -169,22 +169,15 @@ const FunFacts = () => {
               </svg>
             </AccentBlob>
 
-            {/* Main Image */}
+            {/* Main Video */}
             <ImageWrapper>
-              <MainImage 
-                src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&h=900&fit=crop&q=100" 
-                alt="Yoga class in nature"
-                loading="lazy"
+              <MainVideo 
+                src="/yoga-gallery/another video.mp4" 
+                autoPlay
+                muted
+                loop
+                playsInline
               />
-              {/* Play Button */}
-              <PlayButton
-                as={motion.button}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Play video"
-              >
-                <FiPlay />
-              </PlayButton>
             </ImageWrapper>
 
             {/* Bottom dots */}
@@ -488,7 +481,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const MainImage = styled.img`
+const MainVideo = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;

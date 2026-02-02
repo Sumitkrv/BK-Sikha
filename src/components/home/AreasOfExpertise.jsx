@@ -96,7 +96,7 @@ const AreasOfExpertise = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <YogaImage 
-              src="src/assets/bkim/yoga_center.png" 
+              src="/more images/bk shikha yoga pose 3.png" 
               alt="BK Shikha Yoga Pose" 
             />
           </CenterImageWrapper>
@@ -260,6 +260,7 @@ const CenterImageWrapper = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 
   @media (max-width: 1024px) {
     width: 300px;
@@ -279,6 +280,7 @@ const YogaImage = styled.img`
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  background: transparent;
 `;
 
 const ExpertiseItem = styled(motion.div)`

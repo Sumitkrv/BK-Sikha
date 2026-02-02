@@ -4,7 +4,6 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 import styled, { css } from 'styled-components';
 import { theme } from '../../styles/theme';
-import logoImage from '../../assets/bk.jpg';
 
 // Premium easing curves for luxurious motion
 const premiumEasing = {
@@ -59,7 +58,6 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/services', label: 'Services' },
-    { path: '/blog', label: 'Blog' },
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Connect' },
   ], []);
@@ -141,16 +139,14 @@ const Header = () => {
       >
         <Container className="container">
           <Logo to="/" aria-label="BK Shikha - Home">
-            <LogoImage 
-              src={logoImage} 
-              alt="BK Shikha - Create your Destiny" 
-              $isScrolled={isScrolled}
-            />
             <LogoContent $isScrolled={isScrolled}>
-              <LogoText $isScrolled={isScrolled}>BK Shikha</LogoText>
-              <LogoTagline $isScrolled={isScrolled}>
-                Create your Destiny
-              </LogoTagline>
+              <LogoImage src="/bk.jpg" alt="BK Shikha Logo" $isScrolled={isScrolled} />
+              <LogoTextContent>
+                <LogoText $isScrolled={isScrolled}>BK Shikha</LogoText>
+                <LogoTagline $isScrolled={isScrolled}>
+                  Create your Destiny
+                </LogoTagline>
+              </LogoTextContent>
             </LogoContent>
           </Logo>
 
@@ -187,17 +183,6 @@ const Header = () => {
             >
               <NavLinkText>Services</NavLinkText>
               <NavLinkUnderline $isActive={location.pathname === '/services'} />
-            </NavLink>
-            
-            {/* Blog Link */}
-            <NavLink
-              to="/blog"
-              $isActive={location.pathname === '/blog'}
-              aria-current={location.pathname === '/blog' ? 'page' : undefined}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <NavLinkText>Blog</NavLinkText>
-              <NavLinkUnderline $isActive={location.pathname === '/blog'} />
             </NavLink>
             
             {/* Portfolio Link */}
@@ -393,9 +378,10 @@ const Logo = styled(Link)`
 `;
 
 const LogoImage = styled.img`
-  height: ${(props) => (props.$isScrolled ? '48px' : '60px')};
+  height: ${(props) => (props.$isScrolled ? '55px' : '70px')};
   width: auto;
   object-fit: contain;
+  border-radius: 8px;
   transition: 
     height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
     opacity 0.3s ease;
@@ -405,7 +391,7 @@ const LogoImage = styled.img`
   }
   
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: ${(props) => (props.$isScrolled ? '42px' : '50px')};
+    height: ${(props) => (props.$isScrolled ? '48px' : '60px')};
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -414,6 +400,13 @@ const LogoImage = styled.img`
 `;
 
 const LogoContent = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${(props) => (props.$isScrolled ? '0.5rem' : '0.75rem')};
+  transition: gap 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+`;
+
+const LogoTextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${(props) => (props.$isScrolled ? '0.0625rem' : '0.125rem')};

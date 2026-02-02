@@ -5,34 +5,34 @@ import { theme } from '../../styles/theme';
 
 const programs = [
   {
-    image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=1200&auto=format&fit=crop&q=100',
-    category: 'Yoga',
-    title: 'Morning Yoga Flow',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&auto=format&fit=crop&q=100',
-    category: 'Meditation',
-    title: 'Mindful Meditation',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&auto=format&fit=crop&q=100',
-    category: 'Wellness',
-    title: 'Holistic Healing',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=1200&auto=format&fit=crop&q=100',
+    image: '/6 images/Pranayam practice.jpeg',
     category: 'Breathing',
     title: 'Pranayama Practice',
   },
   {
-    image: 'https://images.unsplash.com/photo-1540206395-68808572332f?w=1200&auto=format&fit=crop&q=100',
+    image: '/6 images/holistic healing.jpeg',
+    category: 'Wellness',
+    title: 'Holistic Healing',
+  },
+  {
+    image: '/6 images/yoga lifestyle.jpeg',
+    category: 'Lifestyle',
+    title: 'Yogic Lifestyle Coaching',
+  },
+  {
+    image: '/6 images/morning yoga.jpeg',
+    category: 'Yoga',
+    title: 'Morning Yoga Flow',
+  },
+  {
+    image: '/6 images/weekend wellness.jpeg',
     category: 'Retreat',
     title: 'Weekend Wellness Retreat',
   },
   {
-    image: 'https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1200&auto=format&fit=crop&q=100',
-    category: 'Lifestyle',
-    title: 'Yogic Lifestyle Coaching',
+    image: '/6 images/mindful meditation.jpeg',
+    category: 'Meditation',
+    title: 'Mindful Meditation',
   },
 ];
 

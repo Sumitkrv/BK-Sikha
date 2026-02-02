@@ -20,7 +20,7 @@ const portfolioImages = {
   transform2: "https://images.unsplash.com/photo-1593205134161-0a17c62cf0fc?w=1200&h=1600&fit=crop&q=100",
 };
 
-const heroVideo = "https://cdn.pixabay.com/video/2020/07/30/46026-447087782_large.mp4";
+const heroImage = "/more images/portfolio hero.png";
 
 const portfolioItems = [
   {
@@ -198,9 +198,7 @@ const Portfolio = () => {
       {/* Cinematic Hero Section */}
       <HeroSection ref={heroRef}>
         <HeroVideoWrapper style={{ y: heroY }}>
-          <HeroVideo autoPlay muted loop playsInline poster={portfolioImages.hero}>
-            <source src={heroVideo} type="video/mp4" />
-          </HeroVideo>
+          <HeroBackgroundImage src={heroImage} alt="Portfolio Hero" />
           <VideoOverlay />
         </HeroVideoWrapper>
 
@@ -580,10 +578,11 @@ const HeroVideoWrapper = styled(motion.div)`
   z-index: 0;
 `;
 
-const HeroVideo = styled.video`
+const HeroBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.7;
 `;
 
 const VideoOverlay = styled.div`
@@ -591,9 +590,9 @@ const VideoOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(34, 55, 27, 0.9) 0%,
-    rgba(33, 55, 26, 0.75) 50%,
-    rgba(34, 55, 27, 0.9) 100%
+    rgba(34, 55, 27, 0.6) 0%,
+    rgba(33, 55, 26, 0.5) 50%,
+    rgba(34, 55, 27, 0.6) 100%
   );
 `;
 
