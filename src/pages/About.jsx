@@ -9,8 +9,9 @@ import YogaGallery from '../components/shared/YogaGallery';
 // HD Images - 4K Quality Unique Unsplash Images
 const aboutImages = {
   hero: "/more images/about hero 4.png",
+  heroMobile: "/new images/mobile about hero.png",
   founder: "/597937247_619016434604924_306615671335802667_n.jpg (2).jpeg",
-  meditation: "/more images/begin your transformation 1.png",
+  meditation: "/new images/begin your transformation.png",
   yoga: "https://images.unsplash.com/photo-1506126279646-a697353d3166?w=1600&h=1200&fit=crop&q=100",
   nature: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600&h=1200&fit=crop&q=100",
   wellness: "https://images.unsplash.com/photo-1559595500-e15296bdbb48?w=1600&h=1200&fit=crop&q=100",
@@ -234,7 +235,16 @@ const About = () => {
       {/* Cinematic Hero Section */}
       <HeroSection ref={heroRef}>
         <HeroVideoWrapper style={{ y: heroY }}>
-          <HeroBackgroundImage src={aboutImages.hero} alt="About Hero" />
+          <HeroBackgroundImage 
+            src={aboutImages.hero} 
+            alt="About Hero" 
+            className="desktop-hero"
+          />
+          <HeroBackgroundImage 
+            src={aboutImages.heroMobile} 
+            alt="About Hero Mobile" 
+            className="mobile-hero"
+          />
         </HeroVideoWrapper>
 
         <FloatingOrb className="orb1" />
@@ -827,7 +837,28 @@ const HeroBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   opacity: 0.35;
+  
+  &.mobile-hero {
+    display: none;
+  }
+  
+  @media (max-width: 1025px) {
+    &.desktop-hero {
+      display: none;
+    }
+    
+    &.mobile-hero {
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  
+  @media (orientation: landscape) and (max-height: 600px) {
+    object-position: center center;
+  }
 `;
 
 const VideoOverlay = styled.div`
@@ -918,6 +949,18 @@ const HeroContent = styled.div`
   position: relative;
   z-index: 10;
   padding: 0 2rem;
+  
+  @media (max-width: 640px) {
+    padding: 0 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 1.25rem;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 0 1rem;
+  }
 `;
 
 const HeroLabel = styled.span`
@@ -934,6 +977,24 @@ const HeroLabel = styled.span`
   padding: 0.5rem 1.5rem;
   border: 1px solid rgba(206, 197, 173, 0.3);
   border-radius: 100px;
+  
+  @media (max-width: 640px) {
+    font-size: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    gap: 0.375rem;
+    letter-spacing: 0.15em;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.6875rem;
+    padding: 0.4375rem 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.625rem;
+    padding: 0.375rem 0.875rem;
+  }
 `;
 
 const HeroTitle = styled.h1`
@@ -943,6 +1004,21 @@ const HeroTitle = styled.h1`
   color: #ffffff;
   line-height: 1.15;
   margin: 0 0 1.5rem;
+  
+  @media (max-width: 640px) {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    margin: 0 0 1rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: clamp(1.5rem, 5vw, 1.75rem);
+  }
 `;
 
 const HeroTitleAccent = styled.span`
@@ -963,6 +1039,23 @@ const HeroDescription = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 640px) {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 360px) {
+    font-size: 0.8125rem;
   }
 `;
 
@@ -975,6 +1068,14 @@ const HeroStats = styled.div`
 
   @media (max-width: 600px) {
     gap: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    gap: 1.25rem;
+  }
+  
+  @media (max-width: 360px) {
+    gap: 1rem;
   }
 `;
 
@@ -993,6 +1094,10 @@ const StatNumber = styled.div`
   @media (max-width: 480px) {
     font-size: 1.75rem;
   }
+  
+  @media (max-width: 360px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const StatLabel = styled.div`
@@ -1005,6 +1110,11 @@ const StatLabel = styled.div`
   @media (max-width: 480px) {
     font-size: 0.75rem;
   }
+  
+  @media (max-width: 360px) {
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+  }
 `;
 
 const StatDivider = styled.div`
@@ -1014,6 +1124,14 @@ const StatDivider = styled.div`
 
   @media (max-width: 600px) {
     height: 40px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 35px;
+  }
+  
+  @media (max-width: 360px) {
+    height: 30px;
   }
 `;
 
@@ -2289,10 +2407,12 @@ const CTAButtons = styled.div`
 
 const CTAImageSide = styled.div`
   position: relative;
-  min-height: 400px;
-  border-radius: 0 40px 40px 0;
-  overflow: hidden;
-  margin-right: 2rem;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9f6 0%, #ffffff 100%);
 
   @media (max-width: 900px) {
     display: none;
@@ -2304,7 +2424,7 @@ const CTAImage = styled.img`
   height: 100%;
   object-fit: contain;
   object-position: center;
-  border-radius: 40px;
+  border-radius: 12px;
 `;
 
 const CTAImageOverlay = styled.div`

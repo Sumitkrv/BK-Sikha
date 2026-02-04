@@ -185,20 +185,54 @@ const ServicesSection = styled.section`
   background: linear-gradient(180deg, #f0f4f0 0%, #f5f8f5 40%, #FAF8F5 100%);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  will-change: auto;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(0);
     width: 80%;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(206, 197, 173, 0.4), transparent);
   }
 
+  @media (min-width: 1920px) {
+    padding: 10rem 0 8rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 7rem 0 5.5rem;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 6.5rem 0 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 6rem 0 4.5rem;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 6rem 0 4rem;
+    padding: 5.5rem 0 4rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 4.5rem 0 3.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 4rem 0 3rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 3rem 0 2.5rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 2.5rem 0 2rem;
   }
 `;
 
@@ -209,6 +243,7 @@ const CurvedTop = styled.div`
   right: 0;
   height: 120px;
   pointer-events: none;
+  transform: translateZ(0);
 
   svg {
     width: 100%;
@@ -216,8 +251,24 @@ const CurvedTop = styled.div`
     display: block;
   }
 
+  @media (min-width: 1920px) {
+    height: 140px;
+  }
+
+  @media (max-width: 1024px) {
+    height: 90px;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     height: 60px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    height: 40px;
+  }
+
+  @media (max-width: 375px) {
+    height: 30px;
   }
 `;
 
@@ -228,8 +279,37 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: ${theme.breakpoints.mobile}) {
+  @media (min-width: 1920px) {
+    max-width: 1300px;
+    padding: 0 3rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 1.75rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 0 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 1.25rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0 0.875rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0.75rem;
   }
 `;
 
@@ -237,9 +317,37 @@ const HeaderContent = styled.div`
   text-align: center;
   max-width: 650px;
   margin: 0 auto 5rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    max-width: 750px;
+    margin-bottom: 6rem;
+  }
+
+  @media (max-width: 1440px) {
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 4.5rem;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 600px;
     margin-bottom: 4rem;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 390px) {
+    margin-bottom: 2.5rem;
   }
 `;
 
@@ -252,6 +360,28 @@ const SectionLabel = styled.span`
   text-transform: uppercase;
   color: #cec5ad;
   margin-bottom: 1rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem;
+    letter-spacing: 0.09em;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.75rem;
+    letter-spacing: 0.07em;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -261,6 +391,22 @@ const SectionTitle = styled.h2`
   color: #22371b;
   line-height: 1.15;
   margin-bottom: 1.25rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: clamp(2.75rem, 4.5vw, 3.75rem);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 0.875rem;
+    line-height: 1.25;
+  }
 `;
 
 const SectionDescription = styled.p`
@@ -269,27 +415,67 @@ const SectionDescription = styled.p`
   line-height: 1.85;
   color: #21371a;
   opacity: 0.85;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1.0625rem;
+    line-height: 1.9;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
 `;
 
 const ServicesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem 3rem;
-  
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+
+  @media (min-width: 1920px) {
+    gap: 5rem 4rem;
   }
 
+  @media (max-width: 1200px) {
+    gap: 3.5rem 2.75rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 3.25rem 2.5rem;
+  }
+  
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem 2rem;
   }
 
+  @media (max-width: 640px) {
+    gap: 2.75rem 1.75rem;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  @media (max-width: 390px) {
+    gap: 2.5rem;
+  }
+  
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    gap: 2rem;
   }
   
   /* Large screens */
@@ -300,6 +486,8 @@ const ServicesGrid = styled.div`
 
 const ServiceItem = styled.div`
   text-align: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 `;
 
 const IconWrapper = styled.div`
@@ -308,6 +496,9 @@ const IconWrapper = styled.div`
   margin: 0 auto 1.75rem;
   color: #cec5ad;
   transition: all 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 
   svg {
     width: 100%;
@@ -316,12 +507,61 @@ const IconWrapper = styled.div`
 
   ${ServiceItem}:hover & {
     color: #22371b;
-    transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
+  }
+
+  @media (min-width: 1920px) {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    width: 72px;
+    height: 72px;
+  }
+
+  @media (max-width: 640px) {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 1.375rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 390px) {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    width: 56px;
+    height: 56px;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    ${ServiceItem}:hover & {
+      transform: translateZ(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: color 0.3s ease;
+    
+    ${ServiceItem}:hover & {
+      transform: translateZ(0);
+    }
   }
 `;
 
@@ -331,6 +571,37 @@ const ServiceTitle = styled.h3`
   font-weight: 600;
   color: #22371b;
   margin-bottom: 0.75rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1.5rem;
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.3125rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1.1875rem;
+    margin-bottom: 0.625rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 1rem;
+  }
 `;
 
 const ServiceDescription = styled.p`
@@ -341,11 +612,66 @@ const ServiceDescription = styled.p`
   opacity: 0.8;
   max-width: 280px;
   margin: 0 auto;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+    max-width: 320px;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 0.9375rem;
+    max-width: 270px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.75rem;
+    line-height: 1.65;
+  }
 `;
 
 const CTAWrapper = styled.div`
   text-align: center;
   margin-top: 4rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    margin-top: 5rem;
+  }
+
+  @media (max-width: 1440px) {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 3.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    margin-top: 3rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 390px) {
+    margin-top: 2rem;
+  }
 `;
 
 const CTAButton = styled(Link)`
@@ -364,11 +690,70 @@ const CTAButton = styled(Link)`
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
   letter-spacing: 0.02em;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   &:hover {
     background: #1a2b15;
-    transform: translateY(-3px);
+    transform: translateY(-3px) translateZ(0);
     box-shadow: 0 10px 35px rgba(34, 55, 27, 0.35);
+  }
+
+  @media (min-width: 1920px) {
+    padding: 1.25rem 3.5rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 1.0625rem 2.75rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.9375rem 2.25rem;
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0.875rem 2rem;
+    font-size: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0.8125rem 1.75rem;
+    max-width: 260px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.6875rem;
+    max-width: 240px;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      transform: translateZ(0);
+      box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+    }
+
+    &:active {
+      background: #1a2b15;
+      transform: scale(0.98) translateZ(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateZ(0);
+    }
   }
 `;
 

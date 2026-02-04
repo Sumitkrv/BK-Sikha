@@ -8,6 +8,8 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Philosophy from './pages/Philosophy';
 import Testimonials from './pages/Testimonials';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import LoadingScreen from './components/shared/LoadingScreen';
 import './styles/global.css';
 
@@ -34,6 +36,8 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="philosophy" element={<Philosophy />} />
             <Route path="testimonials" element={<Testimonials />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/:slug" element={<BlogPost />} />
           </Route>
         </Routes>
       </Router>

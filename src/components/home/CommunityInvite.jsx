@@ -283,9 +283,51 @@ const CommunitySection = styled.section`
   background: linear-gradient(180deg, #FAF8F5 0%, #f8f9f7 50%, #FAF8F5 100%);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  will-change: auto;
+
+  @media (min-width: 1920px) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 6rem 0;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 5.5rem 0;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 5rem 0;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 5rem 0;
+    padding: 4.5rem 0;
+  }
+
+  @media (max-width: 820px) {
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    padding: 3.5rem 0;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 430px) {
+    padding: 2.5rem 0;
+  }
+
+  @media (max-width: 390px) {
+    padding: 2.25rem 0;
+  }
+
+  @media (max-width: 375px) {
+    padding: 2rem 0;
   }
 `;
 
@@ -295,16 +337,24 @@ const DecorativeLeaf = styled.div`
   height: 250px;
   opacity: 0.5;
   pointer-events: none;
+  transform: translateZ(0);
+  will-change: auto;
 
   &.left {
     left: -20px;
     top: 20%;
-    transform: rotate(-15deg);
+    transform: rotate(-15deg) translateZ(0);
   }
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100px;
+    height: 210px;
+    opacity: 0.4;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -315,6 +365,7 @@ const DecorativeLeaf = styled.div`
 const DotsDecoration = styled.div`
   position: absolute;
   z-index: 1;
+  transform: translateZ(0);
 
   &.top-left {
     top: 8%;
@@ -330,6 +381,18 @@ const DotsDecoration = styled.div`
     height: 45px;
   }
 
+  @media (max-width: 1024px) {
+    &.top-left {
+      width: 48px;
+      height: 40px;
+    }
+
+    &.bottom-right {
+      width: 60px;
+      height: 40px;
+    }
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
   }
@@ -342,6 +405,12 @@ const Dot = styled.div`
   background: #cec5ad;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(206, 197, 173, 0.4);
+  transform: translateZ(0);
+
+  @media (max-width: 1024px) {
+    width: 7px;
+    height: 7px;
+  }
 `;
 
 const Container = styled.div`
@@ -351,14 +420,73 @@ const Container = styled.div`
   position: relative;
   z-index: 2;
 
-  @media (max-width: ${theme.breakpoints.mobile}) {
+  @media (min-width: 1920px) {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0 1.75rem;
+  }
+
+  @media (max-width: 1024px) {
     padding: 0 1.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 1.25rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0 0.875rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 0.75rem;
   }
 `;
 
 const Header = styled.div`
   text-align: center;
   margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 4.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    margin-bottom: 3.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    margin-bottom: 2.75rem;
+  }
+
+  @media (max-width: 640px) {
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const SectionLabel = styled.span`
@@ -370,6 +498,22 @@ const SectionLabel = styled.span`
   text-transform: uppercase;
   color: #cec5ad;
   margin-bottom: 0.75rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -379,6 +523,20 @@ const SectionTitle = styled.h2`
   color: #22371b;
   line-height: 1.15;
   margin-bottom: 1rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: clamp(2.75rem, 5vw, 3.5rem);
+  }
+
+  @media (max-width: 640px) {
+    line-height: 1.2;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 0.875rem;
+    line-height: 1.25;
+  }
 `;
 
 const SectionSubtitle = styled.p`
@@ -389,10 +547,46 @@ const SectionSubtitle = styled.p`
   max-width: 520px;
   margin: 0 auto;
   line-height: 1.75;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1.125rem;
+    max-width: 600px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 480px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
 `;
 
 const InstagramSection = styled.div`
   margin-bottom: 4rem;
+
+  @media (min-width: 1920px) {
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin-bottom: 3.5rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 2.5rem;
+  }
 `;
 
 const InstagramContent = styled.div`
@@ -401,10 +595,32 @@ const InstagramContent = styled.div`
   gap: 4rem;
   min-height: 500px;
 
+  @media (min-width: 1920px) {
+    gap: 5rem;
+    min-height: 550px;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 3.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 3rem;
+    min-height: 450px;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     flex-direction: column;
     gap: 2.5rem;
     min-height: auto;
+  }
+
+  @media (max-width: 640px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    gap: 1.5rem;
   }
 `;
 
@@ -413,6 +629,15 @@ const InstagramTextSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    flex: 0 0 350px;
+  }
+
+  @media (max-width: 1200px) {
+    flex: 0 0 280px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     flex: none;
@@ -429,6 +654,20 @@ const InstagramBigText = styled.h2`
   color: #22371b;
   line-height: 0.9;
   margin-bottom: 1.5rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: clamp(3.5rem, 8vw, 5rem);
+  }
+
+  @media (max-width: 640px) {
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 1rem;
+    line-height: 0.95;
+  }
 `;
 
 const InstagramHandle = styled.a`
@@ -445,6 +684,8 @@ const InstagramHandle = styled.a`
   background: rgba(206, 197, 173, 0.2);
   border-radius: 50px;
   border: 2px solid transparent;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     font-size: 1.375rem;
@@ -455,7 +696,7 @@ const InstagramHandle = styled.a`
     color: #ffffff;
     background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
     border-color: transparent;
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 8px 25px rgba(131, 58, 180, 0.3);
 
     svg {
@@ -463,8 +704,42 @@ const InstagramHandle = styled.a`
     }
   }
 
+  @media (min-width: 1920px) {
+    font-size: 1.1875rem;
+    padding: 1rem 2rem;
+    
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.0625rem;
+    padding: 0.75rem 1.5rem;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     justify-content: center;
+    font-size: 1rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      transform: translateY(0) translateZ(0);
+    }
+    
+    &:active {
+      transform: scale(0.98) translateZ(0);
+    }
   }
 `;
 
@@ -476,15 +751,27 @@ const InstagramCTA = styled.p`
   margin-top: 0.875rem;
   max-width: 200px;
   line-height: 1.65;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+    max-width: 240px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     max-width: none;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    line-height: 1.7;
   }
 `;
 
 const InstagramImagesSide = styled.div`
   flex: 1;
   position: relative;
+  transform: translateZ(0);
 `;
 
 const InstagramGrid = styled.div`
@@ -494,14 +781,33 @@ const InstagramGrid = styled.div`
   gap: 1.25rem;
   max-width: 650px;
 
+  @media (min-width: 1920px) {
+    max-width: 750px;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 580px;
+    gap: 1.125rem;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    gap: 0.875rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
+  }
+
+  @media (max-width: 390px) {
+    gap: 0.625rem;
   }
 `;
 
@@ -517,34 +823,37 @@ const GridItem = styled.a`
   animation-delay: calc(var(--delay, 0s));
   border: 2px solid transparent;
   background-clip: padding-box;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 
   &.item-1 {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     animation-delay: 0s;
   }
 
   &.item-2 {
-    transform: translateY(20px);
+    transform: translateY(20px) translateZ(0);
     animation-delay: 1s;
   }
 
   &.item-3 {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     animation-delay: 2s;
   }
 
   &.item-4 {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     animation-delay: 3s;
   }
 
   &.item-5 {
-    transform: translateY(-20px);
+    transform: translateY(-20px) translateZ(0);
     animation-delay: 4s;
   }
 
   &.item-6 {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     animation-delay: 5s;
   }
 
@@ -555,10 +864,44 @@ const GridItem = styled.a`
     border-color: rgba(201, 162, 39, 0.5);
   }
 
+  @media (min-width: 1920px) {
+    border-radius: 24px;
+  }
+
+  @media (max-width: 1024px) {
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 16px;
+    
     &.item-2, &.item-5 {
-      transform: translateY(0);
+      transform: translateY(0) translateZ(0);
     }
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    animation: none;
+    transform: translateY(0) translateZ(0) !important;
+    
+    &:hover {
+      animation: none;
+    }
+    
+    &:active {
+      transform: scale(0.97) translateZ(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transform: translateY(0) translateZ(0) !important;
   }
 `;
 
@@ -567,9 +910,27 @@ const GridImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 
   ${GridItem}:hover & {
-    transform: scale(1.1);
+    transform: scale(1.1) translateZ(0);
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    ${GridItem}:hover & {
+      transform: translateZ(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    
+    ${GridItem}:hover & {
+      transform: translateZ(0);
+    }
   }
 `;
 
@@ -584,6 +945,7 @@ const SacredGeometry = styled.div`
   pointer-events: none;
   color: #ffffff;
   z-index: 2;
+  transform: translateZ(0);
 
   svg {
     width: 80%;
@@ -594,6 +956,16 @@ const SacredGeometry = styled.div`
 
   ${GridItem}:hover & {
     opacity: 1;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    svg {
+      animation: none;
+    }
   }
 `;
 
@@ -607,9 +979,16 @@ const ImageOverlay = styled.div`
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  transform: translateZ(0);
 
   ${GridItem}:hover & {
     opacity: 1;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    ${GridItem}:hover & {
+      opacity: 0;
+    }
   }
 `;
 
@@ -623,16 +1002,31 @@ const OverlayIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 0.75rem;
+  transform: translateZ(0);
 
   svg {
     font-size: 1.5rem;
     color: #ffffff;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 45px;
+    height: 45px;
+    
+    svg {
+      font-size: 1.375rem;
+    }
   }
 `;
 
 const OverlayStats = styled.div`
   display: flex;
   gap: 1rem;
+  transform: translateZ(0);
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    gap: 0.75rem;
+  }
 `;
 
 const StatItem = styled.span`
@@ -643,9 +1037,19 @@ const StatItem = styled.span`
   font-size: 0.875rem;
   color: #ffffff;
   font-weight: 500;
+  transform: translateZ(0);
 
   svg {
     font-size: 0.875rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+    gap: 0.25rem;
+    
+    svg {
+      font-size: 0.8125rem;
+    }
   }
 `;
 
@@ -655,9 +1059,20 @@ const ZenRipple = styled.div`
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.8);
   opacity: 0;
+  transform: translateZ(0);
 
   ${GridItem}:hover & {
     animation: ${ripple} 1.2s ease-out infinite;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    ${GridItem}:hover & {
+      animation: none;
+    }
   }
 `;
 
@@ -667,11 +1082,32 @@ const FeaturesGrid = styled.div`
   gap: 2rem;
   margin-bottom: 4rem;
 
+  @media (min-width: 1920px) {
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 1.75rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3rem;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 2.5rem;
+    gap: 1rem;
   }
 `;
 
@@ -683,10 +1119,50 @@ const FeatureCard = styled.div`
   box-shadow: 0 6px 30px rgba(34, 55, 27, 0.06);
   border: 1px solid rgba(206, 197, 173, 0.15);
   transition: all 0.4s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) translateZ(0);
     box-shadow: 0 20px 50px rgba(34, 55, 27, 0.1);
+  }
+
+  @media (min-width: 1920px) {
+    padding: 2.5rem;
+    border-radius: 26px;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 2rem;
+    border-radius: 22px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 1.75rem;
+    border-radius: 20px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      transform: translateZ(0);
+    }
+    
+    &:active {
+      transform: scale(0.98) translateZ(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateZ(0);
+    }
   }
 `;
 
@@ -698,6 +1174,7 @@ const FeatureIconWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
+  transform: translateZ(0);
 
   &.green {
     background: linear-gradient(135deg, rgba(34, 55, 27, 0.12), rgba(34, 55, 27, 0.05));
@@ -719,6 +1196,37 @@ const FeatureIconWrapper = styled.div`
     width: 28px;
     height: 28px;
   }
+
+  @media (min-width: 1920px) {
+    width: 70px;
+    height: 70px;
+    
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 60px;
+    height: 60px;
+    
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1.25rem;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -727,6 +1235,20 @@ const FeatureTitle = styled.h3`
   font-weight: 600;
   color: #22371b;
   margin-bottom: 0.75rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1.375rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1.1875rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+  }
 `;
 
 const FeatureDesc = styled.p`
@@ -735,9 +1257,21 @@ const FeatureDesc = styled.p`
   line-height: 1.75;
   color: #21371a;
   opacity: 0.8;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
 `;
 
-const CTASection = styled.div``;
+const CTASection = styled.div`
+  transform: translateZ(0);
+`;
 
 const CTACard = styled.div`
   background: linear-gradient(135deg, #22371b 0%, #2d4a24 100%);
@@ -745,9 +1279,34 @@ const CTACard = styled.div`
   padding: 4rem;
   position: relative;
   overflow: hidden;
+  transform: translateZ(0);
+  isolation: isolate;
+
+  @media (min-width: 1920px) {
+    border-radius: 36px;
+    padding: 5rem;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 3.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    border-radius: 28px;
+    padding: 3rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 24px;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 2rem;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 390px) {
+    padding: 2.5rem 1.5rem;
   }
 `;
 
@@ -755,6 +1314,7 @@ const CTAContent = styled.div`
   position: relative;
   z-index: 2;
   text-align: center;
+  transform: translateZ(0);
 `;
 
 const CTATitle = styled.h3`
@@ -763,6 +1323,15 @@ const CTATitle = styled.h3`
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 1rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-bottom: 0.875rem;
+  }
 `;
 
 const CTADescription = styled.p`
@@ -772,6 +1341,26 @@ const CTADescription = styled.p`
   color: rgba(255, 255, 255, 0.8);
   max-width: 500px;
   margin: 0 auto 2rem;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    font-size: 1.0625rem;
+    max-width: 550px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 480px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
 `;
 
 const CTAButtons = styled.div`
@@ -779,10 +1368,20 @@ const CTAButtons = styled.div`
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  transform: translateZ(0);
+
+  @media (min-width: 1920px) {
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    gap: 0.875rem;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
   }
 `;
 
@@ -801,14 +1400,47 @@ const InstagramButton = styled.a`
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(131, 58, 180, 0.4);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     font-size: 1.125rem;
   }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 8px 30px rgba(131, 58, 180, 0.5);
+  }
+
+  @media (min-width: 1920px) {
+    padding: 1rem 2.25rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.875rem 1.75rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0.8125rem 1.5rem;
+    font-size: 0.875rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    
+    svg {
+      font-size: 1.0625rem;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      transform: translateZ(0);
+    }
+    
+    &:active {
+      transform: scale(0.98) translateZ(0);
+    }
   }
 `;
 
@@ -826,6 +1458,8 @@ const JourneyButton = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     font-size: 1rem;
@@ -840,13 +1474,50 @@ const JourneyButton = styled(Link)`
       transform: translateX(4px);
     }
   }
+
+  @media (min-width: 1920px) {
+    padding: 1.0625rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.9375rem 2rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.875rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    
+    svg {
+      font-size: 0.9375rem;
+    }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    &:hover {
+      transform: translateZ(0);
+      
+      svg {
+        transform: translateX(0);
+      }
+    }
+    
+    &:active {
+      transform: scale(0.98) translateZ(0);
+      background: #cec5ad;
+      color: #22371b;
+    }
+  }
 `;
 
 const CTADecor = styled.div`
   position: absolute;
   right: -50px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(0);
   width: 300px;
   height: 300px;
   opacity: 0.3;
@@ -859,12 +1530,35 @@ const CTADecor = styled.div`
   }
 
   @keyframes spin {
-    from { transform: translateY(-50%) rotate(0deg); }
-    to { transform: translateY(-50%) rotate(360deg); }
+    from { transform: translateY(-50%) rotate(0deg) translateZ(0); }
+    to { transform: translateY(-50%) rotate(360deg) translateZ(0); }
+  }
+
+  @media (min-width: 1920px) {
+    width: 350px;
+    height: 350px;
+    right: -60px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 260px;
+    height: 260px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 220px;
+    height: 220px;
+    right: -40px;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    svg {
+      animation: none;
+    }
   }
 `;
 

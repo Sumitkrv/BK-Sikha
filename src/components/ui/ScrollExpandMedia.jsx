@@ -8,6 +8,7 @@ const ScrollExpandMedia = ({
   mediaSrc,
   posterSrc,
   bgImageSrc,
+  bgObjectPosition,
   title,
   subtitle,
   scrollToExpand = 'Scroll to explore',
@@ -29,11 +30,23 @@ const ScrollExpandMedia = ({
   }, [mediaType]);
 
   useEffect(() => {
+    // Auto-expand on mobile after 2 seconds for better UX
+    if (isMobile && !mediaFullyExpanded) {
+      const timer = setTimeout(() => {
+        setScrollProgress(1);
+        setMediaFullyExpanded(true);
+        setShowContent(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isMobile, mediaFullyExpanded]);
+
+  useEffect(() => {
     const handleWheel = (e) => {
       if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
         setMediaFullyExpanded(false);
         e.preventDefault();
-      } else if (!mediaFullyExpanded) {
+      } else if (!mediaFullyExpanded && !isMobile) {
         e.preventDefault();
         const scrollDelta = e.deltaY * 0.0009;
         const newProgress = Math.min(
@@ -52,11 +65,17 @@ const ScrollExpandMedia = ({
     };
 
     const handleTouchStart = (e) => {
+      if (isMobile && !mediaFullyExpanded) {
+        // On mobile, any touch starts the expansion
+        setScrollProgress(1);
+        setMediaFullyExpanded(true);
+        setShowContent(true);
+      }
       setTouchStartY(e.touches[0].clientY);
     };
 
     const handleTouchMove = (e) => {
-      if (!touchStartY) return;
+      if (!touchStartY || isMobile) return;
 
       const touchY = e.touches[0].clientY;
       const deltaY = touchStartY - touchY;
@@ -90,13 +109,15 @@ const ScrollExpandMedia = ({
     };
 
     const handleScroll = () => {
-      if (!mediaFullyExpanded) {
+      if (!mediaFullyExpanded && !isMobile) {
         window.scrollTo(0, 0);
       }
     };
 
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('scroll', handleScroll);
+    if (!isMobile) {
+      window.addEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener('scroll', handleScroll);
+    }
     window.addEventListener('touchstart', handleTouchStart, { passive: false });
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('touchend', handleTouchEnd);
@@ -108,11 +129,11 @@ const ScrollExpandMedia = ({
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [scrollProgress, mediaFullyExpanded, touchStartY]);
+  }, [scrollProgress, mediaFullyExpanded, touchStartY, isMobile]);
 
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1025);
     };
 
     checkIfMobile();
@@ -133,16 +154,25 @@ const ScrollExpandMedia = ({
     <SectionWrapper ref={sectionRef}>
       <Section>
         <ContentWrapper>
-          {/* Background Image */}
-          <BackgroundWrapper
-            as={motion.div}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 - scrollProgress }}
-            transition={{ duration: 0.1 }}
-          >
-            <BackgroundImage src={bgImageSrc} alt="Background" />
-            <BackgroundOverlay />
-          </BackgroundWrapper>
+          {/* Background Image - Desktop Only */}
+          {!isMobile && (
+            <BackgroundWrapper
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 - scrollProgress }}
+              transition={{ duration: 0.1 }}
+            >
+              <BackgroundImage
+                src={bgImageSrc}
+                alt=""
+                aria-hidden="true"
+                loading="eager"
+                decoding="async"
+                $objectPosition={bgObjectPosition}
+              />
+              <BackgroundOverlay />
+            </BackgroundWrapper>
+          )}
 
           <Container>
             <MediaContainer>
@@ -254,6 +284,8 @@ const ScrollExpandMedia = ({
 const SectionWrapper = styled.div`
   transition: background-color 0.7s ease-in-out;
   overflow-x: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const Section = styled.section`
@@ -263,6 +295,20 @@ const Section = styled.section`
   align-items: center;
   justify-content: flex-start;
   min-height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+
+  @media (orientation: landscape) and (max-height: 600px) {
+    min-height: 600px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -272,30 +318,73 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100dvh;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 `;
 
 const BackgroundWrapper = styled.div`
   position: absolute;
   inset: 0;
   z-index: 0;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    position: absolute;
+    height: 100%;
+  }
 `;
 
 const BackgroundImage = styled.img`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: ${props => props.$objectPosition || 'center center'};
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    object-position: center 40%;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    object-position: center 35%;
+  }
+
+  @media (max-width: 390px) {
+    object-position: center 30%;
+  }
+
+  @media (max-width: 360px) {
+    object-position: center 25%;
+  }
+
+  @media (orientation: landscape) and (max-height: 600px) {
+    object-position: center 50%;
+  }
 `;
 
 const BackgroundOverlay = styled.div`
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    background: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const Container = styled.div`
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -303,6 +392,11 @@ const Container = styled.div`
   justify-content: flex-start;
   position: relative;
   z-index: 10;
+  
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 100%;
+    padding: 0;
+  }
 `;
 
 const MediaContainer = styled.div`
@@ -313,6 +407,17 @@ const MediaContainer = styled.div`
   width: 100%;
   height: 100dvh;
   position: relative;
+  padding: 0 1rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    height: 100vh;
+    height: 100dvh;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const MediaWrapper = styled.div`
@@ -326,6 +431,32 @@ const MediaWrapper = styled.div`
   max-height: 85vh;
   box-shadow: 0px 10px 60px rgba(34, 55, 27, 0.35);
   overflow: hidden;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 20px;
+    max-width: 92vw;
+    max-height: 80vh;
+    box-shadow: 0px 8px 50px rgba(34, 55, 27, 0.3);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 16px;
+    max-width: 90vw;
+    max-height: 75vh;
+    box-shadow: 0px 6px 40px rgba(34, 55, 27, 0.25);
+  }
+
+  @media (max-width: 390px) {
+    border-radius: 14px;
+    max-width: 88vw;
+    max-height: 70vh;
+  }
+
+  @media (max-width: 360px) {
+    border-radius: 12px;
+    max-width: 86vw;
+    max-height: 68vh;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -333,6 +464,26 @@ const VideoContainer = styled.div`
   width: 100%;
   height: 100%;
   pointer-events: none;
+
+  iframe {
+    border-radius: 24px;
+
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      border-radius: 20px;
+    }
+
+    @media (max-width: ${theme.breakpoints.mobile}) {
+      border-radius: 16px;
+    }
+
+    @media (max-width: 390px) {
+      border-radius: 14px;
+    }
+
+    @media (max-width: 360px) {
+      border-radius: 12px;
+    }
+  }
 `;
 
 const Video = styled.video`
@@ -340,6 +491,22 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   border-radius: 24px;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 20px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 16px;
+  }
+
+  @media (max-width: 390px) {
+    border-radius: 14px;
+  }
+
+  @media (max-width: 360px) {
+    border-radius: 12px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -353,6 +520,22 @@ const MediaImage = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 24px;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 20px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 16px;
+  }
+
+  @media (max-width: 390px) {
+    border-radius: 14px;
+  }
+
+  @media (max-width: 360px) {
+    border-radius: 12px;
+  }
 `;
 
 const VideoOverlay = styled.div`
@@ -360,6 +543,24 @@ const VideoOverlay = styled.div`
   inset: 0;
   background: linear-gradient(180deg, rgba(34, 55, 27, 0.15) 0%, rgba(34, 55, 27, 0.35) 100%);
   border-radius: 24px;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(34, 55, 27, 0.12) 0%, rgba(34, 55, 27, 0.3) 100%);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(34, 55, 27, 0.1) 0%, rgba(34, 55, 27, 0.28) 100%);
+  }
+
+  @media (max-width: 390px) {
+    border-radius: 14px;
+  }
+
+  @media (max-width: 360px) {
+    border-radius: 12px;
+  }
 `;
 
 const ScrollHint = styled.p`
@@ -371,6 +572,17 @@ const ScrollHint = styled.p`
   margin-top: 1.25rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.6875rem;
+    margin-top: 0.875rem;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -384,24 +596,73 @@ const TitleWrapper = styled.div`
   position: relative;
   z-index: 10;
   mix-blend-mode: ${props => props.$textBlend ? 'difference' : 'normal'};
+  padding: 0 1rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    gap: 0.375rem;
+    padding: 0 0.75rem;
+  }
+
+  @media (max-width: 390px) {
+    gap: 0.25rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 const TitleFirstWord = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2rem, 7vw, 5rem);
   font-weight: 600;
   color: #FFFFFF;
   letter-spacing: -0.02em;
   text-shadow: 0 4px 30px rgba(34, 55, 27, 0.4);
+  line-height: 1.1;
+  margin: 0;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    text-shadow: 0 3px 20px rgba(34, 55, 27, 0.5);
+  }
+
+  @media (max-width: 390px) {
+    font-size: clamp(1.5rem, 9vw, 2rem);
+  }
+
+  @media (max-width: 360px) {
+    font-size: clamp(1.375rem, 8.5vw, 1.875rem);
+  }
 `;
 
 const TitleRest = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(2rem, 7vw, 5rem);
   font-weight: 600;
   color: #FFFFFF;
   letter-spacing: -0.02em;
   text-shadow: 0 4px 30px rgba(34, 55, 27, 0.4);
+  line-height: 1.1;
+  margin: 0;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+    text-shadow: 0 3px 20px rgba(34, 55, 27, 0.5);
+  }
+
+  @media (max-width: 390px) {
+    font-size: clamp(1.5rem, 9vw, 2rem);
+  }
+
+  @media (max-width: 360px) {
+    font-size: clamp(1.375rem, 8.5vw, 1.875rem);
+  }
 `;
 
 const ExpandedContent = styled.section`
@@ -412,6 +673,18 @@ const ExpandedContent = styled.section`
   
   @media (min-width: ${theme.breakpoints.tablet}) {
     padding: 4rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 1.25rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 1rem;
   }
 `;
 

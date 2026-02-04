@@ -222,9 +222,59 @@ const FunFactsSection = styled.section`
   background: linear-gradient(180deg, #FAF8F5 0%, #f5f7f4 100%);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    padding: 10rem 0;
+  }
+
+  /* Ultra-wide screens */
+  @media (min-width: 1920px) {
+    padding: 8rem 0;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 6.5rem 0;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 6rem 0;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 5.5rem 0;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 640px) {
+    padding: 3.5rem 0;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 390px) {
+    padding: 2.75rem 0;
+  }
+
+  @media (max-width: 375px) {
+    padding: 2.5rem 0;
+  }
+
+  @media (max-width: 360px) {
+    padding: 2.25rem 0;
   }
 `;
 
@@ -236,11 +286,23 @@ const MonsteraLeaf = styled.div`
   height: 350px;
   opacity: 0.7;
   pointer-events: none;
-  transform: rotate(-10deg);
+  transform: rotate(-10deg) translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 130px;
+    height: 300px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 110px;
+    height: 260px;
+    left: -20px;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -256,10 +318,27 @@ const YogaSilhouette = styled.div`
   height: 200px;
   opacity: 0.4;
   pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 1440px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media (max-width: 1200px) {
+    width: 160px;
+    height: 160px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 140px;
+    height: 140px;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -273,9 +352,55 @@ const Container = styled.div`
   padding: 0 2rem;
   position: relative;
   z-index: 1;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    max-width: 1600px;
+    padding: 0 3rem;
+  }
+
+  /* Ultra-wide screens */
+  @media (min-width: 1920px) {
+    max-width: 1400px;
+    padding: 0 2.5rem;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 1100px;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 1000px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 900px;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 1.75rem;
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0 1.25rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 1.125rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0 1rem;
   }
 `;
 
@@ -285,13 +410,34 @@ const ContentGrid = styled.div`
   gap: 4rem;
   align-items: center;
   margin-bottom: 4rem;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-    margin-bottom: 2.5rem;
+  /* 4K screens */
+  @media (min-width: 2560px) {
+    gap: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  /* Ultra-wide screens */
+  @media (min-width: 1920px) {
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  /* Large screens */
+  @media (min-width: ${theme.breakpoints.wide}) {
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  @media (max-width: 1440px) {
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 1200px) {
+    gap: 3.5rem;
   }
 
   @media (max-width: 1024px) {
@@ -302,21 +448,62 @@ const ContentGrid = styled.div`
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 640px) {
+    gap: 2.5rem;
+    margin-bottom: 2.75rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    gap: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 390px) {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 375px) {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
   }
   
-  /* Large screens */
-  @media (min-width: ${theme.breakpoints.wide}) {
-    gap: 5rem;
-    margin-bottom: 5rem;
+  /* Extra small phones */
+  @media (max-width: 360px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
   }
 `;
 
 const TextColumn = styled.div`
   max-width: 480px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  @media (min-width: 2560px) {
+    max-width: 600px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 540px;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 450px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     max-width: 100%;
     margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 90%;
   }
 `;
 
@@ -329,6 +516,30 @@ const SectionLabel = styled.span`
   text-transform: uppercase;
   color: #cec5ad;
   margin-bottom: 0.75rem;
+
+  @media (min-width: 2560px) {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1rem;
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -338,6 +549,35 @@ const SectionTitle = styled.h2`
   color: #22371b;
   line-height: 1.15;
   margin-bottom: 1.25rem;
+
+  @media (min-width: 2560px) {
+    font-size: clamp(3.5rem, 5vw, 4rem);
+    margin-bottom: 1.75rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: clamp(3rem, 4.75vw, 3.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: clamp(2rem, 4vw, 2.25rem);
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    margin-bottom: 0.875rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: clamp(1.625rem, 4vw, 1.875rem);
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
+  }
 `;
 
 const Description = styled.p`
@@ -347,6 +587,44 @@ const Description = styled.p`
   color: #21371a;
   opacity: 0.85;
   margin-bottom: 2.25rem;
+
+  @media (min-width: 2560px) {
+    font-size: 1.375rem;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.1875rem;
+    line-height: 1.875;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.8125rem;
+  }
 `;
 
 const CTAButton = styled(Link)`
@@ -365,17 +643,82 @@ const CTAButton = styled(Link)`
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
   letter-spacing: 0.02em;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+
+  @media (min-width: 2560px) {
+    padding: 1.25rem 3.5rem;
+    font-size: 1.125rem;
+  }
+
+  @media (min-width: 1920px) {
+    padding: 1.125rem 3rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0.875rem 2.25rem;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0.8125rem 2rem;
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.8125rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0.75rem 1.5rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0.6875rem 1.5rem;
+    font-size: 0.75rem;
+  }
 
   &:hover {
     background: #1a2b15;
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 8px 30px rgba(34, 55, 27, 0.35);
+  }
+
+  /* Touch device optimization */
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      background: #1a2b15;
+      transform: scale(0.98) translateZ(0);
+    }
   }
 `;
 
 const ImageColumn = styled.div`
   position: relative;
   height: 450px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  @media (min-width: 2560px) {
+    height: 600px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 520px;
+  }
+
+  @media (max-width: 1440px) {
+    height: 420px;
+  }
+
+  @media (max-width: 1200px) {
+    height: 400px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     height: 400px;
@@ -384,14 +727,33 @@ const ImageColumn = styled.div`
     width: 100%;
   }
 
+  @media (max-width: 640px) {
+    height: 360px;
+    max-width: 450px;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     height: 350px;
+    max-width: 400px;
+  }
+
+  @media (max-width: 390px) {
+    height: 320px;
+  }
+
+  @media (max-width: 375px) {
+    height: 300px;
+  }
+
+  @media (max-width: 360px) {
+    height: 280px;
   }
 `;
 
 const DotsDecoration = styled.div`
   position: absolute;
   z-index: 3;
+  transform: translateZ(0);
 
   &.top {
     top: 0;
@@ -407,6 +769,34 @@ const DotsDecoration = styled.div`
     height: 45px;
   }
 
+  @media (min-width: 2560px) {
+    &.top {
+      width: 90px;
+      height: 60px;
+    }
+
+    &.bottom {
+      width: 70px;
+      height: 55px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &.top {
+      width: 60px;
+      height: 40px;
+    }
+
+    &.bottom {
+      width: 48px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     display: none;
   }
@@ -419,6 +809,18 @@ const Dot = styled.div`
   background: #cec5ad;
   border-radius: 50%;
   box-shadow: 0 2px 6px rgba(206, 197, 173, 0.4);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  @media (min-width: 2560px) {
+    width: 10px;
+    height: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 7px;
+    height: 7px;
+  }
 `;
 
 const OrganicBlob = styled.div`
@@ -428,6 +830,8 @@ const OrganicBlob = styled.div`
   width: 90%;
   height: 90%;
   z-index: 1;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     width: 100%;
@@ -438,6 +842,36 @@ const OrganicBlob = styled.div`
   svg path {
     fill: #22371b;
   }
+
+  @media (min-width: 2560px) {
+    svg {
+      filter: drop-shadow(0 20px 50px rgba(34, 55, 27, 0.25));
+    }
+  }
+
+  @media (max-width: 640px) {
+    width: 92%;
+    height: 92%;
+
+    svg {
+      filter: drop-shadow(0 12px 30px rgba(34, 55, 27, 0.2));
+    }
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 94%;
+    height: 94%;
+
+    svg {
+      filter: drop-shadow(0 10px 25px rgba(34, 55, 27, 0.18));
+    }
+  }
+
+  @media (max-width: 360px) {
+    svg {
+      filter: drop-shadow(0 8px 20px rgba(34, 55, 27, 0.15));
+    }
+  }
 `;
 
 const AccentBlob = styled.div`
@@ -447,6 +881,8 @@ const AccentBlob = styled.div`
   width: 100px;
   height: 100px;
   z-index: 2;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   svg {
     width: 100%;
@@ -457,9 +893,39 @@ const AccentBlob = styled.div`
     fill: #cec5ad;
   }
 
+  @media (min-width: 2560px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 115px;
+    height: 115px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 90px;
+    height: 90px;
+  }
+
+  @media (max-width: 640px) {
+    width: 75px;
+    height: 75px;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 70px;
     height: 70px;
+  }
+
+  @media (max-width: 390px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 360px) {
+    width: 55px;
+    height: 55px;
   }
 `;
 
@@ -467,17 +933,55 @@ const ImageWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-45%, -50%);
+  transform: translate(-45%, -50%) translateZ(0);
   width: 75%;
   height: 70%;
   border-radius: 20px;
   overflow: hidden;
   z-index: 2;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+
+  @media (min-width: 2560px) {
+    border-radius: 28px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+  }
+
+  @media (min-width: 1920px) {
+    border-radius: 24px;
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.17);
+  }
+
+  @media (max-width: 1024px) {
+    width: 78%;
+    height: 72%;
+  }
+
+  @media (max-width: 640px) {
+    width: 82%;
+    height: 74%;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 85%;
     height: 75%;
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+  }
+
+  @media (max-width: 390px) {
+    width: 88%;
+    height: 78%;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 360px) {
+    width: 90%;
+    height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   }
 `;
 
@@ -485,13 +989,21 @@ const MainVideo = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 `;
 
 const PlayButton = styled.button`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(0);
   width: 75px;
   height: 75px;
   background: rgba(255, 255, 255, 0.98);
@@ -503,6 +1015,8 @@ const PlayButton = styled.button`
   cursor: pointer;
   box-shadow: 0 12px 45px rgba(34, 55, 27, 0.25);
   transition: all 0.3s ease;
+  backface-visibility: hidden;
+  will-change: transform;
 
   svg {
     font-size: 1.75rem;
@@ -510,9 +1024,41 @@ const PlayButton = styled.button`
     margin-left: 4px;
   }
 
-  &:hover {
-    background: #cec5ad;
-    transform: translate(-50%, -50%) scale(1.08);
+  @media (min-width: 2560px) {
+    width: 95px;
+    height: 95px;
+
+    svg {
+      font-size: 2.25rem;
+      margin-left: 5px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 85px;
+    height: 85px;
+
+    svg {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    width: 70px;
+    height: 70px;
+
+    svg {
+      font-size: 1.625rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    width: 65px;
+    height: 65px;
+
+    svg {
+      font-size: 1.5rem;
+    }
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -523,6 +1069,47 @@ const PlayButton = styled.button`
       font-size: 1.5rem;
     }
   }
+
+  @media (max-width: 390px) {
+    width: 58px;
+    height: 58px;
+
+    svg {
+      font-size: 1.375rem;
+      margin-left: 3px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 55px;
+    height: 55px;
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    width: 52px;
+    height: 52px;
+
+    svg {
+      font-size: 1.125rem;
+    }
+  }
+
+  &:hover {
+    background: #cec5ad;
+    transform: translate(-50%, -50%) scale(1.08) translateZ(0);
+  }
+
+  /* Touch device optimization */
+  @media (hover: none) and (pointer: coarse) {
+    &:active {
+      background: #cec5ad;
+      transform: translate(-50%, -50%) scale(0.95) translateZ(0);
+    }
+  }
 `;
 
 const StatsSection = styled.div`
@@ -531,20 +1118,64 @@ const StatsSection = styled.div`
   gap: 2rem;
   padding-top: 3rem;
   border-top: 1px solid rgba(206, 197, 173, 0.4);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  @media (min-width: 2560px) {
+    gap: 3rem;
+    padding-top: 4.5rem;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 2.5rem;
+    padding-top: 3.75rem;
+  }
+
+  @media (max-width: 1440px) {
+    gap: 2rem;
+    padding-top: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    gap: 2rem;
+    padding-top: 2.75rem;
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 3rem;
   }
 
+  @media (max-width: 640px) {
+    gap: 1.75rem 2.5rem;
+    padding-top: 2.5rem;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    padding-top: 2.25rem;
+  }
+
+  @media (max-width: 390px) {
+    gap: 1.5rem 2rem;
+    padding-top: 2rem;
+  }
+
+  @media (max-width: 375px) {
+    gap: 1.25rem 1.75rem;
+  }
+
+  @media (max-width: 360px) {
+    gap: 1.25rem 1.5rem;
+    padding-top: 2rem;
   }
 `;
 
 const StatItem = styled.div`
   text-align: left;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     text-align: center;
@@ -561,6 +1192,37 @@ const StatNumber = styled.div`
   display: flex;
   align-items: flex-start;
 
+  @media (min-width: 2560px) {
+    font-size: clamp(4rem, 6vw, 5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: clamp(3.5rem, 5.5vw, 4.5rem);
+    margin-bottom: 0.625rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: clamp(2.25rem, 5vw, 2.75rem);
+    margin-bottom: 0.375rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  @media (max-width: 390px) {
+    font-size: clamp(1.875rem, 5vw, 2.25rem);
+  }
+
+  @media (max-width: 375px) {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+  }
+
+  @media (max-width: 360px) {
+    font-size: clamp(1.625rem, 5vw, 1.875rem);
+  }
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     justify-content: center;
   }
@@ -571,6 +1233,30 @@ const StatSuffix = styled.span`
   color: #cec5ad;
   font-weight: 600;
   margin-left: 2px;
+
+  @media (min-width: 2560px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.75rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.125rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.9375rem;
+  }
 `;
 
 const StatLabel = styled.div`
@@ -578,6 +1264,30 @@ const StatLabel = styled.div`
   font-size: 1.0625rem;
   font-weight: 600;
   color: #22371b;
+
+  @media (min-width: 2560px) {
+    font-size: 1.375rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.1875rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const StatSublabel = styled.div`
@@ -585,6 +1295,30 @@ const StatSublabel = styled.div`
   font-size: 0.9375rem;
   color: #21371a;
   opacity: 0.7;
+
+  @media (min-width: 2560px) {
+    font-size: 1.1875rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.6875rem;
+  }
 `;
 
 export default FunFacts;

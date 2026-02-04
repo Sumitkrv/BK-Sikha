@@ -59,6 +59,12 @@ export const getLatestPosts = (count = 3) => {
     .slice(0, count);
 };
 
-export const getPostBySlug = (slug) => {
+export const getBlogPostBySlug = (slug) => {
   return blogPosts.find(post => post.slug === slug);
+};
+
+export const getRelatedPosts = (currentSlug, count = 3) => {
+  return blogPosts
+    .filter(post => post.slug !== currentSlug)
+    .slice(0, count);
 };

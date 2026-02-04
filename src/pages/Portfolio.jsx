@@ -20,7 +20,8 @@ const portfolioImages = {
   transform2: "https://images.unsplash.com/photo-1593205134161-0a17c62cf0fc?w=1200&h=1600&fit=crop&q=100",
 };
 
-const heroImage = "/more images/portfolio hero.png";
+const heroImage = "/more images/portfolio 1 (1).png";
+const heroImageMobile = "/more images/portfolio hero mobile.png";
 
 const portfolioItems = [
   {
@@ -156,11 +157,24 @@ const Portfolio = () => {
   
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   
   const heroInView = useInView(heroRef, { once: true, amount: 0.3 });
   const galleryInView = useInView(galleryRef, { once: true, amount: 0.1 });
   const storiesInView = useInView(storiesRef, { once: true, amount: 0.2 });
   const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
+
+  // Detect mobile screen size
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -198,7 +212,7 @@ const Portfolio = () => {
       {/* Cinematic Hero Section */}
       <HeroSection ref={heroRef}>
         <HeroVideoWrapper style={{ y: heroY }}>
-          <HeroBackgroundImage src={heroImage} alt="Portfolio Hero" />
+          <HeroBackgroundImage src={isMobile ? heroImageMobile : heroImage} alt="Portfolio Hero" />
           <VideoOverlay />
         </HeroVideoWrapper>
 
@@ -582,7 +596,33 @@ const HeroBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   opacity: 0.7;
+  
+  @media (max-width: 1024px) {
+    object-position: center 30%;
+  }
+  
+  @media (max-width: 768px) {
+    object-position: center 25%;
+    opacity: 0.6;
+  }
+  
+  @media (max-width: 640px) {
+    object-position: center 20%;
+  }
+  
+  @media (max-width: 480px) {
+    object-position: center 15%;
+  }
+  
+  @media (max-width: 360px) {
+    object-position: center 10%;
+  }
+  
+  @media (orientation: landscape) and (max-height: 600px) {
+    object-position: center center;
+  }
 `;
 
 const VideoOverlay = styled.div`

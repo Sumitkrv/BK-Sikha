@@ -31,13 +31,21 @@ const Layout = () => {
 
 const LayoutWrapper = styled.div`
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  isolation: isolate;
+  will-change: auto;
 `;
 
 const MainContent = styled.main`
   flex: 1;
-  padding-top: 5rem; /* Account for fixed header */
+  padding-top: 0; /* No padding - navbar is relative positioned */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
 `;
 
 export default Layout;

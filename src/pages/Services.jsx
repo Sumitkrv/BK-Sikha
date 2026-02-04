@@ -10,7 +10,6 @@ import {
   FiSmile,
   FiCheck,
   FiArrowRight,
-  FiPlay,
   FiStar,
 } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -18,13 +17,14 @@ import { theme } from '../styles/theme';
 
 // HD Images from Unsplash - 4K Quality Unique Images
 const heroImage = "/more images/services hero.png";
+const heroImageMobile = "/more images/mobile services hero.png";
 const serviceImages = {
-  yoga: "/more images/personalized yoga 2.png",
-  meditation: "/more images/mindset coaching.png",
-  mindset: "/more images/emotionall wellness 2.png",
+  yoga: "/new images/personalized yoga (2).png",
+  meditation: "/new images/emotional wellness (2).png",
+  mindset: "/more images/mindset coaching.png",
   stress: "/more images/stress relief.png",
-  wellness: "/more images/holistic transformation 2.png",
-  confidence: "/more images/self love.png",
+  wellness: "/new images/holistic healing (3).png",
+  confidence: "/new images/self love (2).png",
 };
 
 const Services = () => {
@@ -68,6 +68,7 @@ const Services = () => {
     {
       icon: <FiTarget />,
       image: serviceImages.yoga,
+      objectPosition: 'center 20%',
       title: 'Personalized Yoga',
       tagline: 'Move, Breathe, Transform',
       shortDesc: 'One-on-one sessions tailored to your body and goals',
@@ -79,6 +80,7 @@ const Services = () => {
     {
       icon: <FiHeart />,
       image: serviceImages.meditation,
+      objectPosition: 'center 20%',
       title: 'Emotional Wellness',
       tagline: 'Heal Your Heart, Find Peace',
       shortDesc: 'Deep emotional healing and mental balance coaching',
@@ -90,6 +92,7 @@ const Services = () => {
     {
       icon: <FiZap />,
       image: serviceImages.mindset,
+      objectPosition: 'center 15%',
       title: 'Mindset Coaching',
       tagline: 'Reprogram Your Mind',
       shortDesc: 'NLP techniques for breakthrough success',
@@ -101,6 +104,7 @@ const Services = () => {
     {
       icon: <FiSun />,
       image: serviceImages.stress,
+      objectPosition: 'center 20%',
       title: 'Stress Relief',
       tagline: 'Release Tension, Embrace Calm',
       shortDesc: 'Guided meditation and breathwork for deep relaxation',
@@ -112,6 +116,7 @@ const Services = () => {
     {
       icon: <FiCompass />,
       image: serviceImages.wellness,
+      objectPosition: 'center 20%',
       title: 'Holistic Transformation',
       tagline: 'Complete Life Redesign',
       shortDesc: 'Comprehensive program for total mind-body-spirit wellness',
@@ -123,6 +128,7 @@ const Services = () => {
     {
       icon: <FiSmile />,
       image: serviceImages.confidence,
+      objectPosition: 'center 20%',
       title: 'Self-Love Journey',
       tagline: 'Become Your Best Self',
       shortDesc: 'Build unshakeable confidence and self-acceptance',
@@ -169,7 +175,16 @@ const Services = () => {
 
         {/* Background Image */}
         <HeroVideoWrapper style={{ y: heroY }}>
-          <HeroBackgroundImage src={heroImage} alt="Services Hero" />
+          <HeroBackgroundImage 
+            src={heroImage} 
+            alt="Services Hero" 
+            className="desktop-hero"
+          />
+          <HeroBackgroundImage 
+            src={heroImageMobile} 
+            alt="Services Hero Mobile" 
+            className="mobile-hero"
+          />
           <VideoOverlay />
         </HeroVideoWrapper>
 
@@ -266,7 +281,11 @@ const Services = () => {
           >
             <ServiceImageSide>
               <ServiceImageWrapper>
-                <ServiceImage src={services[activeService].image} alt={services[activeService].title} />
+                <ServiceImage
+                  src={services[activeService].image}
+                  alt={services[activeService].title}
+                  $objectPosition={services[activeService].objectPosition}
+                />
                 <ImageBlobBg style={{ backgroundColor: services[activeService].color }} />
               </ServiceImageWrapper>
               <FloatingBadge>
@@ -292,17 +311,6 @@ const Services = () => {
                 ))}
               </FeaturesGrid>
 
-              <ServiceMeta>
-                <MetaItem>
-                  <MetaLabel>Investment</MetaLabel>
-                  <MetaValue>{services[activeService].price}</MetaValue>
-                </MetaItem>
-                <MetaItem>
-                  <MetaLabel>Duration</MetaLabel>
-                  <MetaValue>{services[activeService].duration}</MetaValue>
-                </MetaItem>
-              </ServiceMeta>
-
               <ServiceCTA as={Link} to="/contact">
                 Book This Service <FiArrowRight />
               </ServiceCTA>
@@ -322,7 +330,7 @@ const Services = () => {
                 whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(34, 55, 27, 0.15)' }}
                 onClick={() => setActiveService(index)}
               >
-                <MiniCardImage>
+                <MiniCardImage style={{ '--object-position': service.objectPosition || 'center 50%' }}>
                   <img src={service.image} alt={service.title} />
                   <MiniCardOverlay style={{ backgroundColor: service.color }} />
                 </MiniCardImage>
@@ -330,7 +338,6 @@ const Services = () => {
                   <MiniCardIcon style={{ color: service.color }}>{service.icon}</MiniCardIcon>
                   <MiniCardTitle>{service.title}</MiniCardTitle>
                   <MiniCardTagline>{service.tagline}</MiniCardTagline>
-                  <MiniCardPrice>{service.price}</MiniCardPrice>
                 </MiniCardContent>
               </ServiceMiniCard>
             ))}
@@ -494,7 +501,28 @@ const HeroBackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   opacity: 0.7;
+  
+  &.mobile-hero {
+    display: none;
+  }
+  
+  @media (max-width: 1025px) {
+    &.desktop-hero {
+      display: none;
+    }
+    
+    &.mobile-hero {
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  
+  @media (orientation: landscape) and (max-height: 600px) {
+    object-position: center center;
+  }
 `;
 
 const HeroVideo = styled.video`
@@ -825,7 +853,7 @@ const ServiceImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 50%;
+  object-position: ${props => props.$objectPosition || 'center 50%'};
   position: relative;
   z-index: 2;
 `;
@@ -1027,14 +1055,14 @@ const ServiceMiniCard = styled.div`
 
 const MiniCardImage = styled.div`
   position: relative;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 50%;
+    object-position: var(--object-position, center 50%);
     transition: transform 0.5s ease;
   }
 
@@ -1080,15 +1108,7 @@ const MiniCardTagline = styled.p`
   margin: 0 0 0.75rem;
 `;
 
-const MiniCardPrice = styled.span`
-  font-family: \${theme.fonts.heading};
-  font-size: 1rem;
-  font-weight: 600;
-  color: #cec5ad;
-  background: #22371b;
-  padding: 0.375rem 0.875rem;
-  border-radius: 100px;
-`;
+
 
 // Journey Section Styles
 const JourneySection = styled.section`
