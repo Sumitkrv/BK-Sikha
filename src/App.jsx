@@ -25,27 +25,28 @@ function App() {
     setIsLoading(false);
   };
 
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
-    <>
-      {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
-      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="portfolio" element={<Portfolio />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="philosophy" element={<Philosophy />} />
-            <Route path="testimonials" element={<Testimonials />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="blog/:slug" element={<BlogPost />} />
-            <Route path="nlp" element={<NLP />} />
-            <Route path="gut-missing" element={<GutMissing />} />
-          </Route>
-        </Routes>
-      </Router>
-    </>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="services" element={<Services />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="philosophy" element={<Philosophy />} />
+          <Route path="testimonials" element={<Testimonials />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+          <Route path="nlp" element={<NLP />} />
+          <Route path="gut-missing" element={<GutMissing />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -230,7 +230,7 @@ const LoadingContainer = styled.div`
   width: 100vw;
   height: 100vh;
   background: #000000;
-  z-index: 9999;
+  z-index: 10000;
   overflow: hidden;
   
   @media (max-width: 768px) {
