@@ -11,6 +11,8 @@ const Footer = () => {
   const quickLinks = [
     { path: '/about', label: 'About BK Shikha' },
     { path: '/services', label: 'Services' },
+    { path: '/nlp', label: 'NLP Coaching' },
+    { path: '/gut-missing', label: 'Gut Health Healing' },
     { path: '/blog', label: 'Wellness Insights' },
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Connect' },
@@ -20,8 +22,9 @@ const Footer = () => {
     'Personalized Yoga Coaching',
     'Emotional Wellness Mentoring',
     'Mindset & NLP Coaching',
+    'Gut Health & Nutrition',
+    'Gut Missing Healing Program',
     'Stress Relief Sessions',
-    'Confidence Building',
   ];
 
   return (
@@ -48,7 +51,7 @@ const Footer = () => {
                 <FiInstagram />
               </SocialLink>
               <SocialLink
-                href="mailto:contact@bkshikha.com"
+                href="mailto:khnadelwalshikha1983@gmail.com"
                 aria-label="Email"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.95 }}
@@ -56,7 +59,7 @@ const Footer = () => {
                 <FiMail />
               </SocialLink>
               <SocialLink
-                href="tel:+1234567890"
+                href="tel:+917835012335"
                 aria-label="Phone"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
@@ -121,11 +124,9 @@ const Footer = () => {
 
 // Styled Components
 const FooterWrapper = styled.footer`
-  background-image: url('/more images/footer.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-top: 1px solid rgba(206, 197, 173, 0.2);
+  background: url('/more images/footer.png') center / cover no-repeat !important;
+  background-color: #6D28D9;
+  border-top: 1px solid rgba(233, 213, 255, 0.5);
   padding: 5rem 0 2.5rem;
   margin-top: 0;
   position: relative;
@@ -137,7 +138,7 @@ const FooterWrapper = styled.footer`
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(34, 55, 27, 0.75);
+    background: linear-gradient(135deg, rgba(109, 40, 217, 0.86) 0%, rgba(124, 58, 237, 0.82) 55%, rgba(139, 92, 246, 0.8) 100%);
     z-index: 0;
     transform: translateZ(0);
   }
@@ -348,7 +349,7 @@ const BrandName = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 700;
-  color: #cec5ad;
+  color: #EDE9FE;
   margin: 0;
 
   @media (min-width: 2560px) {
@@ -507,8 +508,8 @@ const SocialLink = styled(motion.a)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(206, 197, 173, 0.15);
-  color: #cec5ad;
+  background: rgba(196, 181, 253, 0.22);
+  color: #EDE9FE;
   border-radius: ${theme.borderRadius.full};
   font-size: 1.25rem;
   transition: all 0.3s ease;
@@ -559,17 +560,17 @@ const SocialLink = styled(motion.a)`
   }
 
   &:hover {
-    background: #cec5ad;
-    color: #22371b;
+    background: #C4B5FD;
+    color: #2D1B4E;
     transform: translateY(-3px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(206, 197, 173, 0.25);
+    box-shadow: 0 8px 25px rgba(196, 181, 253, 0.3);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #cec5ad;
-      color: #22371b;
+      background: #C4B5FD;
+      color: #2D1B4E;
       transform: scale(0.95) translateZ(0);
     }
   }
@@ -611,7 +612,7 @@ const SectionTitle = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-weight: 700;
-  color: #cec5ad;
+  color: #EDE9FE;
   margin: 0 0 0.75rem;
 
   @media (min-width: 2560px) {
@@ -709,7 +710,7 @@ const FooterLink = styled(Link)`
   }
 
   &:hover {
-    color: #cec5ad;
+    color: #EDE9FE;
     padding-left: 0.5rem;
   }
 
@@ -722,7 +723,7 @@ const FooterLink = styled(Link)`
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      color: #cec5ad;
+      color: #EDE9FE;
     }
   }
 
@@ -831,15 +832,15 @@ const CTAText = styled.p`
 const CTAButton = styled(motion(Link))`
   display: inline-block;
   padding: 1rem 2.25rem;
-  background: #22371b;
-  color: #FAF8F5;
+  background: #8B5CF6;
+  color: #FFFFFF;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
   border-radius: ${theme.borderRadius.full};
-  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
   transition: all 0.3s ease;
   letter-spacing: 0.02em;
   transform: translateZ(0);
@@ -885,7 +886,7 @@ const CTAButton = styled(motion(Link))`
   &:hover {
     background: #1a2b15;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(34, 55, 27, 0.35);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
   }
 
   /* Touch device optimization */
@@ -981,7 +982,7 @@ const Copyright = styled.p`
 `;
 
 const HeartIcon = styled.span`
-  color: #cec5ad;
+  color: #EDE9FE;
   display: inline-flex;
   animation: heartbeat 1.5s ease-in-out infinite;
   transform: translateZ(0);

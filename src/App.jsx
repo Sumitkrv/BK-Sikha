@@ -10,6 +10,8 @@ import Philosophy from './pages/Philosophy';
 import Testimonials from './pages/Testimonials';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import NLP from './pages/NLP';
+import GutMissing from './pages/GutMissing';
 import LoadingScreen from './components/shared/LoadingScreen';
 import './styles/global.css';
 
@@ -38,6 +40,8 @@ function App() {
             <Route path="testimonials" element={<Testimonials />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:slug" element={<BlogPost />} />
+            <Route path="nlp" element={<NLP />} />
+            <Route path="gut-missing" element={<GutMissing />} />
           </Route>
         </Routes>
       </Router>

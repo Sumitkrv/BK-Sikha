@@ -69,14 +69,14 @@ const CommunityInvite = () => {
     <CommunitySection ref={ref}>
       <DecorativeLeaf className="left">
         <svg viewBox="0 0 150 300" fill="none">
-          <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#e8f0e9" />
-          <path d="M75 30V270" stroke="#c5ddc8" strokeWidth="1.5" />
-          <path d="M75 80L40 120" stroke="#c5ddc8" strokeWidth="1" />
-          <path d="M75 140L45 180" stroke="#c5ddc8" strokeWidth="1" />
-          <path d="M75 200L50 240" stroke="#c5ddc8" strokeWidth="1" />
-          <path d="M75 80L110 120" stroke="#c5ddc8" strokeWidth="1" />
-          <path d="M75 140L105 180" stroke="#c5ddc8" strokeWidth="1" />
-          <path d="M75 200L100 240" stroke="#c5ddc8" strokeWidth="1" />
+          <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#F3EEFF" />
+          <path d="M75 30V270" stroke="#C4B5FD" strokeWidth="1.5" />
+          <path d="M75 80L40 120" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 140L45 180" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 200L50 240" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 80L110 120" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 140L105 180" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 200L100 240" stroke="#C4B5FD" strokeWidth="1" />
         </svg>
       </DecorativeLeaf>
 
@@ -236,9 +236,9 @@ const CommunityInvite = () => {
             </CTAContent>
             <CTADecor>
               <svg viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="100" r="80" stroke="#c9a227" strokeWidth="1" strokeDasharray="4 4" opacity="0.3"/>
-                <circle cx="100" cy="100" r="60" stroke="#5a8a62" strokeWidth="1" strokeDasharray="4 4" opacity="0.4"/>
-                <circle cx="100" cy="100" r="40" stroke="#c9a227" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
+                <circle cx="100" cy="100" r="80" stroke="#A78BFA" strokeWidth="1" strokeDasharray="4 4" opacity="0.35"/>
+                <circle cx="100" cy="100" r="60" stroke="#8B5CF6" strokeWidth="1" strokeDasharray="4 4" opacity="0.4"/>
+                <circle cx="100" cy="100" r="40" stroke="#C4B5FD" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
               </svg>
             </CTADecor>
           </CTACard>
@@ -271,16 +271,16 @@ const rotateGeometry = keyframes`
 `;
 
 const chakraGlow = keyframes`
-  0%, 100% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.3), 0 0 40px rgba(90, 138, 98, 0.2); }
-  25% { box-shadow: 0 0 25px rgba(90, 138, 98, 0.4), 0 0 50px rgba(201, 162, 39, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(142, 207, 179, 0.4), 0 0 60px rgba(90, 138, 98, 0.3); }
-  75% { box-shadow: 0 0 25px rgba(201, 162, 39, 0.4), 0 0 50px rgba(142, 207, 179, 0.3); }
+  0%, 100% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.32), 0 0 40px rgba(139, 92, 246, 0.22); }
+  25% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(167, 139, 250, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(196, 181, 253, 0.4), 0 0 60px rgba(139, 92, 246, 0.3); }
+  75% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.4), 0 0 50px rgba(196, 181, 253, 0.3); }
 `;
 
 // Styled Components
 const CommunitySection = styled.section`
   padding: 7rem 0;
-  background: linear-gradient(180deg, #FAF8F5 0%, #f8f9f7 50%, #FAF8F5 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 50%, #FFFFFF 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -402,9 +402,9 @@ const Dot = styled.div`
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #cec5ad;
+  background: #C4B5FD;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(206, 197, 173, 0.4);
+  box-shadow: 0 2px 6px rgba(196, 181, 253, 0.45);
   transform: translateZ(0);
 
   @media (max-width: 1024px) {
@@ -496,7 +496,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #cec5ad;
+  color: #A78BFA;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -520,7 +520,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4.5vw, 3rem);
   font-weight: 500;
-  color: #22371b;
+  color: #2D1B4E;
   line-height: 1.15;
   margin-bottom: 1rem;
   transform: translateZ(0);
@@ -542,7 +542,7 @@ const SectionTitle = styled.h2`
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.8;
   max-width: 520px;
   margin: 0 auto;
@@ -651,7 +651,7 @@ const InstagramBigText = styled.h2`
   font-size: clamp(3rem, 8vw, 4.5rem);
   font-weight: 300;
   letter-spacing: -0.02em;
-  color: #22371b;
+  color: #2D1B4E;
   line-height: 0.9;
   margin-bottom: 1.5rem;
   transform: translateZ(0);
@@ -676,12 +676,12 @@ const InstagramHandle = styled.a`
   gap: 0.625rem;
   font-family: ${theme.fonts.body};
   font-size: 1.125rem;
-  color: #22371b;
+  color: #2D1B4E;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.875rem 1.75rem;
-  background: rgba(206, 197, 173, 0.2);
+  background: rgba(196, 181, 253, 0.24);
   border-radius: 50px;
   border: 2px solid transparent;
   transform: translateZ(0);
@@ -694,10 +694,10 @@ const InstagramHandle = styled.a`
 
   &:hover {
     color: #ffffff;
-    background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
     border-color: transparent;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(131, 58, 180, 0.3);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.34);
 
     svg {
       transform: scale(1.1);
@@ -746,7 +746,7 @@ const InstagramHandle = styled.a`
 const InstagramCTA = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.7;
   margin-top: 0.875rem;
   max-width: 200px;
@@ -861,7 +861,7 @@ const GridItem = styled.a`
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     z-index: 10;
     animation: ${chakraGlow} 2s ease-in-out infinite;
-    border-color: rgba(201, 162, 39, 0.5);
+    border-color: rgba(167, 139, 250, 0.55);
   }
 
   @media (min-width: 1920px) {
@@ -1116,15 +1116,15 @@ const FeatureCard = styled.div`
   padding: 2.25rem;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0 6px 30px rgba(34, 55, 27, 0.06);
-  border: 1px solid rgba(206, 197, 173, 0.15);
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(196, 181, 253, 0.24);
   transition: all 0.4s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
 
   &:hover {
     transform: translateY(-8px) translateZ(0);
-    box-shadow: 0 20px 50px rgba(34, 55, 27, 0.1);
+    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.18);
   }
 
   @media (min-width: 1920px) {
@@ -1177,19 +1177,18 @@ const FeatureIconWrapper = styled.div`
   transform: translateZ(0);
 
   &.green {
-    background: linear-gradient(135deg, rgba(34, 55, 27, 0.12), rgba(34, 55, 27, 0.05));
-    color: #22371b;
-    color: #5a8a62;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.08));
+    color: #8B5CF6;
   }
 
   &.golden {
-    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(201, 162, 39, 0.05));
-    color: #c9a227;
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.24), rgba(167, 139, 250, 0.1));
+    color: #7C3AED;
   }
 
   &.mint {
-    background: linear-gradient(135deg, rgba(142, 207, 179, 0.2), rgba(142, 207, 179, 0.08));
-    color: #5a9a72;
+    background: linear-gradient(135deg, rgba(196, 181, 253, 0.28), rgba(196, 181, 253, 0.12));
+    color: #6D4BCB;
   }
 
   svg {
@@ -1233,7 +1232,7 @@ const FeatureTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -1255,7 +1254,7 @@ const FeatureDesc = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   line-height: 1.75;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.8;
   transform: translateZ(0);
 
@@ -1274,7 +1273,7 @@ const CTASection = styled.div`
 `;
 
 const CTACard = styled.div`
-  background: linear-gradient(135deg, #22371b 0%, #2d4a24 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 50%, #A78BFA 100%);
   border-radius: 32px;
   padding: 4rem;
   position: relative;
@@ -1390,7 +1389,7 @@ const InstagramButton = styled.a`
   align-items: center;
   gap: 0.5rem;
   padding: 0.9375rem 2rem;
-  background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737);
+  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 55%, #A78BFA 100%);
   color: #ffffff;
   border: none;
   border-radius: 100px;
@@ -1399,7 +1398,7 @@ const InstagramButton = styled.a`
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(131, 58, 180, 0.4);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.38);
   transform: translateZ(0);
   backface-visibility: hidden;
 
@@ -1409,7 +1408,7 @@ const InstagramButton = styled.a`
 
   &:hover {
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(131, 58, 180, 0.5);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.46);
   }
 
   @media (min-width: 1920px) {
@@ -1450,8 +1449,8 @@ const JourneyButton = styled(Link)`
   gap: 0.5rem;
   padding: 1rem 2.25rem;
   background: transparent;
-  color: #cec5ad;
-  border: 2px solid #cec5ad;
+  color: #EDE9FE;
+  border: 2px solid #EDE9FE;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
@@ -1467,8 +1466,8 @@ const JourneyButton = styled(Link)`
   }
 
   &:hover {
-    background: #cec5ad;
-    color: #22371b;
+    background: #EDE9FE;
+    color: #6D4BCB;
 
     svg {
       transform: translateX(4px);
@@ -1507,8 +1506,8 @@ const JourneyButton = styled(Link)`
     
     &:active {
       transform: scale(0.98) translateZ(0);
-      background: #cec5ad;
-      color: #22371b;
+      background: #EDE9FE;
+      color: #6D4BCB;
     }
   }
 `;

@@ -39,9 +39,9 @@ const Contact = () => {
     'Personalized Yoga Coaching',
     'Emotional Wellness Mentoring',
     'Mindset & NLP Coaching',
+    'Gut Health & Nutrition',
     'Stress Relief Sessions',
     'Holistic Transformation',
-    'Confidence Building',
     'Not sure yet - Need guidance',
   ];
 
@@ -210,8 +210,8 @@ const Contact = () => {
                     </MethodIcon>
                     <MethodInfo>
                       <MethodLabel>Email</MethodLabel>
-                      <MethodLink href="mailto:contact@bkshikha.com">
-                        contact@bkshikha.com
+                      <MethodLink href="mailto:khnadelwalshikha1983@gmail.com">
+                        khnadelwalshikha1983@gmail.com
                       </MethodLink>
                       <MethodDescription>
                         For detailed inquiries
@@ -225,11 +225,30 @@ const Contact = () => {
                     </MethodIcon>
                     <MethodInfo>
                       <MethodLabel>WhatsApp</MethodLabel>
-                      <MethodLink href="tel:+1234567890">
-                        +91 XXX XXX XXXX
+                      <MethodLink href="tel:+917835012335">
+                        +91 783 501 2335
                       </MethodLink>
                       <MethodDescription>
                         Direct booking & quick questions
+                      </MethodDescription>
+                    </MethodInfo>
+                  </ContactMethod>
+
+                  <ContactMethod>
+                    <MethodIcon>
+                      <FiMapPin />
+                    </MethodIcon>
+                    <MethodInfo>
+                      <MethodLabel>Location</MethodLabel>
+                      <MethodLink
+                        href="https://maps.google.com/?q=New+Delhi+110007"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        New Delhi, India 110007
+                      </MethodLink>
+                      <MethodDescription>
+                        Available in Hindi (Fluent) & English
                       </MethodDescription>
                     </MethodInfo>
                   </ContactMethod>
@@ -343,7 +362,7 @@ const HeroSection = styled.section`
   background: linear-gradient(
     135deg,
     ${theme.colors.background} 0%,
-    rgba(206, 197, 173, 0.15) 50%,
+    rgba(196, 181, 253, 0.2) 50%,
     ${theme.colors.backgroundAlt} 100%
   );
   text-align: center;
@@ -356,7 +375,7 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(34, 55, 27, 0.03) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 30% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 55%);
     pointer-events: none;
   }
 `;
@@ -370,7 +389,7 @@ const Subtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   font-weight: 600;
-  color: #cec5ad;
+  color: #A78BFA;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0 0 1rem;
@@ -380,7 +399,7 @@ const HeroTitle = styled.h1`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0 0 1.5rem;
   line-height: 1.2;
 `;
@@ -388,7 +407,7 @@ const HeroTitle = styled.h1`
 const HeroDescription = styled.p`
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.85;
   margin: 0;
 `;
@@ -425,14 +444,14 @@ const FormTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0 0 1rem;
 `;
 
 const FormDescription = styled.p`
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.8;
   margin: 0 0 2.5rem;
 `;
@@ -453,7 +472,7 @@ const Label = styled.label`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   font-weight: 500;
-  color: #21371a;
+  color: #2D1B4E;
 `;
 
 const Required = styled.span`
@@ -464,20 +483,20 @@ const Input = styled.input`
   padding: 1rem 1.25rem;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  color: #21371a;
+  color: #4B5563;
   background: white;
-  border: 2px solid rgba(206, 197, 173, 0.4);
+  border: 2px solid rgba(196, 181, 253, 0.45);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: #22371b;
-    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
   }
 
   &::placeholder {
-    color: rgba(33, 55, 26, 0.5);
+    color: rgba(75, 85, 99, 0.55);
   }
 `;
 
@@ -485,17 +504,17 @@ const Select = styled.select`
   padding: 1rem 1.25rem;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  color: #21371a;
+  color: #4B5563;
   background: white;
-  border: 2px solid rgba(206, 197, 173, 0.4);
+  border: 2px solid rgba(196, 181, 253, 0.45);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
   cursor: pointer;
 
   &:focus {
     outline: none;
-    border-color: #22371b;
-    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
   }
 `;
 
@@ -504,21 +523,21 @@ const Textarea = styled.textarea`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.7;
-  color: #21371a;
+  color: #4B5563;
   background: white;
-  border: 2px solid rgba(206, 197, 173, 0.4);
+  border: 2px solid rgba(196, 181, 253, 0.45);
   border-radius: ${theme.borderRadius.lg};
   resize: vertical;
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: #22371b;
-    box-shadow: 0 0 0 3px rgba(34, 55, 27, 0.15);
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
   }
 
   &::placeholder {
-    color: rgba(33, 55, 26, 0.5);
+    color: rgba(75, 85, 99, 0.55);
   }
 `;
 
@@ -528,11 +547,11 @@ const SubmitButton = styled(motion.button)`
   font-size: 1.125rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #22371b 0%, #2d4a23 100%);
+  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
   border: none;
   border-radius: ${theme.borderRadius.full};
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(34, 55, 27, 0.3);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
   transition: all ${theme.transitions.base};
   display: inline-flex;
   align-items: center;
@@ -541,8 +560,8 @@ const SubmitButton = styled(motion.button)`
   align-self: flex-start;
 
   &:hover {
-    background: linear-gradient(135deg, #2d4a23 0%, #22371b 100%);
-    box-shadow: 0 6px 20px rgba(34, 55, 27, 0.4);
+    background: linear-gradient(135deg, #6D4BCB 0%, #7C3AED 100%);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
     transform: translateY(-2px);
   }
 
@@ -561,15 +580,15 @@ const InfoCard = styled.div`
   background: white;
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
-  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.08);
-  border: 1px solid rgba(206, 197, 173, 0.2);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(196, 181, 253, 0.3);
 `;
 
 const InfoTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0 0 2rem;
 `;
 
@@ -593,10 +612,10 @@ const MethodIcon = styled.div`
   justify-content: center;
   background: linear-gradient(
     135deg,
-    #22371b 0%,
-    #2d4a23 100%
+    #7C3AED 0%,
+    #8B5CF6 100%
   );
-  color: #cec5ad;
+  color: #EDE9FE;
   font-size: 1.5rem;
   border-radius: ${theme.borderRadius.lg};
 `;
@@ -611,14 +630,14 @@ const MethodLabel = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0;
 `;
 
 const MethodLink = styled.a`
   font-size: 1rem;
   font-weight: 500;
-  color: #22371b;
+  color: #6D4BCB;
   text-decoration: none;
   transition: all ${theme.transitions.base};
   position: relative;
@@ -630,12 +649,12 @@ const MethodLink = styled.a`
     left: 0;
     width: 0;
     height: 2px;
-    background: #cec5ad;
+    background: #8B5CF6;
     transition: width 0.3s ease;
   }
 
   &:hover {
-    color: #21371a;
+    color: #7C3AED;
     
     &::after {
       width: 100%;
@@ -645,16 +664,16 @@ const MethodLink = styled.a`
 
 const MethodDescription = styled.p`
   font-size: 0.9rem;
-  color: rgba(33, 55, 26, 0.65);
+  color: rgba(75, 85, 99, 0.75);
   margin: 0;
 `;
 
 const SessionInfoCard = styled.div`
   background: linear-gradient(
     135deg,
-    #22371b 0%,
-    #2d4a23 50%,
-    #22371b 100%
+    #6D4BCB 0%,
+    #7C3AED 50%,
+    #8B5CF6 100%
   );
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
@@ -670,7 +689,7 @@ const SessionInfoCard = styled.div`
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(206, 197, 173, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(237, 233, 254, 0.18) 0%, transparent 70%);
     pointer-events: none;
   }
 `;
@@ -706,8 +725,8 @@ const QuoteCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: ${theme.borderRadius.xl};
-  border-left: 4px solid #cec5ad;
-  box-shadow: 0 2px 12px rgba(34, 55, 27, 0.06);
+  border-left: 4px solid #C4B5FD;
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.1);
 `;
 
 const QuoteText = styled.p`
@@ -715,13 +734,13 @@ const QuoteText = styled.p`
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.6;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0 0 0.75rem;
 `;
 
 const QuoteAuthor = styled.p`
   font-size: 0.95rem;
-  color: #cec5ad;
+  color: #8B5CF6;
   font-weight: 500;
   margin: 0;
 `;
@@ -755,12 +774,12 @@ const FAQItem = styled.div`
   background: ${theme.colors.background};
   padding: 2rem;
   border-radius: ${theme.borderRadius.lg};
-  border: 2px solid rgba(206, 197, 173, 0.3);
+  border: 2px solid rgba(196, 181, 253, 0.35);
   transition: all ${theme.transitions.base};
 
   &:hover {
-    border-color: #cec5ad;
-    box-shadow: 0 4px 15px rgba(34, 55, 27, 0.08);
+    border-color: #A78BFA;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.12);
     transform: translateY(-2px);
   }
 `;
@@ -769,14 +788,14 @@ const FAQQuestion = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin: 0 0 0.75rem;
 `;
 
 const FAQAnswer = styled.p`
   font-size: 1rem;
   line-height: 1.7;
-  color: #21371a;
+  color: ${theme.colors.text};
   opacity: 0.85;
   margin: 0;
 `;

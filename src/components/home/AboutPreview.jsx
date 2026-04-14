@@ -77,33 +77,33 @@ const AboutPreview = () => {
           {/* Elegant corner ornaments */}
           <CornerOrnament className="top-left">
             <svg viewBox="0 0 40 40" fill="none">
-              <line x1="0" y1="0" x2="40" y2="0" stroke="#cec5ad" strokeWidth="2"/>
-              <line x1="0" y1="0" x2="0" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <circle cx="4" cy="4" r="2" fill="#cec5ad"/>
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#C4B5FD" strokeWidth="2"/>
+              <line x1="0" y1="0" x2="0" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <circle cx="4" cy="4" r="2" fill="#C4B5FD"/>
             </svg>
           </CornerOrnament>
           
           <CornerOrnament className="top-right">
             <svg viewBox="0 0 40 40" fill="none">
-              <line x1="0" y1="0" x2="40" y2="0" stroke="#cec5ad" strokeWidth="2"/>
-              <line x1="40" y1="0" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <circle cx="36" cy="4" r="2" fill="#cec5ad"/>
+              <line x1="0" y1="0" x2="40" y2="0" stroke="#C4B5FD" strokeWidth="2"/>
+              <line x1="40" y1="0" x2="40" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <circle cx="36" cy="4" r="2" fill="#C4B5FD"/>
             </svg>
           </CornerOrnament>
           
           <CornerOrnament className="bottom-left">
             <svg viewBox="0 0 40 40" fill="none">
-              <line x1="0" y1="40" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <line x1="0" y1="0" x2="0" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <circle cx="4" cy="36" r="2" fill="#cec5ad"/>
+              <line x1="0" y1="40" x2="40" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <line x1="0" y1="0" x2="0" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <circle cx="4" cy="36" r="2" fill="#C4B5FD"/>
             </svg>
           </CornerOrnament>
           
           <CornerOrnament className="bottom-right">
             <svg viewBox="0 0 40 40" fill="none">
-              <line x1="0" y1="40" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <line x1="40" y1="0" x2="40" y2="40" stroke="#cec5ad" strokeWidth="2"/>
-              <circle cx="36" cy="36" r="2" fill="#cec5ad"/>
+              <line x1="0" y1="40" x2="40" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <line x1="40" y1="0" x2="40" y2="40" stroke="#C4B5FD" strokeWidth="2"/>
+              <circle cx="36" cy="36" r="2" fill="#C4B5FD"/>
             </svg>
           </CornerOrnament>
 
@@ -115,10 +115,10 @@ const AboutPreview = () => {
           {/* Floating badge */}
           <FloatingBadge>
             <svg viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="38" fill="#cec5ad" opacity="0.95"/>
-              <circle cx="40" cy="40" r="30" fill="none" stroke="#22371b" strokeWidth="1" opacity="0.3"/>
-              <text x="40" y="35" textAnchor="middle" fill="#22371b" fontSize="12" fontWeight="600">12+</text>
-              <text x="40" y="48" textAnchor="middle" fill="#22371b" fontSize="8">Years</text>
+              <circle cx="40" cy="40" r="38" fill="#EDE9FE" opacity="0.95"/>
+              <circle cx="40" cy="40" r="30" fill="none" stroke="#8B5CF6" strokeWidth="1" opacity="0.35"/>
+              <text x="40" y="35" textAnchor="middle" fill="#2D1B4E" fontSize="12" fontWeight="600">12+</text>
+              <text x="40" y="48" textAnchor="middle" fill="#2D1B4E" fontSize="8">Years</text>
             </svg>
           </FloatingBadge>
 
@@ -180,7 +180,7 @@ const AboutPreview = () => {
 // Styled Components - Anayoga Style
 const AboutSection = styled.section`
   padding: 7rem 0;
-  background: linear-gradient(180deg, #f8f9f6 0%, #f3f5f2 50%, #eef1ec 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 50%, #EDE9FE 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -192,7 +192,7 @@ const AboutSection = styled.section`
     top: 0;
     width: 40%;
     height: 100%;
-    background: radial-gradient(ellipse at 20% 50%, rgba(206, 197, 173, 0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 20% 50%, rgba(196, 181, 253, 0.14) 0%, transparent 50%);
     pointer-events: none;
     will-change: auto;
   }
@@ -382,11 +382,11 @@ const BackgroundShape = styled.div`
     transform: translate(-50%, -50%) rotate(-2deg) translateZ(0);
     width: 420px;
     height: 520px;
-    background: linear-gradient(135deg, #1a2817 0%, #22371b 50%, #2d4a24 100%);
+    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A78BFA 100%);
     border-radius: 16px;
     box-shadow: 
-      0 30px 80px rgba(34, 55, 27, 0.4),
-      0 15px 40px rgba(34, 55, 27, 0.3);
+      0 30px 80px rgba(124, 58, 237, 0.32),
+      0 15px 40px rgba(124, 58, 237, 0.24);
     will-change: transform;
   }
 
@@ -394,9 +394,9 @@ const BackgroundShape = styled.div`
     transform: translate(-48%, -52%) rotate(2deg) translateZ(0);
     width: 410px;
     height: 510px;
-    background: linear-gradient(135deg, rgba(206, 197, 173, 0.15) 0%, rgba(206, 197, 173, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(196, 181, 253, 0.22) 0%, rgba(237, 233, 254, 0.16) 100%);
     border-radius: 16px;
-    border: 1px solid rgba(206, 197, 173, 0.3);
+    border: 1px solid rgba(233, 213, 255, 0.75);
   }
 
   @media (min-width: 1920px) {
@@ -437,8 +437,8 @@ const BackgroundShape = styled.div`
       width: 380px;
       height: 480px;
       box-shadow: 
-        0 20px 60px rgba(34, 55, 27, 0.35),
-        0 10px 30px rgba(34, 55, 27, 0.25);
+        0 20px 60px rgba(124, 58, 237, 0.28),
+        0 10px 30px rgba(124, 58, 237, 0.2);
     }
     &.secondary {
       width: 370px;
@@ -473,8 +473,8 @@ const BackgroundShape = styled.div`
       width: 300px;
       height: 380px;
       box-shadow: 
-        0 15px 40px rgba(34, 55, 27, 0.3),
-        0 8px 20px rgba(34, 55, 27, 0.2);
+        0 15px 40px rgba(124, 58, 237, 0.24),
+        0 8px 20px rgba(124, 58, 237, 0.16);
     }
     &.secondary {
       width: 290px;
@@ -509,8 +509,8 @@ const BackgroundShape = styled.div`
       width: 245px;
       height: 320px;
       box-shadow: 
-        0 10px 30px rgba(34, 55, 27, 0.25),
-        0 5px 15px rgba(34, 55, 27, 0.15);
+        0 10px 30px rgba(124, 58, 237, 0.2),
+        0 5px 15px rgba(124, 58, 237, 0.12);
     }
     &.secondary {
       width: 235px;
@@ -592,7 +592,7 @@ const CornerOrnament = styled.div`
 
 const AccentLine = styled.div`
   position: absolute;
-  background: linear-gradient(90deg, transparent 0%, #cec5ad 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, #C4B5FD 50%, transparent 100%);
   z-index: 1;
   opacity: 0.4;
   transform: translateZ(0);
@@ -602,7 +602,7 @@ const AccentLine = styled.div`
     top: 15%;
     width: 2px;
     height: 120px;
-    background: linear-gradient(180deg, transparent 0%, #cec5ad 50%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, #C4B5FD 50%, transparent 100%);
   }
 
   &.vertical-right {
@@ -610,7 +610,7 @@ const AccentLine = styled.div`
     bottom: 15%;
     width: 2px;
     height: 100px;
-    background: linear-gradient(180deg, transparent 0%, #cec5ad 50%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, #C4B5FD 50%, transparent 100%);
   }
 
   &.horizontal-top {
@@ -633,7 +633,7 @@ const FloatingBadge = styled.div`
   height: 80px;
   z-index: 5;
   animation: floatBadge 4s ease-in-out infinite;
-  filter: drop-shadow(0 4px 12px rgba(206, 197, 173, 0.5));
+  filter: drop-shadow(0 4px 12px rgba(196, 181, 253, 0.45));
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -769,11 +769,11 @@ const ImageBorder = styled.div`
   left: -8px;
   right: -8px;
   bottom: -8px;
-  background: linear-gradient(135deg, #cec5ad 0%, #d4cdb3 50%, #cec5ad 100%);
+  background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 50%, #C4B5FD 100%);
   border-radius: 24px;
   z-index: -1;
   box-shadow: 
-    0 8px 32px rgba(206, 197, 173, 0.3),
+    0 8px 32px rgba(139, 92, 246, 0.22),
     inset 0 2px 4px rgba(255, 255, 255, 0.2);
   transform: translateZ(0);
 
@@ -796,7 +796,7 @@ const ImageBorder = styled.div`
     right: -6px;
     bottom: -6px;
     box-shadow: 
-      0 6px 24px rgba(206, 197, 173, 0.25),
+      0 6px 24px rgba(139, 92, 246, 0.2),
       inset 0 2px 3px rgba(255, 255, 255, 0.2);
   }
 
@@ -910,10 +910,10 @@ const ImageOverlay = styled.div`
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(34, 55, 27, 0.03) 0%,
+    rgba(139, 92, 246, 0.06) 0%,
     transparent 20%,
     transparent 80%,
-    rgba(34, 55, 27, 0.08) 100%
+    rgba(139, 92, 246, 0.12) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -995,7 +995,7 @@ const SectionLabel = styled.span`
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: #22371b;
+  color: #8B5CF6;
   margin-bottom: 1rem;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -1013,7 +1013,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4.5vw, 3.25rem);
   font-weight: 500;
-  color: #22371b;
+  color: #2D1B4E;
   line-height: 1.15;
   margin-bottom: 1.5rem;
   letter-spacing: -0.01em;
@@ -1041,7 +1041,7 @@ const SubTitle = styled.h3`
   font-family: ${theme.fonts.body};
   font-size: 1.125rem;
   font-weight: 400;
-  color: #21371a;
+  color: #4B5563;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-style: italic;
@@ -1072,7 +1072,7 @@ const Description = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.8;
-  color: #21371a;
+  color: #4B5563;
   margin-bottom: 2rem;
 
   @media (min-width: 1920px) {
@@ -1109,8 +1109,8 @@ const CTAButton = styled(Link)`
   justify-content: center;
   padding: 1rem 2.75rem;
   background: transparent;
-  color: #22371b;
-  border: 2px solid #22371b;
+  color: #8B5CF6;
+  border: 2px solid #8B5CF6;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
@@ -1124,10 +1124,10 @@ const CTAButton = styled(Link)`
   backface-visibility: hidden;
 
   &:hover {
-    background: #22371b;
-    color: #FAF8F5;
+    background: #8B5CF6;
+    color: #FFFFFF;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(34, 55, 27, 0.25);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.28);
   }
 
   @media (min-width: 1920px) {
@@ -1159,7 +1159,7 @@ const CTAButton = styled(Link)`
     
     &:hover {
       transform: translateY(-1px) translateZ(0);
-      box-shadow: 0 6px 20px rgba(34, 55, 27, 0.22);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25);
     }
   }
 
@@ -1182,8 +1182,8 @@ const CTAButton = styled(Link)`
     }
 
     &:active {
-      background: #22371b;
-      color: #FAF8F5;
+      background: #8B5CF6;
+      color: #FFFFFF;
       transform: scale(0.98) translateZ(0);
     }
   }

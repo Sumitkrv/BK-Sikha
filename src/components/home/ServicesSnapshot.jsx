@@ -66,33 +66,78 @@ const LifeConsultationIcon = () => (
 const services = [
   {
     icon: FlexibleTimeIcon,
-    title: 'Flexible Time',
-    description: 'Practice yoga at your own pace with sessions designed to fit your busy lifestyle and schedule.',
+    title: 'Flexible Timings',
+    description: 'Book sessions at times that fit your routine and energy levels.',
   },
   {
     icon: ReduceStressIcon,
-    title: 'Reduce Stress',
-    description: 'Learn powerful techniques to calm your mind, release tension, and find inner peace.',
+    title: 'Stress-Free & Anxiety-Free Lifestyle',
+    description: 'Practical mind-body tools to reduce stress, calm anxiety, and build emotional balance.',
   },
   {
     icon: YogaStylesIcon,
-    title: 'Many Yoga Styles',
-    description: 'Explore various yoga traditions from gentle Hatha to dynamic Vinyasa and restorative practices.',
+    title: 'Yogasana Sessions',
+    description: 'Guided yoga postures designed for strength, flexibility, and inner steadiness.',
   },
   {
     icon: LifeBalancingIcon,
-    title: 'Life Balancing',
-    description: 'Achieve harmony between work, relationships, and personal growth through mindful living.',
+    title: 'Balanced Lifestyle Guidance',
+    description: 'Personalized lifestyle direction to create better balance in daily life.',
   },
   {
     icon: HealthTipsIcon,
-    title: 'Health Tips',
-    description: 'Receive guidance on nutrition, sleep, and daily habits that support your wellness journey.',
+    title: 'Health & Wellness Tips',
+    description: 'Simple, practical wellness suggestions for sustainable long-term health.',
   },
   {
     icon: LifeConsultationIcon,
     title: 'Life Consultation',
-    description: 'Get personalized coaching to overcome challenges and align with your true purpose.',
+    description: 'One-on-one consultation to support personal clarity and aligned decision-making.',
+  },
+  {
+    icon: YogaStylesIcon,
+    title: 'Weight Loss Programs',
+    description: 'Structured yoga and wellness plans designed for healthy, lasting weight management.',
+  },
+  {
+    icon: HealthTipsIcon,
+    title: 'Autoimmune Wellness Support',
+    description: 'Holistic support plans focused on inflammation care, resilience, and daily vitality.',
+  },
+  {
+    icon: LifeBalancingIcon,
+    title: 'Medicine-Free Lifestyle Tips',
+    description: 'Lifestyle-first practices to improve wellbeing naturally through routine and habits.',
+  },
+  {
+    icon: ReduceStressIcon,
+    title: 'Vagus Nerve Activation Techniques',
+    description: 'Breath and relaxation methods that support nervous system regulation and calm.',
+  },
+  {
+    icon: HealthTipsIcon,
+    title: 'Gut Wellness Videos',
+    description: 'Educational video guidance for better digestion, gut balance, and mindful nourishment.',
+  },
+  {
+    icon: LifeConsultationIcon,
+    title: 'Wellness Parlour Services',
+    description: 'Integrated wellness experiences designed to restore body, mind, and confidence.',
+  },
+  {
+    icon: LifeBalancingIcon,
+    title: 'Comprehensive Wellness Programs',
+    description: 'End-to-end programs combining yoga, mindset work, and holistic lifestyle coaching.',
+  },
+  {
+    icon: ReduceStressIcon,
+    title: 'NLP Tools & Techniques',
+    description: 'Effective NLP practices to shift thought patterns and create empowering behavior change.',
+  },
+  {
+    icon: LifeConsultationIcon,
+    title: 'NLP Coaching',
+    description: 'Personalized NLP coaching sessions for emotional clarity, confidence, and growth.',
   },
 ];
 
@@ -128,7 +173,7 @@ const ServicesSnapshot = () => {
       {/* Curved top decoration */}
       <CurvedTop>
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,120 C480,0 960,0 1440,120 L1440,0 L0,0 Z" fill="#f8f9f6"/>
+          <path d="M0,120 C480,0 960,0 1440,120 L1440,0 L0,0 Z" fill="#F8F5FF"/>
         </svg>
       </CurvedTop>
 
@@ -143,7 +188,7 @@ const ServicesSnapshot = () => {
             <SectionLabel>Services</SectionLabel>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <SectionTitle>What we offer to you</SectionTitle>
+            <SectionTitle>What We Offer</SectionTitle>
           </motion.div>
           <motion.div variants={itemVariants}>
             <SectionDescription>
@@ -182,7 +227,7 @@ const ServicesSnapshot = () => {
 // Styled Components - Anayoga Style
 const ServicesSection = styled.section`
   padding: 8rem 0 6rem;
-  background: linear-gradient(180deg, #f0f4f0 0%, #f5f8f5 40%, #FAF8F5 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 40%, #EDE9FE 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -196,7 +241,7 @@ const ServicesSection = styled.section`
     transform: translateX(-50%) translateZ(0);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(206, 197, 173, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(196, 181, 253, 0.6), transparent);
   }
 
   @media (min-width: 1920px) {
@@ -358,7 +403,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #cec5ad;
+  color: #8B5CF6;
   margin-bottom: 1rem;
   transform: translateZ(0);
 
@@ -388,7 +433,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 500;
-  color: #22371b;
+  color: #2D1B4E;
   line-height: 1.15;
   margin-bottom: 1.25rem;
   transform: translateZ(0);
@@ -413,7 +458,7 @@ const SectionDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.85;
-  color: #21371a;
+  color: #4B5563;
   opacity: 0.85;
   transform: translateZ(0);
 
@@ -494,7 +539,7 @@ const IconWrapper = styled.div`
   width: 80px;
   height: 80px;
   margin: 0 auto 1.75rem;
-  color: #cec5ad;
+  color: #8B5CF6;
   transition: all 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -506,7 +551,7 @@ const IconWrapper = styled.div`
   }
 
   ${ServiceItem}:hover & {
-    color: #22371b;
+    color: #2D1B4E;
     transform: scale(1.05) translateZ(0);
   }
 
@@ -569,7 +614,7 @@ const ServiceTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -608,7 +653,7 @@ const ServiceDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   line-height: 1.75;
-  color: #21371a;
+  color: #4B5563;
   opacity: 0.8;
   max-width: 280px;
   margin: 0 auto;
@@ -679,8 +724,8 @@ const CTAButton = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1.125rem 3rem;
-  background: #22371b;
-  color: #FAF8F5;
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  color: #FFFFFF;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
@@ -688,15 +733,15 @@ const CTAButton = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.28);
   letter-spacing: 0.02em;
   transform: translateZ(0);
   backface-visibility: hidden;
 
   &:hover {
-    background: #1a2b15;
+    background: #7C3AED;
     transform: translateY(-3px) translateZ(0);
-    box-shadow: 0 10px 35px rgba(34, 55, 27, 0.35);
+    box-shadow: 0 10px 35px rgba(124, 58, 237, 0.36);
   }
 
   @media (min-width: 1920px) {
@@ -739,11 +784,11 @@ const CTAButton = styled(Link)`
   @media (hover: none) and (pointer: coarse) {
     &:hover {
       transform: translateZ(0);
-      box-shadow: 0 4px 20px rgba(34, 55, 27, 0.25);
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.28);
     }
 
     &:active {
-      background: #1a2b15;
+      background: #7C3AED;
       transform: scale(0.98) translateZ(0);
     }
   }

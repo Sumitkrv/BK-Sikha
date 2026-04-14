@@ -9,16 +9,20 @@
 
 :root {
   /* Color variables for easy reference */
-  --primary: #22371b;
-  --primary-light: #3a5a34;
-  --secondary: #A8C5A4;
-  --accent: #cec5ad;
-  --accent-light: #ddd6c3;
-  --background: #FAF8F5;
-  --background-alt: #f5f7f4;
-  --text: #21371a;
-  --text-muted: rgba(33, 55, 26, 0.7);
-  --cta: #22371b;
+  --primary: #8B5CF6;
+  --primary-light: #C4B5FD;
+  --secondary: #EDE9FE;
+  --accent: #C4B5FD;
+  --accent-light: #F8F5FF;
+  --background: #FFFFFF;
+  --background-alt: #F8F5FF;
+  --text: #4B5563;
+  --text-muted: rgba(75, 85, 99, 0.82);
+  --heading: #2D1B4E;
+  --border: #E9D5FF;
+  --cta: #8B5CF6;
+  --cta-hover: #7C3AED;
+  --page-gradient: linear-gradient(135deg, #FFFFFF 0%, #F8F5FF 50%, #EDE9FE 100%);
 }
 
 html {
@@ -30,7 +34,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text);
-  background-color: var(--background);
+  background: var(--page-gradient);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -41,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--primary);
+  color: var(--heading);
   margin-bottom: 1rem;
 }
 
@@ -90,7 +94,20 @@ a {
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--cta-hover);
+}
+
+/* Better legibility on gradients/images */
+[class*='Hero'] p,
+[class*='hero'] p,
+[class*='Hero'] h1,
+[class*='Hero'] h2,
+[class*='hero'] h1,
+[class*='hero'] h2,
+header a,
+header h1,
+header p {
+  text-shadow: 0 1px 2px rgba(45, 27, 78, 0.2);
 }
 
 /* Buttons - Calm, inviting CTAs */
@@ -135,8 +152,8 @@ img {
 
 /* Selection */
 ::selection {
-  background-color: #cec5ad;
-  color: #22371b;
+  background-color: #C4B5FD;
+  color: #2D1B4E;
 }
 
 /* Scrollbar styling - subtle and elegant */
@@ -145,22 +162,22 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cec5ad;
+  background: #C4B5FD;
   border-radius: 5px;
-  border: 2px solid #FAF8F5;
+  border: 2px solid #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #22371b;
+  background: #8B5CF6;
 }
 
 /* Focus states - accessible and beautiful */
 *:focus-visible {
-  outline: 2px solid #cec5ad;
+  outline: 2px solid #C4B5FD;
   outline-offset: 4px;
 }
 
@@ -178,12 +195,93 @@ img {
   animation: shimmer 2s infinite linear;
   background: linear-gradient(
     to right,
-    #f5f2ed 0%,
-    #e8e5e0 20%,
-    #f5f2ed 40%,
-    #f5f2ed 100%
+    #F8F5FF 0%,
+    #EDE9FE 20%,
+    #F8F5FF 40%,
+    #F8F5FF 100%
   );
   background-size: 1000px 100%;
+}
+
+/* ===== PURPLE PREMIUM THEME OVERRIDES ===== */
+
+main {
+  background: var(--page-gradient);
+}
+
+main section:nth-of-type(odd) {
+  background-color: #FFFFFF !important;
+}
+
+main section:nth-of-type(even) {
+  background-color: #F8F5FF !important;
+}
+
+p,
+li,
+small,
+label,
+input,
+textarea,
+select {
+  color: var(--text);
+}
+
+button,
+.btn,
+[class*='button'],
+[class*='Button'] {
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+button:not([class*='secondary']):not([class*='Secondary']),
+[class*='cta'],
+[class*='CTA'] {
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 24px rgba(139, 92, 246, 0.22) !important;
+}
+
+button:hover,
+.btn:hover,
+[class*='button']:hover,
+[class*='Button']:hover {
+  transform: translateY(-2px);
+}
+
+button:hover:not([class*='secondary']):not([class*='Secondary']),
+[class*='cta']:hover,
+[class*='CTA']:hover {
+  background: #7C3AED !important;
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28) !important;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #E9D5FF !important;
+  background: #FFFFFF !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18) !important;
+}
+
+footer {
+  background: linear-gradient(135deg, #6D28D9 0%, #7C3AED 55%, #8B5CF6 100%) !important;
+}
+
+footer * {
+  color: #FFFFFF !important;
+}
+
+footer a:hover,
+footer svg {
+  color: #EDE9FE !important;
 }
 
 /* Smooth page transitions */

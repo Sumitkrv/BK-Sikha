@@ -4,45 +4,45 @@
 export const theme = {
   // Color Palette - Mindfully curated for wellness and trust
   colors: {
-    // Primary: Deep Forest Green - Grounding, natural, trustworthy
-    primary: '#22371b',
-    primaryLight: '#3a5a34',
-    primaryDark: '#1a2b15',
-    primaryMuted: '#21371a',
+    // Primary Purple system
+    primary: '#8B5CF6',
+    primaryLight: '#C4B5FD',
+    primaryDark: '#7C3AED',
+    primaryMuted: '#6D4BCB',
     
-    // Secondary: Sage Green - Calm, healing, growth, balance
-    secondary: '#A8C5A4',
-    secondaryLight: '#C5DCC2',
-    secondaryDark: '#8AA887',
+    // Secondary / support purples
+    secondary: '#C4B5FD',
+    secondaryLight: '#EDE9FE',
+    secondaryDark: '#A78BFA',
     
-    // Accent: Warm Beige - Premium, wisdom, transformation
-    accent: '#cec5ad',
-    accentLight: '#ddd6c3',
-    accentDark: '#b8af97',
-    accentMuted: 'rgba(206, 197, 173, 0.6)',
+    // Accent tones
+    accent: '#EDE9FE',
+    accentLight: '#F8F5FF',
+    accentDark: '#DDD6FE',
+    accentMuted: 'rgba(196, 181, 253, 0.45)',
     
-    // Background: Warm Cream - Peaceful, spacious, elegant
-    background: '#FAF8F5',
-    backgroundAlt: '#FFFFFF',
-    backgroundDark: '#F5F2ED',
-    backgroundGreen: '#f0f5f0',
+    // Backgrounds
+    background: '#FFFFFF',
+    backgroundAlt: '#F8F5FF',
+    backgroundDark: '#F3EEFF',
+    backgroundGreen: '#F8F5FF',
     
-    // Neutral: Deep Forest tones - Sophistication, clarity, grounding
-    text: '#21371a',
-    textLight: '#5a6b55',
-    textDark: '#22371b',
-    textMuted: 'rgba(33, 55, 26, 0.7)',
+    // Typography colors
+    text: '#4B5563',
+    textLight: '#6B7280',
+    textDark: '#2D1B4E',
+    textMuted: 'rgba(75, 85, 99, 0.82)',
     
-    // CTA: Deep Forest - Action, vitality, nature connection
-    cta: '#22371b',
-    ctaHover: '#1a2b15',
-    ctaLight: '#3a5a34',
+    // CTA
+    cta: '#8B5CF6',
+    ctaHover: '#7C3AED',
+    ctaLight: '#A78BFA',
     
     // Semantic colors
-    success: '#88B584',
-    warning: '#D4A574',
-    error: '#C07A6F',
-    info: '#A8C5A4',
+    success: '#8B5CF6',
+    warning: '#A78BFA',
+    error: '#C084FC',
+    info: '#C4B5FD',
   },
   
   // Typography - Serene, premium, highly readable
@@ -99,11 +99,11 @@ export const theme = {
   
   // Shadows - Subtle, elevated, premium
   shadows: {
-    sm: '0 1px 3px rgba(139, 115, 85, 0.08)',
-    md: '0 4px 12px rgba(139, 115, 85, 0.1)',
-    lg: '0 10px 30px rgba(139, 115, 85, 0.12)',
-    xl: '0 20px 50px rgba(139, 115, 85, 0.15)',
-    inner: 'inset 0 2px 4px rgba(139, 115, 85, 0.06)',
+    sm: '0 2px 10px rgba(139, 92, 246, 0.10)',
+    md: '0 10px 24px rgba(139, 92, 246, 0.14)',
+    lg: '0 16px 36px rgba(139, 92, 246, 0.16)',
+    xl: '0 24px 60px rgba(139, 92, 246, 0.20)',
+    inner: 'inset 0 2px 4px rgba(139, 92, 246, 0.08)',
   },
   
   // Transitions - Slow, mindful, luxurious

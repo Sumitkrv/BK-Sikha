@@ -38,29 +38,29 @@ const Philosophy = () => {
       icon: <FiHeart />,
       title: 'Mind-First Healing',
       description: 'True healing begins with the mind. When the mind is calm and balanced, the body naturally heals and transforms.',
-      gradient: 'linear-gradient(135deg, #5a8a62, #8ecfb3)',
-      color: '#5a8a62'
+      gradient: 'linear-gradient(135deg, #8B5CF6, #C4B5FD)',
+      color: '#8B5CF6'
     },
     {
       icon: <FiTarget />,
       title: 'Root-Cause Oriented',
       description: 'We address the underlying causes, not just symptoms, empowering sustainable transformation and lasting wellness.',
-      gradient: 'linear-gradient(135deg, #c9a227, #e0c45e)',
-      color: '#c9a227'
+      gradient: 'linear-gradient(135deg, #A78BFA, #C4B5FD)',
+      color: '#8B5CF6'
     },
     {
       icon: <FiSun />,
       title: 'Holistic Integration',
       description: 'Combining ancient yogic wisdom with modern NLP, gut health science, and mindful nutrition for complete well-being.',
-      gradient: 'linear-gradient(135deg, #8ecfb3, #b8e0d2)',
-      color: '#8ecfb3'
+      gradient: 'linear-gradient(135deg, #C4B5FD, #EDE9FE)',
+      color: '#8B5CF6'
     },
     {
       icon: <FiUsers />,
       title: 'Compassionate Guidance',
       description: 'Every individual\'s journey is unique. We provide personalized, compassionate support adapted to your needs.',
-      gradient: 'linear-gradient(135deg, #6a9b72, #8bb894)',
-      color: '#6a9b72'
+      gradient: 'linear-gradient(135deg, #8B5CF6, #A78BFA)',
+      color: '#8B5CF6'
     },
   ];
 
@@ -154,27 +154,27 @@ const Philosophy = () => {
       <HeroSection ref={heroRef}>
         <DecorativeLeaf className="left">
           <svg viewBox="0 0 120 300" fill="none">
-            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="#d0dcd2" strokeWidth="1" fill="none" />
-            <path d="M60 30V270" stroke="#d0dcd2" strokeWidth="1" />
-            <path d="M60 60L30 100" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 120L35 160" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 180L40 220" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 60L90 100" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 120L85 160" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 180L80 220" stroke="#d0dcd2" strokeWidth="0.8" />
+            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="#DDD6FE" strokeWidth="1" fill="none" />
+            <path d="M60 30V270" stroke="#DDD6FE" strokeWidth="1" />
+            <path d="M60 60L30 100" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 120L35 160" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 180L40 220" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 60L90 100" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 120L85 160" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 180L80 220" stroke="#DDD6FE" strokeWidth="0.8" />
           </svg>
         </DecorativeLeaf>
 
         <DecorativeLeaf className="right">
           <svg viewBox="0 0 120 300" fill="none">
-            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="#d0dcd2" strokeWidth="1" fill="none" />
-            <path d="M60 30V270" stroke="#d0dcd2" strokeWidth="1" />
-            <path d="M60 60L30 100" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 120L35 160" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 180L40 220" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 60L90 100" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 120L85 160" stroke="#d0dcd2" strokeWidth="0.8" />
-            <path d="M60 180L80 220" stroke="#d0dcd2" strokeWidth="0.8" />
+            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="#DDD6FE" strokeWidth="1" fill="none" />
+            <path d="M60 30V270" stroke="#DDD6FE" strokeWidth="1" />
+            <path d="M60 60L30 100" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 120L35 160" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 180L40 220" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 60L90 100" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 120L85 160" stroke="#DDD6FE" strokeWidth="0.8" />
+            <path d="M60 180L80 220" stroke="#DDD6FE" strokeWidth="0.8" />
           </svg>
         </DecorativeLeaf>
 
@@ -217,7 +217,7 @@ const Philosophy = () => {
               <OurStoryImageWrapper>
                 <OurStoryBlobBackground>
                   <svg viewBox="0 0 400 500" fill="none">
-                    <path d="M320,250 C350,380 280,470 180,480 C80,490 20,400 25,280 C30,160 90,40 200,30 C310,20 290,120 320,250 Z" fill="#e8f0ea" />
+                    <path d="M320,250 C350,380 280,470 180,480 C80,490 20,400 25,280 C30,160 90,40 200,30 C310,20 290,120 320,250 Z" fill="#EDE9FE" />
                   </svg>
                 </OurStoryBlobBackground>
                 <OurStoryImage 
@@ -323,7 +323,7 @@ const Philosophy = () => {
               <ImageWrapper>
                 <BlobBackground>
                   <svg viewBox="0 0 400 450" fill="none">
-                    <path d="M350,225 C350,350 275,425 175,425 C75,425 25,350 25,225 C25,100 100,25 200,25 C300,25 350,100 350,225 Z" fill="#8ecfb3" />
+                    <path d="M350,225 C350,350 275,425 175,425 C75,425 25,350 25,225 C25,100 100,25 200,25 C300,25 350,100 350,225 Z" fill="#C4B5FD" />
                   </svg>
                 </BlobBackground>
                 <MainImage 
@@ -407,11 +407,11 @@ const Philosophy = () => {
                 <SectionTitle className="centered">Our Offerings</SectionTitle>
                 <LotusIcon>
                   <svg viewBox="0 0 40 40" fill="none">
-                    <path d="M20 8 C20 8 15 12 15 18 C15 24 20 28 20 28 C20 28 25 24 25 18 C25 12 20 8 20 8 Z" stroke="#c9a227" strokeWidth="1" fill="none" />
-                    <path d="M12 16 C12 16 8 18 8 22 C8 26 12 30 12 30" stroke="#c9a227" strokeWidth="0.8" fill="none" />
-                    <path d="M28 16 C28 16 32 18 32 22 C32 26 28 30 28 30" stroke="#c9a227" strokeWidth="0.8" fill="none" />
-                    <path d="M10 22 C10 22 6 24 6 27 C6 30 10 32 10 32" stroke="#c9a227" strokeWidth="0.6" fill="none" />
-                    <path d="M30 22 C30 22 34 24 34 27 C34 30 30 32 30 32" stroke="#c9a227" strokeWidth="0.6" fill="none" />
+                    <path d="M20 8 C20 8 15 12 15 18 C15 24 20 28 20 28 C20 28 25 24 25 18 C25 12 20 8 20 8 Z" stroke="#8B5CF6" strokeWidth="1" fill="none" />
+                    <path d="M12 16 C12 16 8 18 8 22 C8 26 12 30 12 30" stroke="#8B5CF6" strokeWidth="0.8" fill="none" />
+                    <path d="M28 16 C28 16 32 18 32 22 C32 26 28 30 28 30" stroke="#8B5CF6" strokeWidth="0.8" fill="none" />
+                    <path d="M10 22 C10 22 6 24 6 27 C6 30 10 32 10 32" stroke="#8B5CF6" strokeWidth="0.6" fill="none" />
+                    <path d="M30 22 C30 22 34 24 34 27 C34 30 30 32 30 32" stroke="#8B5CF6" strokeWidth="0.6" fill="none" />
                   </svg>
                 </LotusIcon>
               </ExpertiseTitleGroup>
@@ -607,7 +607,7 @@ const HeroTitle = styled.h1`
 const HeroSubtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: clamp(1.125rem, 2vw, 1.375rem);
-  color: #5a8a62;
+  color: #8B5CF6;
   font-style: italic;
   margin: 0;
 `;
@@ -690,7 +690,7 @@ const OurStoryFloatingBadge = styled.div`
   position: absolute;
   top: 15%;
   right: 0;
-  background: linear-gradient(135deg, #5a8a62 0%, #6a9b72 100%);
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
   color: white;
   padding: 1rem 1.25rem;
   border-radius: 16px;
@@ -730,7 +730,7 @@ const OurStoryFloatingBadge2 = styled(OurStoryFloatingBadge)`
   top: auto;
   bottom: 20%;
   right: -10px;
-  background: linear-gradient(135deg, #c9a227 0%, #e0c45e 100%);
+  background: linear-gradient(135deg, #A78BFA 0%, #C4B5FD 100%);
   box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -758,7 +758,7 @@ const OurStoryDescription = styled.p`
   margin-bottom: 1.25rem;
 
   strong {
-    color: #5a8a62;
+    color: #8B5CF6;
     font-weight: 600;
   }
 `;
@@ -768,7 +768,7 @@ const OurStoryStats = styled.div`
   gap: 2rem;
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid #e8f0ea;
+  border-top: 1px solid #E9D5FF;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     flex-direction: column;
@@ -786,11 +786,11 @@ const OurStoryStatIcon = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #e8f0ea 0%, #d8e8dc 100%);
+  background: linear-gradient(135deg, #F8F5FF 0%, #EDE9FE 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5a8a62;
+  color: #8B5CF6;
   font-size: 1rem;
 `;
 
@@ -852,7 +852,7 @@ const SectionLabel = styled.span`
   font-weight: 500;
   font-style: italic;
   letter-spacing: 0.02em;
-  color: #c9a227;
+  color: #8B5CF6;
   margin-bottom: 0.75rem;
 
   &.center {
@@ -879,11 +879,11 @@ const QuoteText = styled.p`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-style: italic;
-  color: #5a8a62;
+  color: #8B5CF6;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
-  border-left: 3px solid #c9a227;
+  border-left: 3px solid #C4B5FD;
 `;
 
 const Description = styled.p`
@@ -1059,7 +1059,7 @@ const PrincipleIcon = styled.div`
   justify-content: center;
   background: linear-gradient(135deg, rgba(255,255,255,1), rgba(255,255,255,0.9));
   border-radius: 50%;
-  color: ${props => props.theme?.colors?.primary || '#5a8a62'};
+  color: ${props => props.theme?.colors?.primary || '#8B5CF6'};
   font-size: 2rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   position: relative;
@@ -1095,7 +1095,7 @@ const PrincipleArrow = styled.div`
   justify-content: center;
   background: rgba(90, 138, 98, 0.08);
   border-radius: 50%;
-  color: #5a8a62;
+  color: #8B5CF6;
   font-size: 1.125rem;
   opacity: 0;
   transform: translateX(-10px);
@@ -1411,7 +1411,7 @@ const CTALabel = styled.span`
   font-size: 1rem;
   font-weight: 500;
   font-style: italic;
-  color: #c9a227;
+  color: #8B5CF6;
   margin-bottom: 0.75rem;
 `;
 
@@ -1437,7 +1437,7 @@ const CTAButton = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   padding: 1.125rem 2.75rem;
-  background: linear-gradient(135deg, #5a8a62, #6a9b72);
+  background: linear-gradient(135deg, #8B5CF6, #A78BFA);
   color: #ffffff;
   border: none;
   border-radius: 100px;
@@ -1453,7 +1453,7 @@ const CTAButton = styled(Link)`
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #6a9b72, #7aab82);
+    background: linear-gradient(135deg, #7C3AED, #8B5CF6);
     opacity: 0;
     transition: opacity 0.4s ease;
   }

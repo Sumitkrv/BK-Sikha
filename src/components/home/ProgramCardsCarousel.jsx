@@ -20,15 +20,14 @@ const programs = [
     title: 'Yogic Lifestyle Coaching',
   },
   {
-    image: '/new%20images/morning%20flow%20(2).png',
-    category: 'Yoga',
-    title: 'Morning Yoga Flow',
+    image: '/new%20images/emotional%20wellness%20(2).png',
+    category: 'NLP',
+    title: 'NLP Technique',
   },
   {
-    image: '/new%20images/weekend%20wellness%20treat.png',
-    category: 'Retreat',
-    title: 'Weekend Wellness Retreat',
-    objectPosition: 'left center',
+    image: '/new%20images/begin%20your%20transformation.png',
+    category: 'Awareness',
+    title: 'Eye Opening Sessions',
   },
   {
     image: '/new%20images/meditation.png',

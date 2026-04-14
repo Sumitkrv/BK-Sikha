@@ -8,34 +8,64 @@ import { FiArrowRight } from 'react-icons/fi';
 const classes = [
   {
     image: "/new images/online meditation (2).png",
-    price: "₹999",
-    title: "Online Meditation",
+    title: "Online Meditation & NLP Techniques",
+    description: "Meditation and guided NLP tools to calm the mind and reframe limiting patterns.",
   },
   {
     image: "/new images/yoga at home (2).png",
-    price: "₹1,499",
     title: "Yoga at Home",
+    description: "Personalized at-home yoga routines for flexibility, energy, and everyday balance.",
     imagePosition: "center 20%",
   },
   {
-    image: "/new images/couple yoga (2).png",
-    price: "₹2,499",
-    title: "Couple Yoga",
-  },
-  {
-    image: "/new images/morning .png",
-    price: "₹799",
-    title: "Morning Flow",
+    image: "/new images/private session (2).png",
+    title: "Private Wellness Sessions",
+    description: "One-on-one wellness sessions focused on your emotional, physical, and lifestyle goals.",
   },
   {
     image: "/new images/stress relief (2).png",
-    price: "₹1,299",
-    title: "Stress Relief",
+    title: "Stress-Free Healing Sessions",
+    description: "Restorative breathwork and healing practices to reduce stress and restore inner calm.",
   },
   {
-    image: "/new images/private session (2).png",
-    price: "₹1,999",
-    title: "Private Session",
+    image: "/new images/begin your transformation.png",
+    title: "Eye Opening Mindfulness Sessions",
+    description: "Awareness-based mindfulness sessions that deepen clarity, presence, and self-connection.",
+  },
+  {
+    image: "/new images/holistic healing (3).png",
+    title: "Cure & Healing Yoga",
+    description: "Targeted therapeutic yoga support for recovery, resilience, and holistic healing.",
+  },
+  {
+    image: "/new images/self love (2).png",
+    title: "Health Fiesta Programs",
+    description: "High-energy wellness programs that make healthy living enjoyable and sustainable.",
+  },
+  {
+    image: "/new images/yoga busy days.png",
+    title: "Mind Boosting Sessions for Students",
+    description: "Focus-building sessions to improve confidence, concentration, and emotional strength.",
+  },
+  {
+    image: "/new images/sacred healing space (2).png",
+    title: "Upcoming Wellness Sessions",
+    description: "Explore upcoming curated sessions designed for complete mind-body wellbeing.",
+  },
+  {
+    image: "/new images/personalized yoga (2).png",
+    title: "Monthly Healthy Lifestyle Program",
+    description: "Monthly guided framework to build healthy habits and long-term lifestyle discipline.",
+  },
+  {
+    image: "/new images/meditation.png",
+    title: "Wellness Parlour Monthly Pack",
+    description: "A premium monthly blend of wellness therapies, lifestyle coaching, and support.",
+  },
+  {
+    image: "/new images/holistic healing.png",
+    title: "Mind Zumba",
+    description: "Rhythmic movement sessions to boost mood, release tension, and energize your day.",
   },
 ];
 
@@ -71,15 +101,15 @@ const CoachingJourney = () => {
       {/* Decorative leaf */}
       <LeafDecoration>
         <svg viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M100 20C100 20 180 100 180 200C180 300 100 380 100 380" stroke="#d4e5d6" strokeWidth="1.5" fill="none"/>
-          <path d="M100 60C100 60 150 120 150 200C150 280 100 340 100 340" stroke="#d4e5d6" strokeWidth="1" fill="none"/>
-          <path d="M100 100C100 100 130 140 130 200C130 260 100 300 100 300" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
-          <path d="M60 120C60 120 100 160 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
-          <path d="M140 120C140 120 100 160 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
-          <path d="M50 180C50 180 100 200 100 200" stroke="#d4e5d6" strokeWidth="0.6" fill="none"/>
-          <path d="M150 180C150 180 100 200 100 200" stroke="#d4e5d6" strokeWidth="0.6" fill="none"/>
-          <path d="M60 260C60 260 100 240 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
-          <path d="M140 260C140 260 100 240 100 200" stroke="#d4e5d6" strokeWidth="0.8" fill="none"/>
+          <path d="M100 20C100 20 180 100 180 200C180 300 100 380 100 380" stroke="#DDD6FE" strokeWidth="1.5" fill="none"/>
+          <path d="M100 60C100 60 150 120 150 200C150 280 100 340 100 340" stroke="#DDD6FE" strokeWidth="1" fill="none"/>
+          <path d="M100 100C100 100 130 140 130 200C130 260 100 300 100 300" stroke="#DDD6FE" strokeWidth="0.8" fill="none"/>
+          <path d="M60 120C60 120 100 160 100 200" stroke="#DDD6FE" strokeWidth="0.8" fill="none"/>
+          <path d="M140 120C140 120 100 160 100 200" stroke="#DDD6FE" strokeWidth="0.8" fill="none"/>
+          <path d="M50 180C50 180 100 200 100 200" stroke="#DDD6FE" strokeWidth="0.6" fill="none"/>
+          <path d="M150 180C150 180 100 200 100 200" stroke="#DDD6FE" strokeWidth="0.6" fill="none"/>
+          <path d="M60 260C60 260 100 240 100 200" stroke="#DDD6FE" strokeWidth="0.8" fill="none"/>
+          <path d="M140 260C140 260 100 240 100 200" stroke="#DDD6FE" strokeWidth="0.8" fill="none"/>
         </svg>
       </LeafDecoration>
 
@@ -94,7 +124,7 @@ const CoachingJourney = () => {
             <SectionLabel>Our Classes</SectionLabel>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <SectionTitle>Most Favorite Classes</SectionTitle>
+            <SectionTitle>Our Signature Wellness Programs</SectionTitle>
           </motion.div>
           <motion.div variants={itemVariants}>
             <SectionDescription>
@@ -122,6 +152,7 @@ const CoachingJourney = () => {
               </CardImageWrapper>
               <CardContent>
                 <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.description}</CardDescription>
                 <BookNowLink to="/contact">
                   Book Now <FiArrowRight />
                 </BookNowLink>
@@ -137,7 +168,7 @@ const CoachingJourney = () => {
 // Styled Components - Exact Anayoga Style
 const ClassesSection = styled.section`
   padding: 7rem 0;
-  background: linear-gradient(180deg, #FAF8F5 0%, #f5f7f4 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -205,7 +236,7 @@ const LeafDecoration = styled.div`
   }
 
   svg path {
-    stroke: #cec5ad;
+    stroke: #C4B5FD;
   }
 
   @media (max-width: 1024px) {
@@ -305,7 +336,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #cec5ad;
+  color: #8B5CF6;
   margin-bottom: 0.75rem;
 
   @media (min-width: 1920px) {
@@ -337,7 +368,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 400;
-  color: #22371b;
+  color: #2D1B4E;
   line-height: 1.2;
   margin-bottom: 1rem;
 
@@ -368,7 +399,7 @@ const SectionDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.7;
-  color: #21371a;
+  color: #4B5563;
 
   @media (min-width: 1920px) {
     font-size: 1.0625rem;
@@ -402,7 +433,7 @@ const SectionDescription = styled.p`
 const ClassesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.25rem 2rem;
   
   @media (min-width: 1920px) {
     gap: 2.5rem;
@@ -456,25 +487,27 @@ const ClassesGrid = styled.div`
 
 const ClassCard = styled.div`
   position: relative;
-  padding-bottom: 72px;
-  transition: all 0.3s ease;
+  padding-bottom: 176px;
+  transition: transform 0.3s ease, box-shadow 0.35s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
+  border-radius: 18px;
 
   &:hover {
     transform: translateY(-8px) translateZ(0);
+    box-shadow: 0 24px 44px rgba(34, 55, 27, 0.14);
   }
 
   @media (min-width: 1920px) {
-    padding-bottom: 82px;
+    padding-bottom: 190px;
   }
 
   @media (max-width: 1024px) {
-    padding-bottom: 68px;
+    padding-bottom: 170px;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding-bottom: 72px;
+    padding-bottom: 176px;
     transition: all 0.25s ease;
     
     &:hover {
@@ -483,11 +516,11 @@ const ClassCard = styled.div`
   }
 
   @media (max-width: 640px) {
-    padding-bottom: 68px;
+    padding-bottom: 166px;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding-bottom: 64px;
+    padding-bottom: 160px;
     
     &:hover {
       transform: translateY(-4px) translateZ(0);
@@ -495,7 +528,7 @@ const ClassCard = styled.div`
   }
 
   @media (max-width: 390px) {
-    padding-bottom: 60px;
+    padding-bottom: 152px;
   }
 
   @media (hover: none) and (pointer: coarse) {
@@ -519,10 +552,10 @@ const ClassCard = styled.div`
 
 const CardImageWrapper = styled.div`
   width: 100%;
-  height: 280px;
-  margin-top: 0.5rem;
+  height: 260px;
+  margin-top: 0;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 18px;
   transform: translateZ(0);
 
   @media (min-width: 1920px) {
@@ -623,14 +656,15 @@ const CardImage = styled.img`
 
 const CardContent = styled.div`
   position: absolute;
-  bottom: -10px;
-  left: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  padding: 1.25rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 1.1rem 1.2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(209, 213, 219, 0.45);
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.12);
   transform: translateZ(0);
 
   @media (min-width: 1920px) {
@@ -650,9 +684,7 @@ const CardContent = styled.div`
   }
 
   @media (max-width: 640px) {
-    left: 10px;
-    right: 10px;
-    padding: 0.9375rem 1.125rem;
+    padding: 0.95rem 1rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -678,7 +710,7 @@ const CardPrice = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 700;
-  color: #22371b;
+  color: #8B5CF6;
   margin-bottom: 0.35rem;
 
   @media (min-width: 1920px) {
@@ -709,12 +741,32 @@ const CardPrice = styled.span`
   }
 `;
 
+const CardDescription = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #475569;
+  margin-bottom: 0.7rem;
+
+  @media (max-width: 640px) {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.7813rem;
+    margin-bottom: 0.625rem;
+  }
+`;
+
 const CardTitle = styled.h3`
   font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #22371b;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
 
   @media (min-width: 1920px) {
     font-size: 1.375rem;
@@ -756,7 +808,7 @@ const BookNowLink = styled(Link)`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #22371b;
+  color: #8B5CF6;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.5rem 0;
@@ -770,7 +822,7 @@ const BookNowLink = styled(Link)`
   }
 
   &:hover {
-    color: #22371b;
+    color: #7C3AED;
     
     svg {
       transform: translateX(4px);

@@ -6,39 +6,39 @@ import { FaCheck } from 'react-icons/fa';
 
 const leftExpertiseData = [
   {
-    title: "Yoga & Meditation",
-    description: "12+ years of Yoga and 15+ years of Meditation expertise",
+    title: "Sleep Disorders",
+    description: "Support for irregular sleep cycles, poor rest quality, and nighttime overthinking.",
   },
   {
-    title: "NLP Coaching",
-    description: "Mind coaching using Neuro-Linguistic Programming tools",
+    title: "Stress",
+    description: "Holistic methods to lower daily stress and build calm inner resilience.",
   },
   {
-    title: "Counseling",
-    description: "Professional support for children, teenagers, and adults",
+    title: "Anxiety",
+    description: "Mind-body practices to soothe anxiety and improve emotional stability.",
   },
   {
-    title: "Stress & Anxiety Relief",
-    description: "Holistic approach to emotional wellness and balance",
+    title: "Autoimmune Challenges",
+    description: "Lifestyle and wellness guidance that supports immune balance and recovery.",
   }
 ];
 
 const rightExpertiseData = [
   {
-    title: "Gut Health Expert",
-    description: "Digestive wellness and metabolism improvement programs",
+    title: "Weight Issues",
+    description: "Sustainable support for healthy weight correction and body confidence.",
   },
   {
-    title: "Weight Management",
-    description: "Sustainable, healthy weight loss and transformation",
+    title: "Relationship Problems",
+    description: "Compassionate coaching for communication, harmony, and emotional healing.",
   },
   {
-    title: "Relationship Healing",
-    description: "Emotional wellness and relationship counseling support",
+    title: "Negative Thought Patterns",
+    description: "NLP-based reframing to break repetitive negative thinking loops.",
   },
   {
-    title: "Lifestyle Transformation",
-    description: "Mindful nutrition and habit correction guidance",
+    title: "Repeated Failures in Life",
+    description: "Transform limiting beliefs and rebuild confidence through guided mindset work.",
   }
 ];
 
@@ -54,13 +54,11 @@ const AreasOfExpertise = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <Subtitle>Areas of Expertise</Subtitle>
-          <Title>Comprehensive Wellness Services</Title>
+          <Subtitle>Pain Points We Address</Subtitle>
+          <Title>Challenges You Don&apos;t Have to Face Alone</Title>
           <Description>
-            BK Shikha offers a complete range of holistic wellness services combining yoga, 
-            meditation, mindfulness practices, NLP tools, stress management, counseling, 
-            gut health correction, and sustainable weight management. Her approach empowers 
-            long-term physical, mental, and emotional well-being.
+            A focused support system for common emotional, lifestyle, and health challenges — 
+            approached through yoga, mindfulness, and practical NLP techniques.
           </Description>
         </Header>
 
@@ -125,6 +123,10 @@ const AreasOfExpertise = () => {
             ))}
           </RightColumn>
         </ExpertiseGrid>
+
+        <SupportiveLine>
+          Feeling stuck in stress, health concerns, or emotional imbalance? We are here to guide your transformation journey.
+        </SupportiveLine>
       </Container>
     </Section>
   );
@@ -135,7 +137,7 @@ export default AreasOfExpertise;
 // Styled Components
 const Section = styled.section`
   padding: 120px 0;
-  background: linear-gradient(165deg, #FAF8F5 0%, #f5f7f4 50%, #f0f3ef 100%);
+  background: linear-gradient(165deg, #FFFFFF 0%, #F8F5FF 50%, #EDE9FE 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -148,7 +150,7 @@ const Section = styled.section`
     transform: translate(-50%, -50%) translateZ(0);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(206, 197, 173, 0.06) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.14) 0%, transparent 60%);
     pointer-events: none;
     will-change: auto;
   }
@@ -270,7 +272,7 @@ const Subtitle = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: #cec5ad;
+  color: #8B5CF6;
   margin-bottom: 16px;
 
   @media (min-width: 1920px) {
@@ -311,7 +313,7 @@ const Title = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(1.75rem, 5vw, 3.5rem);
   font-weight: 500;
-  color: #22371b;
+  color: #2D1B4E;
   margin-bottom: 24px;
   line-height: 1.15;
 
@@ -363,7 +365,7 @@ const Description = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.1rem;
   line-height: 1.85;
-  color: #21371a;
+  color: #4B5563;
   opacity: 0.85;
 
   @media (min-width: 1920px) {
@@ -611,8 +613,19 @@ const ExpertiseItem = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 1rem 1.125rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(196, 181, 253, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(45, 27, 78, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
+
+  &:hover {
+    transform: translateY(-4px) translateZ(0);
+    box-shadow: 0 14px 30px rgba(45, 27, 78, 0.12);
+  }
 
   @media (min-width: 1920px) {
     gap: 24px;
@@ -652,7 +665,7 @@ const ItemTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.4rem;
   font-weight: 600;
-  color: #22371b;
+  color: #2D1B4E;
   margin-bottom: 8px;
 
   @media (min-width: 1920px) {
@@ -700,7 +713,7 @@ const ItemDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #21371a;
+  color: #4B5563;
   opacity: 0.8;
 
   @media (min-width: 1920px) {
@@ -741,15 +754,41 @@ const ItemDescription = styled.p`
   }
 `;
 
+const SupportiveLine = styled.p`
+  max-width: 860px;
+  margin: 2.75rem auto 0;
+  text-align: center;
+  font-family: ${theme.fonts.body};
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #374151;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(196, 181, 253, 0.32);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    margin-top: 2.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin-top: 1.9rem;
+    font-size: 0.875rem;
+    padding: 0.875rem 1rem;
+  }
+`;
+
 const CheckIcon = styled(motion.div)`
   min-width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #22371b 0%, #2d4a24 100%);
+  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(34, 55, 27, 0.3);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.32);
   color: white;
   font-size: 1.2rem;
   transform: translateZ(0);
@@ -759,7 +798,7 @@ const CheckIcon = styled(motion.div)`
     min-width: 56px;
     height: 56px;
     font-size: 1.3rem;
-    box-shadow: 0 7px 24px rgba(34, 55, 27, 0.35);
+    box-shadow: 0 7px 24px rgba(124, 58, 237, 0.36);
   }
 
   @media (max-width: 1440px) {
@@ -784,7 +823,7 @@ const CheckIcon = styled(motion.div)`
     min-width: 42px;
     height: 42px;
     font-size: 1.05rem;
-    box-shadow: 0 5px 16px rgba(34, 55, 27, 0.25);
+    box-shadow: 0 5px 16px rgba(139, 92, 246, 0.26);
   }
 
   @media (max-width: 640px) {
@@ -797,14 +836,14 @@ const CheckIcon = styled(motion.div)`
     min-width: 36px;
     height: 36px;
     font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(34, 55, 27, 0.22);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.24);
   }
 
   @media (max-width: 390px) {
     min-width: 32px;
     height: 32px;
     font-size: 0.8rem;
-    box-shadow: 0 3px 10px rgba(34, 55, 27, 0.2);
+    box-shadow: 0 3px 10px rgba(139, 92, 246, 0.22);
   }
 
   @media (max-width: 375px) {
