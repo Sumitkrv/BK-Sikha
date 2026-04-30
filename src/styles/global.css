@@ -27,6 +27,9 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -37,6 +40,14 @@ body {
   background: var(--page-gradient);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
