@@ -601,6 +601,7 @@ const ContactMethods = styled.div`
 const ContactMethod = styled.div`
   display: flex;
   gap: 1.25rem;
+  min-width: 0;
 `;
 
 const MethodIcon = styled.div`
@@ -624,6 +625,7 @@ const MethodInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 `;
 
 const MethodLabel = styled.h4`
@@ -641,6 +643,9 @@ const MethodLink = styled.a`
   text-decoration: none;
   transition: all ${theme.transitions.base};
   position: relative;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
 
   &::after {
     content: '';
