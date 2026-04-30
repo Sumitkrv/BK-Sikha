@@ -683,6 +683,7 @@ const About = () => {
       <StudioSection>
         <StudioImageWrapper>
           <StudioImage src={aboutImages.studio} alt="Wellness Studio" loading="lazy" />
+          <StudioOverlay />
           <StudioContent>
             <StudioBadge>
               <FiPlay /> Virtual & In-Person Sessions
@@ -2231,7 +2232,7 @@ const StudioBadge = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 500;
-  color: #000000;
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -2241,7 +2242,7 @@ const StudioTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
-  color: #000000;
+  color: #FFFFFF;
   margin-bottom: 1rem;
 `;
 
@@ -2249,7 +2250,7 @@ const StudioDesc = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #000000;
+  color: rgba(255, 255, 255, 0.92);
 `;
 
 // Quote Section

@@ -173,6 +173,7 @@ const Section = styled.section`
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 70px 0;
+    overflow: visible;
   }
 
   @media (max-width: 640px) {

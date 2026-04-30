@@ -5,12 +5,12 @@ import Header from './Header';
 import Footer from './Footer';
 import styled from 'styled-components';
 
-const Layout = () => {
+const Layout = ({ hideHeader = false }) => {
   const location = useLocation();
 
   return (
     <>
-      <Header />
+      {!hideHeader && <Header />}
       <LayoutWrapper>
         <MainContent>
           <AnimatePresence mode="wait">

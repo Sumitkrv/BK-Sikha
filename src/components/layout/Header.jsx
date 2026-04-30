@@ -286,7 +286,6 @@ const Header = () => {
             >
               <MobileNavHeader>
                 <MobileNavBrand>BK Shikha</MobileNavBrand>
-                <MobileNavTagline>Your Wellness Journey</MobileNavTagline>
               </MobileNavHeader>
               
               <MobileNavLinks>
@@ -1057,7 +1056,6 @@ const MobileNav = styled.nav`
 const MobileNavHeader = styled.div`
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(233, 213, 255, 0.7);
 
   @media (max-width: 640px) {
     margin-bottom: 2.25rem;

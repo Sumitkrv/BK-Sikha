@@ -10,7 +10,6 @@ import {
   FiSmile,
   FiCheck,
   FiArrowRight,
-  FiStar,
 } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
@@ -288,10 +287,6 @@ const Services = () => {
                 />
                 <ImageBlobBg style={{ backgroundColor: services[activeService].color }} />
               </ServiceImageWrapper>
-              <FloatingBadge>
-                <BadgeIcon><FiStar /></BadgeIcon>
-                <BadgeText>Popular Choice</BadgeText>
-              </FloatingBadge>
             </ServiceImageSide>
 
             <ServiceDetailsSide>
@@ -839,6 +834,22 @@ const ServicesTabs = styled.div`
   @media (max-width: ${theme.breakpoints.mobile}) {
     gap: 0.5rem;
     margin-bottom: 2rem;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 0.5rem 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    padding: 0 0.25rem 0.5rem;
   }
 `;
 
@@ -856,11 +867,18 @@ const ServiceTab = styled.button`
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
     padding: 0.625rem 1rem;
     font-size: 0.8125rem;
     gap: 0.375rem;
+    flex: 0 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    flex: 1 1 calc(50% - 0.5rem);
+    justify-content: center;
   }
 
   &:hover {
@@ -958,10 +976,16 @@ const FloatingBadge = styled.div`
   z-index: 10;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
-    bottom: -10px;
-    right: 15px;
+    top: 12px;
+    bottom: auto;
+    right: 12px;
     padding: 0.625rem 1rem;
     font-size: 0.8125rem;
+  }
+
+  @media (max-width: 430px) {
+    left: 12px;
+    right: auto;
   }
 `;
 
@@ -974,6 +998,12 @@ const BadgeText = styled.span``;
 const ServiceDetailsSide = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    text-align: left;
+    align-items: flex-start;
+    width: 100%;
+  }
 `;
 
 const ServiceIcon = styled.div`
@@ -994,6 +1024,10 @@ const ServiceTagline = styled.span`
   font-style: italic;
   color: #7C3AED;
   margin-bottom: 0.5rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.9375rem;
+  }
 `;
 
 const ServiceName = styled.h3`
@@ -1002,6 +1036,11 @@ const ServiceName = styled.h3`
   font-weight: 700;
   color: #2D1B4E;
   margin: 0 0 1rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.625rem;
+    margin-bottom: 0.75rem;
+  }
 `;
 
 const ServiceShortDesc = styled.p`
@@ -1010,6 +1049,11 @@ const ServiceShortDesc = styled.p`
   line-height: 1.7;
   color: ${theme.colors.text};
   margin: 0 0 1.5rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
 `;
 
 const FeaturesGrid = styled.div`
@@ -1020,6 +1064,12 @@ const FeaturesGrid = styled.div`
 
   @media (max-width: \${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 420px) {
+    gap: 0.65rem;
   }
 `;
 
@@ -1027,6 +1077,10 @@ const FeatureItem = styled.div`
   display: flex;
   align-items: center;
   gap: 0.75rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    justify-content: flex-start;
+  }
 `;
 
 const FeatureCheck = styled.span`
@@ -1045,6 +1099,11 @@ const FeatureText = styled.span`
   font-family: \${theme.fonts.body};
   font-size: 0.9375rem;
   color: ${theme.colors.text};
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.875rem;
+    text-align: left;
+  }
 `;
 
 const ServiceMeta = styled.div`
@@ -1096,6 +1155,7 @@ const ServiceCTA = styled(Link)`
     width: 100%;
     padding: 0.875rem 1.5rem;
     font-size: 0.9375rem;
+    align-self: stretch;
   }
 
   &:hover {
@@ -1127,6 +1187,11 @@ const AllServicesGrid = styled.div`
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 1.125rem;
+  }
 `;
 
 const ServiceMiniCard = styled.div`
@@ -1136,6 +1201,8 @@ const ServiceMiniCard = styled.div`
   cursor: pointer;
   transition: all 0.4s ease;
   border: 2px solid transparent;
+  min-width: 0;
+  width: 100%;
 
   &:hover {
     border-color: #C4B5FD;
