@@ -281,7 +281,7 @@ const HeroImage = styled.img`
 const HeroOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(45, 27, 78, 0.85) 10%, rgba(109, 75, 203, 0.52) 58%, rgba(139, 92, 246, 0.22) 100%);
+  background: linear-gradient(120deg, rgba(58, 31, 35, 0.85) 10%, rgba(109, 75, 203, 0.52) 58%, rgba(194, 89, 100, 0.22) 100%);
 `;
 
 const HeroContent = styled.div`
@@ -292,7 +292,7 @@ const HeroContent = styled.div`
 `;
 
 const HeroLabel = styled.p`
-  color: #EDE9FE;
+  color: #FFF0F2;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.85rem;
@@ -330,11 +330,12 @@ const PrimaryCTA = styled(Link)`
   font-size: 0.95rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   box-shadow: 0 5px 18px rgba(109, 75, 203, 0.35);
   transition: all ${theme.transitions.base};
 
   &:hover {
+    color: #000000;
     transform: translateY(-2px);
   }
 `;
@@ -352,6 +353,7 @@ const SecondaryCTA = styled(Link)`
   transition: all ${theme.transitions.base};
 
   &:hover {
+    color: #000000;
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
   }
@@ -374,7 +376,7 @@ const AboutGrid = styled.div`
 
 const AboutCard = styled.div`
   background: white;
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
   border-radius: ${theme.borderRadius.xl};
   padding: 2.2rem;
   box-shadow: ${theme.shadows.sm};
@@ -404,7 +406,7 @@ const AboutImage = styled.img`
 `;
 
 const SymptomsSection = styled.section`
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 100%);
 `;
 
 const SymptomGrid = styled.div`
@@ -423,7 +425,7 @@ const SymptomGrid = styled.div`
 
 const SymptomCard = styled.div`
   background: white;
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
   border-radius: ${theme.borderRadius.lg};
   padding: 1.6rem 1.2rem;
   transition: all ${theme.transitions.base};
@@ -440,15 +442,15 @@ const SymptomIcon = styled.div`
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: #2D1B4E;
-  background: rgba(196, 181, 253, 0.32);
+  color: #3A1F23;
+  background: rgba(245, 197, 202, 0.32);
   margin-bottom: 0.8rem;
 `;
 
 const SymptomTitle = styled.h3`
   margin: 0 0 0.45rem;
   font-size: 1.2rem;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const SymptomDescription = styled.p`
@@ -475,7 +477,7 @@ const TreatmentGrid = styled.div`
 const TreatmentCard = styled.div`
   border-radius: ${theme.borderRadius.xl};
   overflow: hidden;
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
   background: ${theme.colors.background};
   transition: all ${theme.transitions.base};
 
@@ -498,7 +500,7 @@ const TreatmentContent = styled.div`
 const TreatmentTitle = styled.h3`
   margin: 0 0 0.5rem;
   font-size: 1.35rem;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const TreatmentDescription = styled.p`
@@ -529,15 +531,15 @@ const TrustItem = styled.div`
   align-items: flex-start;
   gap: 0.7rem;
   background: white;
-  border: 1px solid rgba(196, 181, 253, 0.32);
+  border: 1px solid rgba(245, 197, 202, 0.32);
   border-radius: ${theme.borderRadius.lg};
   padding: 1rem 1.05rem;
-  color: #2D1B4E;
+  color: #3A1F23;
   font-size: 0.96rem;
 
   svg {
     margin-top: 0.15rem;
-    color: #8B5CF6;
+    color: #C25964;
     flex-shrink: 0;
   }
 `;
@@ -557,7 +559,7 @@ const AccordionWrap = styled.div`
 const FAQItem = styled.div`
   background: ${theme.colors.background};
   border-radius: ${theme.borderRadius.lg};
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
 `;
 
 const FAQButton = styled.button`
@@ -569,14 +571,14 @@ const FAQButton = styled.button`
   gap: 1rem;
   background: transparent;
   padding: 1rem 1.2rem;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const FAQQuestion = styled.h4`
   margin: 0;
   font-size: 1.18rem;
   font-family: ${theme.fonts.heading};
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const Chevron = styled.span`
@@ -598,11 +600,11 @@ const FAQAnswerText = styled.p`
 
 const ContactCTASection = styled.section`
   padding: 0 0 6rem;
-  background: linear-gradient(180deg, #ffffff 0%, #F8F5FF 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #FFF7F8 100%);
 `;
 
 const ContactCard = styled.div`
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
   border-radius: ${theme.borderRadius['2xl']};
   padding: 3rem 2rem;
   text-align: center;

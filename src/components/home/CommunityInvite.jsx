@@ -69,14 +69,14 @@ const CommunityInvite = () => {
     <CommunitySection ref={ref}>
       <DecorativeLeaf className="left">
         <svg viewBox="0 0 150 300" fill="none">
-          <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#F3EEFF" />
-          <path d="M75 30V270" stroke="#C4B5FD" strokeWidth="1.5" />
-          <path d="M75 80L40 120" stroke="#C4B5FD" strokeWidth="1" />
-          <path d="M75 140L45 180" stroke="#C4B5FD" strokeWidth="1" />
-          <path d="M75 200L50 240" stroke="#C4B5FD" strokeWidth="1" />
-          <path d="M75 80L110 120" stroke="#C4B5FD" strokeWidth="1" />
-          <path d="M75 140L105 180" stroke="#C4B5FD" strokeWidth="1" />
-          <path d="M75 200L100 240" stroke="#C4B5FD" strokeWidth="1" />
+          <path d="M75 0C75 0 15 75 15 150C15 225 75 300 75 300C75 300 135 225 135 150C135 75 75 0 75 0Z" fill="#FFF0F2" />
+          <path d="M75 30V270" stroke="#F5C5CA" strokeWidth="1.5" />
+          <path d="M75 80L40 120" stroke="#F5C5CA" strokeWidth="1" />
+          <path d="M75 140L45 180" stroke="#F5C5CA" strokeWidth="1" />
+          <path d="M75 200L50 240" stroke="#F5C5CA" strokeWidth="1" />
+          <path d="M75 80L110 120" stroke="#F5C5CA" strokeWidth="1" />
+          <path d="M75 140L105 180" stroke="#F5C5CA" strokeWidth="1" />
+          <path d="M75 200L100 240" stroke="#F5C5CA" strokeWidth="1" />
         </svg>
       </DecorativeLeaf>
 
@@ -236,9 +236,9 @@ const CommunityInvite = () => {
             </CTAContent>
             <CTADecor>
               <svg viewBox="0 0 200 200" fill="none">
-                <circle cx="100" cy="100" r="80" stroke="#A78BFA" strokeWidth="1" strokeDasharray="4 4" opacity="0.35"/>
-                <circle cx="100" cy="100" r="60" stroke="#8B5CF6" strokeWidth="1" strokeDasharray="4 4" opacity="0.4"/>
-                <circle cx="100" cy="100" r="40" stroke="#C4B5FD" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
+                <circle cx="100" cy="100" r="80" stroke="#D4848C" strokeWidth="1" strokeDasharray="4 4" opacity="0.35"/>
+                <circle cx="100" cy="100" r="60" stroke="#C25964" strokeWidth="1" strokeDasharray="4 4" opacity="0.4"/>
+                <circle cx="100" cy="100" r="40" stroke="#F5C5CA" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
               </svg>
             </CTADecor>
           </CTACard>
@@ -271,16 +271,16 @@ const rotateGeometry = keyframes`
 `;
 
 const chakraGlow = keyframes`
-  0%, 100% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.32), 0 0 40px rgba(139, 92, 246, 0.22); }
-  25% { box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), 0 0 50px rgba(167, 139, 250, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(196, 181, 253, 0.4), 0 0 60px rgba(139, 92, 246, 0.3); }
-  75% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.4), 0 0 50px rgba(196, 181, 253, 0.3); }
+  0%, 100% { box-shadow: 0 0 20px rgba(167, 139, 250, 0.32), 0 0 40px rgba(194, 89, 100, 0.22); }
+  25% { box-shadow: 0 0 25px rgba(194, 89, 100, 0.4), 0 0 50px rgba(167, 139, 250, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(245, 197, 202, 0.4), 0 0 60px rgba(194, 89, 100, 0.3); }
+  75% { box-shadow: 0 0 25px rgba(167, 139, 250, 0.4), 0 0 50px rgba(245, 197, 202, 0.3); }
 `;
 
 // Styled Components
 const CommunitySection = styled.section`
   padding: 7rem 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 50%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 50%, #FFFFFF 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -402,9 +402,9 @@ const Dot = styled.div`
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #C4B5FD;
+  background: #F5C5CA;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(196, 181, 253, 0.45);
+  box-shadow: 0 2px 6px rgba(245, 197, 202, 0.45);
   transform: translateZ(0);
 
   @media (max-width: 1024px) {
@@ -496,7 +496,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #A78BFA;
+  color: #D4848C;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -520,7 +520,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4.5vw, 3rem);
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.15;
   margin-bottom: 1rem;
   transform: translateZ(0);
@@ -651,7 +651,7 @@ const InstagramBigText = styled.h2`
   font-size: clamp(3rem, 8vw, 4.5rem);
   font-weight: 300;
   letter-spacing: -0.02em;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 0.9;
   margin-bottom: 1.5rem;
   transform: translateZ(0);
@@ -676,12 +676,12 @@ const InstagramHandle = styled.a`
   gap: 0.625rem;
   font-family: ${theme.fonts.body};
   font-size: 1.125rem;
-  color: #2D1B4E;
+  color: #3A1F23;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.875rem 1.75rem;
-  background: rgba(196, 181, 253, 0.24);
+  background: rgba(245, 197, 202, 0.24);
   border-radius: 50px;
   border: 2px solid transparent;
   transform: translateZ(0);
@@ -694,10 +694,10 @@ const InstagramHandle = styled.a`
 
   &:hover {
     color: #ffffff;
-    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+    background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
     border-color: transparent;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.34);
+    box-shadow: 0 8px 25px rgba(194, 89, 100, 0.34);
 
     svg {
       transform: scale(1.1);
@@ -1116,15 +1116,15 @@ const FeatureCard = styled.div`
   padding: 2.25rem;
   border-radius: 24px;
   text-align: center;
-  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(196, 181, 253, 0.24);
+  box-shadow: 0 6px 30px rgba(194, 89, 100, 0.1);
+  border: 1px solid rgba(245, 197, 202, 0.24);
   transition: all 0.4s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
 
   &:hover {
     transform: translateY(-8px) translateZ(0);
-    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.18);
+    box-shadow: 0 20px 50px rgba(194, 89, 100, 0.18);
   }
 
   @media (min-width: 1920px) {
@@ -1177,17 +1177,17 @@ const FeatureIconWrapper = styled.div`
   transform: translateZ(0);
 
   &.green {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.08));
-    color: #8B5CF6;
+    background: linear-gradient(135deg, rgba(194, 89, 100, 0.2), rgba(194, 89, 100, 0.08));
+    color: #C25964;
   }
 
   &.golden {
     background: linear-gradient(135deg, rgba(167, 139, 250, 0.24), rgba(167, 139, 250, 0.1));
-    color: #7C3AED;
+    color: #A3404B;
   }
 
   &.mint {
-    background: linear-gradient(135deg, rgba(196, 181, 253, 0.28), rgba(196, 181, 253, 0.12));
+    background: linear-gradient(135deg, rgba(245, 197, 202, 0.28), rgba(245, 197, 202, 0.12));
     color: #6D4BCB;
   }
 
@@ -1232,7 +1232,7 @@ const FeatureTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -1273,7 +1273,7 @@ const CTASection = styled.div`
 `;
 
 const CTACard = styled.div`
-  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 50%, #A78BFA 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #C25964 50%, #D4848C 100%);
   border-radius: 32px;
   padding: 4rem;
   position: relative;
@@ -1389,7 +1389,7 @@ const InstagramButton = styled.a`
   align-items: center;
   gap: 0.5rem;
   padding: 0.9375rem 2rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 55%, #A78BFA 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 55%, #D4848C 100%);
   color: #ffffff;
   border: none;
   border-radius: 100px;
@@ -1398,7 +1398,7 @@ const InstagramButton = styled.a`
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.38);
+  box-shadow: 0 4px 20px rgba(163, 64, 75, 0.38);
   transform: translateZ(0);
   backface-visibility: hidden;
 
@@ -1408,7 +1408,7 @@ const InstagramButton = styled.a`
 
   &:hover {
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.46);
+    box-shadow: 0 8px 30px rgba(163, 64, 75, 0.46);
   }
 
   @media (min-width: 1920px) {
@@ -1449,8 +1449,8 @@ const JourneyButton = styled(Link)`
   gap: 0.5rem;
   padding: 1rem 2.25rem;
   background: transparent;
-  color: #EDE9FE;
-  border: 2px solid #EDE9FE;
+  color: #FFF0F2;
+  border: 2px solid #FFF0F2;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
@@ -1466,8 +1466,8 @@ const JourneyButton = styled(Link)`
   }
 
   &:hover {
-    background: #EDE9FE;
-    color: #6D4BCB;
+    background: #FFF0F2;
+    color: #000000;
 
     svg {
       transform: translateX(4px);
@@ -1506,8 +1506,8 @@ const JourneyButton = styled(Link)`
     
     &:active {
       transform: scale(0.98) translateZ(0);
-      background: #EDE9FE;
-      color: #6D4BCB;
+      background: #FFF0F2;
+      color: #000000;
     }
   }
 `;

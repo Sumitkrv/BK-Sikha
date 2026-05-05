@@ -5,34 +5,24 @@ import { theme } from '../../styles/theme';
 
 const programs = [
   {
-    image: '/new%20images/pranayam%20practice.png',
-    category: 'Breathing',
-    title: 'Pranayama Practice',
-  },
-  {
-    image: '/new%20images/holistic%20healing.png',
-    category: 'Wellness',
-    title: 'Holistic Healing',
-  },
-  {
     image: '/new%20images/yogic%20coaching.png',
-    category: 'Lifestyle',
-    title: 'Yogic Lifestyle Coaching',
-  },
-  {
-    image: '/new%20images/emotional%20wellness%20(2).png',
-    category: 'NLP',
-    title: 'NLP Technique',
-  },
-  {
-    image: '/new%20images/begin%20your%20transformation.png',
-    category: 'Awareness',
-    title: 'Eye Opening Sessions',
+    category: 'Yoga',
+    title: 'Personalized Yoga',
   },
   {
     image: '/new%20images/meditation.png',
     category: 'Meditation',
     title: 'Mindful Meditation',
+  },
+  {
+    image: '/new%20images/holistic%20healing%20(3).png',
+    category: 'Gut Health',
+    title: 'Gut Healing',
+  },
+  {
+    image: '/new%20images/emotional%20wellness%20(2).png',
+    category: 'NLP',
+    title: 'NLP Coaching',
   },
 ];
 
@@ -163,13 +153,16 @@ const SectionHeader = styled.div`
   transform: translateZ(0);
 
   span {
-    display: block;
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
     font-family: ${theme.fonts.body};
-    font-size: ${theme.fontSizes.sm};
+    font-size: 0.84rem;
     font-weight: 600;
-    color: #cec5ad;
+    color: #3A1F23;
+    background: rgba(194, 89, 100, 0.18);
+    border-radius: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     margin-bottom: 0.75rem;
   }
 

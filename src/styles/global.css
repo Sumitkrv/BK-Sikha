@@ -8,21 +8,22 @@
 }
 
 :root {
-  /* Color variables for easy reference */
-  --primary: #8B5CF6;
-  --primary-light: #C4B5FD;
-  --secondary: #EDE9FE;
-  --accent: #C4B5FD;
-  --accent-light: #F8F5FF;
+  /* Color variables — Dusty Rose #C25964 brand palette */
+  --primary: #C25964;
+  --primary-light: #D4848C;
+  --primary-dark: #A3404B;
+  --secondary: #F5C5CA;
+  --accent: #F5C5CA;
+  --accent-light: #FFF7F8;
   --background: #FFFFFF;
-  --background-alt: #F8F5FF;
-  --text: #4B5563;
-  --text-muted: rgba(75, 85, 99, 0.82);
-  --heading: #2D1B4E;
-  --border: #E9D5FF;
-  --cta: #8B5CF6;
-  --cta-hover: #7C3AED;
-  --page-gradient: linear-gradient(135deg, #FFFFFF 0%, #F8F5FF 50%, #EDE9FE 100%);
+  --background-alt: #FFF7F8;
+  --text: #4B3235;
+  --text-muted: rgba(75, 50, 53, 0.82);
+  --heading: #3A1F23;
+  --border: #F5C5CA;
+  --cta: #C25964;
+  --cta-hover: #C25964;
+  --page-gradient: linear-gradient(135deg, #FFFFFF 0%, #FFF7F8 50%, #FFF0F2 100%);
 }
 
 html {
@@ -118,7 +119,7 @@ a:hover {
 header a,
 header h1,
 header p {
-  text-shadow: 0 1px 2px rgba(45, 27, 78, 0.2);
+  text-shadow: 0 1px 2px rgba(58, 31, 35, 0.2);
 }
 
 /* Buttons - Calm, inviting CTAs */
@@ -163,8 +164,8 @@ img {
 
 /* Selection */
 ::selection {
-  background-color: #C4B5FD;
-  color: #2D1B4E;
+  background-color: #F5C5CA;
+  color: #3A1F23;
 }
 
 /* Scrollbar styling - subtle and elegant */
@@ -177,18 +178,18 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C4B5FD;
+  background: #F5C5CA;
   border-radius: 5px;
   border: 2px solid #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B5CF6;
+  background: #C25964;
 }
 
 /* Focus states - accessible and beautiful */
 *:focus-visible {
-  outline: 2px solid #C4B5FD;
+  outline: 2px solid #F5C5CA;
   outline-offset: 4px;
 }
 
@@ -206,15 +207,15 @@ img {
   animation: shimmer 2s infinite linear;
   background: linear-gradient(
     to right,
-    #F8F5FF 0%,
-    #EDE9FE 20%,
-    #F8F5FF 40%,
-    #F8F5FF 100%
+    #FFF7F8 0%,
+    #FFF0F2 20%,
+    #FFF7F8 40%,
+    #FFF7F8 100%
   );
   background-size: 1000px 100%;
 }
 
-/* ===== PURPLE PREMIUM THEME OVERRIDES ===== */
+/* ===== DUSTY ROSE PREMIUM THEME ===== */
 
 main {
   background: var(--page-gradient);
@@ -225,7 +226,7 @@ main section:nth-of-type(odd) {
 }
 
 main section:nth-of-type(even) {
-  background-color: #F8F5FF !important;
+  background-color: #FFF7F8 !important;
 }
 
 p,
@@ -249,9 +250,9 @@ button,
 button:not([class*='secondary']):not([class*='Secondary']),
 [class*='cta'],
 [class*='CTA'] {
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%) !important;
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%) !important;
   color: #FFFFFF !important;
-  box-shadow: 0 10px 24px rgba(139, 92, 246, 0.22) !important;
+  box-shadow: 0 10px 24px rgba(194, 89, 100, 0.22) !important;
 }
 
 button:hover,
@@ -259,31 +260,49 @@ button:hover,
 [class*='button']:hover,
 [class*='Button']:hover {
   transform: translateY(-2px);
+  color: #000 !important;
 }
 
 button:hover:not([class*='secondary']):not([class*='Secondary']),
 [class*='cta']:hover,
 [class*='CTA']:hover {
-  background: #7C3AED !important;
-  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.28) !important;
+  background: #C25964 !important;
+  box-shadow: 0 14px 30px rgba(194, 89, 100, 0.24) !important;
+  color: #000 !important;
+}
+
+button:active,
+button:focus-visible,
+.btn:active,
+.btn:focus-visible,
+[class*='button']:active,
+[class*='button']:focus-visible,
+[class*='Button']:active,
+[class*='Button']:focus-visible,
+[class*='cta']:active,
+[class*='cta']:focus-visible,
+[class*='CTA']:active,
+[class*='CTA']:focus-visible {
+  color: #000000 !important;
+  font-weight: 700 !important;
 }
 
 input,
 textarea,
 select {
-  border: 1px solid #E9D5FF !important;
+  border: 1px solid #F5C5CA !important;
   background: #FFFFFF !important;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #8B5CF6 !important;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18) !important;
+  border-color: #C25964 !important;
+  box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18) !important;
 }
 
 footer {
-  background: linear-gradient(135deg, #6D28D9 0%, #7C3AED 55%, #8B5CF6 100%) !important;
+  background: linear-gradient(135deg, #7A2530 0%, #A3404B 55%, #C25964 100%) !important;
 }
 
 footer * {
@@ -292,7 +311,7 @@ footer * {
 
 footer a:hover,
 footer svg {
-  color: #EDE9FE !important;
+  color: #F5C5CA !important;
 }
 
 /* Smooth page transitions */
@@ -358,7 +377,6 @@ footer svg {
 
 /* Mobile First - Base styles for smallest screens */
 @media (max-width: 359px) {
-  /* Extra small phones (iPhone SE, Galaxy Fold) */
   html {
     font-size: 14px;
   }
@@ -484,7 +502,6 @@ footer svg {
 
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
-  /* Increase touch target sizes */
   button, 
   a, 
   input, 
@@ -493,7 +510,6 @@ footer svg {
     min-height: 44px;
   }
   
-  /* Remove hover effects that don't work on touch */
   *:hover {
     transition-duration: 0s !important;
   }
@@ -501,7 +517,6 @@ footer svg {
 
 /* High DPI / Retina displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /* Optimize for high DPI */
   img {
     image-rendering: -webkit-optimize-contrast;
   }
@@ -548,7 +563,6 @@ footer svg {
     padding: 2rem 0;
   }
   
-  /* Reduce hero heights in landscape */
   [class*="HeroSection"], 
   [class*="hero"] {
     min-height: 80vh;

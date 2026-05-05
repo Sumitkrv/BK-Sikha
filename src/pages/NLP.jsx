@@ -243,7 +243,7 @@ const HeroImage = styled.img`
 const HeroOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, rgba(45, 27, 78, 0.84) 10%, rgba(109, 75, 203, 0.5) 55%, rgba(139, 92, 246, 0.22) 100%);
+  background: linear-gradient(115deg, rgba(58, 31, 35, 0.84) 10%, rgba(109, 75, 203, 0.5) 55%, rgba(194, 89, 100, 0.22) 100%);
 `;
 
 const HeroContent = styled.div`
@@ -262,7 +262,7 @@ const HeroLabel = styled.p`
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #EDE9FE;
+  color: #FFF0F2;
   margin: 0 0 1rem;
   font-weight: 600;
 `;
@@ -299,7 +299,7 @@ const PrimaryCTA = styled(Link)`
   color: white;
   font-weight: 600;
   font-size: 0.95rem;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   box-shadow: 0 6px 20px rgba(109, 75, 203, 0.35);
   transition: all ${theme.transitions.base};
 
@@ -323,6 +323,7 @@ const SecondaryCTA = styled(Link)`
 
   &:hover {
     background: rgba(255, 255, 255, 0.12);
+    color: #000000;
   }
 `;
 
@@ -363,7 +364,7 @@ const AboutImage = styled.img`
 `;
 
 const BenefitsSection = styled.section`
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 100%);
 `;
 
 const BenefitsGrid = styled.div`
@@ -384,7 +385,7 @@ const BenefitCard = styled.div`
   background: white;
   padding: 2rem 1.6rem;
   border-radius: ${theme.borderRadius.xl};
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
   box-shadow: ${theme.shadows.sm};
   transition: all ${theme.transitions.base};
 
@@ -400,8 +401,8 @@ const BenefitIcon = styled.div`
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: #2D1B4E;
-  background: rgba(196, 181, 253, 0.32);
+  color: #3A1F23;
+  background: rgba(245, 197, 202, 0.32);
   margin-bottom: 0.95rem;
   font-size: 1.15rem;
 `;
@@ -409,7 +410,7 @@ const BenefitIcon = styled.div`
 const BenefitTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.45rem;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 0.55rem;
 `;
 
@@ -440,14 +441,14 @@ const ProcessGrid = styled.div`
 
 const StepCard = styled.div`
   background: ${theme.colors.background};
-  border: 1px solid rgba(196, 181, 253, 0.35);
+  border: 1px solid rgba(245, 197, 202, 0.35);
   border-radius: ${theme.borderRadius.lg};
   padding: 1.4rem 1.2rem;
 `;
 
 const StepNumber = styled.span`
   font-family: ${theme.fonts.body};
-  color: #C4B5FD;
+  color: #F5C5CA;
   font-size: 0.85rem;
   letter-spacing: 0.1em;
   font-weight: 700;
@@ -457,7 +458,7 @@ const StepTitle = styled.h4`
   margin: 0.4rem 0 0.5rem;
   font-size: 1.2rem;
   font-family: ${theme.fonts.heading};
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const StepDescription = styled.p`
@@ -473,12 +474,12 @@ const TestimonialsSection = styled.section`
 
 const BannerCTASection = styled.section`
   padding: 0 0 6rem;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 100%);
 `;
 
 const BannerCard = styled.div`
   text-align: center;
-  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
   border-radius: ${theme.borderRadius['2xl']};
   padding: 3.2rem 2rem;
   box-shadow: ${theme.shadows.lg};

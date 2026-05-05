@@ -55,7 +55,7 @@ const AreasOfExpertise = () => {
           transition={{ duration: 0.6 }}
         >
           <Subtitle>Pain Points We Address</Subtitle>
-          <Title>Challenges You Don&apos;t Have to Face Alone</Title>
+          <Title>Why Choose Us</Title>
           <Description>
             A focused support system for common emotional, lifestyle, and health challenges — 
             approached through yoga, mindfulness, and practical NLP techniques.
@@ -137,7 +137,7 @@ export default AreasOfExpertise;
 // Styled Components
 const Section = styled.section`
   padding: 120px 0;
-  background: linear-gradient(165deg, #FFFFFF 0%, #F8F5FF 50%, #EDE9FE 100%);
+  background: linear-gradient(165deg, #FFFFFF 0%, #FFF7F8 50%, #FFF0F2 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -150,7 +150,7 @@ const Section = styled.section`
     transform: translate(-50%, -50%) translateZ(0);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(196, 181, 253, 0.14) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(245, 197, 202, 0.14) 0%, transparent 60%);
     pointer-events: none;
     will-change: auto;
   }
@@ -273,7 +273,7 @@ const Subtitle = styled.p`
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2.5px;
-  color: #8B5CF6;
+  color: #C25964;
   margin-bottom: 16px;
 
   @media (min-width: 1920px) {
@@ -314,7 +314,7 @@ const Title = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(1.75rem, 5vw, 3.5rem);
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 24px;
   line-height: 1.15;
 
@@ -616,16 +616,16 @@ const ExpertiseItem = styled(motion.div)`
   gap: 20px;
   padding: 1rem 1.125rem;
   background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(196, 181, 253, 0.28);
+  border: 1px solid rgba(245, 197, 202, 0.28);
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(45, 27, 78, 0.08);
+  box-shadow: 0 8px 24px rgba(58, 31, 35, 0.08);
   transition: transform 0.25s ease, box-shadow 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
 
   &:hover {
     transform: translateY(-4px) translateZ(0);
-    box-shadow: 0 14px 30px rgba(45, 27, 78, 0.12);
+    box-shadow: 0 14px 30px rgba(58, 31, 35, 0.12);
   }
 
   @media (min-width: 1920px) {
@@ -666,7 +666,7 @@ const ItemTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.4rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 8px;
 
   @media (min-width: 1920px) {
@@ -764,7 +764,7 @@ const SupportiveLine = styled.p`
   line-height: 1.75;
   color: #374151;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(196, 181, 253, 0.32);
+  border: 1px solid rgba(245, 197, 202, 0.32);
   border-radius: 14px;
   padding: 1rem 1.25rem;
 
@@ -785,11 +785,11 @@ const CheckIcon = styled(motion.div)`
   min-width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.32);
+  box-shadow: 0 6px 20px rgba(194, 89, 100, 0.32);
   color: white;
   font-size: 1.2rem;
   transform: translateZ(0);
@@ -799,7 +799,7 @@ const CheckIcon = styled(motion.div)`
     min-width: 56px;
     height: 56px;
     font-size: 1.3rem;
-    box-shadow: 0 7px 24px rgba(124, 58, 237, 0.36);
+    box-shadow: 0 7px 24px rgba(163, 64, 75, 0.36);
   }
 
   @media (max-width: 1440px) {
@@ -824,7 +824,7 @@ const CheckIcon = styled(motion.div)`
     min-width: 42px;
     height: 42px;
     font-size: 1.05rem;
-    box-shadow: 0 5px 16px rgba(139, 92, 246, 0.26);
+    box-shadow: 0 5px 16px rgba(194, 89, 100, 0.26);
   }
 
   @media (max-width: 640px) {
@@ -837,14 +837,14 @@ const CheckIcon = styled(motion.div)`
     min-width: 36px;
     height: 36px;
     font-size: 0.9rem;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.24);
+    box-shadow: 0 4px 12px rgba(194, 89, 100, 0.24);
   }
 
   @media (max-width: 390px) {
     min-width: 32px;
     height: 32px;
     font-size: 0.8rem;
-    box-shadow: 0 3px 10px rgba(139, 92, 246, 0.22);
+    box-shadow: 0 3px 10px rgba(194, 89, 100, 0.22);
   }
 
   @media (max-width: 375px) {

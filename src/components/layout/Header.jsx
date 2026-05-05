@@ -57,18 +57,8 @@ const Header = () => {
   const navLinks = useMemo(() => [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/services', label: 'Services' },
     { path: '/nlp', label: 'NLP' },
     { path: '/gut-missing', label: 'Gut Healing' },
-    { path: '/portfolio', label: 'Portfolio' },
-    { path: '/contact', label: 'Connect' },
-  ], []);
-
-  // Simple nav links for items without dropdown
-  const simpleNavLinks = useMemo(() => [
-    { path: '/', label: 'Home' },
-    { path: '/portfolio', label: 'Portfolio' },
-    { path: '/contact', label: 'Connect' },
   ], []);
 
   // Motion variants with reduced motion support
@@ -176,28 +166,6 @@ const Header = () => {
               <NavLinkUnderline $isActive={location.pathname === '/about'} />
             </NavLink>
             
-            {/* Services Link */}
-            <NavLink
-              to="/services"
-              $isActive={location.pathname === '/services'}
-              aria-current={location.pathname === '/services' ? 'page' : undefined}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <NavLinkText>Services</NavLinkText>
-              <NavLinkUnderline $isActive={location.pathname === '/services'} />
-            </NavLink>
-            
-            {/* Portfolio Link */}
-            <NavLink
-              to="/portfolio"
-              $isActive={location.pathname === '/portfolio'}
-              aria-current={location.pathname === '/portfolio' ? 'page' : undefined}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <NavLinkText>Portfolio</NavLinkText>
-              <NavLinkUnderline $isActive={location.pathname === '/portfolio'} />
-            </NavLink>
-
             {/* NLP Link */}
             <NavLink
               to="/nlp"
@@ -218,17 +186,6 @@ const Header = () => {
             >
               <NavLinkText>Gut Healing</NavLinkText>
               <NavLinkUnderline $isActive={location.pathname === '/gut-missing'} />
-            </NavLink>
-            
-            {/* Connect Link */}
-            <NavLink
-              to="/contact"
-              $isActive={location.pathname === '/contact'}
-              aria-current={location.pathname === '/contact' ? 'page' : undefined}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <NavLinkText>Connect</NavLinkText>
-              <NavLinkUnderline $isActive={location.pathname === '/contact'} />
             </NavLink>
             
             {/* Desktop CTA Button */}
@@ -343,16 +300,18 @@ const HeaderWrapper = styled.header`
   right: 0;
   width: 100%;
   z-index: 9999;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.92) 0%, rgba(124, 58, 237, 0.9) 60%, rgba(109, 40, 217, 0.9) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.16);
+  background: linear-gradient(135deg, rgba(194, 89, 100, 0.9) 0%, rgba(169, 74, 84, 0.88) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 28px rgba(42, 16, 21, 0.2);
   transition: 
     background 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
     box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
     padding 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
     backdrop-filter 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-  padding: 1.375rem 0;
+  padding: 1.125rem 0;
+  min-height: 64px;
   margin-bottom: 0;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -360,7 +319,7 @@ const HeaderWrapper = styled.header`
   isolation: isolate;
   
   /* Safe area for notched devices */
-  padding-top: max(${(props) => (props.$isScrolled ? '0.875rem' : '1.375rem')}, env(safe-area-inset-top));
+  padding-top: max(${(props) => (props.$isScrolled ? '0.75rem' : '1.125rem')}, env(safe-area-inset-top));
   
   /* 4K screens */
   @media (min-width: 2560px) {
@@ -373,27 +332,27 @@ const HeaderWrapper = styled.header`
   }
 
   @media (max-width: 1440px) {
-    padding: ${(props) => (props.$isScrolled ? '0.875rem 0' : '1.375rem 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.8125rem 0' : '1.125rem 0')};
   }
 
   @media (max-width: 1200px) {
-    padding: ${(props) => (props.$isScrolled ? '0.8125rem 0' : '1.25rem 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.75rem 0' : '1rem 0')};
   }
 
   @media (max-width: 1024px) {
-    padding: ${(props) => (props.$isScrolled ? '0.75rem 0' : '1.125rem 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.6875rem 0' : '0.9375rem 0')};
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: ${(props) => (props.$isScrolled ? '0.6875rem 0 0' : '1rem 0 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.625rem 0 0' : '0.875rem 0 0')};
   }
 
   @media (max-width: 640px) {
-    padding: ${(props) => (props.$isScrolled ? '0.625rem 0 0' : '0.9375rem 0 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.5625rem 0 0' : '0.8125rem 0 0')};
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding: ${(props) => (props.$isScrolled ? '0.625rem 0 0' : '1rem 0 0')};
+    padding: ${(props) => (props.$isScrolled ? '0.5625rem 0 0' : '0.875rem 0 0')};
   }
 
   @media (max-width: 390px) {
@@ -423,6 +382,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 2.5rem;
+  padding: 0 1.5rem;
   transform: translateZ(0);
   backface-visibility: hidden;
 
@@ -444,18 +404,22 @@ const Container = styled.div`
 
   @media (max-width: 1024px) {
     gap: 2rem;
+    padding: 0 1.25rem;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     gap: 1.5rem;
+    padding: 0 1rem;
   }
 
   @media (max-width: 640px) {
     gap: 1.25rem;
+    padding: 0 0.875rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     gap: 1rem;
+    padding: 0 0.75rem;
   }
 
   @media (max-width: 390px) {
@@ -500,7 +464,7 @@ const Logo = styled(Link)`
 `;
 
 const LogoImage = styled.img`
-  height: ${(props) => (props.$isScrolled ? '55px' : '70px')};
+  height: ${(props) => (props.$isScrolled ? '58px' : '72px')};
   width: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -652,7 +616,7 @@ const LogoTagline = styled.span`
   font-size: ${(props) => (props.$isScrolled ? '0.625rem' : '0.6875rem')};
   font-weight: 400;
   font-style: italic;
-  color: rgba(237, 233, 254, 0.9);
+  color: rgba(255, 240, 242, 0.9);
   letter-spacing: 0.06em;
   opacity: ${(props) => (props.$isScrolled ? 0.85 : 1)};
   transition: 
@@ -708,7 +672,7 @@ const LogoTagline = styled.span`
 const Nav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 1.35rem;
+  gap: 1.6rem;
   transform: translateZ(0);
   backface-visibility: hidden;
   
@@ -718,15 +682,15 @@ const Nav = styled.nav`
   }
   
   @media (min-width: 2560px) {
-    gap: 2rem;
+    gap: 2.25rem;
   }
 
   @media (min-width: 1920px) {
-    gap: 1.8rem;
+    gap: 2rem;
   }
 
   @media (min-width: ${theme.breakpoints.wide}) {
-    gap: 1.6rem;
+    gap: 1.75rem;
   }
 
   @media (min-width: ${theme.breakpoints.tablet}) {
@@ -744,7 +708,7 @@ const Nav = styled.nav`
 
 const NavLink = styled(Link)`
   font-family: ${theme.fonts.body};
-  font-size: 0.9375rem;
+  font-size: 0.975rem;
   font-weight: ${(props) => (props.$isActive ? 500 : 400)};
   color: ${(props) =>
     props.$isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.9)'};
@@ -779,7 +743,7 @@ const NavLink = styled(Link)`
   }
 
   &:hover {
-    color: #FFFFFF;
+    color: #000000;
   }
   
   &:focus-visible {
@@ -812,10 +776,10 @@ const NavLinkUnderline = styled.span`
   bottom: 0.25rem;
   left: 50%;
   height: 2px;
-  background: #C4B5FD;
+  background: linear-gradient(90deg, rgba(255, 240, 242, 0.2), rgba(255, 240, 242, 0.9));
   border-radius: 1px;
   transform: translateX(-50%) translateZ(0);
-  width: ${(props) => (props.$isActive ? '70%' : '0')};
+  width: ${(props) => (props.$isActive ? '75%' : '0')};
   opacity: ${(props) => (props.$isActive ? 1 : 0)};
   transition: 
     width 0.35s cubic-bezier(0.25, 0.1, 0.25, 1),
@@ -841,7 +805,7 @@ const CTAButton = styled(motion(Link))`
   align-items: center;
   justify-content: center;
   padding: 0.8125rem 1.875rem;
-  background: #8B5CF6;
+  background: linear-gradient(135deg, #C25964 0%, #A94A54 100%);
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
@@ -850,8 +814,8 @@ const CTAButton = styled(motion(Link))`
   text-decoration: none;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 2px 8px rgba(139, 92, 246, 0.3),
-    0 1px 2px rgba(139, 92, 246, 0.15);
+    0 6px 20px rgba(194, 89, 100, 0.35),
+    0 2px 6px rgba(194, 89, 100, 0.2);
   transition: 
     background 0.3s ease,
     box-shadow 0.3s ease,
@@ -882,27 +846,28 @@ const CTAButton = styled(motion(Link))`
   }
 
   &:hover {
-    background: #7C3AED;
+    background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
+    color: #000000 !important;
     box-shadow: 
-      0 8px 24px rgba(124, 58, 237, 0.4),
-      0 4px 8px rgba(124, 58, 237, 0.2);
-    transform: translateY(-2px) translateZ(0);
+      0 12px 30px rgba(194, 89, 100, 0.45),
+      0 6px 14px rgba(194, 89, 100, 0.28);
+    transform: translateY(-2px) scale(1.02) translateZ(0);
   }
   
   &:focus-visible {
-    outline: 2px solid #8B5CF6;
+    outline: 2px solid #C25964;
     outline-offset: 3px;
   }
   
   &:active {
-    background: #6D28D9;
+    background: #7A2530;
     transform: translateY(0) translateZ(0);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #7C3AED;
+      background: #A3404B;
       transform: scale(0.98) translateZ(0);
     }
   }
@@ -920,7 +885,7 @@ const MobileMenuButton = styled(motion.button)`
   display: none;
   background: transparent;
   border: none;
-  color: #EDE9FE;
+  color: #FFF0F2;
   padding: 0.75rem;
   margin-right: -0.75rem;
   cursor: pointer;
@@ -931,11 +896,11 @@ const MobileMenuButton = styled(motion.button)`
   will-change: transform;
   
   &:hover {
-    background: rgba(196, 181, 253, 0.18);
+    background: rgba(245, 197, 202, 0.18);
   }
   
   &:focus-visible {
-    outline: 2px solid #C4B5FD;
+    outline: 2px solid #F5C5CA;
     outline-offset: 2px;
   }
 
@@ -969,7 +934,7 @@ const MobileMenuButton = styled(motion.button)`
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: rgba(196, 181, 253, 0.25);
+      background: rgba(245, 197, 202, 0.25);
     }
   }
 `;
@@ -983,9 +948,9 @@ const MenuIconWrapper = styled(motion.div)`
 const MobileNavOverlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(45, 27, 78, 0.28);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(58, 31, 35, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: ${theme.zIndex.modal - 1};
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -995,16 +960,12 @@ const MobileNav = styled.nav`
   position: fixed;
   top: 0;
   right: 0;
-  width: 85%;
-  max-width: 400px;
+  width: 100%;
+  max-width: none;
   height: 100vh;
   height: 100dvh;
-  background: linear-gradient(
-    180deg,
-    ${theme.colors.backgroundAlt} 0%,
-    ${theme.colors.background} 100%
-  );
-  box-shadow: -8px 0 40px rgba(139, 92, 246, 0.2);
+  background: linear-gradient(180deg, #FFF3F5 0%, #FFFFFF 100%);
+  box-shadow: -12px 0 40px rgba(194, 89, 100, 0.25);
   padding: 2.5rem 2rem 3rem;
   padding-top: max(2.5rem, env(safe-area-inset-top));
   padding-bottom: max(3rem, env(safe-area-inset-bottom));
@@ -1035,7 +996,6 @@ const MobileNav = styled.nav`
   }
 
   @media (max-width: 390px) {
-    width: 88%;
     padding: 1.875rem 1.375rem 2.25rem;
   }
 
@@ -1044,12 +1004,11 @@ const MobileNav = styled.nav`
   }
   
   @media (max-width: 360px) {
-    width: 90%;
     padding: 2rem 1.5rem 2.5rem;
   }
   
   @media (min-width: 600px) {
-    width: 60%;
+    width: 100%;
   }
 `;
 
@@ -1082,7 +1041,7 @@ const MobileNavBrand = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   letter-spacing: 0.04em;
   margin-bottom: 0.25rem;
 
@@ -1107,7 +1066,7 @@ const MobileNavTagline = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 0.75rem;
   font-weight: 400;
-  color: #6B7280;
+  color: #6D4A4E;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 
@@ -1157,7 +1116,7 @@ const MobileNavLink = styled(Link)`
   font-size: 1.125rem;
   font-weight: ${(props) => (props.$isActive ? 500 : 400)};
   color: ${(props) =>
-    props.$isActive ? '#2D1B4E' : '#4B3A71'};
+    props.$isActive ? '#3A1F23' : '#5A3238'};
   text-decoration: none;
   padding: 1rem 1rem 1rem 1.25rem;
   border-radius: ${theme.borderRadius.lg};
@@ -1191,19 +1150,19 @@ const MobileNavLink = styled(Link)`
   }
 
   &:hover {
-    color: #2D1B4E;
-    background: rgba(196, 181, 253, 0.12);
+    color: #3A1F23;
+    background: rgba(245, 197, 202, 0.12);
   }
   
   &:focus-visible {
-    outline: 2px solid #C4B5FD;
+    outline: 2px solid #F5C5CA;
     outline-offset: -2px;
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: rgba(196, 181, 253, 0.18);
+      background: rgba(245, 197, 202, 0.18);
     }
   }
   
@@ -1219,7 +1178,7 @@ const ActiveIndicator = styled.span`
   transform: translateY(-50%) translateZ(0);
   width: 3px;
   height: 1.5rem;
-  background: #C4B5FD;
+  background: #F5C5CA;
   border-radius: 2px;
   backface-visibility: hidden;
 
@@ -1247,7 +1206,7 @@ const MobileCTAButton = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1.125rem 2rem;
-  background: #8B5CF6;
+  background: #C25964;
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
@@ -1257,8 +1216,8 @@ const MobileCTAButton = styled(Link)`
   text-align: center;
   border-radius: ${theme.borderRadius.full};
   box-shadow: 
-    0 4px 16px rgba(139, 92, 246, 0.28),
-    0 2px 4px rgba(139, 92, 246, 0.14);
+    0 4px 16px rgba(194, 89, 100, 0.28),
+    0 2px 4px rgba(194, 89, 100, 0.14);
   margin-top: auto;
   transition: 
     background 0.3s ease,
@@ -1293,21 +1252,22 @@ const MobileCTAButton = styled(Link)`
   }
 
   &:hover {
-    background: #7C3AED;
+    background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
+    color: #000000 !important;
     box-shadow: 
-      0 6px 24px rgba(124, 58, 237, 0.35),
-      0 2px 6px rgba(124, 58, 237, 0.16);
+      0 6px 24px rgba(194, 89, 100, 0.35),
+      0 2px 6px rgba(194, 89, 100, 0.16);
   }
   
   &:focus-visible {
-    outline: 2px solid #8B5CF6;
+    outline: 2px solid #C25964;
     outline-offset: 3px;
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #7C3AED;
+      background: #A3404B;
       transform: scale(0.98) translateZ(0);
     }
   }

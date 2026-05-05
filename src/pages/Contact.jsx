@@ -283,7 +283,7 @@ const Contact = () => {
       {/* FAQ Section */}
       <FAQSection className="section">
         <div className="container">
-          <SectionTitle subtitle="Common Questions">
+          <SectionTitle subtitle="Common Questions" className="faq-title">
             What You Might Be Wondering
           </SectionTitle>
 
@@ -362,7 +362,7 @@ const HeroSection = styled.section`
   background: linear-gradient(
     135deg,
     ${theme.colors.background} 0%,
-    rgba(196, 181, 253, 0.2) 50%,
+    rgba(245, 197, 202, 0.2) 50%,
     ${theme.colors.backgroundAlt} 100%
   );
   text-align: center;
@@ -375,7 +375,7 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 55%);
+    background: radial-gradient(ellipse at 30% 20%, rgba(163, 64, 75, 0.08) 0%, transparent 55%);
     pointer-events: none;
   }
 `;
@@ -389,7 +389,7 @@ const Subtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   font-weight: 600;
-  color: #A78BFA;
+  color: #D4848C;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 0 0 1rem;
@@ -399,7 +399,7 @@ const HeroTitle = styled.h1`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 1.5rem;
   line-height: 1.2;
 `;
@@ -444,7 +444,7 @@ const FormTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 1rem;
 `;
 
@@ -472,7 +472,7 @@ const Label = styled.label`
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const Required = styled.span`
@@ -485,14 +485,14 @@ const Input = styled.input`
   font-size: 1rem;
   color: #4B5563;
   background: white;
-  border: 2px solid rgba(196, 181, 253, 0.45);
+  border: 2px solid rgba(245, 197, 202, 0.45);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: #8B5CF6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+    border-color: #C25964;
+    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
   }
 
   &::placeholder {
@@ -506,15 +506,15 @@ const Select = styled.select`
   font-size: 1rem;
   color: #4B5563;
   background: white;
-  border: 2px solid rgba(196, 181, 253, 0.45);
+  border: 2px solid rgba(245, 197, 202, 0.45);
   border-radius: ${theme.borderRadius.lg};
   transition: all ${theme.transitions.base};
   cursor: pointer;
 
   &:focus {
     outline: none;
-    border-color: #8B5CF6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+    border-color: #C25964;
+    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
   }
 `;
 
@@ -525,15 +525,15 @@ const Textarea = styled.textarea`
   line-height: 1.7;
   color: #4B5563;
   background: white;
-  border: 2px solid rgba(196, 181, 253, 0.45);
+  border: 2px solid rgba(245, 197, 202, 0.45);
   border-radius: ${theme.borderRadius.lg};
   resize: vertical;
   transition: all ${theme.transitions.base};
 
   &:focus {
     outline: none;
-    border-color: #8B5CF6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+    border-color: #C25964;
+    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
   }
 
   &::placeholder {
@@ -547,11 +547,11 @@ const SubmitButton = styled(motion.button)`
   font-size: 1.125rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   border: none;
   border-radius: ${theme.borderRadius.full};
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 15px rgba(163, 64, 75, 0.3);
   transition: all ${theme.transitions.base};
   display: inline-flex;
   align-items: center;
@@ -560,8 +560,8 @@ const SubmitButton = styled(motion.button)`
   align-self: flex-start;
 
   &:hover {
-    background: linear-gradient(135deg, #6D4BCB 0%, #7C3AED 100%);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    background: linear-gradient(135deg, #6D4BCB 0%, #A3404B 100%);
+    box-shadow: 0 6px 20px rgba(163, 64, 75, 0.4);
     transform: translateY(-2px);
   }
 
@@ -580,15 +580,15 @@ const InfoCard = styled.div`
   background: white;
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(196, 181, 253, 0.3);
+  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.1);
+  border: 1px solid rgba(245, 197, 202, 0.3);
 `;
 
 const InfoTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 2rem;
 `;
 
@@ -613,10 +613,10 @@ const MethodIcon = styled.div`
   justify-content: center;
   background: linear-gradient(
     135deg,
-    #7C3AED 0%,
-    #8B5CF6 100%
+    #A3404B 0%,
+    #C25964 100%
   );
-  color: #EDE9FE;
+  color: #FFF0F2;
   font-size: 1.5rem;
   border-radius: ${theme.borderRadius.lg};
 `;
@@ -632,7 +632,7 @@ const MethodLabel = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0;
 `;
 
@@ -654,12 +654,12 @@ const MethodLink = styled.a`
     left: 0;
     width: 0;
     height: 2px;
-    background: #8B5CF6;
+    background: #C25964;
     transition: width 0.3s ease;
   }
 
   &:hover {
-    color: #7C3AED;
+    color: #A3404B;
     
     &::after {
       width: 100%;
@@ -677,8 +677,8 @@ const SessionInfoCard = styled.div`
   background: linear-gradient(
     135deg,
     #6D4BCB 0%,
-    #7C3AED 50%,
-    #8B5CF6 100%
+    #A3404B 50%,
+    #C25964 100%
   );
   padding: 2.5rem;
   border-radius: ${theme.borderRadius.xl};
@@ -694,7 +694,7 @@ const SessionInfoCard = styled.div`
     right: -50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(237, 233, 254, 0.18) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 240, 242, 0.18) 0%, transparent 70%);
     pointer-events: none;
   }
 `;
@@ -730,8 +730,8 @@ const QuoteCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: ${theme.borderRadius.xl};
-  border-left: 4px solid #C4B5FD;
-  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.1);
+  border-left: 4px solid #F5C5CA;
+  box-shadow: 0 2px 12px rgba(194, 89, 100, 0.1);
 `;
 
 const QuoteText = styled.p`
@@ -739,19 +739,43 @@ const QuoteText = styled.p`
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.6;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 0.75rem;
 `;
 
 const QuoteAuthor = styled.p`
   font-size: 0.95rem;
-  color: #8B5CF6;
+  color: #C25964;
   font-weight: 500;
   margin: 0;
 `;
 
 const FAQSection = styled.section`
   background: white;
+
+  .faq-title {
+    text-align: center;
+    margin: 0 auto 3.5rem;
+  }
+
+  .faq-title p {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    margin: 0 0 1rem;
+    background: rgba(194, 89, 100, 0.18);
+    color: #3A1F23;
+    border-radius: 2px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+  }
+
+  .faq-title h2 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 600;
+    color: #C25964;
+    line-height: 1.2;
+  }
 `;
 
 const FAQGrid = styled.div`
@@ -779,12 +803,12 @@ const FAQItem = styled.div`
   background: ${theme.colors.background};
   padding: 2rem;
   border-radius: ${theme.borderRadius.lg};
-  border: 2px solid rgba(196, 181, 253, 0.35);
+  border: 2px solid rgba(245, 197, 202, 0.35);
   transition: all ${theme.transitions.base};
 
   &:hover {
-    border-color: #A78BFA;
-    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.12);
+    border-color: #D4848C;
+    box-shadow: 0 4px 15px rgba(194, 89, 100, 0.12);
     transform: translateY(-2px);
   }
 `;
@@ -793,7 +817,7 @@ const FAQQuestion = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 0.75rem;
 `;
 

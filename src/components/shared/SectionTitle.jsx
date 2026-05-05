@@ -40,12 +40,16 @@ const TitleWrapper = styled.div`
 
 const Subtitle = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: ${theme.colors.accent};
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
   margin: 0 0 1rem;
+  background: rgba(194, 89, 100, 0.18);
+  border-radius: 2px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #3A1F23;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 `;
 
 const Title = styled.h2`

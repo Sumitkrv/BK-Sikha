@@ -74,7 +74,7 @@ const Services = () => {
       features: ['Custom practice design', 'Restorative yoga techniques', 'Mind-body connection', 'Progress evaluation & adjustment'],
       price: 'From ₹999',
       duration: '60 min sessions',
-      color: '#7C3AED',
+      color: '#A3404B',
     },
     {
       icon: <FiHeart />,
@@ -86,7 +86,7 @@ const Services = () => {
       features: ['Anxiety, OCD & stress relief', 'Shower & Rewinding techniques', 'Healthy coping skills', 'Inner peace cultivation'],
       price: 'From ₹1,499',
       duration: '90 min sessions',
-      color: '#8B5CF6',
+      color: '#C25964',
     },
     {
       icon: <FiZap />,
@@ -98,7 +98,7 @@ const Services = () => {
       features: ['Anxiety & confidence sessions', 'Focus & emotional balance', 'Goal clarity', 'Success mindset'],
       price: 'From ₹1,999',
       duration: '75 min sessions',
-      color: '#A78BFA',
+      color: '#D4848C',
     },
     {
       icon: <FiSun />,
@@ -110,7 +110,7 @@ const Services = () => {
       features: ['Deep relaxation', 'Better sleep', 'Worry release', 'Grounded state'],
       price: 'From ₹799',
       duration: '45 min sessions',
-      color: '#C4B5FD',
+      color: '#F5C5CA',
     },
     {
       icon: <FiCompass />,
@@ -134,7 +134,7 @@ const Services = () => {
       features: ['Self-esteem boost', 'Boundary setting', 'Authentic expression', 'Self-acceptance'],
       price: 'From ₹1,299',
       duration: '60 min sessions',
-      color: '#DDD6FE',
+      color: '#F5C5CA',
     },
   ];
 
@@ -156,19 +156,19 @@ const Services = () => {
         
         <LeafDecoration className="left">
           <svg viewBox="0 0 120 400" fill="none">
-            <path d="M60 0C60 0 10 80 10 200C10 320 60 400 60 400" stroke="#C4B5FD" strokeWidth="1.5" fill="none" opacity="0.45"/>
-            <path d="M60 50C60 50 30 100 30 200C30 300 60 350 60 350" stroke="#C4B5FD" strokeWidth="1" fill="none" opacity="0.35"/>
-            <path d="M20 120C20 120 60 160 60 200" stroke="#C4B5FD" strokeWidth="0.8" fill="none" opacity="0.35"/>
-            <path d="M100 120C100 120 60 160 60 200" stroke="#C4B5FD" strokeWidth="0.8" fill="none" opacity="0.35"/>
-            <path d="M30 280C30 280 60 240 60 200" stroke="#C4B5FD" strokeWidth="0.8" fill="none" opacity="0.35"/>
-            <path d="M90 280C90 280 60 240 60 200" stroke="#C4B5FD" strokeWidth="0.8" fill="none" opacity="0.35"/>
+            <path d="M60 0C60 0 10 80 10 200C10 320 60 400 60 400" stroke="#F5C5CA" strokeWidth="1.5" fill="none" opacity="0.45"/>
+            <path d="M60 50C60 50 30 100 30 200C30 300 60 350 60 350" stroke="#F5C5CA" strokeWidth="1" fill="none" opacity="0.35"/>
+            <path d="M20 120C20 120 60 160 60 200" stroke="#F5C5CA" strokeWidth="0.8" fill="none" opacity="0.35"/>
+            <path d="M100 120C100 120 60 160 60 200" stroke="#F5C5CA" strokeWidth="0.8" fill="none" opacity="0.35"/>
+            <path d="M30 280C30 280 60 240 60 200" stroke="#F5C5CA" strokeWidth="0.8" fill="none" opacity="0.35"/>
+            <path d="M90 280C90 280 60 240 60 200" stroke="#F5C5CA" strokeWidth="0.8" fill="none" opacity="0.35"/>
           </svg>
         </LeafDecoration>
 
         <LeafDecoration className="right">
           <svg viewBox="0 0 120 400" fill="none">
-            <path d="M60 0C60 0 110 80 110 200C110 320 60 400 60 400" stroke="#C4B5FD" strokeWidth="1.5" fill="none" opacity="0.45"/>
-            <path d="M60 50C60 50 90 100 90 200C90 300 60 350 60 350" stroke="#C4B5FD" strokeWidth="1" fill="none" opacity="0.35"/>
+            <path d="M60 0C60 0 110 80 110 200C110 320 60 400 60 400" stroke="#F5C5CA" strokeWidth="1.5" fill="none" opacity="0.45"/>
+            <path d="M60 50C60 50 90 100 90 200C90 300 60 350 60 350" stroke="#F5C5CA" strokeWidth="1" fill="none" opacity="0.35"/>
           </svg>
         </LeafDecoration>
 
@@ -225,7 +225,7 @@ const Services = () => {
         {/* Wave Separator */}
         <WaveSeparator>
           <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
-            <path d="M0,40 C360,120 1080,0 1440,80 L1440,120 L0,120 Z" fill="#F8F5FF" />
+            <path d="M0,40 C360,120 1080,0 1440,80 L1440,120 L0,120 Z" fill="#FFF7F8" />
           </svg>
         </WaveSeparator>
       </HeroSection>
@@ -322,7 +322,7 @@ const Services = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(139, 92, 246, 0.2)' }}
+                whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(194, 89, 100, 0.2)' }}
                 onClick={() => setActiveService(index)}
               >
                 <MiniCardImage style={{ '--object-position': service.objectPosition || 'center 50%' }}>
@@ -344,9 +344,9 @@ const Services = () => {
       <JourneySection ref={journeyRef}>
         <JourneyBgPattern>
           <svg viewBox="0 0 800 400" fill="none" preserveAspectRatio="xMidYMid slice">
-            <circle cx="100" cy="100" r="150" fill="#7C3AED" opacity="0.07"/>
-            <circle cx="700" cy="300" r="200" fill="#C4B5FD" opacity="0.08"/>
-            <circle cx="400" cy="50" r="100" fill="#8B5CF6" opacity="0.07"/>
+            <circle cx="100" cy="100" r="150" fill="#A3404B" opacity="0.07"/>
+            <circle cx="700" cy="300" r="200" fill="#F5C5CA" opacity="0.08"/>
+            <circle cx="400" cy="50" r="100" fill="#C25964" opacity="0.07"/>
           </svg>
         </JourneyBgPattern>
 
@@ -471,7 +471,7 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #6D4BCB 0%, #7C3AED 50%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #A3404B 50%, #C25964 100%);
   padding: 8rem 0 6rem;
   
   @media (max-width: ${theme.breakpoints.tablet}) {
@@ -543,9 +543,9 @@ const VideoOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(45, 27, 78, 0.82) 0%,
+    rgba(58, 31, 35, 0.82) 0%,
     rgba(109, 75, 203, 0.64) 50%,
-    rgba(45, 27, 78, 0.82) 100%
+    rgba(58, 31, 35, 0.82) 100%
   );
 `;
 
@@ -559,7 +559,7 @@ const FloatingOrb = styled.div`
   &.orb1 {
     width: 400px;
     height: 400px;
-    background: #C4B5FD;
+    background: #F5C5CA;
     top: -100px;
     right: -100px;
     animation-delay: 0s;
@@ -568,7 +568,7 @@ const FloatingOrb = styled.div`
   &.orb2 {
     width: 300px;
     height: 300px;
-    background: #8B5CF6;
+    background: #C25964;
     bottom: 10%;
     left: -50px;
     animation-delay: 2s;
@@ -577,7 +577,7 @@ const FloatingOrb = styled.div`
   &.orb3 {
     width: 200px;
     height: 200px;
-    background: #A78BFA;
+    background: #D4848C;
     top: 40%;
     right: 20%;
     animation-delay: 4s;
@@ -638,12 +638,12 @@ const HeroLabel = styled.span`
   font-family: \${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #EDE9FE;
+  color: #FFF0F2;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
   padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(237, 233, 254, 0.45);
+  border: 1px solid rgba(255, 240, 242, 0.45);
   border-radius: 100px;
 `;
 
@@ -657,7 +657,7 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroTitleAccent = styled.span`
-  color: #EDE9FE;
+  color: #FFF0F2;
   font-style: italic;
   font-weight: 400;
 `;
@@ -701,7 +701,7 @@ const HeroPrimaryBtn = styled(Link)`
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: #EDE9FE;
+  background: #FFF0F2;
   color: #6D4BCB;
   font-family: \${theme.fonts.body};
   font-size: 1rem;
@@ -717,7 +717,7 @@ const HeroPrimaryBtn = styled(Link)`
   }
 
   &:hover {
-    background: #DDD6FE;
+    background: #F5C5CA;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(167, 139, 250, 0.35);
   }
@@ -755,8 +755,8 @@ const HeroSecondaryBtn = styled.button`
   }
 
   &:hover {
-    border-color: #EDE9FE;
-    color: #EDE9FE;
+    border-color: #FFF0F2;
+    color: #FFF0F2;
   }
 `;
 
@@ -777,7 +777,7 @@ const WaveSeparator = styled.div`
 // Services Showcase Styles
 const ServicesShowcase = styled.section`
   padding: 6rem 0;
-  background: #F8F5FF;
+  background: #FFF7F8;
 
   @media (max-width: \${theme.breakpoints.tablet}) {
     padding: 4rem 0;
@@ -793,11 +793,14 @@ const SectionHeader = styled.div`
 const SectionLabel = styled.span`
   display: inline-block;
   font-family: \${theme.fonts.body};
-  font-size: 0.875rem;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  color: #7C3AED;
+  color: #3A1F23;
+  background: rgba(194, 89, 100, 0.18);
+  border-radius: 2px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   margin-bottom: 1rem;
 
   &.center {
@@ -810,7 +813,7 @@ const SectionTitle = styled.h2`
   font-family: \${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 1rem;
   line-height: 1.2;
 `;
@@ -858,9 +861,9 @@ const ServiceTab = styled.button`
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: \${props => props.$active ? '#7C3AED' : 'white'};
-  color: \${props => props.$active ? '#EDE9FE' : '#2D1B4E'};
-  border: 2px solid \${props => props.$active ? '#7C3AED' : '#E9D5FF'};
+  background: \${props => props.$active ? '#A3404B' : 'white'};
+  color: \${props => props.$active ? '#FFF0F2' : '#3A1F23'};
+  border: 2px solid \${props => props.$active ? '#A3404B' : '#F5C5CA'};
   border-radius: 100px;
   font-family: \${theme.fonts.body};
   font-size: 0.875rem;
@@ -882,15 +885,15 @@ const ServiceTab = styled.button`
   }
 
   &:hover {
-    border-color: #7C3AED;
-    background: \${props => props.$active ? '#7C3AED' : 'rgba(139, 92, 246, 0.08)'};
+    border-color: #A3404B;
+    background: \${props => props.$active ? '#A3404B' : 'rgba(194, 89, 100, 0.08)'};
   }
 `;
 
 const TabIcon = styled.span`
   font-size: 1rem;
   display: flex;
-  color: \${props => props.$active ? '#EDE9FE' : '#8B5CF6'};
+  color: \${props => props.$active ? '#FFF0F2' : '#C25964'};
 `;
 
 const TabTitle = styled.span`
@@ -906,7 +909,7 @@ const ActiveServiceCard = styled.div`
   background: white;
   border-radius: 30px;
   padding: 3rem;
-  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+  box-shadow: 0 20px 60px rgba(194, 89, 100, 0.12);
   margin-bottom: 5rem;
 
   @media (max-width: \${theme.breakpoints.tablet}) {
@@ -966,13 +969,13 @@ const FloatingBadge = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #7C3AED;
-  color: #EDE9FE;
+  background: #A3404B;
+  color: #FFF0F2;
   padding: 0.75rem 1.25rem;
   border-radius: 100px;
   font-size: 0.875rem;
   font-weight: 500;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 10px 30px rgba(163, 64, 75, 0.3);
   z-index: 10;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
@@ -1022,7 +1025,7 @@ const ServiceTagline = styled.span`
   font-family: \${theme.fonts.heading};
   font-size: 1rem;
   font-style: italic;
-  color: #7C3AED;
+  color: #A3404B;
   margin-bottom: 0.5rem;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -1034,7 +1037,7 @@ const ServiceName = styled.h3`
   font-family: \${theme.fonts.heading};
   font-size: 2rem;
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 1rem;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -1089,8 +1092,8 @@ const FeatureCheck = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(139, 92, 246, 0.16);
-  color: #7C3AED;
+  background: rgba(194, 89, 100, 0.16);
+  color: #A3404B;
   border-radius: 50%;
   font-size: 0.75rem;
 `;
@@ -1121,7 +1124,7 @@ const MetaLabel = styled.span`
   display: block;
   font-family: \${theme.fonts.body};
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #6D4A4E;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.25rem;
@@ -1131,7 +1134,7 @@ const MetaValue = styled.span`
   font-family: \${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const ServiceCTA = styled(Link)`
@@ -1140,7 +1143,7 @@ const ServiceCTA = styled(Link)`
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
   font-family: \${theme.fonts.body};
   font-size: 1rem;
@@ -1161,7 +1164,7 @@ const ServiceCTA = styled(Link)`
   &:hover {
     background: #6D4BCB;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.28);
+    box-shadow: 0 10px 30px rgba(163, 64, 75, 0.28);
   }
 
   svg {
@@ -1205,7 +1208,7 @@ const ServiceMiniCard = styled.div`
   width: 100%;
 
   &:hover {
-    border-color: #C4B5FD;
+    border-color: #F5C5CA;
   }
 `;
 
@@ -1256,7 +1259,7 @@ const MiniCardTitle = styled.h4`
   font-family: \${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 0.25rem;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
@@ -1268,7 +1271,7 @@ const MiniCardTagline = styled.p`
   font-family: \${theme.fonts.body};
   font-size: 0.875rem;
   font-style: italic;
-  color: #7C3AED;
+  color: #A3404B;
   margin: 0 0 0.75rem;
 `;
 
@@ -1311,7 +1314,7 @@ const JourneyTitle = styled.h2`
   font-family: \${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 4rem;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
@@ -1350,14 +1353,14 @@ const StepNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
-  color: #EDE9FE;
+  background: linear-gradient(135deg, #A3404B 0%, #D4848C 100%);
+  color: #FFF0F2;
   font-family: \${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 50%;
   margin-bottom: 1.5rem;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.28);
+  box-shadow: 0 10px 30px rgba(163, 64, 75, 0.28);
 `;
 
 const StepContent = styled.div``;
@@ -1366,7 +1369,7 @@ const StepTitle = styled.h4`
   font-family: \${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 0.5rem;
 `;
 
@@ -1384,7 +1387,7 @@ const StepConnector = styled.div`
   right: -30px;
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, #C4B5FD, transparent);
+  background: linear-gradient(90deg, #F5C5CA, transparent);
 
   @media (max-width: \${theme.breakpoints.tablet}) {
     display: none;
@@ -1394,7 +1397,7 @@ const StepConnector = styled.div`
 // Quote Section Styles
 const QuoteSection = styled.section`
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #C25964 100%);
   text-align: center;
 
   @media (max-width: \${theme.breakpoints.mobile}) {
@@ -1411,7 +1414,7 @@ const QuoteMark = styled.span`
   display: block;
   font-family: \${theme.fonts.heading};
   font-size: 6rem;
-  color: #EDE9FE;
+  color: #FFF0F2;
   opacity: 0.3;
   line-height: 0.5;
   margin-bottom: 1rem;
@@ -1434,14 +1437,14 @@ const QuoteText = styled.p`
 const QuoteAuthor = styled.span`
   font-family: \${theme.fonts.body};
   font-size: 1rem;
-  color: #EDE9FE;
+  color: #FFF0F2;
   letter-spacing: 0.1em;
 `;
 
 // CTA Section Styles
 const CTASection = styled.section`
   padding: 6rem 0;
-  background: #F8F5FF;
+  background: #FFF7F8;
   position: relative;
   overflow: hidden;
 
@@ -1463,13 +1466,13 @@ const CTABlob = styled.div`
   opacity: 0.15;
 
   &.left {
-    background: #8B5CF6;
+    background: #C25964;
     top: -100px;
     left: -100px;
   }
 
   &.right {
-    background: #C4B5FD;
+    background: #F5C5CA;
     bottom: -100px;
     right: -100px;
   }
@@ -1488,7 +1491,7 @@ const CTALabel = styled.span`
   font-family: \${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7C3AED;
+  color: #A3404B;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
@@ -1498,7 +1501,7 @@ const CTATitle = styled.h2`
   font-family: \${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin: 0 0 1.5rem;
 `;
 
@@ -1539,7 +1542,7 @@ const CTAPrimaryBtn = styled(Link)`
   justify-content: center;
   gap: 0.5rem;
   padding: 1.125rem 2.25rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
   font-family: \${theme.fonts.body};
   font-size: 1rem;
@@ -1557,7 +1560,7 @@ const CTAPrimaryBtn = styled(Link)`
   &:hover {
     background: #6D4BCB;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.28);
+    box-shadow: 0 10px 30px rgba(163, 64, 75, 0.28);
   }
 
   svg {
@@ -1581,7 +1584,7 @@ const CTASecondaryBtn = styled(Link)`
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  border: 2px solid #8B5CF6;
+  border: 2px solid #C25964;
   border-radius: 100px;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -1592,7 +1595,7 @@ const CTASecondaryBtn = styled(Link)`
   }
 
   &:hover {
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(194, 89, 100, 0.08);
   }
 `;
 

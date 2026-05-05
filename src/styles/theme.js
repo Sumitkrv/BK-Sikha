@@ -2,54 +2,54 @@
 // Inspired by Instagram aesthetic: calm, earthy, feminine, premium wellness
 
 export const theme = {
-  // Color Palette - Mindfully curated for wellness and trust
+  // Color Palette - Dusty Rose #C25964 as brand primary
   colors: {
-    // Primary Purple system
-    primary: '#8B5CF6',
-    primaryLight: '#C4B5FD',
-    primaryDark: '#7C3AED',
-    primaryMuted: '#6D4BCB',
+    // Primary Rose system
+    primary: '#C25964',
+    primaryLight: '#D4848C',
+    primaryDark: '#A3404B',
+    primaryMuted: '#B04E58',
     
-    // Secondary / support purples
-    secondary: '#C4B5FD',
-    secondaryLight: '#EDE9FE',
-    secondaryDark: '#A78BFA',
+    // Secondary / support rose tones
+    secondary: '#F5C5CA',
+    secondaryLight: '#FFF0F2',
+    secondaryDark: '#E8A0A8',
     
     // Accent tones
-    accent: '#EDE9FE',
-    accentLight: '#F8F5FF',
-    accentDark: '#DDD6FE',
-    accentMuted: 'rgba(196, 181, 253, 0.45)',
+    accent: '#FDEDEF',
+    accentLight: '#FFF7F8',
+    accentDark: '#F5C5CA',
+    accentMuted: 'rgba(194, 89, 100, 0.18)',
     
     // Backgrounds
     background: '#FFFFFF',
-    backgroundAlt: '#F8F5FF',
-    backgroundDark: '#F3EEFF',
-    backgroundGreen: '#F8F5FF',
+    backgroundAlt: '#FFF7F8',
+    backgroundDark: '#FFF0F2',
+    backgroundGreen: '#FFF7F8',
     
     // Typography colors
-    text: '#4B5563',
-    textLight: '#6B7280',
-    textDark: '#2D1B4E',
-    textMuted: 'rgba(75, 85, 99, 0.82)',
+    text: '#4B3235',
+    textLight: '#6D4A4E',
+    textDark: '#3A1F23',
+    textMuted: 'rgba(75, 50, 53, 0.82)',
     
     // CTA
-    cta: '#8B5CF6',
-    ctaHover: '#7C3AED',
-    ctaLight: '#A78BFA',
+    cta: '#C25964',
+    ctaHover: '#C25964',
+    ctaLight: '#D4848C',
     
     // Semantic colors
-    success: '#8B5CF6',
-    warning: '#A78BFA',
-    error: '#C084FC',
-    info: '#C4B5FD',
+    success: '#C25964',
+    warning: '#D4848C',
+    error: '#A3404B',
+    info: '#F5C5CA',
   },
   
   // Typography - Serene, premium, highly readable
   fonts: {
-    heading: "'Cormorant Garamond', serif", // Elegant, spiritual, premium
-    body: "'Montserrat', sans-serif", // Clean, modern, calming
-    accent: "'Cormorant Garamond', serif", // For special text
+    heading: "'Cormorant Garamond', serif",
+    body: "'Montserrat', sans-serif",
+    accent: "'Cormorant Garamond', serif",
   },
   
   fontSizes: {
@@ -99,11 +99,11 @@ export const theme = {
   
   // Shadows - Subtle, elevated, premium
   shadows: {
-    sm: '0 2px 10px rgba(139, 92, 246, 0.10)',
-    md: '0 10px 24px rgba(139, 92, 246, 0.14)',
-    lg: '0 16px 36px rgba(139, 92, 246, 0.16)',
-    xl: '0 24px 60px rgba(139, 92, 246, 0.20)',
-    inner: 'inset 0 2px 4px rgba(139, 92, 246, 0.08)',
+    sm: '0 2px 10px rgba(194, 89, 100, 0.10)',
+    md: '0 10px 24px rgba(194, 89, 100, 0.14)',
+    lg: '0 16px 36px rgba(194, 89, 100, 0.16)',
+    xl: '0 24px 60px rgba(194, 89, 100, 0.20)',
+    inner: 'inset 0 2px 4px rgba(194, 89, 100, 0.08)',
   },
   
   // Transitions - Slow, mindful, luxurious
@@ -116,24 +116,17 @@ export const theme = {
   
   // Breakpoints - Comprehensive responsive design for all devices
   breakpoints: {
-    // Mobile breakpoints
-    xs: '360px',        // Extra small phones (iPhone SE, Galaxy Fold)
-    sm: '480px',        // Small phones
-    mobile: '768px',    // Mobile (phones) - max
-    
-    // Tablet breakpoints
-    md: '768px',        // Tablet start
-    tablet: '1024px',   // Tablet max
-    
-    // Desktop breakpoints
-    lg: '1024px',       // Laptop/Desktop start
-    desktop: '1280px',  // Desktop
-    xl: '1440px',       // Large desktop
-    
-    // Ultra-wide breakpoints
-    wide: '1536px',     // Wide screens
-    xxl: '1920px',      // 2K screens
-    ultra: '2560px',    // 4K screens
+    xs: '360px',
+    sm: '480px',
+    mobile: '768px',
+    md: '768px',
+    tablet: '1024px',
+    lg: '1024px',
+    desktop: '1280px',
+    xl: '1440px',
+    wide: '1536px',
+    xxl: '1920px',
+    ultra: '2560px',
   },
   
   // Z-index layers
@@ -157,14 +150,12 @@ export const theme = {
 
 // Framer Motion animation variants for consistent motion design
 export const motionVariants = {
-  // Fade animations
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
   },
   
-  // Slide animations
   slideUp: {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
@@ -189,14 +180,12 @@ export const motionVariants = {
     exit: { opacity: 0, x: 40 },
   },
   
-  // Scale animations
   scaleIn: {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 },
     exit: { opacity: 0, scale: 0.9 },
   },
   
-  // Stagger children animations
   staggerContainer: {
     initial: {},
     animate: {

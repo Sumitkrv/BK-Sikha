@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
@@ -144,6 +143,8 @@ const services = [
 const ServicesSnapshot = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const [isExpanded, setIsExpanded] = useState(false);
+  const visibleServices = isExpanded ? services : services.slice(0, 6);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -168,12 +169,25 @@ const ServicesSnapshot = () => {
     },
   };
 
+  const mobileCardVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.06,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    }),
+  };
+
   return (
     <ServicesSection ref={ref}>
       {/* Curved top decoration */}
       <CurvedTop>
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path d="M0,120 C480,0 960,0 1440,120 L1440,0 L0,0 Z" fill="#F8F5FF"/>
+          <path d="M0,120 C480,0 960,0 1440,120 L1440,0 L0,0 Z" fill="#FFF7F8"/>
         </svg>
       </CurvedTop>
 
@@ -198,8 +212,9 @@ const ServicesSnapshot = () => {
           </motion.div>
         </HeaderContent>
 
+        {/* Desktop / Tablet grid layout */}
         <ServicesGrid>
-          {services.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <ServiceItem
               key={index}
               as={motion.div}
@@ -214,9 +229,39 @@ const ServicesSnapshot = () => {
           ))}
         </ServicesGrid>
 
+        {/* Mobile horizontal swipe strip */}
+        <MobileScrollHint as={motion.p} variants={itemVariants}>
+          Swipe to explore →
+        </MobileScrollHint>
+        <MobileScrollWrapper>
+          <MobileScroller>
+            {visibleServices.map((service, index) => (
+              <MobileCard
+                key={index}
+                as={motion.div}
+                custom={index}
+                variants={mobileCardVariants}
+                initial="hidden"
+                animate={isInView ? 'visible' : 'hidden'}
+                whileTap={{ scale: 0.97 }}
+              >
+                <MobileIconCircle>
+                  <service.icon />
+                </MobileIconCircle>
+                <MobileCardTitle>{service.title}</MobileCardTitle>
+                <MobileCardDesc>{service.description}</MobileCardDesc>
+              </MobileCard>
+            ))}
+          </MobileScroller>
+        </MobileScrollWrapper>
+
         <CTAWrapper as={motion.div} variants={itemVariants}>
-          <CTAButton to="/services">
-            View All Services
+          <CTAButton
+            type="button"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            aria-expanded={isExpanded}
+          >
+            {isExpanded ? 'Show Less' : 'Explore All Services'}
           </CTAButton>
         </CTAWrapper>
       </Container>
@@ -227,7 +272,7 @@ const ServicesSnapshot = () => {
 // Styled Components - Anayoga Style
 const ServicesSection = styled.section`
   padding: 8rem 0 6rem;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 40%, #EDE9FE 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 40%, #FFF0F2 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -241,7 +286,7 @@ const ServicesSection = styled.section`
     transform: translateX(-50%) translateZ(0);
     width: 80%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(196, 181, 253, 0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(245, 197, 202, 0.6), transparent);
   }
 
   @media (min-width: 1920px) {
@@ -403,7 +448,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8B5CF6;
+  color: #C25964;
   margin-bottom: 1rem;
   transform: translateZ(0);
 
@@ -433,7 +478,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.15;
   margin-bottom: 1.25rem;
   transform: translateZ(0);
@@ -509,18 +554,9 @@ const ServicesGrid = styled.div`
     gap: 2.75rem 1.75rem;
   }
 
+  /* Hide on mobile — replaced by horizontal scroller */
   @media (max-width: ${theme.breakpoints.mobile}) {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  @media (max-width: 390px) {
-    gap: 2.5rem;
-  }
-  
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    gap: 2rem;
+    display: none;
   }
   
   /* Large screens */
@@ -539,7 +575,7 @@ const IconWrapper = styled.div`
   width: 80px;
   height: 80px;
   margin: 0 auto 1.75rem;
-  color: #8B5CF6;
+  color: #C25964;
   transition: all 0.3s ease;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -551,7 +587,7 @@ const IconWrapper = styled.div`
   }
 
   ${ServiceItem}:hover & {
-    color: #2D1B4E;
+    color: #3A1F23;
     transform: scale(1.05) translateZ(0);
   }
 
@@ -614,7 +650,7 @@ const ServiceTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.75rem;
   transform: translateZ(0);
 
@@ -689,6 +725,156 @@ const ServiceDescription = styled.p`
   }
 `;
 
+/* ── Mobile horizontal swipe layout ── */
+
+const MobileScrollHint = styled.p`
+  display: none;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    display: block;
+    font-family: ${theme.fonts.body};
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #C25964;
+    letter-spacing: 0.06em;
+    text-align: right;
+    padding-right: 1rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.75;
+  }
+`;
+
+const MobileScrollWrapper = styled.div`
+  display: none;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    display: block;
+    position: relative;
+    /* right-fade to hint more content */
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 48px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 247, 248, 0.88));
+      pointer-events: none;
+      z-index: 2;
+    }
+  }
+`;
+
+const MobileScroller = styled.div`
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    display: flex;
+    flex-direction: row;
+    gap: 0.875rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* left pad so first card doesn't stick to edge */
+    padding: 0.5rem 1rem 1.25rem;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+`;
+
+const MobileCard = styled.div`
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex: 0 0 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.375rem 1.25rem 1.5rem;
+    box-shadow:
+      0 4px 20px rgba(194, 89, 100, 0.09),
+      0 1px 4px rgba(58, 31, 35, 0.05);
+    border: 1px solid rgba(245, 197, 202, 0.45);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    cursor: pointer;
+    /* scale-down on press is handled by whileTap */
+    transition: box-shadow 0.25s ease;
+    &:active {
+      box-shadow: 0 2px 10px rgba(194, 89, 100, 0.12);
+    }
+  }
+
+  @media (max-width: 390px) {
+    flex: 0 0 82vw;
+    padding: 1.25rem 1.125rem 1.375rem;
+  }
+
+  @media (max-width: 360px) {
+    flex: 0 0 86vw;
+    padding: 1.125rem 1rem 1.25rem;
+  }
+`;
+
+const MobileIconCircle = styled.div`
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(194, 89, 100, 0.1);
+    color: #C25964;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+`;
+
+const MobileCardTitle = styled.h3`
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-family: ${theme.fonts.heading};
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #3A1F23;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 1rem;
+  }
+`;
+
+const MobileCardDesc = styled.p`
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-family: ${theme.fonts.body};
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    color: #6D4A4E;
+    margin: 0;
+    opacity: 0.85;
+    /* clamp to ~3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.75rem;
+  }
+`;
+
 const CTAWrapper = styled.div`
   text-align: center;
   margin-top: 4rem;
@@ -719,29 +905,30 @@ const CTAWrapper = styled.div`
   }
 `;
 
-const CTAButton = styled(Link)`
+const CTAButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 1.125rem 3rem;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   color: #FFFFFF;
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   font-weight: 600;
   text-decoration: none;
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.28);
+  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.28);
   letter-spacing: 0.02em;
   transform: translateZ(0);
   backface-visibility: hidden;
 
   &:hover {
-    background: #7C3AED;
+    background: #A3404B;
     transform: translateY(-3px) translateZ(0);
-    box-shadow: 0 10px 35px rgba(124, 58, 237, 0.36);
+    box-shadow: 0 10px 35px rgba(163, 64, 75, 0.36);
   }
 
   @media (min-width: 1920px) {
@@ -784,11 +971,11 @@ const CTAButton = styled(Link)`
   @media (hover: none) and (pointer: coarse) {
     &:hover {
       transform: translateZ(0);
-      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.28);
+      box-shadow: 0 4px 20px rgba(194, 89, 100, 0.28);
     }
 
     &:active {
-      background: #7C3AED;
+      background: #A3404B;
       transform: scale(0.98) translateZ(0);
     }
   }

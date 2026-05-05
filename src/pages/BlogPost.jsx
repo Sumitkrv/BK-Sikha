@@ -747,6 +747,7 @@ const CTAButton = styled(Link)`
     transform: translateY(-3px);
     box-shadow: 0 10px 35px rgba(206, 197, 173, 0.4);
     background: linear-gradient(135deg, #d6ceb8 0%, #ddd6c3 100%);
+    color: #000000;
   }
 `;
 

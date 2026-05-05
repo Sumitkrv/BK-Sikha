@@ -9,22 +9,19 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { path: '/about', label: 'About BK Shikha' },
-    { path: '/services', label: 'Services' },
-    { path: '/nlp', label: 'NLP Coaching' },
-    { path: '/gut-missing', label: 'Gut Health Healing' },
-    { path: '/blog', label: 'Wellness Insights' },
-    { path: '/portfolio', label: 'Portfolio' },
-    { path: '/contact', label: 'Connect' },
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/nlp', label: 'NLP' },
+    { path: '/gut-missing', label: 'Gut Healing' },
   ];
 
   const services = [
-    'Personalized Yoga Coaching',
-    'Emotional Wellness Mentoring',
-    'Mindset & NLP Coaching',
-    'Gut Health & Nutrition',
-    'Gut Missing Healing Program',
-    'Stress Relief Sessions',
+    { label: 'Personalized Yoga', path: '/services' },
+    { label: 'Emotional Wellness', path: '/services' },
+    { label: 'Mindset Coaching', path: '/services' },
+    { label: 'Stress Relief', path: '/services' },
+    { label: 'Holistic Transformation', path: '/services' },
+    { label: 'Self-Love Journey', path: '/services' },
   ];
 
   return (
@@ -86,7 +83,7 @@ const Footer = () => {
             <SectionTitle>Services</SectionTitle>
             <LinksList>
               {services.map((service, index) => (
-                <ServiceItem key={index}>{service}</ServiceItem>
+                <FooterLink key={index} to={service.path}>{service.label}</FooterLink>
               ))}
             </LinksList>
           </LinksSection>
@@ -95,7 +92,7 @@ const Footer = () => {
           <CTASection>
             <SectionTitle>Begin Your Journey</SectionTitle>
             <CTAText>
-              Ready to transform your life through wellness and yoga? Let's connect and create your personalized path to inner peace.
+              Ready to begin your wellness journey? Let's connect.
             </CTAText>
             <CTAButton
               to="/contact"
@@ -125,7 +122,7 @@ const Footer = () => {
 // Styled Components
 const FooterWrapper = styled.footer`
   background: url('/more images/footer.png') center / cover no-repeat !important;
-  background-color: #6D28D9;
+  background-color: #7A2530;
   border-top: 1px solid rgba(233, 213, 255, 0.5);
   padding: 5rem 0 2.5rem;
   margin-top: 0;
@@ -138,7 +135,7 @@ const FooterWrapper = styled.footer`
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(109, 40, 217, 0.86) 0%, rgba(124, 58, 237, 0.82) 55%, rgba(139, 92, 246, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(122, 37, 48, 0.86) 0%, rgba(163, 64, 75, 0.82) 55%, rgba(194, 89, 100, 0.8) 100%);
     z-index: 0;
     transform: translateZ(0);
   }
@@ -295,28 +292,29 @@ const FooterTop = styled.div`
     margin-bottom: 2.25rem;
   }
 
+  /* Mobile: brand full-width top row, links+services side-by-side, CTA full-width bottom */
   @media (max-width: ${theme.breakpoints.mobile}) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  @media (max-width: 390px) {
-    gap: 1.75rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.25rem;
     margin-bottom: 1.75rem;
+
+    /* Brand spans both columns */
+    > *:nth-child(1) {
+      grid-column: 1 / -1;
+      text-align: center;
+      align-items: center;
+    }
+
+    /* CTA spans both columns */
+    > *:nth-child(4) {
+      grid-column: 1 / -1;
+      align-items: center;
+      text-align: center;
+    }
   }
 
-  @media (max-width: 375px) {
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Extra small phones */
   @media (max-width: 360px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: center;
+    gap: 1.25rem 1rem;
     margin-bottom: 1.5rem;
   }
 `;
@@ -349,7 +347,7 @@ const BrandName = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 700;
-  color: #EDE9FE;
+  color: #FFF0F2;
   margin: 0;
 
   @media (min-width: 2560px) {
@@ -508,8 +506,8 @@ const SocialLink = styled(motion.a)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(196, 181, 253, 0.22);
-  color: #EDE9FE;
+  background: rgba(245, 197, 202, 0.22);
+  color: #FFF0F2;
   border-radius: ${theme.borderRadius.full};
   font-size: 1.25rem;
   transition: all 0.3s ease;
@@ -560,17 +558,17 @@ const SocialLink = styled(motion.a)`
   }
 
   &:hover {
-    background: #C4B5FD;
-    color: #2D1B4E;
+    background: #F5C5CA;
+    color: #3A1F23;
     transform: translateY(-3px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(196, 181, 253, 0.3);
+    box-shadow: 0 8px 25px rgba(245, 197, 202, 0.3);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #C4B5FD;
-      color: #2D1B4E;
+      background: #F5C5CA;
+      color: #3A1F23;
       transform: scale(0.95) translateZ(0);
     }
   }
@@ -599,12 +597,12 @@ const LinksSection = styled.div`
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    gap: 0.75rem;
-    align-items: center;
+    gap: 0.6rem;
+    align-items: flex-start;
   }
 
   @media (max-width: 360px) {
-    gap: 0.625rem;
+    gap: 0.5rem;
   }
 `;
 
@@ -612,7 +610,7 @@ const SectionTitle = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.375rem;
   font-weight: 700;
-  color: #EDE9FE;
+  color: #FFF0F2;
   margin: 0 0 0.75rem;
 
   @media (min-width: 2560px) {
@@ -667,12 +665,12 @@ const LinksList = styled.div`
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    gap: 0.5rem;
-    align-items: center;
+    gap: 0.4rem;
+    align-items: flex-start;
   }
 
   @media (max-width: 360px) {
-    gap: 0.5rem;
+    gap: 0.375rem;
   }
 `;
 
@@ -710,7 +708,7 @@ const FooterLink = styled(Link)`
   }
 
   &:hover {
-    color: #EDE9FE;
+    color: #FFF0F2;
     padding-left: 0.5rem;
   }
 
@@ -723,7 +721,7 @@ const FooterLink = styled(Link)`
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      color: #EDE9FE;
+      color: #FFF0F2;
     }
   }
 
@@ -732,36 +730,6 @@ const FooterLink = styled(Link)`
   }
 `;
 
-const ServiceItem = styled.p`
-  font-size: 0.9375rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
-
-  @media (min-width: 2560px) {
-    font-size: 1.0625rem;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 640px) {
-    font-size: 0.875rem;
-  }
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    font-size: 0.8125rem;
-  }
-
-  @media (max-width: 390px) {
-    font-size: 0.75rem;
-  }
-
-  @media (max-width: 360px) {
-    font-size: 0.6875rem;
-  }
-`;
 
 const CTASection = styled.div`
   display: flex;
@@ -832,7 +800,7 @@ const CTAText = styled.p`
 const CTAButton = styled(motion(Link))`
   display: inline-block;
   padding: 1rem 2.25rem;
-  background: #8B5CF6;
+  background: #C25964;
   color: #FFFFFF;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
@@ -840,7 +808,7 @@ const CTAButton = styled(motion(Link))`
   text-decoration: none;
   text-align: center;
   border-radius: ${theme.borderRadius.full};
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.3);
   transition: all 0.3s ease;
   letter-spacing: 0.02em;
   transform: translateZ(0);
@@ -884,15 +852,16 @@ const CTAButton = styled(motion(Link))`
   }
 
   &:hover {
-    background: #1a2b15;
+    background: #A3404B;
+    color: #000000;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 8px 30px rgba(163, 64, 75, 0.35);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #1a2b15;
+      background: #A3404B;
       transform: scale(0.98) translateZ(0);
     }
   }
@@ -982,7 +951,7 @@ const Copyright = styled.p`
 `;
 
 const HeartIcon = styled.span`
-  color: #EDE9FE;
+  color: #FFF0F2;
   display: inline-flex;
   animation: heartbeat 1.5s ease-in-out infinite;
   transform: translateZ(0);

@@ -81,7 +81,7 @@ const Header = styled.div`
 
 const Label = styled.p`
   margin: 0 0 0.8rem;
-  color: #C4B5FD;
+  color: #F5C5CA;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -90,7 +90,7 @@ const Label = styled.p`
 
 const Title = styled.h2`
   margin: 0 0 0.7rem;
-  color: #2D1B4E;
+  color: #3A1F23;
   font-size: clamp(2rem, 4vw, 3.1rem);
   line-height: 1.15;
 `;
@@ -136,7 +136,7 @@ const CardBody = styled.div`
 
 const CardTitle = styled.h3`
   margin: 0 0 0.5rem;
-  color: #2D1B4E;
+  color: #3A1F23;
   font-size: 1.35rem;
 `;
 
@@ -159,15 +159,15 @@ const CTA = styled(Link)`
   border-radius: ${theme.borderRadius.full};
   padding: 0.85rem 1.7rem;
   color: white;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   font-weight: 600;
   font-size: 0.95rem;
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.22);
+  box-shadow: 0 4px 16px rgba(194, 89, 100, 0.22);
   transition: all ${theme.transitions.base};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 8px 24px rgba(163, 64, 75, 0.3);
   }
 `;
 

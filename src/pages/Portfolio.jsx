@@ -141,12 +141,12 @@ const successStories = [
 ];
 
 const achievements = [
-  { icon: <FiUsers />, number: '5000+', label: 'Lives Transformed', color: '#EDE9FE' },
-  { icon: <FiAward />, number: '12+', label: 'Years Experience', color: '#C4B5FD' },
-  { icon: <FiHeart />, number: '98%', label: 'Client Satisfaction', color: '#A78BFA' },
-  { icon: <FiStar />, number: '500+', label: 'Sessions Delivered', color: '#EDE9FE' },
-  { icon: <FiMapPin />, number: '25+', label: 'Countries Reached', color: '#C4B5FD' },
-  { icon: <FiTarget />, number: '100%', label: 'Dedication', color: '#A78BFA' },
+  { icon: <FiUsers />, number: '5000+', label: 'Lives Transformed', color: '#FFF0F2' },
+  { icon: <FiAward />, number: '12+', label: 'Years Experience', color: '#F5C5CA' },
+  { icon: <FiHeart />, number: '98%', label: 'Client Satisfaction', color: '#D4848C' },
+  { icon: <FiStar />, number: '500+', label: 'Sessions Delivered', color: '#FFF0F2' },
+  { icon: <FiMapPin />, number: '25+', label: 'Countries Reached', color: '#F5C5CA' },
+  { icon: <FiTarget />, number: '100%', label: 'Dedication', color: '#D4848C' },
 ];
 
 const Portfolio = () => {
@@ -222,15 +222,15 @@ const Portfolio = () => {
 
         <DecorativeLeaf className="left">
           <svg viewBox="0 0 120 300" fill="none">
-            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="rgba(196, 181, 253, 0.35)" strokeWidth="1" fill="none" />
-            <path d="M60 30V270" stroke="rgba(196, 181, 253, 0.35)" strokeWidth="1" />
+            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="rgba(245, 197, 202, 0.35)" strokeWidth="1" fill="none" />
+            <path d="M60 30V270" stroke="rgba(245, 197, 202, 0.35)" strokeWidth="1" />
           </svg>
         </DecorativeLeaf>
 
         <DecorativeLeaf className="right">
           <svg viewBox="0 0 120 300" fill="none">
-            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="rgba(196, 181, 253, 0.35)" strokeWidth="1" fill="none" />
-            <path d="M60 30V270" stroke="rgba(196, 181, 253, 0.35)" strokeWidth="1" />
+            <path d="M60 0C60 0 10 60 10 150C10 240 60 300 60 300C60 300 110 240 110 150C110 60 60 0 60 0Z" stroke="rgba(245, 197, 202, 0.35)" strokeWidth="1" fill="none" />
+            <path d="M60 30V270" stroke="rgba(245, 197, 202, 0.35)" strokeWidth="1" />
           </svg>
         </DecorativeLeaf>
 
@@ -371,10 +371,10 @@ const Portfolio = () => {
 
         <GalleryDecor>
           <svg viewBox="0 0 200 400" fill="none">
-            <path d="M100,20 Q150,100 140,200 Q130,300 100,380" stroke="#DDD6FE" strokeWidth="2" fill="none" />
-            <path d="M100,80 Q60,120 40,100" stroke="#DDD6FE" strokeWidth="1.5" fill="none" />
-            <path d="M100,140 Q55,180 30,150" stroke="#DDD6FE" strokeWidth="1.5" fill="none" />
-            <path d="M100,200 Q50,240 25,200" stroke="#DDD6FE" strokeWidth="1.5" fill="none" />
+            <path d="M100,20 Q150,100 140,200 Q130,300 100,380" stroke="#F5C5CA" strokeWidth="2" fill="none" />
+            <path d="M100,80 Q60,120 40,100" stroke="#F5C5CA" strokeWidth="1.5" fill="none" />
+            <path d="M100,140 Q55,180 30,150" stroke="#F5C5CA" strokeWidth="1.5" fill="none" />
+            <path d="M100,200 Q50,240 25,200" stroke="#F5C5CA" strokeWidth="1.5" fill="none" />
           </svg>
         </GalleryDecor>
       </GallerySection>
@@ -495,9 +495,9 @@ const Portfolio = () => {
 
         <CTADecor>
           <svg viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="80" stroke="#C4B5FD" strokeWidth="1" strokeDasharray="4 4" opacity="0.35"/>
+            <circle cx="100" cy="100" r="80" stroke="#F5C5CA" strokeWidth="1" strokeDasharray="4 4" opacity="0.35"/>
             <circle cx="100" cy="100" r="60" stroke="#ffffff" strokeWidth="1" strokeDasharray="4 4" opacity="0.2"/>
-            <circle cx="100" cy="100" r="40" stroke="#A78BFA" strokeWidth="1" strokeDasharray="4 4" opacity="0.45"/>
+            <circle cx="100" cy="100" r="40" stroke="#D4848C" strokeWidth="1" strokeDasharray="4 4" opacity="0.45"/>
           </svg>
         </CTADecor>
       </CTASection>
@@ -630,9 +630,9 @@ const VideoOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(45, 27, 78, 0.62) 0%,
+    rgba(58, 31, 35, 0.62) 0%,
     rgba(109, 75, 203, 0.5) 50%,
-    rgba(45, 27, 78, 0.62) 100%
+    rgba(58, 31, 35, 0.62) 100%
   );
 `;
 
@@ -647,7 +647,7 @@ const FloatingOrb = styled.div`
   &.orb1 {
     width: 500px;
     height: 500px;
-    background: #C4B5FD;
+    background: #F5C5CA;
     top: -150px;
     right: -150px;
   }
@@ -655,7 +655,7 @@ const FloatingOrb = styled.div`
   &.orb2 {
     width: 400px;
     height: 400px;
-    background: #8B5CF6;
+    background: #C25964;
     bottom: -100px;
     left: -100px;
     animation-delay: 4s;
@@ -664,7 +664,7 @@ const FloatingOrb = styled.div`
   &.orb3 {
     width: 300px;
     height: 300px;
-    background: #A78BFA;
+    background: #D4848C;
     top: 50%;
     left: 30%;
     animation-delay: 8s;
@@ -714,12 +714,12 @@ const HeroLabel = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #EDE9FE;
+  color: #FFF0F2;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
   padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(237, 233, 254, 0.45);
+  border: 1px solid rgba(255, 240, 242, 0.45);
   border-radius: 100px;
 
   svg {
@@ -737,7 +737,7 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroTitleAccent = styled.span`
-  color: #EDE9FE;
+  color: #FFF0F2;
   font-style: italic;
   font-weight: 400;
 `;
@@ -765,7 +765,7 @@ const HeroPrimaryBtn = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: #EDE9FE;
+  background: #FFF0F2;
   color: #6D4BCB;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
@@ -775,7 +775,7 @@ const HeroPrimaryBtn = styled(Link)`
   transition: all 0.3s ease;
 
   &:hover {
-    background: #DDD6FE;
+    background: #F5C5CA;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(167, 139, 250, 0.35);
   }
@@ -805,8 +805,8 @@ const HeroSecondaryBtn = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: #EDE9FE;
-    color: #EDE9FE;
+    border-color: #FFF0F2;
+    color: #FFF0F2;
   }
 `;
 
@@ -826,7 +826,7 @@ const WaveSeparator = styled.div`
 
 // Stats Marquee
 const StatsMarquee = styled.section`
-  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #C25964 100%);
   padding: 2rem 0;
   overflow: hidden;
 `;
@@ -888,7 +888,7 @@ const SectionLabel = styled.span`
   font-size: 0.9375rem;
   font-weight: 500;
   font-style: italic;
-  color: #8B5CF6;
+  color: #C25964;
   margin-bottom: 0.75rem;
 `;
 
@@ -896,7 +896,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 400;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.2;
   margin-bottom: 1rem;
 `;
@@ -905,7 +905,7 @@ const SectionDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   max-width: 600px;
   margin: 0 auto 2rem;
 `;
@@ -920,9 +920,9 @@ const CategoryScroll = styled.div`
 
 const CategoryPill = styled.button`
   padding: 0.75rem 1.5rem;
-  background: ${props => props.$active ? '#7C3AED' : 'transparent'};
-  color: ${props => props.$active ? '#EDE9FE' : '#2D1B4E'};
-  border: 2px solid ${props => props.$active ? '#7C3AED' : 'rgba(139, 92, 246, 0.25)'};
+  background: ${props => props.$active ? '#A3404B' : 'transparent'};
+  color: ${props => props.$active ? '#FFF0F2' : '#3A1F23'};
+  border: 2px solid ${props => props.$active ? '#A3404B' : 'rgba(194, 89, 100, 0.25)'};
   border-radius: 100px;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
@@ -931,8 +931,8 @@ const CategoryPill = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    border-color: #7C3AED;
-    background: ${props => props.$active ? '#7C3AED' : 'rgba(139, 92, 246, 0.08)'};
+    border-color: #A3404B;
+    background: ${props => props.$active ? '#A3404B' : 'rgba(194, 89, 100, 0.08)'};
   }
 `;
 
@@ -1001,7 +1001,7 @@ const BentoImage = styled.img`
 const BentoOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(45, 27, 78, 0) 0%, rgba(45, 27, 78, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(58, 31, 35, 0) 0%, rgba(58, 31, 35, 0.9) 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1018,7 +1018,7 @@ const OverlayCategory = styled.span`
   align-self: flex-start;
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.95);
-  color: #2D1B4E;
+  color: #3A1F23;
   font-family: ${theme.fonts.body};
   font-size: 0.8125rem;
   font-weight: 600;
@@ -1049,7 +1049,7 @@ const ViewButton = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   font-weight: 500;
-  color: #EDE9FE;
+  color: #FFF0F2;
   
   svg {
     transition: transform 0.3s ease;
@@ -1068,7 +1068,7 @@ const FeaturedBadge = styled.div`
   align-items: center;
   gap: 0.35rem;
   padding: 0.5rem 1rem;
-  background: #EDE9FE;
+  background: #FFF0F2;
   color: #6D4BCB;
   font-family: ${theme.fonts.body};
   font-size: 0.8125rem;
@@ -1099,7 +1099,7 @@ const GalleryDecor = styled.div`
 // Stories Section
 const StoriesSection = styled.section`
   padding: 6rem 0;
-  background: linear-gradient(180deg, #F8F5FF 0%, #F3EEFF 100%);
+  background: linear-gradient(180deg, #FFF7F8 0%, #FFF0F2 100%);
   position: relative;
   overflow: hidden;
 `;
@@ -1129,7 +1129,7 @@ const StoryCard = styled.div`
   background: #ffffff;
   border-radius: 24px;
   padding: 2rem;
-  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.12);
+  box-shadow: 0 10px 40px rgba(194, 89, 100, 0.12);
   transition: all 0.3s ease;
 `;
 
@@ -1146,7 +1146,7 @@ const StoryAvatar = styled.img`
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #C4B5FD;
+  border: 3px solid #F5C5CA;
 `;
 
 const StoryInfo = styled.div`
@@ -1157,19 +1157,19 @@ const StoryName = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.125rem;
 `;
 
 const StoryRole = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
-  color: #6B7280;
+  color: #6D4A4E;
 `;
 
 const TransformBadge = styled.span`
   padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  background: linear-gradient(135deg, #A3404B, #D4848C);
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 0.75rem;
@@ -1191,7 +1191,7 @@ const StoryQuote = styled.p`
 const StoryStars = styled.div`
   display: flex;
   gap: 0.25rem;
-  color: #C4B5FD;
+  color: #F5C5CA;
 
   svg {
     fill: currentColor;
@@ -1208,14 +1208,14 @@ const StoriesOrb = styled.div`
   opacity: 0.15;
 
   &.left {
-    background: #8B5CF6;
+    background: #C25964;
     left: -200px;
     top: 50%;
     transform: translateY(-50%);
   }
 
   &.right {
-    background: #C4B5FD;
+    background: #F5C5CA;
     right: -200px;
     top: 50%;
     transform: translateY(-50%);
@@ -1225,7 +1225,7 @@ const StoriesOrb = styled.div`
 // Quote Section
 const QuoteSection = styled.section`
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #C25964 100%);
   position: relative;
   overflow: hidden;
 `;
@@ -1242,7 +1242,7 @@ const QuoteIcon = styled.span`
   display: block;
   font-family: ${theme.fonts.heading};
   font-size: 8rem;
-  color: #EDE9FE;
+  color: #FFF0F2;
   opacity: 0.2;
   line-height: 0.5;
   margin-bottom: 1rem;
@@ -1270,7 +1270,7 @@ const AuthorImage = styled.img`
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #EDE9FE;
+  border: 3px solid #FFF0F2;
 `;
 
 const AuthorDetails = styled.div`
@@ -1281,7 +1281,7 @@ const AuthorName = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #EDE9FE;
+  color: #FFF0F2;
 `;
 
 const AuthorRole = styled.div`
@@ -1316,15 +1316,15 @@ const SocialCard = styled.a`
   align-items: center;
   gap: 1.25rem;
   padding: 1.5rem 2rem;
-  background: #F8F5FF;
+  background: #FFF7F8;
   border-radius: 20px;
   text-decoration: none;
   min-width: 280px;
   transition: all 0.3s ease;
 
   &:hover {
-    background: #F3EEFF;
-    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.16);
+    background: #FFF0F2;
+    box-shadow: 0 15px 40px rgba(194, 89, 100, 0.16);
   }
 `;
 
@@ -1356,24 +1356,24 @@ const SocialName = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const SocialHandle = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
-  color: #6B7280;
+  color: #6D4A4E;
 `;
 
 const SocialArrow = styled.div`
-  color: #7C3AED;
+  color: #A3404B;
   font-size: 1.25rem;
 `;
 
 // CTA Section
 const CTASection = styled.section`
   padding: 6rem 0;
-  background: linear-gradient(135deg, #F3EEFF 0%, #F8F5FF 100%);
+  background: linear-gradient(135deg, #FFF0F2 0%, #FFF7F8 100%);
   position: relative;
   overflow: hidden;
 `;
@@ -1382,7 +1382,7 @@ const CTABlobLeft = styled.div`
   position: absolute;
   width: 500px;
   height: 500px;
-  background: #8B5CF6;
+  background: #C25964;
   border-radius: 50%;
   filter: blur(150px);
   opacity: 0.08;
@@ -1395,7 +1395,7 @@ const CTABlobRight = styled.div`
   position: absolute;
   width: 400px;
   height: 400px;
-  background: #C4B5FD;
+  background: #F5C5CA;
   border-radius: 50%;
   filter: blur(150px);
   opacity: 0.15;
@@ -1416,7 +1416,7 @@ const CTALabel = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7C3AED;
+  color: #A3404B;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
@@ -1426,7 +1426,7 @@ const CTATitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 1rem;
 `;
 
@@ -1434,7 +1434,7 @@ const CTADescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.125rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   margin-bottom: 2.5rem;
 `;
 
@@ -1451,7 +1451,7 @@ const CTAPrimaryBtn = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   padding: 1.125rem 2.25rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
@@ -1463,7 +1463,7 @@ const CTAPrimaryBtn = styled(Link)`
   &:hover {
     background: #6D4BCB;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.28);
+    box-shadow: 0 10px 30px rgba(163, 64, 75, 0.28);
   }
 
   svg {
@@ -1486,12 +1486,12 @@ const CTASecondaryBtn = styled(Link)`
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  border: 2px solid #8B5CF6;
+  border: 2px solid #C25964;
   border-radius: 100px;
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.08);
+    background: rgba(194, 89, 100, 0.08);
   }
 `;
 
@@ -1508,7 +1508,7 @@ const CTAFeature = styled.div`
   gap: 0.5rem;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  color: #7C3AED;
+  color: #A3404B;
 
   svg {
     font-size: 1rem;
@@ -1534,7 +1534,7 @@ const CTADecor = styled.div`
 const ModalOverlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(45, 27, 78, 0.9);
+  background: rgba(58, 31, 35, 0.9);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -1574,8 +1574,8 @@ const ModalCloseBtn = styled.button`
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 
   &:hover {
-    background: #7C3AED;
-    color: #EDE9FE;
+    background: #A3404B;
+    color: #FFF0F2;
   }
 `;
 
@@ -1592,8 +1592,8 @@ const ModalBody = styled.div`
 const ModalCategory = styled.span`
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(139, 92, 246, 0.14);
-  color: #7C3AED;
+  background: rgba(194, 89, 100, 0.14);
+  color: #A3404B;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
@@ -1605,14 +1605,14 @@ const ModalTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: 2rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.5rem;
 `;
 
 const ModalSubtitle = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
-  color: #7C3AED;
+  color: #A3404B;
   font-style: italic;
   margin-bottom: 1.5rem;
 `;
@@ -1621,7 +1621,7 @@ const ModalDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   margin-bottom: 2rem;
 `;
 
@@ -1630,8 +1630,8 @@ const ModalStats = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem 0;
-  border-top: 1px solid #E9D5FF;
-  border-bottom: 1px solid #E9D5FF;
+  border-top: 1px solid #F5C5CA;
+  border-bottom: 1px solid #F5C5CA;
   margin-bottom: 1.5rem;
 `;
 
@@ -1643,14 +1643,14 @@ const ModalStatValue = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.25rem;
 `;
 
 const ModalStatLabel = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 0.8125rem;
-  color: #6B7280;
+  color: #6D4A4E;
   text-transform: capitalize;
 `;
 
@@ -1663,8 +1663,8 @@ const ModalTags = styled.div`
 
 const ModalTag = styled.span`
   padding: 0.5rem 1rem;
-  background: #F8F5FF;
-  color: #7C3AED;
+  background: #FFF7F8;
+  color: #A3404B;
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 500;
@@ -1676,7 +1676,7 @@ const ModalCTA = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 1rem;

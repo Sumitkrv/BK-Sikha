@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import ProgramCardsCarousel from '../components/home/ProgramCardsCarousel';
 import AboutPreview from '../components/home/AboutPreview';
 import ServicesSnapshot from '../components/home/ServicesSnapshot';
-import NLPServicesPreview from '../components/home/NLPServicesPreview';
-import GutHealingPreview from '../components/home/GutHealingPreview';
 import AreasOfExpertise from '../components/home/AreasOfExpertise';
-import CoachingJourney from '../components/home/CoachingJourney';
-import FunFacts from '../components/home/FunFacts';
-import BlogPreview from '../components/home/BlogPreview';
-import CommunityInvite from '../components/home/CommunityInvite';
 
 const Home = () => {
   return (
@@ -22,13 +16,7 @@ const Home = () => {
       <ProgramCardsCarousel />
       <AboutPreview />
       <ServicesSnapshot />
-      <NLPServicesPreview />
-      <GutHealingPreview />
       <AreasOfExpertise />
-      <CoachingJourney />
-      <FunFacts />
-      <BlogPreview />
-      <CommunityInvite />
     </HomeWrapper>
   );
 };

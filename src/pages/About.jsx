@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight, FiHeart, FiStar, FiUsers, FiAward, FiCheck, FiPlay, FiTarget, FiZap, FiFeather, FiSun, FiCalendar } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
-import YogaGallery from '../components/shared/YogaGallery';
 
 // HD Images - 4K Quality Unique Unsplash Images
 const aboutImages = {
@@ -155,25 +154,25 @@ const values = [
     icon: <FiHeart />,
     title: 'Root-Cause Healing',
     description: 'We address underlying causes, not just symptoms, for lasting transformation.',
-    color: '#8B5CF6',
+    color: '#C25964',
   },
   {
     icon: <FiSun />,
     title: 'Mind-First Approach',
     description: 'True healing begins with the mind. When calm, the body naturally transforms.',
-    color: '#A78BFA',
+    color: '#D4848C',
   },
   {
     icon: <FiUsers />,
     title: 'Holistic Integration',
     description: 'Combining ancient yogic wisdom with modern science for complete well-being.',
-    color: '#C4B5FD',
+    color: '#E7A3AB',
   },
   {
     icon: <FiFeather />,
     title: 'Compassionate Care',
     description: 'Every journey is unique. We provide personalized guidance with empathy.',
-    color: '#6D4BCB',
+    color: '#C25964',
   },
 ];
 
@@ -424,127 +423,49 @@ const About = () => {
         </ValuesDecor>
       </ValuesSection>
 
-      {/* Yoga Gallery Section */}
-      <YogaGallery />
-
-      {/* Timeline Section */}
+      {/* ── Timeline Section — Editorial Vertical ── */}
       <TimelineSection ref={timelineRef}>
-        {/* Decorative Yoga Elements */}
-        <YogaDecorLeft>
-          <svg viewBox="0 0 200 600" fill="none">
-            {/* Lotus Flower 1 */}
-            <g opacity="0.3">
-              <path d="M100,80 Q85,60 85,45 Q85,30 100,30 Q115,30 115,45 Q115,60 100,80" fill="rgba(206, 197, 173, 0.4)"/>
-              <path d="M100,80 Q75,70 70,60 Q65,50 75,45 Q85,40 100,50" fill="rgba(206, 197, 173, 0.3)"/>
-              <path d="M100,80 Q125,70 130,60 Q135,50 125,45 Q115,40 100,50" fill="rgba(206, 197, 173, 0.3)"/>
-              <path d="M100,80 Q90,85 85,95 Q80,105 90,110 Q100,115 100,100" fill="rgba(206, 197, 173, 0.35)"/>
-              <path d="M100,80 Q110,85 115,95 Q120,105 110,110 Q100,115 100,100" fill="rgba(206, 197, 173, 0.35)"/>
-              <circle cx="100" cy="80" r="8" fill="rgba(142, 207, 179, 0.5)"/>
-            </g>
-            {/* Om Symbol */}
-            <g transform="translate(30, 250)" opacity="0.25">
-              <path d="M30,20 Q35,15 40,20 Q45,25 40,30 Q35,35 30,30 Q25,25 30,20" stroke="rgba(206, 197, 173, 0.6)" strokeWidth="2" fill="none"/>
-              <path d="M40,25 Q50,20 55,30" stroke="rgba(206, 197, 173, 0.6)" strokeWidth="2" fill="none"/>
-              <circle cx="58" cy="28" r="3" fill="rgba(206, 197, 173, 0.6)"/>
-              <path d="M20,35 Q30,40 40,35" stroke="rgba(206, 197, 173, 0.6)" strokeWidth="2" fill="none"/>
-            </g>
-            {/* Lotus Flower 2 */}
-            <g transform="translate(0, 400)" opacity="0.3">
-              <path d="M100,80 Q85,60 85,45 Q85,30 100,30 Q115,30 115,45 Q115,60 100,80" fill="rgba(142, 207, 179, 0.4)"/>
-              <path d="M100,80 Q75,70 70,60 Q65,50 75,45 Q85,40 100,50" fill="rgba(142, 207, 179, 0.3)"/>
-              <path d="M100,80 Q125,70 130,60 Q135,50 125,45 Q115,40 100,50" fill="rgba(142, 207, 179, 0.3)"/>
-              <circle cx="100" cy="80" r="8" fill="rgba(206, 197, 173, 0.5)"/>
-            </g>
-          </svg>
-        </YogaDecorLeft>
-
-        <YogaDecorRight>
-          <svg viewBox="0 0 200 600" fill="none">
-            {/* Meditation Figure */}
-            <g transform="translate(80, 100)" opacity="0.2">
-              <circle cx="30" cy="15" r="12" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2" fill="none"/>
-              <path d="M30,27 L30,50" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2"/>
-              <path d="M30,35 Q20,40 15,35" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2" fill="none"/>
-              <path d="M30,35 Q40,40 45,35" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2" fill="none"/>
-              <path d="M30,50 Q20,60 15,65" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2" fill="none"/>
-              <path d="M30,50 Q40,60 45,65" stroke="rgba(206, 197, 173, 0.5)" strokeWidth="2" fill="none"/>
-            </g>
-            {/* Peace Symbol */}
-            <g transform="translate(70, 320)" opacity="0.25">
-              <circle cx="40" cy="40" r="25" stroke="rgba(142, 207, 179, 0.6)" strokeWidth="2.5" fill="none"/>
-              <path d="M40,40 L40,65" stroke="rgba(142, 207, 179, 0.6)" strokeWidth="2.5"/>
-              <path d="M40,40 L20,55" stroke="rgba(142, 207, 179, 0.6)" strokeWidth="2.5"/>
-              <path d="M40,40 L60,55" stroke="rgba(142, 207, 179, 0.6)" strokeWidth="2.5"/>
-            </g>
-            {/* Zen Circle */}
-            <g transform="translate(60, 480)" opacity="0.3">
-              <path d="M20,30 Q30,10 50,10 Q70,10 80,30 Q85,50 70,65 Q50,80 30,65 Q10,50 20,30" 
-                    stroke="rgba(206, 197, 173, 0.5)" strokeWidth="3" fill="none" strokeDasharray="5,3"/>
-            </g>
-          </svg>
-        </YogaDecorRight>
-
-        {/* Floating Mandala */}
-        <FloatingMandala>
-          <svg viewBox="0 0 200 200" fill="none">
-            <circle cx="100" cy="100" r="80" stroke="rgba(206, 197, 173, 0.2)" strokeWidth="1" fill="none"/>
-            <circle cx="100" cy="100" r="60" stroke="rgba(142, 207, 179, 0.2)" strokeWidth="1" fill="none"/>
-            <circle cx="100" cy="100" r="40" stroke="rgba(206, 197, 173, 0.2)" strokeWidth="1" fill="none"/>
-            <circle cx="100" cy="100" r="20" stroke="rgba(142, 207, 179, 0.2)" strokeWidth="1" fill="none"/>
-            {[0, 45, 90, 135, 180, 225, 270, 315].map(angle => (
-              <line 
-                key={angle}
-                x1="100" 
-                y1="100" 
-                x2={100 + 80 * Math.cos(angle * Math.PI / 180)} 
-                y2={100 + 80 * Math.sin(angle * Math.PI / 180)} 
-                stroke="rgba(206, 197, 173, 0.15)" 
-                strokeWidth="0.5"
-              />
-            ))}
-          </svg>
-        </FloatingMandala>
-
         <Container>
-          <TimelineContent
+          <TLHeader
             as={motion.div}
-            variants={containerVariants}
-            initial="hidden"
-            animate={timelineInView ? "visible" : "hidden"}
+            initial={{ opacity: 0, y: 24 }}
+            animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
           >
-            <motion.div variants={itemVariants}>
-              <TimelineHeader>
-                <SectionLabel className="center light">The Journey</SectionLabel>
-                <SectionTitle className="center light">Milestones of Transformation</SectionTitle>
-              </TimelineHeader>
-            </motion.div>
+            <SectionLabel className="center">The Journey</SectionLabel>
+            <SectionTitle className="center">Milestones of Transformation</SectionTitle>
+            <TLSubtitle>
+              A path shaped by dedication, growth, and an unwavering commitment to holistic well-being.
+            </TLSubtitle>
+          </TLHeader>
 
-            <TimelineTrack>
-              {milestones.map((milestone, index) => (
-                <TimelineItem 
-                  key={index}
-                  as={motion.div}
-                  variants={itemVariants}
-                  className={index % 2 === 0 ? 'left' : 'right'}
-                >
-                  <TimelineYear>{milestone.year}</TimelineYear>
-                  <TimelineCard
-                    as={motion.div}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <TimelineCardTitle>{milestone.title}</TimelineCardTitle>
-                    <TimelineDesc>{milestone.description}</TimelineDesc>
-                  </TimelineCard>
-                  <TimelineDot />
-                </TimelineItem>
-              ))}
-              <TimelineLine />
-            </TimelineTrack>
-          </TimelineContent>
+          <TLList>
+            <TLTrackLine />
+            {milestones.map((milestone, index) => (
+              <TLItem
+                key={index}
+                as={motion.div}
+                initial={{ opacity: 0, y: 32 }}
+                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: 0.1 + index * 0.09, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                {/* Left: numbered circle */}
+                <TLCircleCol>
+                  <TLCircle>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </TLCircle>
+                </TLCircleCol>
+
+                {/* Right: year + title + description */}
+                <TLBody>
+                  <TLYear>{milestone.year}</TLYear>
+                  <TLTitle>{milestone.title}</TLTitle>
+                  <TLDesc>{milestone.description}</TLDesc>
+                </TLBody>
+              </TLItem>
+            ))}
+          </TLList>
         </Container>
-
-        <TimelineOrb className="orb1" />
-        <TimelineOrb className="orb2" />
       </TimelineSection>
 
       {/* Credentials Section */}
@@ -679,24 +600,6 @@ const About = () => {
         <QADecorOrb className="right" />
       </QASection>
 
-      {/* Studio Image Section */}
-      <StudioSection>
-        <StudioImageWrapper>
-          <StudioImage src={aboutImages.studio} alt="Wellness Studio" loading="lazy" />
-          <StudioOverlay />
-          <StudioContent>
-            <StudioBadge>
-              <FiPlay /> Virtual & In-Person Sessions
-            </StudioBadge>
-            <StudioTitle>A Sacred Space for Healing</StudioTitle>
-            <StudioDesc>
-              Whether you join us in our serene studio or connect virtually, 
-              every session is designed to create a sanctuary for your transformation.
-            </StudioDesc>
-          </StudioContent>
-        </StudioImageWrapper>
-      </StudioSection>
-
       {/* Quote Section */}
       <QuoteSection>
         <QuoteContent>
@@ -794,7 +697,7 @@ const Container = styled.div`
 const HeroSection = styled.section`
   min-height: 100vh;
   min-height: 100dvh;
-  background: linear-gradient(135deg, #6D4BCB 0%, #7C3AED 50%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #6D4BCB 0%, #A3404B 50%, #C25964 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -871,9 +774,9 @@ const VideoOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(45, 27, 78, 0.82) 0%,
+    rgba(58, 31, 35, 0.82) 0%,
     rgba(109, 75, 203, 0.64) 50%,
-    rgba(45, 27, 78, 0.82) 100%
+    rgba(58, 31, 35, 0.82) 100%
   );
 `;
 
@@ -887,7 +790,7 @@ const FloatingOrb = styled.div`
   &.orb1 {
     width: 500px;
     height: 500px;
-    background: #C4B5FD;
+    background: #F5C5CA;
     top: -150px;
     right: -150px;
     animation-delay: 0s;
@@ -896,7 +799,7 @@ const FloatingOrb = styled.div`
   &.orb2 {
     width: 400px;
     height: 400px;
-    background: #8B5CF6;
+    background: #C25964;
     bottom: -100px;
     left: -100px;
     animation-delay: 3s;
@@ -905,7 +808,7 @@ const FloatingOrb = styled.div`
   &.orb3 {
     width: 250px;
     height: 250px;
-    background: #A78BFA;
+    background: #D4848C;
     top: 40%;
     left: 20%;
     animation-delay: 6s;
@@ -975,12 +878,12 @@ const HeroLabel = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #EDE9FE;
+  color: #FFF0F2;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1.5rem;
   padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(237, 233, 254, 0.45);
+  border: 1px solid rgba(255, 240, 242, 0.45);
   border-radius: 100px;
   
   @media (max-width: 640px) {
@@ -1027,7 +930,7 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroTitleAccent = styled.span`
-  color: #EDE9FE;
+  color: #FFF0F2;
   font-style: italic;
   font-weight: 400;
 `;
@@ -1092,7 +995,7 @@ const StatNumber = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 2.25rem;
   font-weight: 700;
-  color: #EDE9FE;
+  color: #FFF0F2;
   line-height: 1;
   margin-bottom: 0.25rem;
 
@@ -1125,7 +1028,7 @@ const StatLabel = styled.div`
 const StatDivider = styled.div`
   width: 1px;
   height: 50px;
-  background: rgba(237, 233, 254, 0.35);
+  background: rgba(255, 240, 242, 0.35);
 
   @media (max-width: 600px) {
     height: 40px;
@@ -1232,7 +1135,7 @@ const StoryImageWrapper = styled.div`
 const ImageGradientBg = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(196, 181, 253, 0.22) 0%, rgba(139, 92, 246, 0.12) 100%);
+  background: linear-gradient(135deg, rgba(245, 197, 202, 0.22) 0%, rgba(194, 89, 100, 0.12) 100%);
   border-radius: 30px;
   z-index: 0;
 `;
@@ -1243,7 +1146,7 @@ const FounderImageCard = styled.div`
   height: 100%;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 30px 80px rgba(194, 89, 100, 0.2);
   z-index: 1;
   
   &::before {
@@ -1254,7 +1157,7 @@ const FounderImageCard = styled.div`
       180deg,
       transparent 0%,
       transparent 60%,
-      rgba(45, 27, 78, 0.32) 100%
+      rgba(58, 31, 35, 0.32) 100%
     );
     z-index: 2;
     pointer-events: none;
@@ -1297,7 +1200,7 @@ const StatBadge = styled.div`
   padding: 1rem 1.5rem;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+  box-shadow: 0 10px 30px rgba(194, 89, 100, 0.15);
   
   @media (max-width: 768px) {
     padding: 0.875rem 1.25rem;
@@ -1308,7 +1211,7 @@ const OverlayStatNumber = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: 1.75rem;
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1;
   margin-bottom: 0.25rem;
   
@@ -1320,7 +1223,7 @@ const OverlayStatNumber = styled.div`
 const OverlayStatText = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
-  color: #7C3AED;
+  color: #A3404B;
   font-weight: 500;
   
   @media (max-width: 768px) {
@@ -1335,25 +1238,31 @@ const MentorLabel = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #7C3AED;
+  color: #A3404B;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
 `;
 
 const MentorTitle = styled.h3`
-  font-family: ${theme.fonts.heading};
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: #6B7280;
-  margin-bottom: 0.5rem;
+  display: inline-block;
+  font-family: ${theme.fonts.body};
+  padding: 0.35rem 0.9rem;
+  margin: 0 0 1rem;
+  background: rgba(194, 89, 100, 0.18);
+  border-radius: 2px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #3A1F23;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 `;
 
 const FounderName = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.1;
   margin-bottom: 0.5rem;
 `;
@@ -1362,7 +1271,7 @@ const FounderRole = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.25rem;
   font-weight: 500;
-  color: #7C3AED;
+  color: #A3404B;
   margin-bottom: 2rem;
 `;
 
@@ -1371,11 +1280,11 @@ const MentorQuote = styled.blockquote`
   font-size: 1.375rem;
   font-style: italic;
   font-weight: 400;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.6;
   padding: 2rem 0 2rem 2rem;
   margin: 0 0 2.5rem 0;
-  border-left: 4px solid #C4B5FD;
+  border-left: 4px solid #F5C5CA;
   position: relative;
   
   &::before {
@@ -1384,7 +1293,7 @@ const MentorQuote = styled.blockquote`
     left: -15px;
     top: 0;
     font-size: 4rem;
-    color: #C4B5FD;
+    color: #F5C5CA;
     opacity: 0.5;
     font-family: ${theme.fonts.heading};
     line-height: 1;
@@ -1408,13 +1317,13 @@ const CredentialItem = styled.div`
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background: rgba(139, 92, 246, 0.06);
+  background: rgba(194, 89, 100, 0.06);
   border-radius: 16px;
-  border: 1px solid rgba(139, 92, 246, 0.16);
+  border: 1px solid rgba(194, 89, 100, 0.16);
   transition: all 0.3s ease;
   
   &:hover {
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(194, 89, 100, 0.1);
     transform: translateX(5px);
   }
 `;
@@ -1425,7 +1334,7 @@ const MentorCredentialIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  background: linear-gradient(135deg, #A3404B, #D4848C);
   border-radius: 12px;
   color: #ffffff;
   font-size: 1.25rem;
@@ -1436,7 +1345,7 @@ const MentorCredentialText = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
 `;
 
 const StoryButtons = styled.div`
@@ -1451,7 +1360,7 @@ const SectionLabel = styled.span`
   font-size: 0.9375rem;
   font-weight: 500;
   font-style: italic;
-  color: #8B5CF6;
+  color: #C25964;
   margin-bottom: 0.75rem;
 
   &.center {
@@ -1460,7 +1369,7 @@ const SectionLabel = styled.span`
   }
 
   &.light {
-    color: #EDE9FE;
+    color: #FFF0F2;
   }
 `;
 
@@ -1468,7 +1377,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.2;
   margin-bottom: 1rem;
 
@@ -1484,7 +1393,7 @@ const SectionTitle = styled.h2`
 // Mission Section
 const MissionSection = styled.section`
   padding: 5rem 0;
-  background: linear-gradient(180deg, #F8F5FF 0%, #F3EEFF 100%);
+  background: linear-gradient(180deg, #FFF7F8 0%, #FFF0F2 100%);
 `;
 
 const MissionGrid = styled.div`
@@ -1501,7 +1410,7 @@ const MissionCard = styled.div`
   background: white;
   padding: 3rem;
   border-radius: 30px;
-  box-shadow: 0 15px 50px rgba(139, 92, 246, 0.12);
+  box-shadow: 0 15px 50px rgba(194, 89, 100, 0.12);
   text-align: center;
 
   &.vision {
@@ -1528,13 +1437,13 @@ const MissionIconWrapper = styled.div`
   font-size: 1.75rem;
 
   &.mission {
-    background: linear-gradient(135deg, #7C3AED, #A78BFA);
-    color: #EDE9FE;
+    background: linear-gradient(135deg, #A3404B, #D4848C);
+    color: #FFF0F2;
   }
 
   &.vision {
-    background: rgba(237, 233, 254, 0.25);
-    color: #EDE9FE;
+    background: rgba(255, 240, 242, 0.25);
+    color: #FFF0F2;
   }
 `;
 
@@ -1542,7 +1451,7 @@ const MissionTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 1rem;
 `;
 
@@ -1550,7 +1459,7 @@ const MissionText = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
 `;
 
 // Values Section
@@ -1576,7 +1485,7 @@ const ValuesDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   max-width: 600px;
   margin: 1rem auto 0;
 `;
@@ -1596,12 +1505,12 @@ const ValuesGrid = styled.div`
 `;
 
 const ValueCard = styled.div`
-  background: #F8F5FF;
+  background: #FFF7F8;
   padding: 2.5rem 2rem;
   border-radius: 24px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(196, 181, 253, 0.28);
+  border: 1px solid rgba(245, 197, 202, 0.28);
 `;
 
 const ValueIconWrapper = styled.div`
@@ -1620,7 +1529,7 @@ const ValueTitle = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.75rem;
 `;
 
@@ -1628,7 +1537,7 @@ const ValueDescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   line-height: 1.7;
-  color: #6B7280;
+  color: #6D4A4E;
 `;
 
 const ValuesDecor = styled.div`
@@ -1651,225 +1560,188 @@ const ValuesDecor = styled.div`
   }
 `;
 
-// Timeline Section
+// ── Timeline Section — Editorial Vertical ───────────────────────────────────
 const TimelineSection = styled.section`
-  padding: 6rem 0;
-  background: linear-gradient(135deg, #6D4BCB 0%, #7C3AED 50%, #8B5CF6 100%);
+  padding: 7rem 0 8rem;
+  background: #ffffff;
   position: relative;
-  overflow: hidden;
 
   @media (max-width: 768px) {
-    padding: 4rem 0;
+    padding: 4rem 0 5rem;
   }
 `;
 
-const TimelineContent = styled.div``;
-
-const TimelineHeader = styled.div`
+const TLHeader = styled.div`
   text-align: center;
-  margin-bottom: 4rem;
-`;
-
-const TimelineTrack = styled.div`
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem;
-`;
-
-const TimelineLine = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, #EDE9FE, #EDE9FE, transparent);
-  transform: translateX(-50%);
+  margin-bottom: 5rem;
 
   @media (max-width: 768px) {
-    left: 20px;
+    margin-bottom: 3rem;
   }
 `;
 
-const TimelineItem = styled.div`
+const TLSubtitle = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #6D4A4E;
+  max-width: 500px;
+  margin: 0.5rem auto 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.9375rem;
+  }
+`;
+
+/* Outer list wrapper — holds the absolute track line */
+const TLList = styled.div`
   position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+`;
+
+/* The continuous vertical line running through all circles */
+const TLTrackLine = styled.div`
+  position: absolute;
+  left: 23px;
+  top: 24px;
+  bottom: 24px;
+  width: 1.5px;
+  background: linear-gradient(
+    to bottom,
+    rgba(194, 89, 100, 0) 0%,
+    #F5C5CA 8%,
+    #C25964 20%,
+    #C25964 80%,
+    #F5C5CA 92%,
+    rgba(194, 89, 100, 0) 100%
+  );
+
+  @media (max-width: 480px) {
+    left: 19px;
+  }
+`;
+
+/* One milestone row */
+const TLItem = styled.div`
   display: flex;
-  align-items: center;
-  margin-bottom: 3rem;
-
-  &.left {
-    flex-direction: row;
-    padding-right: calc(50% + 40px);
-    text-align: right;
-
-    @media (max-width: 768px) {
-      padding-right: 0;
-      padding-left: 60px;
-      text-align: left;
-    }
-  }
-
-  &.right {
-    flex-direction: row-reverse;
-    padding-left: calc(50% + 40px);
-
-    @media (max-width: 768px) {
-      padding-left: 60px;
-      padding-right: 0;
-    }
-  }
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(245, 197, 202, 0.35);
+  cursor: default;
+  transition: background 0.25s ease;
+  border-radius: 12px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   &:last-child {
-    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba(245, 197, 202, 0.06);
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.25rem;
+    padding: 1.5rem 0.25rem;
   }
 `;
 
-const TimelineDot = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: #EDE9FE;
-  border: 3px solid #6D4BCB;
+/* Left column: contains only the numbered circle */
+const TLCircleCol = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.2rem;
+`;
+
+/* The numbered circle */
+const TLCircle = styled.div`
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(194, 89, 100, 0.3);
+  position: relative;
   z-index: 2;
 
-  @media (max-width: 768px) {
-    left: 20px;
+  span {
+    font-family: ${theme.fonts.body};
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+
+    span { font-size: 0.75rem; }
   }
 `;
 
-const TimelineYear = styled.span`
-  font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #EDE9FE;
-  min-width: 70px;
-
-  @media (max-width: 768px) {
-    position: absolute;
-    left: 50px;
-    top: -25px;
-    font-size: 0.875rem;
-  }
-`;
-
-const TimelineCard = styled.div`
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 16px;
-  border: 1px solid rgba(237, 233, 254, 0.28);
+/* Right column: year + title + description */
+const TLBody = styled.div`
   flex: 1;
-  margin: 0 1rem;
+  padding-top: 0.15rem;
+`;
 
-  @media (max-width: 768px) {
-    margin: 0;
+const TLYear = styled.span`
+  display: inline-block;
+  font-family: ${theme.fonts.body};
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C25964;
+  margin-bottom: 0.5rem;
+
+  /* Short decorative line before the year */
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1.5px;
+    background: #C25964;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    opacity: 0.55;
   }
 `;
 
-const TimelineCardTitle = styled.h4`
+const TLTitle = styled.h4`
   font-family: ${theme.fonts.heading};
-  font-size: 1.125rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  color: #3A1F23;
+  margin: 0 0 0.6rem;
+  line-height: 1.25;
 `;
 
-const TimelineDesc = styled.p`
+const TLDesc = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  color: #6D4A4E;
   margin: 0;
-`;
+  max-width: 580px;
 
-const TimelineOrb = styled.div`
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.15;
-
-  &.orb1 {
-    width: 400px;
-    height: 400px;
-    background: #C4B5FD;
-    top: -100px;
-    left: -100px;
-  }
-
-  &.orb2 {
-    width: 300px;
-    height: 300px;
-    background: #A78BFA;
-    bottom: -50px;
-    right: -50px;
-  }
-`;
-
-const YogaDecorLeft = styled.div`
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  height: 600px;
-  z-index: 1;
-  pointer-events: none;
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;
-
-const YogaDecorRight = styled.div`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  height: 600px;
-  z-index: 1;
-  pointer-events: none;
-
-  @media (max-width: 1200px) {
-    display: none;
-  }
-`;
-
-const FloatingMandala = styled.div`
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 200px;
-  height: 200px;
-  opacity: 0.6;
-  animation: rotate 60s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  @media (max-width: 1200px) {
-    width: 150px;
-    height: 150px;
-    top: 5%;
-    right: 2%;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
   }
 `;
 
 // Credentials Section
 const CredentialsSection = styled.section`
   padding: 6rem 0;
-  background: #F8F5FF;
+  background: #FFF7F8;
 
   @media (max-width: 768px) {
     padding: 4rem 0;
@@ -1887,7 +1759,7 @@ const CredentialsDesc = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   max-width: 600px;
   margin: 1rem auto 0;
 `;
@@ -1911,9 +1783,9 @@ const CredentialCard = styled.div`
   padding: 2rem;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 10px 30px rgba(194, 89, 100, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(196, 181, 253, 0.28);
+  border: 1px solid rgba(245, 197, 202, 0.28);
 `;
 
 const CredentialIcon = styled.div`
@@ -1923,9 +1795,9 @@ const CredentialIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+  background: linear-gradient(135deg, #A3404B, #D4848C);
   border-radius: 50%;
-  color: #EDE9FE;
+  color: #FFF0F2;
   font-size: 1.25rem;
 `;
 
@@ -1933,14 +1805,14 @@ const CredentialTitle = styled.h4`
   font-family: ${theme.fonts.heading};
   font-size: 1.0625rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   margin-bottom: 0.5rem;
 `;
 
 const CredentialOrg = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
-  color: #6B7280;
+  color: #6D4A4E;
   margin: 0;
 `;
 
@@ -1974,7 +1846,7 @@ const QADescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   max-width: 650px;
   margin: 1rem auto 0;
 
@@ -2000,15 +1872,15 @@ const QAGrid = styled.div`
 `;
 
 const QAVideoCard = styled.div`
-  background: #F8F5FF;
+  background: #FFF7F8;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+  box-shadow: 0 10px 30px rgba(194, 89, 100, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid rgba(196, 181, 253, 0.26);
+  border: 1px solid rgba(245, 197, 202, 0.26);
 
   &:hover {
-    box-shadow: 0 15px 40px rgba(139, 92, 246, 0.18);
+    box-shadow: 0 15px 40px rgba(194, 89, 100, 0.18);
   }
 `;
 
@@ -2047,7 +1919,7 @@ const QAPlayOverlay = styled.div`
   background: linear-gradient(
     135deg,
     rgba(109, 75, 203, 0.45),
-    rgba(45, 27, 78, 0.65)
+    rgba(58, 31, 35, 0.65)
   );
   transition: all 0.3s ease;
 
@@ -2055,7 +1927,7 @@ const QAPlayOverlay = styled.div`
     background: linear-gradient(
       135deg,
       rgba(109, 75, 203, 0.35),
-      rgba(45, 27, 78, 0.55)
+      rgba(58, 31, 35, 0.55)
     );
   }
 `;
@@ -2081,7 +1953,7 @@ const QAPlayButton = styled(motion.button)`
   }
 
   &:hover {
-    background: #EDE9FE;
+    background: #FFF0F2;
   }
 
   @media (max-width: 768px) {
@@ -2103,7 +1975,7 @@ const QAQuestion = styled.h3`
   font-family: ${theme.fonts.heading};
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.4;
   margin: 0;
 
@@ -2122,7 +1994,7 @@ const QADecorOrb = styled.div`
   &.left {
     width: 400px;
     height: 400px;
-    background: #A78BFA;
+    background: #D4848C;
     top: 10%;
     left: -100px;
   }
@@ -2130,7 +2002,7 @@ const QADecorOrb = styled.div`
   &.right {
     width: 350px;
     height: 350px;
-    background: #C4B5FD;
+    background: #F5C5CA;
     bottom: 10%;
     right: -100px;
   }
@@ -2156,16 +2028,16 @@ const QAViewMoreButton = styled(motion.button)`
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #D4848C 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 20px rgba(163, 64, 75, 0.3);
   transition: all 0.3s ease;
   outline: none;
 
   &:hover {
-    box-shadow: 0 6px 30px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 6px 30px rgba(163, 64, 75, 0.4);
     transform: translateY(-2px);
   }
 
@@ -2206,9 +2078,9 @@ const StudioOverlay = styled.div`
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(45, 27, 78, 0.9) 0%,
+    rgba(58, 31, 35, 0.9) 0%,
     rgba(109, 75, 203, 0.7) 50%,
-    rgba(139, 92, 246, 0.4) 100%
+    rgba(194, 89, 100, 0.4) 100%
   );
 `;
 
@@ -2256,7 +2128,7 @@ const StudioDesc = styled.p`
 // Quote Section
 const QuoteSection = styled.section`
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #6D4BCB 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #C25964 0%, #A94A54 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -2273,7 +2145,7 @@ const QuoteMark = styled.span`
   display: block;
   font-family: ${theme.fonts.heading};
   font-size: 8rem;
-  color: #EDE9FE;
+  color: #FFE5E8;
   opacity: 0.2;
   line-height: 0.5;
   margin-bottom: 1rem;
@@ -2292,7 +2164,7 @@ const QuoteText = styled.p`
 const QuoteAuthor = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 1rem;
-  color: #EDE9FE;
+  color: #FFF0F2;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 `;
@@ -2306,13 +2178,13 @@ const QuoteOrb = styled.div`
   opacity: 0.2;
 
   &.left {
-    background: #C4B5FD;
+    background: #F5C5CA;
     left: -100px;
     bottom: -100px;
   }
 
   &.right {
-    background: #8B5CF6;
+    background: #C25964;
     right: -100px;
     top: -100px;
   }
@@ -2321,7 +2193,7 @@ const QuoteOrb = styled.div`
 // CTA Section
 const CTASection = styled.section`
   padding: 6rem 0;
-  background: #F8F5FF;
+  background: #FFF7F8;
 
   @media (max-width: 768px) {
     padding: 4rem 0;
@@ -2332,7 +2204,7 @@ const CTACard = styled.div`
   background: white;
   border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(139, 92, 246, 0.14);
+  box-shadow: 0 30px 80px rgba(194, 89, 100, 0.14);
 `;
 
 const CTAGrid = styled.div`
@@ -2357,7 +2229,7 @@ const CTALabel = styled.span`
   font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7C3AED;
+  color: #A3404B;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
@@ -2367,7 +2239,7 @@ const CTATitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.2;
   margin: 0 0 1rem;
 `;
@@ -2376,7 +2248,7 @@ const CTADescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #6B7280;
+  color: #6D4A4E;
   margin: 0 0 1.5rem;
 `;
 
@@ -2397,7 +2269,7 @@ const CTAFeature = styled.span`
   gap: 0.5rem;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  color: #6D4BCB;
+  color: #C25964;
 
   svg {
     font-size: 0.875rem;
@@ -2417,7 +2289,7 @@ const CTAImageSide = styled.div`
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #F8F5FF 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #FFF7F8 0%, #ffffff 100%);
 
   @media (max-width: 900px) {
     display: none;
@@ -2435,7 +2307,7 @@ const CTAImage = styled.img`
 const CTAImageOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(109, 75, 203, 0.18), rgba(139, 92, 246, 0.12));
+  background: linear-gradient(135deg, rgba(194, 89, 100, 0.15), rgba(212, 132, 140, 0.1));
 `;
 
 // Buttons
@@ -2444,7 +2316,7 @@ const PrimaryButton = styled(Link)`
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
@@ -2458,9 +2330,10 @@ const PrimaryButton = styled(Link)`
   }
 
   &:hover {
-    background: #6D4BCB;
+    background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
+    color: #000000 !important;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.25);
+    box-shadow: 0 10px 30px rgba(194, 89, 100, 0.28);
 
     svg {
       transform: translateX(4px);
@@ -2474,8 +2347,8 @@ const SecondaryButton = styled(Link)`
   gap: 0.5rem;
   padding: 1rem 2rem;
   background: transparent;
-  color: #6D4BCB;
-  border: 2px solid #8B5CF6;
+  color: #C25964;
+  border: 2px solid #C25964;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
@@ -2484,7 +2357,8 @@ const SecondaryButton = styled(Link)`
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.08);
+    background: #C25964;
+    color: #000000 !important;
   }
 `;
 

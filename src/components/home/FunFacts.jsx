@@ -216,7 +216,7 @@ const Counter = ({ end, isInView }) => {
 // Styled Components
 const FunFactsSection = styled.section`
   padding: 7rem 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F5FF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 100%);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -511,7 +511,7 @@ const SectionLabel = styled.span`
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8B5CF6;
+  color: #C25964;
   margin-bottom: 0.75rem;
 
   @media (min-width: 2560px) {
@@ -543,7 +543,7 @@ const SectionTitle = styled.h2`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.25rem, 4.5vw, 3rem);
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1.15;
   margin-bottom: 1.25rem;
 
@@ -632,7 +632,7 @@ const CTAButton = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1rem 2.75rem;
-  background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
   color: #FFFFFF;
   border: none;
   border-radius: 100px;
@@ -641,7 +641,7 @@ const CTAButton = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.28);
+  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.28);
   letter-spacing: 0.02em;
   transform: translateZ(0);
   backface-visibility: hidden;
@@ -684,15 +684,15 @@ const CTAButton = styled(Link)`
   }
 
   &:hover {
-    background: #7C3AED;
+    background: #A3404B;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 8px 30px rgba(163, 64, 75, 0.35);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #7C3AED;
+      background: #A3404B;
       transform: scale(0.98) translateZ(0);
     }
   }
@@ -806,9 +806,9 @@ const Dot = styled.div`
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #C4B5FD;
+  background: #F5C5CA;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(196, 181, 253, 0.45);
+  box-shadow: 0 2px 6px rgba(245, 197, 202, 0.45);
   transform: translateZ(0);
   backface-visibility: hidden;
 
@@ -836,16 +836,16 @@ const OrganicBlob = styled.div`
   svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 15px 40px rgba(139, 92, 246, 0.22));
+    filter: drop-shadow(0 15px 40px rgba(194, 89, 100, 0.22));
   }
 
   svg path {
-    fill: #8B5CF6;
+    fill: #C25964;
   }
 
   @media (min-width: 2560px) {
     svg {
-      filter: drop-shadow(0 20px 50px rgba(139, 92, 246, 0.26));
+      filter: drop-shadow(0 20px 50px rgba(194, 89, 100, 0.26));
     }
   }
 
@@ -854,7 +854,7 @@ const OrganicBlob = styled.div`
     height: 92%;
 
     svg {
-      filter: drop-shadow(0 12px 30px rgba(139, 92, 246, 0.22));
+      filter: drop-shadow(0 12px 30px rgba(194, 89, 100, 0.22));
     }
   }
 
@@ -863,13 +863,13 @@ const OrganicBlob = styled.div`
     height: 94%;
 
     svg {
-      filter: drop-shadow(0 10px 25px rgba(139, 92, 246, 0.2));
+      filter: drop-shadow(0 10px 25px rgba(194, 89, 100, 0.2));
     }
   }
 
   @media (max-width: 360px) {
     svg {
-      filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.18));
+      filter: drop-shadow(0 8px 20px rgba(194, 89, 100, 0.18));
     }
   }
 `;
@@ -890,7 +890,7 @@ const AccentBlob = styled.div`
   }
 
   svg circle {
-    fill: #EDE9FE;
+    fill: #FFF0F2;
   }
 
   @media (min-width: 2560px) {
@@ -1013,14 +1013,14 @@ const PlayButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 12px 45px rgba(139, 92, 246, 0.24);
+  box-shadow: 0 12px 45px rgba(194, 89, 100, 0.24);
   transition: all 0.3s ease;
   backface-visibility: hidden;
   will-change: transform;
 
   svg {
     font-size: 1.75rem;
-    color: #8B5CF6;
+    color: #C25964;
     margin-left: 4px;
   }
 
@@ -1099,14 +1099,14 @@ const PlayButton = styled.button`
   }
 
   &:hover {
-    background: #EDE9FE;
+    background: #FFF0F2;
     transform: translate(-50%, -50%) scale(1.08) translateZ(0);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #EDE9FE;
+      background: #FFF0F2;
       transform: translate(-50%, -50%) scale(0.95) translateZ(0);
     }
   }
@@ -1186,7 +1186,7 @@ const StatNumber = styled.div`
   font-family: ${theme.fonts.heading};
   font-size: clamp(2.75rem, 5vw, 3.75rem);
   font-weight: 500;
-  color: #2D1B4E;
+  color: #3A1F23;
   line-height: 1;
   margin-bottom: 0.5rem;
   display: flex;
@@ -1230,7 +1230,7 @@ const StatNumber = styled.div`
 
 const StatSuffix = styled.span`
   font-size: 1.5rem;
-  color: #8B5CF6;
+  color: #C25964;
   font-weight: 600;
   margin-left: 2px;
 
@@ -1263,7 +1263,7 @@ const StatLabel = styled.div`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   font-weight: 600;
-  color: #2D1B4E;
+  color: #3A1F23;
 
   @media (min-width: 2560px) {
     font-size: 1.375rem;
