@@ -743,7 +743,7 @@ const NavLink = styled(Link)`
   }
 
   &:hover {
-    color: #000000;
+    color: #6B1E28;
   }
   
   &:focus-visible {
@@ -847,7 +847,7 @@ const CTAButton = styled(motion(Link))`
 
   &:hover {
     background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
-    color: #000000 !important;
+    color: #ffffff;
     box-shadow: 
       0 12px 30px rgba(194, 89, 100, 0.45),
       0 6px 14px rgba(194, 89, 100, 0.28);
@@ -1150,8 +1150,8 @@ const MobileNavLink = styled(Link)`
   }
 
   &:hover {
-    color: #3A1F23;
-    background: rgba(245, 197, 202, 0.12);
+    color: #6B1E28;
+    background: rgba(107, 30, 40, 0.07);
   }
   
   &:focus-visible {
@@ -1253,7 +1253,7 @@ const MobileCTAButton = styled(Link)`
 
   &:hover {
     background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
-    color: #000000 !important;
+    color: #ffffff;
     box-shadow: 
       0 6px 24px rgba(194, 89, 100, 0.35),
       0 2px 6px rgba(194, 89, 100, 0.16);

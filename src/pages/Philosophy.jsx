@@ -552,12 +552,12 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 8rem 0 6rem;
+  padding: calc(8rem + var(--navbar-h)) 0 6rem;
   overflow: hidden;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: 45vh;
-    padding: 6rem 0 4rem;
+    padding: calc(6rem + var(--navbar-h)) 0 4rem;
     background-attachment: scroll;
   }
 `;

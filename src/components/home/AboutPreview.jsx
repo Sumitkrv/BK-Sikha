@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-const aboutImage = '/6 images/our story.jpeg';
+const aboutImage = '/st/Our%20story%20(%20HOME%20Page)%20copy.jpg.jpeg';
 
 const AboutPreview = () => {
   const ref = useRef(null);
@@ -1125,9 +1125,9 @@ const CTAButton = styled.button`
 
   &:hover {
     background: #C25964;
-    color: #000000 !important;
+    color: #ffffff;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 25px rgba(194, 89, 100, 0.28);
+    box-shadow: 0 8px 25px rgba(194, 89, 100, 0.35);
   }
 
   @media (min-width: 1920px) {

@@ -302,7 +302,7 @@ const Testimonials = () => {
 const PageWrapper = styled.div``;
 
 const HeroSection = styled.section`
-  padding: 6rem 0 4rem;
+  padding: calc(6rem + var(--navbar-h)) 0 4rem;
   background: linear-gradient(
     135deg,
     ${theme.colors.background} 0%,

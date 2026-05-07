@@ -263,7 +263,8 @@ const HeroSection = styled.section`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  
+  padding-top: var(--navbar-h);
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: 50vh;
     background-attachment: scroll;

@@ -5,22 +5,22 @@ import { theme } from '../../styles/theme';
 
 const programs = [
   {
-    image: '/new%20images/yogic%20coaching.png',
+    image: '/st/t1.jpeg',
     category: 'Yoga',
     title: 'Personalized Yoga',
   },
   {
-    image: '/new%20images/meditation.png',
+    image: '/st/t2.jpg.jpeg',
     category: 'Meditation',
     title: 'Mindful Meditation',
   },
   {
-    image: '/new%20images/holistic%20healing%20(3).png',
+    image: '/st/t3.jpeg',
     category: 'Gut Health',
     title: 'Gut Healing',
   },
   {
-    image: '/new%20images/emotional%20wellness%20(2).png',
+    image: '/st/t4.jpeg',
     category: 'NLP',
     title: 'NLP Coaching',
   },

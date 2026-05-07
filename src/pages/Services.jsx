@@ -472,16 +472,16 @@ const HeroSection = styled.section`
   justify-content: center;
   overflow: hidden;
   background: linear-gradient(135deg, #6D4BCB 0%, #A3404B 50%, #C25964 100%);
-  padding: 8rem 0 6rem;
-  
+  padding: calc(8rem + var(--navbar-h)) 0 6rem;
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     min-height: 85vh;
-    padding: 6rem 0 4rem;
+    padding: calc(6rem + var(--navbar-h)) 0 4rem;
   }
-  
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     min-height: 75vh;
-    padding: 5rem 0 3rem;
+    padding: calc(5rem + var(--navbar-h)) 0 3rem;
   }
   
   /* Extra small phones */
@@ -607,7 +607,7 @@ const LeafDecoration = styled.div`
     transform: translateY(-50%) scaleX(-1);
   }
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -635,7 +635,7 @@ const HeroContent = styled.div`
 
 const HeroLabel = styled.span`
   display: inline-block;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
   color: #FFF0F2;
@@ -648,7 +648,7 @@ const HeroLabel = styled.span`
 `;
 
 const HeroTitle = styled.h1`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
   color: #ffffff;
@@ -663,7 +663,7 @@ const HeroTitleAccent = styled.span`
 `;
 
 const HeroDescription = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1.25rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
@@ -672,7 +672,7 @@ const HeroDescription = styled.p`
   margin-left: auto;
   margin-right: auto;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.0625rem;
   }
 `;
@@ -703,7 +703,7 @@ const HeroPrimaryBtn = styled(Link)`
   padding: 1rem 2rem;
   background: #FFF0F2;
   color: #6D4BCB;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -711,7 +711,7 @@ const HeroPrimaryBtn = styled(Link)`
   transition: all 0.3s ease;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0.875rem 1.5rem;
     font-size: 0.9375rem;
   }
@@ -739,7 +739,7 @@ const HeroSecondaryBtn = styled.button`
   padding: 1rem 2rem;
   background: transparent;
   color: #ffffff;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
@@ -749,7 +749,7 @@ const HeroSecondaryBtn = styled.button`
   transition: all 0.3s ease;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0.875rem 1.5rem;
     font-size: 0.9375rem;
   }
@@ -779,7 +779,7 @@ const ServicesShowcase = styled.section`
   padding: 6rem 0;
   background: #FFF7F8;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 4rem 0;
   }
 `;
@@ -792,7 +792,7 @@ const SectionHeader = styled.div`
 
 const SectionLabel = styled.span`
   display: inline-block;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   padding: 0.35rem 0.9rem;
   font-size: 0.84rem;
   font-weight: 600;
@@ -810,7 +810,7 @@ const SectionLabel = styled.span`
 `;
 
 const SectionTitle = styled.h2`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: #3A1F23;
@@ -819,7 +819,7 @@ const SectionTitle = styled.h2`
 `;
 
 const SectionDescription = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.8;
   color: ${theme.colors.text};
@@ -861,18 +861,18 @@ const ServiceTab = styled.button`
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: \${props => props.$active ? '#A3404B' : 'white'};
-  color: \${props => props.$active ? '#FFF0F2' : '#3A1F23'};
-  border: 2px solid \${props => props.$active ? '#A3404B' : '#F5C5CA'};
+  background: ${props => props.$active ? '#A3404B' : 'white'};
+  color: ${props => props.$active ? '#FFF0F2' : '#3A1F23'};
+  border: 2px solid ${props => props.$active ? '#A3404B' : '#F5C5CA'};
   border-radius: 100px;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0.625rem 1rem;
     font-size: 0.8125rem;
     gap: 0.375rem;
@@ -886,18 +886,18 @@ const ServiceTab = styled.button`
 
   &:hover {
     border-color: #A3404B;
-    background: \${props => props.$active ? '#A3404B' : 'rgba(194, 89, 100, 0.08)'};
+    background: ${props => props.$active ? '#A3404B' : 'rgba(194, 89, 100, 0.08)'};
   }
 `;
 
 const TabIcon = styled.span`
   font-size: 1rem;
   display: flex;
-  color: \${props => props.$active ? '#FFF0F2' : '#C25964'};
+  color: ${props => props.$active ? '#FFF0F2' : '#C25964'};
 `;
 
 const TabTitle = styled.span`
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     display: none;
   }
 `;
@@ -912,14 +912,14 @@ const ActiveServiceCard = styled.div`
   box-shadow: 0 20px 60px rgba(194, 89, 100, 0.12);
   margin-bottom: 5rem;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 2rem;
     border-radius: 24px;
   }
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 1.5rem;
     border-radius: 20px;
     margin-bottom: 3rem;
@@ -978,7 +978,7 @@ const FloatingBadge = styled.div`
   box-shadow: 0 10px 30px rgba(163, 64, 75, 0.3);
   z-index: 10;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     top: 12px;
     bottom: auto;
     right: 12px;
@@ -1022,7 +1022,7 @@ const ServiceIcon = styled.div`
 `;
 
 const ServiceTagline = styled.span`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 1rem;
   font-style: italic;
   color: #A3404B;
@@ -1034,7 +1034,7 @@ const ServiceTagline = styled.span`
 `;
 
 const ServiceName = styled.h3`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 2rem;
   font-weight: 700;
   color: #3A1F23;
@@ -1047,7 +1047,7 @@ const ServiceName = styled.h3`
 `;
 
 const ServiceShortDesc = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
   line-height: 1.7;
   color: ${theme.colors.text};
@@ -1065,7 +1065,7 @@ const FeaturesGrid = styled.div`
   gap: 1rem;
   margin-bottom: 2rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
@@ -1099,7 +1099,7 @@ const FeatureCheck = styled.span`
 `;
 
 const FeatureText = styled.span`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   color: ${theme.colors.text};
 
@@ -1122,7 +1122,7 @@ const MetaItem = styled.div``;
 
 const MetaLabel = styled.span`
   display: block;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.8125rem;
   color: #6D4A4E;
   text-transform: uppercase;
@@ -1131,7 +1131,7 @@ const MetaLabel = styled.span`
 `;
 
 const MetaValue = styled.span`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 600;
   color: #3A1F23;
@@ -1145,7 +1145,7 @@ const ServiceCTA = styled(Link)`
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -1154,7 +1154,7 @@ const ServiceCTA = styled(Link)`
   align-self: flex-start;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     width: 100%;
     padding: 0.875rem 1.5rem;
     font-size: 0.9375rem;
@@ -1181,12 +1181,12 @@ const AllServicesGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
@@ -1225,7 +1225,7 @@ const MiniCardImage = styled.div`
     transition: transform 0.5s ease;
   }
 
-  \${ServiceMiniCard}:hover & img {
+  ${ServiceMiniCard}:hover & img {
     transform: scale(1.1);
   }
 `;
@@ -1236,7 +1236,7 @@ const MiniCardOverlay = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease;
 
-  \${ServiceMiniCard}:hover & {
+  ${ServiceMiniCard}:hover & {
     opacity: 0.2;
   }
 `;
@@ -1244,7 +1244,7 @@ const MiniCardOverlay = styled.div`
 const MiniCardContent = styled.div`
   padding: 1.5rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 1.25rem;
   }
 `;
@@ -1256,19 +1256,19 @@ const MiniCardIcon = styled.span`
 `;
 
 const MiniCardTitle = styled.h4`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
   color: #3A1F23;
   margin: 0 0 0.25rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.125rem;
   }
 `;
 
 const MiniCardTagline = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-style: italic;
   color: #A3404B;
@@ -1284,11 +1284,11 @@ const JourneySection = styled.section`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 4rem 0;
   }
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
   }
 `;
@@ -1311,13 +1311,13 @@ const JourneyContent = styled.div`
 `;
 
 const JourneyTitle = styled.h2`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: #3A1F23;
   margin: 0 0 4rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     margin: 0 0 2.5rem;
   }
 `;
@@ -1330,7 +1330,7 @@ const JourneySteps = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     flex-direction: column;
     align-items: center;
   }
@@ -1355,7 +1355,7 @@ const StepNumber = styled.div`
   justify-content: center;
   background: linear-gradient(135deg, #A3404B 0%, #D4848C 100%);
   color: #FFF0F2;
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 50%;
@@ -1366,7 +1366,7 @@ const StepNumber = styled.div`
 const StepContent = styled.div``;
 
 const StepTitle = styled.h4`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 1.25rem;
   font-weight: 600;
   color: #3A1F23;
@@ -1374,7 +1374,7 @@ const StepTitle = styled.h4`
 `;
 
 const StepDesc = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
   line-height: 1.6;
   color: ${theme.colors.text};
@@ -1389,7 +1389,7 @@ const StepConnector = styled.div`
   height: 2px;
   background: linear-gradient(90deg, #F5C5CA, transparent);
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     display: none;
   }
 `;
@@ -1400,7 +1400,7 @@ const QuoteSection = styled.section`
   background: linear-gradient(135deg, #6D4BCB 0%, #C25964 100%);
   text-align: center;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 1.5rem;
   }
 `;
@@ -1412,20 +1412,20 @@ const QuoteContainer = styled.div`
 
 const QuoteMark = styled.span`
   display: block;
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: 6rem;
   color: #FFF0F2;
   opacity: 0.3;
   line-height: 0.5;
   margin-bottom: 1rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 4rem;
   }
 `;
 
 const QuoteText = styled.p`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
   font-style: italic;
@@ -1435,7 +1435,7 @@ const QuoteText = styled.p`
 `;
 
 const QuoteAuthor = styled.span`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   color: #FFF0F2;
   letter-spacing: 0.1em;
@@ -1448,11 +1448,11 @@ const CTASection = styled.section`
   position: relative;
   overflow: hidden;
 
-  @media (max-width: \${theme.breakpoints.tablet}) {
+  @media (max-width: ${theme.breakpoints.tablet}) {
     padding: 4rem 0;
   }
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
   }
 `;
@@ -1488,7 +1488,7 @@ const CTAContent = styled.div`
 
 const CTALabel = styled.span`
   display: inline-block;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 0.875rem;
   font-weight: 600;
   color: #A3404B;
@@ -1498,7 +1498,7 @@ const CTALabel = styled.span`
 `;
 
 const CTATitle = styled.h2`
-  font-family: \${theme.fonts.heading};
+  font-family: ${theme.fonts.heading};
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: #3A1F23;
@@ -1506,13 +1506,13 @@ const CTATitle = styled.h2`
 `;
 
 const CTADescription = styled.p`
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1.125rem;
   line-height: 1.8;
   color: ${theme.colors.text};
   margin: 0 0 2.5rem;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.0625rem;
     margin: 0 0 2rem;
   }
@@ -1544,7 +1544,7 @@ const CTAPrimaryBtn = styled(Link)`
   padding: 1.125rem 2.25rem;
   background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
   color: #ffffff;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -1552,7 +1552,7 @@ const CTAPrimaryBtn = styled(Link)`
   transition: all 0.3s ease;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 1rem 1.75rem;
     font-size: 0.9375rem;
   }
@@ -1580,7 +1580,7 @@ const CTASecondaryBtn = styled(Link)`
   padding: 1.125rem 2.25rem;
   background: transparent;
   color: #6D4BCB;
-  font-family: \${theme.fonts.body};
+  font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
@@ -1589,7 +1589,7 @@ const CTASecondaryBtn = styled(Link)`
   transition: all 0.3s ease;
   white-space: nowrap;
 
-  @media (max-width: \${theme.breakpoints.mobile}) {
+  @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 1rem 1.75rem;
     font-size: 0.9375rem;
   }

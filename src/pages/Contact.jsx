@@ -1,38 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  FiMail,
-  FiPhone,
-  FiInstagram,
-  FiMapPin,
-  FiSend,
-} from 'react-icons/fi';
+import { FiMail, FiPhone, FiInstagram, FiMapPin, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
-import SectionTitle from '../components/shared/SectionTitle';
-import Button from '../components/shared/Button';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
+    name: '', email: '', phone: '', service: '', message: '',
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you! Your message has been sent. I\'ll be in touch soon. 🙏');
+    alert("Thank you! Your message has been sent. I'll be in touch soon. 🙏");
   };
 
   const services = [
@@ -42,790 +23,699 @@ const Contact = () => {
     'Gut Health & Nutrition',
     'Stress Relief Sessions',
     'Holistic Transformation',
-    'Not sure yet - Need guidance',
+    'Not sure yet – Need guidance',
+  ];
+
+  const contactItems = [
+    { icon: <FiInstagram />, label: 'Instagram', value: '@cyd_bkshikha', href: 'https://www.instagram.com/cyd_bkshikha', note: 'Daily wellness tips & inspiration' },
+    { icon: <FiMail />,      label: 'Email',     value: 'khnadelwalshikha1983@gmail.com', href: 'mailto:khnadelwalshikha1983@gmail.com', note: 'For detailed inquiries' },
+    { icon: <FiPhone />,     label: 'WhatsApp',  value: '+91 783 501 2335', href: 'tel:+917835012335', note: 'Direct booking & quick questions' },
+    { icon: <FiMapPin />,    label: 'Location',  value: 'New Delhi, India 110007', href: 'https://maps.google.com/?q=New+Delhi+110007', note: 'Hindi (Fluent) & English' },
   ];
 
   return (
     <PageWrapper>
-      {/* Hero */}
+
+      {/* ── Hero ── */}
       <HeroSection>
         <div className="container">
-          <HeroContent
-            as={motion.div}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Subtitle>Let's Connect</Subtitle>
-            <HeroTitle>Begin Your Healing Journey Today</HeroTitle>
-            <HeroDescription>
-              Every transformation starts with a conversation. Share your story, ask
-              your questions, and let's explore how we can work together to create the
-              life you deserve.
-            </HeroDescription>
-          </HeroContent>
+          <HeroInner>
+            <HeroLeft
+              as={motion.div}
+              initial={{ opacity: 0, x: -28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              <HeroEyebrow>Let's Connect</HeroEyebrow>
+              <HeroTitle>Begin Your<br />Healing Journey</HeroTitle>
+              <HeroLine />
+              <HeroDesc>
+                Every transformation starts with a conversation. Share your story, ask your questions, and let's explore how we can create the life you deserve together.
+              </HeroDesc>
+              <HeroStats>
+                <HeroStat><HeroStatNum>15+</HeroStatNum><HeroStatLabel>Years Experience</HeroStatLabel></HeroStat>
+                <HeroStatDivider />
+                <HeroStat><HeroStatNum>2000+</HeroStatNum><HeroStatLabel>Lives Transformed</HeroStatLabel></HeroStat>
+                <HeroStatDivider />
+                <HeroStat><HeroStatNum>24hr</HeroStatNum><HeroStatLabel>Response Time</HeroStatLabel></HeroStat>
+              </HeroStats>
+            </HeroLeft>
+            <HeroRight
+              as={motion.div}
+              initial={{ opacity: 0, x: 28 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+            >
+              <HeroConsultBox>
+                <HeroConsultIcon>🌿</HeroConsultIcon>
+                <HeroConsultTitle>Free 15-Min Consultation</HeroConsultTitle>
+                <HeroConsultText>
+                  Not sure where to start? Book a complimentary call — no pressure, no sales pitch, just a heartfelt conversation about your wellness journey.
+                </HeroConsultText>
+                <HeroConsultNote>Fill the form below to get started</HeroConsultNote>
+                <HeroArrow><FiArrowRight /></HeroArrow>
+              </HeroConsultBox>
+            </HeroRight>
+          </HeroInner>
         </div>
       </HeroSection>
 
-      {/* Contact Form & Info */}
-      <ContactSection className="section">
+      {/* ── Form + Info ── */}
+      <MainSection>
         <div className="container">
-          <ContentWrapper>
-            {/* Contact Form */}
-            <FormSection
+          <MainGrid>
+
+            {/* Form */}
+            <FormWrap
               as={motion.div}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <FormTitle>Send Me a Message</FormTitle>
-              <FormDescription>
-                Fill out the form below and I'll get back to you within 24 hours. ✨
-              </FormDescription>
+              <FormHeader>
+                <FormTitle>Send Me a Message</FormTitle>
+                <FormSubtitle>I'll get back to you within 24 hours</FormSubtitle>
+              </FormHeader>
 
               <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                  <Label htmlFor="name">
-                    Your Name <Required>*</Required>
-                  </Label>
-                  <Input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="What should I call you?"
-                    required
-                  />
-                </FormGroup>
+                <FormRow>
+                  <FormGroup>
+                    <Label htmlFor="name">Your Name <Req>*</Req></Label>
+                    <Input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="What should I call you?" required />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label htmlFor="email">Email Address <Req>*</Req></Label>
+                    <Input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
+                  </FormGroup>
+                </FormRow>
+
+                <FormRow>
+                  <FormGroup>
+                    <Label htmlFor="phone">Phone Number <Optional>(Optional)</Optional></Label>
+                    <Input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 XXX XXX XXXX" />
+                  </FormGroup>
+                  <FormGroup>
+                    <Label htmlFor="service">Service Interested In <Req>*</Req></Label>
+                    <Select id="service" name="service" value={formData.service} onChange={handleChange} required>
+                      <option value="">Select a service…</option>
+                      {services.map((s, i) => <option key={i} value={s}>{s}</option>)}
+                    </Select>
+                  </FormGroup>
+                </FormRow>
 
                 <FormGroup>
-                  <Label htmlFor="email">
-                    Email Address <Required>*</Required>
-                  </Label>
-                  <Input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                    required
-                  />
+                  <Label htmlFor="message">Tell Me About Your Journey <Req>*</Req></Label>
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="What brings you here? What are you hoping to achieve? Share as much or as little as you're comfortable with…" rows="5" required />
                 </FormGroup>
 
-                <FormGroup>
-                  <Label htmlFor="phone">Phone Number (Optional)</Label>
-                  <Input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+91 XXX XXX XXXX"
-                  />
-                </FormGroup>
-
-                <FormGroup>
-                  <Label htmlFor="service">
-                    Service You're Interested In <Required>*</Required>
-                  </Label>
-                  <Select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">Select a service...</option>
-                    {services.map((service, index) => (
-                      <option key={index} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </Select>
-                </FormGroup>
-
-                <FormGroup>
-                  <Label htmlFor="message">
-                    Tell Me About Your Journey <Required>*</Required>
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="What brings you here? What are you hoping to achieve? Share as much or as little as you're comfortable with..."
-                    rows="6"
-                    required
-                  />
-                </FormGroup>
-
-                <SubmitButton
+                <SubmitBtn
                   type="submit"
+                  as={motion.button}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <FiSend />
-                  Send Message
-                </SubmitButton>
+                  Send Message <FiArrowRight />
+                </SubmitBtn>
               </Form>
-            </FormSection>
+            </FormWrap>
 
-            {/* Contact Info */}
-            <InfoSection
+            {/* Info sidebar */}
+            <InfoWrap
               as={motion.div}
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <InfoCard>
-                <InfoTitle>Other Ways to Connect</InfoTitle>
+              <InfoHeading>Other Ways to Reach Me</InfoHeading>
+              <InfoList>
+                {contactItems.map((item, i) => (
+                  <InfoItem key={i}>
+                    <InfoIcon>{item.icon}</InfoIcon>
+                    <InfoItemBody>
+                      <InfoItemLabel>{item.label}</InfoItemLabel>
+                      <InfoItemLink href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                        {item.value}
+                      </InfoItemLink>
+                      <InfoItemNote>{item.note}</InfoItemNote>
+                    </InfoItemBody>
+                  </InfoItem>
+                ))}
+              </InfoList>
 
-                <ContactMethods>
-                  <ContactMethod>
-                    <MethodIcon>
-                      <FiInstagram />
-                    </MethodIcon>
-                    <MethodInfo>
-                      <MethodLabel>Instagram</MethodLabel>
-                      <MethodLink
-                        href="https://www.instagram.com/cyd_bkshikha"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        @cyd_bkshikha
-                      </MethodLink>
-                      <MethodDescription>
-                        Daily wellness tips & inspiration
-                      </MethodDescription>
-                    </MethodInfo>
-                  </ContactMethod>
+              <QuoteStrip>
+                <QuoteMark>"</QuoteMark>
+                <QuoteBody>
+                  <QuoteText>The journey of a thousand miles begins with a single step.</QuoteText>
+                  <QuoteAuthor>— Lao Tzu</QuoteAuthor>
+                </QuoteBody>
+              </QuoteStrip>
+            </InfoWrap>
 
-                  <ContactMethod>
-                    <MethodIcon>
-                      <FiMail />
-                    </MethodIcon>
-                    <MethodInfo>
-                      <MethodLabel>Email</MethodLabel>
-                      <MethodLink href="mailto:khnadelwalshikha1983@gmail.com">
-                        khnadelwalshikha1983@gmail.com
-                      </MethodLink>
-                      <MethodDescription>
-                        For detailed inquiries
-                      </MethodDescription>
-                    </MethodInfo>
-                  </ContactMethod>
-
-                  <ContactMethod>
-                    <MethodIcon>
-                      <FiPhone />
-                    </MethodIcon>
-                    <MethodInfo>
-                      <MethodLabel>WhatsApp</MethodLabel>
-                      <MethodLink href="tel:+917835012335">
-                        +91 783 501 2335
-                      </MethodLink>
-                      <MethodDescription>
-                        Direct booking & quick questions
-                      </MethodDescription>
-                    </MethodInfo>
-                  </ContactMethod>
-
-                  <ContactMethod>
-                    <MethodIcon>
-                      <FiMapPin />
-                    </MethodIcon>
-                    <MethodInfo>
-                      <MethodLabel>Location</MethodLabel>
-                      <MethodLink
-                        href="https://maps.google.com/?q=New+Delhi+110007"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        New Delhi, India 110007
-                      </MethodLink>
-                      <MethodDescription>
-                        Available in Hindi (Fluent) & English
-                      </MethodDescription>
-                    </MethodInfo>
-                  </ContactMethod>
-                </ContactMethods>
-              </InfoCard>
-
-              <SessionInfoCard>
-                <SessionIcon>📅</SessionIcon>
-                <SessionTitle>Free Consultation Call</SessionTitle>
-                <SessionDescription>
-                  Not sure where to start? Book a complimentary 15-minute
-                  consultation call where we'll discuss your goals and find the
-                  perfect service for you.
-                </SessionDescription>
-                <SessionNote>
-                  No pressure, no sales pitch - just a heartfelt conversation about
-                  your wellness journey.
-                </SessionNote>
-              </SessionInfoCard>
-
-              <QuoteCard>
-                <QuoteText>
-                  "The journey of a thousand miles begins with a single step."
-                </QuoteText>
-                <QuoteAuthor>- Lao Tzu</QuoteAuthor>
-              </QuoteCard>
-            </InfoSection>
-          </ContentWrapper>
+          </MainGrid>
         </div>
-      </ContactSection>
+      </MainSection>
 
-      {/* FAQ Section */}
-      <FAQSection className="section">
+      {/* ── FAQ ── */}
+      <FAQSection>
         <div className="container">
-          <SectionTitle subtitle="Common Questions" className="faq-title">
-            What You Might Be Wondering
-          </SectionTitle>
+          <FAQTop
+            as={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <FAQEyebrow>Common Questions</FAQEyebrow>
+            <FAQTitle>Frequently Asked Questions</FAQTitle>
+          </FAQTop>
 
-          <FAQGrid>
-            <FAQItem
-              as={motion.div}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <FAQQuestion>How long does each session last?</FAQQuestion>
-              <FAQAnswer>
-                Session lengths vary by service: Yoga sessions are typically 60
-                minutes, emotional wellness and NLP coaching are 75-90 minutes, and
-                stress relief sessions are 45 minutes.
-              </FAQAnswer>
-            </FAQItem>
-
-            <FAQItem
-              as={motion.div}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <FAQQuestion>Are sessions online or in-person?</FAQQuestion>
-              <FAQAnswer>
-                I offer both! Online sessions via Zoom are available worldwide.
-                In-person sessions are available in select locations. We'll discuss
-                what works best for you during our consultation.
-              </FAQAnswer>
-            </FAQItem>
-
-            <FAQItem
-              as={motion.div}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <FAQQuestion>What if I'm a complete beginner?</FAQQuestion>
-              <FAQAnswer>
-                Perfect! I work with people at all levels. Every practice is
-                personalized to your current abilities and goals. There's no judgment,
-                only support and guidance.
-              </FAQAnswer>
-            </FAQItem>
-
-            <FAQItem
-              as={motion.div}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <FAQQuestion>How quickly will I see results?</FAQQuestion>
-              <FAQAnswer>
-                Many clients feel shifts after the first session - increased calm,
-                clarity, or hope. Lasting transformation typically unfolds over 8-12
-                weeks with consistent practice. Everyone's journey is unique.
-              </FAQAnswer>
-            </FAQItem>
-          </FAQGrid>
+          <FAQList>
+            {[
+              { q: 'What type of yoga do you teach?', a: 'The sessions are a blend of gentle yoga, breathwork, and mindful movement designed to support both physical and mental well-being.' },
+              { q: 'Can NLP help with anxiety, confidence, or emotional blocks?', a: 'Yes. NLP techniques are highly effective in addressing patterns related to anxiety, self-doubt, and emotional triggers — helping you respond rather than react.' },
+              { q: 'How is gut health connected to mental well-being?', a: 'Your gut and brain are closely connected. An imbalanced gut can impact mood, stress levels, and energy, which is why a holistic approach is essential.' },
+              { q: 'Who is this program best suited for?', a: 'Anyone looking to improve physical health, emotional balance, mindset, and overall lifestyle in a holistic, sustainable way.' },
+            ].map((item, i) => (
+              <FAQRow
+                key={i}
+                as={motion.div}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: i * 0.08 }}
+              >
+                <FAQNum>0{i + 1}</FAQNum>
+                <FAQContent>
+                  <FAQQuestion>{item.q}</FAQQuestion>
+                  <FAQAnswer>{item.a}</FAQAnswer>
+                </FAQContent>
+              </FAQRow>
+            ))}
+          </FAQList>
         </div>
       </FAQSection>
+
     </PageWrapper>
   );
 };
 
-// Styled Components
+/* ── Styled Components ── */
 const PageWrapper = styled.div``;
 
+/* Hero */
 const HeroSection = styled.section`
-  padding: 6rem 0 4rem;
-  background: linear-gradient(
-    135deg,
-    ${theme.colors.background} 0%,
-    rgba(245, 197, 202, 0.2) 50%,
-    ${theme.colors.backgroundAlt} 100%
-  );
-  text-align: center;
+  padding: calc(5.5rem + var(--navbar-h)) 0 4rem;
+  background: linear-gradient(160deg, #FFFFFF 0%, #FFF7F8 60%, #FFF0F2 100%);
+  overflow: hidden;
   position: relative;
-  
+
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(163, 64, 75, 0.08) 0%, transparent 55%);
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(194,89,100,0.08) 0%, transparent 70%);
     pointer-events: none;
+  }
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: calc(4.5rem + var(--navbar-h)) 0 3rem;
   }
 `;
 
-const HeroContent = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+const HeroInner = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 `;
 
-const Subtitle = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #D4848C;
+const HeroLeft = styled.div``;
+
+const HeroEyebrow = styled.span`
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 0 0 1rem;
+  color: #C25964;
+  display: block;
+  margin-bottom: 1rem;
 `;
 
 const HeroTitle = styled.h1`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 700;
-  color: #3A1F23;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
+  color: #1A1214;
+  line-height: 1.1;
+  margin: 0 0 1.1rem;
 `;
 
-const HeroDescription = styled.p`
-  font-size: 1.125rem;
+const HeroLine = styled.div`
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, #E8909A, #C25964);
+  border-radius: 2px;
+  margin-bottom: 1.4rem;
+`;
+
+const HeroDesc = styled.p`
+  font-size: 1rem;
+  color: rgba(75, 50, 53, 0.7);
+  line-height: 1.85;
+  margin: 0 0 2.25rem;
+  max-width: 480px;
+`;
+
+const HeroStats = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+`;
+
+const HeroStat = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+`;
+
+const HeroStatNum = styled.div`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1A1214;
+  line-height: 1;
+`;
+
+const HeroStatLabel = styled.div`
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(75, 50, 53, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+`;
+
+const HeroStatDivider = styled.div`
+  width: 1px;
+  height: 2.2rem;
+  background: rgba(26, 18, 20, 0.12);
+`;
+
+const HeroRight = styled.div``;
+
+const HeroConsultBox = styled.div`
+  background: #FFFFFF;
+  border: 1px solid rgba(194, 89, 100, 0.15);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 32px rgba(194, 89, 100, 0.08);
+  position: relative;
+`;
+
+const HeroConsultIcon = styled.div`
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+`;
+
+const HeroConsultTitle = styled.h3`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0 0 1rem;
+`;
+
+const HeroConsultText = styled.p`
+  font-size: 0.93rem;
+  color: rgba(75, 50, 53, 0.68);
   line-height: 1.8;
-  color: ${theme.colors.text};
-  opacity: 0.85;
+  margin: 0 0 1.25rem;
+`;
+
+const HeroConsultNote = styled.p`
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #C25964;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   margin: 0;
 `;
 
-const ContactSection = styled.section`
-  background: ${theme.colors.backgroundAlt};
+const HeroArrow = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  color: rgba(194, 89, 100, 0.3);
+  font-size: 1.5rem;
 `;
 
-const ContentWrapper = styled.div`
+/* Main Section */
+const MainSection = styled.section`
+  padding: 5.5rem 0;
+  background: #FDFAF8;
+`;
+
+const MainGrid = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
-  
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  grid-template-columns: 3fr 2fr;
+  gap: 5rem;
+  align-items: flex-start;
+
+  @media (max-width: ${theme.breakpoints.desktop}) {
+    gap: 3.5rem;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
-  /* Large screens */
-  @media (min-width: ${theme.breakpoints.wide}) {
-    gap: 5rem;
-  }
 `;
 
-const FormSection = styled.div``;
+/* Form */
+const FormWrap = styled.div``;
+
+const FormHeader = styled.div`
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(26,18,20,0.08);
+`;
 
 const FormTitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: 2.25rem;
-  font-weight: 600;
-  color: #3A1F23;
-  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0 0 0.3rem;
 `;
 
-const FormDescription = styled.p`
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  color: ${theme.colors.text};
-  opacity: 0.8;
-  margin: 0 0 2.5rem;
+const FormSubtitle = styled.p`
+  font-size: 0.9rem;
+  color: #8A7078;
+  margin: 0;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
+`;
+
+const FormRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.45rem;
 `;
 
 const Label = styled.label`
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1A1214;
+`;
+
+const Req = styled.span`color: #C25964;`;
+
+const Optional = styled.span`
+  font-weight: 400;
+  color: #8A7078;
+  font-size: 0.78rem;
+  margin-left: 0.25rem;
+`;
+
+const inputBase = `
+  padding: 0.875rem 1.1rem;
   font-family: ${theme.fonts.body};
   font-size: 0.95rem;
-  font-weight: 500;
-  color: #3A1F23;
-`;
-
-const Required = styled.span`
-  color: #c45e4a;
-`;
-
-const Input = styled.input`
-  padding: 1rem 1.25rem;
-  font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  color: #4B5563;
-  background: white;
-  border: 2px solid rgba(245, 197, 202, 0.45);
-  border-radius: ${theme.borderRadius.lg};
-  transition: all ${theme.transitions.base};
+  color: #1A1214;
+  background: #ffffff;
+  border: 1.5px solid rgba(163, 64, 75, 0.15);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
     border-color: #C25964;
-    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
+    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.12);
   }
 
   &::placeholder {
-    color: rgba(75, 85, 99, 0.55);
+    color: rgba(138, 112, 120, 0.6);
   }
 `;
 
-const Select = styled.select`
-  padding: 1rem 1.25rem;
+const Input = styled.input`${inputBase}`;
+const Select = styled.select`${inputBase} cursor: pointer; appearance: auto;`;
+const Textarea = styled.textarea`${inputBase} resize: vertical; line-height: 1.7;`;
+
+const SubmitBtn = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 2.25rem;
+  background: linear-gradient(135deg, #A3404B, #C25964);
+  color: #ffffff;
   font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  color: #4B5563;
-  background: white;
-  border: 2px solid rgba(245, 197, 202, 0.45);
-  border-radius: ${theme.borderRadius.lg};
-  transition: all ${theme.transitions.base};
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-    border-color: #C25964;
-    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
-  }
-`;
-
-const Textarea = styled.textarea`
-  padding: 1rem 1.25rem;
-  font-family: ${theme.fonts.body};
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #4B5563;
-  background: white;
-  border: 2px solid rgba(245, 197, 202, 0.45);
-  border-radius: ${theme.borderRadius.lg};
-  resize: vertical;
-  transition: all ${theme.transitions.base};
-
-  &:focus {
-    outline: none;
-    border-color: #C25964;
-    box-shadow: 0 0 0 3px rgba(194, 89, 100, 0.18);
-  }
-
-  &::placeholder {
-    color: rgba(75, 85, 99, 0.55);
-  }
-`;
-
-const SubmitButton = styled(motion.button)`
-  padding: 1.125rem 2.5rem;
-  font-family: ${theme.fonts.body};
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
+  font-size: 0.95rem;
+  font-weight: 700;
   border: none;
   border-radius: ${theme.borderRadius.full};
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(163, 64, 75, 0.3);
-  transition: all ${theme.transitions.base};
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  box-shadow: 0 6px 24px rgba(163, 64, 75, 0.32);
+  transition: all 0.25s ease;
   align-self: flex-start;
+  margin-top: 0.5rem;
+
+  svg { transition: transform 0.3s ease; }
 
   &:hover {
-    background: linear-gradient(135deg, #6D4BCB 0%, #A3404B 100%);
-    box-shadow: 0 6px 20px rgba(163, 64, 75, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(163, 64, 75, 0.42);
+    svg { transform: translateX(4px); }
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     width: 100%;
+    justify-content: center;
   }
 `;
 
-const InfoSection = styled.div`
+/* Info Sidebar */
+const InfoWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  position: sticky;
+  top: 7rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    position: static;
+  }
 `;
 
-const InfoCard = styled.div`
-  background: white;
-  padding: 2.5rem;
-  border-radius: ${theme.borderRadius.xl};
-  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.1);
-  border: 1px solid rgba(245, 197, 202, 0.3);
-`;
-
-const InfoTitle = styled.h3`
+const InfoHeading = styled.h3`
   font-family: ${theme.fonts.heading};
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #3A1F23;
-  margin: 0 0 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0 0 0.25rem;
 `;
 
-const ContactMethods = styled.div`
+const InfoList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-`;
-
-const ContactMethod = styled.div`
-  display: flex;
   gap: 1.25rem;
-  min-width: 0;
 `;
 
-const MethodIcon = styled.div`
-  width: 50px;
-  height: 50px;
-  flex-shrink: 0;
+const InfoItem = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: #ffffff;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(163, 64, 75, 0.1);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(163, 64, 75, 0.08);
+  }
+`;
+
+const InfoIcon = styled.div`
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.55rem;
+  background: linear-gradient(135deg, #A3404B, #C25964);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    #A3404B 0%,
-    #C25964 100%
-  );
-  color: #FFF0F2;
-  font-size: 1.5rem;
-  border-radius: ${theme.borderRadius.lg};
+  font-size: 0.9rem;
+  flex-shrink: 0;
 `;
 
-const MethodInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+const InfoItemBody = styled.div`
+  flex: 1;
   min-width: 0;
 `;
 
-const MethodLabel = styled.h4`
-  font-family: ${theme.fonts.heading};
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #3A1F23;
-  margin: 0;
+const InfoItemLabel = styled.div`
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8A7078;
+  margin-bottom: 0.15rem;
 `;
 
-const MethodLink = styled.a`
-  font-size: 1rem;
-  font-weight: 500;
-  color: #6D4BCB;
+const InfoItemLink = styled.a`
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #A3404B;
   text-decoration: none;
-  transition: all ${theme.transitions.base};
-  position: relative;
+  display: block;
   overflow-wrap: anywhere;
-  word-break: break-word;
-  min-width: 0;
+  word-break: break-all;
+  margin-bottom: 0.1rem;
+  transition: color 0.2s ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #C25964;
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    color: #A3404B;
-    
-    &::after {
-      width: 100%;
-    }
-  }
+  &:hover { color: #6B1E28; text-decoration: underline; }
 `;
 
-const MethodDescription = styled.p`
-  font-size: 0.9rem;
-  color: rgba(75, 85, 99, 0.75);
-  margin: 0;
+const InfoItemNote = styled.div`
+  font-size: 0.75rem;
+  color: #8A7078;
 `;
 
-const SessionInfoCard = styled.div`
-  background: linear-gradient(
-    135deg,
-    #6D4BCB 0%,
-    #A3404B 50%,
-    #C25964 100%
-  );
-  padding: 2.5rem;
-  border-radius: ${theme.borderRadius.xl};
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 240, 242, 0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
+const QuoteStrip = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.4rem 1.5rem;
+  background: #ffffff;
+  border-left: 3px solid #C25964;
+  border-radius: 0 0.75rem 0.75rem 0;
 `;
 
-const SessionIcon = styled.div`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-`;
-
-const SessionTitle = styled.h3`
+const QuoteMark = styled.span`
   font-family: ${theme.fonts.heading};
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: white;
-  margin: 0 0 1rem;
+  font-size: 3rem;
+  color: #C25964;
+  line-height: 0.8;
+  flex-shrink: 0;
+  opacity: 0.35;
 `;
 
-const SessionDescription = styled.p`
-  font-size: 1.0625rem;
-  line-height: 1.7;
-  margin: 0 0 1rem;
-  opacity: 0.95;
-`;
-
-const SessionNote = styled.p`
-  font-size: 0.9rem;
-  font-style: italic;
-  margin: 0;
-  opacity: 0.9;
-`;
-
-const QuoteCard = styled.div`
-  background: white;
-  padding: 2rem;
-  border-radius: ${theme.borderRadius.xl};
-  border-left: 4px solid #F5C5CA;
-  box-shadow: 0 2px 12px rgba(194, 89, 100, 0.1);
-`;
+const QuoteBody = styled.div``;
 
 const QuoteText = styled.p`
   font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   font-style: italic;
-  line-height: 1.6;
-  color: #3A1F23;
-  margin: 0 0 0.75rem;
+  color: #1A1214;
+  line-height: 1.65;
+  margin: 0 0 0.35rem;
 `;
 
 const QuoteAuthor = styled.p`
-  font-size: 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: #C25964;
-  font-weight: 500;
   margin: 0;
 `;
 
+/* FAQ */
 const FAQSection = styled.section`
-  background: white;
-
-  .faq-title {
-    text-align: center;
-    margin: 0 auto 3.5rem;
-  }
-
-  .faq-title p {
-    display: inline-block;
-    padding: 0.35rem 0.9rem;
-    margin: 0 0 1rem;
-    background: rgba(194, 89, 100, 0.18);
-    color: #3A1F23;
-    border-radius: 2px;
-    font-size: 0.84rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-  }
-
-  .faq-title h2 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    font-weight: 600;
-    color: #C25964;
-    line-height: 1.2;
-  }
+  padding: 5.5rem 0 6rem;
+  background: #ffffff;
 `;
 
-const FAQGrid = styled.div`
+const FAQTop = styled.div`
+  margin-bottom: 3rem;
+`;
+
+const FAQEyebrow = styled.span`
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C25964;
+  display: block;
+  margin-bottom: 0.75rem;
+`;
+
+const FAQTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0;
+  line-height: 1.15;
+`;
+
+const FAQList = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+`;
+
+const FAQRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  
-  /* Extra small phones */
-  @media (max-width: 360px) {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(163, 64, 75, 0.1);
 
-  @media (max-width: ${theme.breakpoints.tablet}) {
-    grid-template-columns: 1fr;
-  }
-  
-  /* Large screens */
-  @media (min-width: ${theme.breakpoints.wide}) {
-    gap: 2.5rem;
+  &:first-child { border-top: 1px solid rgba(163, 64, 75, 0.1); }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
   }
 `;
 
-const FAQItem = styled.div`
-  background: ${theme.colors.background};
-  padding: 2rem;
-  border-radius: ${theme.borderRadius.lg};
-  border: 2px solid rgba(245, 197, 202, 0.35);
-  transition: all ${theme.transitions.base};
-
-  &:hover {
-    border-color: #D4848C;
-    box-shadow: 0 4px 15px rgba(194, 89, 100, 0.12);
-    transform: translateY(-2px);
-  }
+const FAQNum = styled.span`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: rgba(194, 89, 100, 0.22);
+  padding-top: 0.2rem;
 `;
+
+const FAQContent = styled.div``;
 
 const FAQQuestion = styled.h4`
   font-family: ${theme.fonts.heading};
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #3A1F23;
-  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
 `;
 
 const FAQAnswer = styled.p`
-  font-size: 1rem;
-  line-height: 1.7;
-  color: ${theme.colors.text};
-  opacity: 0.85;
+  font-size: 0.92rem;
+  line-height: 1.78;
+  color: #7A6468;
   margin: 0;
 `;
 

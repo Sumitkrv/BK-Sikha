@@ -94,8 +94,8 @@ const AreasOfExpertise = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <YogaImage 
-              src="/more images/bk shikha yoga pose 3.png" 
-              alt="BK Shikha Yoga Pose" 
+              src="/st/why%20choose%20us.png" 
+              alt="Why Choose Us" 
             />
           </CenterImageWrapper>
 
@@ -524,8 +524,8 @@ const RightColumn = styled.div`
 
 const CenterImageWrapper = styled(motion.div)`
   position: relative;
-  width: 400px;
-  height: 600px;
+  width: 440px;
+  height: 595px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -534,55 +534,55 @@ const CenterImageWrapper = styled(motion.div)`
   backface-visibility: hidden;
 
   @media (min-width: 1920px) {
-    width: 450px;
-    height: 675px;
+    width: 500px;
+    height: 676px;
   }
 
   @media (max-width: 1440px) {
-    width: 380px;
-    height: 570px;
+    width: 410px;
+    height: 553px;
   }
 
   @media (max-width: 1200px) {
-    width: 340px;
-    height: 510px;
+    width: 370px;
+    height: 500px;
   }
 
   @media (max-width: 1024px) {
-    width: 300px;
-    height: 450px;
+    width: 330px;
+    height: 446px;
   }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     order: 1;
-    width: 280px;
-    height: 420px;
+    width: 300px;
+    height: 405px;
     margin: 0 auto;
   }
 
   @media (max-width: 640px) {
-    width: 240px;
-    height: 360px;
+    width: 270px;
+    height: 365px;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    width: 220px;
-    height: 330px;
+    width: 250px;
+    height: 338px;
   }
 
   @media (max-width: 430px) {
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 311px;
   }
 
   @media (max-width: 390px) {
-    width: 180px;
-    height: 270px;
+    width: 210px;
+    height: 284px;
   }
 
   @media (max-width: 375px) {
-    width: 160px;
-    height: 240px;
+    width: 200px;
+    height: 270px;
   }
 `;
 

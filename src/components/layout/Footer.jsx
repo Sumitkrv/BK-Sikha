@@ -16,12 +16,12 @@ const Footer = () => {
   ];
 
   const services = [
-    { label: 'Personalized Yoga', path: '/services' },
-    { label: 'Emotional Wellness', path: '/services' },
-    { label: 'Mindset Coaching', path: '/services' },
-    { label: 'Stress Relief', path: '/services' },
-    { label: 'Holistic Transformation', path: '/services' },
-    { label: 'Self-Love Journey', path: '/services' },
+    'Personalized Yoga',
+    'Emotional Wellness',
+    'Mindset Coaching',
+    'Stress Relief',
+    'Holistic Transformation',
+    'Self-Love Journey',
   ];
 
   return (
@@ -83,7 +83,7 @@ const Footer = () => {
             <SectionTitle>Services</SectionTitle>
             <LinksList>
               {services.map((service, index) => (
-                <FooterLink key={index} to={service.path}>{service.label}</FooterLink>
+                <ServiceItem key={index}>{service}</ServiceItem>
               ))}
             </LinksList>
           </LinksSection>
@@ -730,6 +730,20 @@ const FooterLink = styled(Link)`
   }
 `;
 
+const ServiceItem = styled.span`
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: default;
+
+  @media (max-width: 640px) {
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.8125rem;
+  }
+`;
 
 const CTASection = styled.div`
   display: flex;
@@ -800,20 +814,27 @@ const CTAText = styled.p`
 const CTAButton = styled(motion(Link))`
   display: inline-block;
   padding: 1rem 2.25rem;
-  background: #C25964;
-  color: #FFFFFF;
+  background: #ffffff;
+  color: #A3404B !important;
   font-family: ${theme.fonts.body};
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   text-align: center;
   border-radius: ${theme.borderRadius.full};
-  box-shadow: 0 4px 20px rgba(194, 89, 100, 0.3);
+  box-shadow: 0 4px 20px rgba(58, 31, 35, 0.3);
   transition: all 0.3s ease;
   letter-spacing: 0.02em;
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform;
+
+  &:hover {
+    color: #A3404B !important;
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(58, 31, 35, 0.45);
+    text-decoration: none;
+  }
 
   @media (min-width: 2560px) {
     padding: 1.25rem 3rem;
@@ -852,16 +873,16 @@ const CTAButton = styled(motion(Link))`
   }
 
   &:hover {
-    background: #A3404B;
-    color: #000000;
+    background: #FFF0F2;
+    color: #7A2530;
     transform: translateY(-2px) translateZ(0);
-    box-shadow: 0 8px 30px rgba(163, 64, 75, 0.35);
+    box-shadow: 0 10px 35px rgba(58, 31, 35, 0.4);
   }
 
   /* Touch device optimization */
   @media (hover: none) and (pointer: coarse) {
     &:active {
-      background: #A3404B;
+      background: #FFF0F2;
       transform: scale(0.98) translateZ(0);
     }
   }

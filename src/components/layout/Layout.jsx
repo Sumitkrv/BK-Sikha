@@ -13,13 +13,13 @@ const Layout = ({ hideHeader = false }) => {
       {!hideHeader && <Header />}
       <LayoutWrapper>
         <MainContent>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={location.pathname}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               <Outlet />
             </motion.div>
@@ -36,19 +36,15 @@ const LayoutWrapper = styled.div`
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 `;
 
 const MainContent = styled.main`
   flex: 1;
-  padding-top: 100px; /* Account for fixed navbar */
-
-  @media (max-width: 768px) {
-    padding-top: 65px;
-  }
-
-  @media (max-width: 480px) {
-    padding-top: 60px;
-  }
+  /* No padding-top here — each page's hero section absorbs the navbar
+     offset via var(--navbar-h) so backgrounds fill flush to the top. */
 `;
 
 export default Layout;

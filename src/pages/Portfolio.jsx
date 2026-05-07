@@ -579,11 +579,12 @@ const Container = styled.div`
 // Hero Section
 const HeroSection = styled.section`
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: var(--navbar-h);
 `;
 
 const HeroVideoWrapper = styled(motion.div)`
@@ -1542,6 +1543,15 @@ const ModalOverlay = styled.div`
   padding: 2rem;
   z-index: 1000;
   overflow-y: auto;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 1rem;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 390px) {
+    padding: 0.75rem;
+  }
 `;
 
 const ModalContent = styled.div`
@@ -1552,6 +1562,15 @@ const ModalContent = styled.div`
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    border-radius: 20px;
+    max-height: 95vh;
+  }
+
+  @media (max-width: 390px) {
+    border-radius: 16px;
+  }
 `;
 
 const ModalCloseBtn = styled.button`
@@ -1583,10 +1602,34 @@ const ModalImage = styled.img`
   width: 100%;
   height: 350px;
   object-fit: cover;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 280px;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    height: 220px;
+  }
+
+  @media (max-width: 390px) {
+    height: 180px;
+  }
 `;
 
 const ModalBody = styled.div`
   padding: 2.5rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 2rem;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 1.25rem 1rem;
+  }
 `;
 
 const ModalCategory = styled.span`
@@ -1607,6 +1650,14 @@ const ModalTitle = styled.h2`
   font-weight: 600;
   color: #3A1F23;
   margin-bottom: 0.5rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 390px) {
+    font-size: 1.25rem;
+  }
 `;
 
 const ModalSubtitle = styled.p`
@@ -1633,6 +1684,15 @@ const ModalStats = styled.div`
   border-top: 1px solid #F5C5CA;
   border-bottom: 1px solid #F5C5CA;
   margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 390px) {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 `;
 
 const ModalStat = styled.div`

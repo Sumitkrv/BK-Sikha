@@ -68,8 +68,16 @@ const Section = styled.section`
   padding: 6rem 0;
   background: ${theme.colors.background};
 
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 5rem 0;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 4rem 0;
+  }
+
+  @media (max-width: 390px) {
+    padding: 3rem 0;
   }
 `;
 
@@ -107,6 +115,10 @@ const Grid = styled.div`
   gap: 1.2rem;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `;

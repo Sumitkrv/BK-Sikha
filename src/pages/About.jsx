@@ -9,8 +9,8 @@ import { theme } from '../styles/theme';
 const aboutImages = {
   hero: "/more images/about hero 4.png",
   heroMobile: "/new images/mobile about hero.png",
-  founder: "/597937247_619016434604924_306615671335802667_n.jpg (2).jpeg",
-  meditation: "/new images/begin your transformation.png",
+  founder: "/st/(%20About%20page%20)%20BK%20Shikha%20copy.jpg.jpeg",
+  meditation: "/2/About%20(%20Ready%20to%20Experience%20True%20Wellness.png",
   yoga: "https://images.unsplash.com/photo-1506126279646-a697353d3166?w=1600&h=1200&fit=crop&q=100",
   nature: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600&h=1200&fit=crop&q=100",
   wellness: "https://images.unsplash.com/photo-1559595500-e15296bdbb48?w=1600&h=1200&fit=crop&q=100",
@@ -42,110 +42,20 @@ const qaVideos = [
   {
     id: 1,
     question: 'Wellness Q&A - Part 1',
-    videoUrl: '/BK Q&A 21/Q&A 1.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=450&fit=crop&q=80',
+    videoUrl: '/2/BK_Shikha 01_1.mp4',
+    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%201%20%29.jpg.jpeg',
   },
   {
     id: 2,
     question: 'Wellness Q&A - Part 2',
-    videoUrl: '/BK Q&A 21/Q&A 2.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=450&fit=crop&q=80',
+    videoUrl: '/2/BK_Shikha 02_1.mp4',
+    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%202%20%29.jpg.jpeg',
   },
   {
     id: 3,
     question: 'Wellness Q&A - Part 3',
-    videoUrl: '/BK Q&A 21/Q&A 3.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 4,
-    question: 'Wellness Q&A - Part 4',
-    videoUrl: '/BK Q&A 21/Q&A 4.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1593811167562-9cef47bfc4a7?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 5,
-    question: 'Wellness Q&A - Part 5',
-    videoUrl: '/BK Q&A 21/Q&A 5.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1506126279646-a697353d3166?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 6,
-    question: 'Wellness Q&A - Part 6',
-    videoUrl: '/BK Q&A 21/Q&A 6.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1529693662653-9d480530a697?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 7,
-    question: 'Wellness Q&A - Part 7',
-    videoUrl: '/BK Q&A 21/Q&A 7.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 8,
-    question: 'Wellness Q&A - Part 8',
-    videoUrl: '/BK Q&A 22/Q&A 8.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1559595500-e15296bdbb48?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 9,
-    question: 'Wellness Q&A - Part 9',
-    videoUrl: '/BK Q&A 22/Q&A 9.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 10,
-    question: 'Wellness Q&A - Part 10',
-    videoUrl: '/BK Q&A 22/Q&A 10.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 11,
-    question: 'Wellness Q&A - Part 11',
-    videoUrl: '/BK Q&A 22/Q&A 11.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1540206395-68808572332f?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 12,
-    question: 'Wellness Q&A - Part 12',
-    videoUrl: '/BK Q&A 22/Q&A 12.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 14,
-    question: 'Wellness Q&A - Part 14',
-    videoUrl: '/BK Q&A 22/Q&A 14.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 16,
-    question: 'Wellness Q&A - Part 16',
-    videoUrl: '/BK Q&A 22/Q&A 16.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 17,
-    question: 'Wellness Q&A - Part 17',
-    videoUrl: '/BK Q&A 22/Q&A 17.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 18,
-    question: 'Wellness Q&A - Part 18',
-    videoUrl: '/BK Q&A 22/Q&A 18.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 20,
-    question: 'Wellness Q&A - Part 20',
-    videoUrl: '/BK Q&A 22/Q&A 20.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1516534775068-ba3e7458af70?w=800&h=450&fit=crop&q=80',
-  },
-  {
-    id: 21,
-    question: 'Wellness Q&A - Part 21',
-    videoUrl: '/BK Q&A 22/Q&A 21.mp4',
-    thumbnail: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=450&fit=crop&q=80',
+    videoUrl: '/2/BK_Shikha 03_1.mp4',
+    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%203%20%29.jpg.jpeg',
   },
 ];
 
@@ -361,10 +271,6 @@ const About = () => {
               </CredentialsList>
 
               <StoryButtons>
-                <PrimaryButton to="#journey">
-                  Discover My Journey
-                  <FiArrowRight />
-                </PrimaryButton>
                 <SecondaryButton to="/contact">
                   Book Consultation
                 </SecondaryButton>
@@ -441,29 +347,58 @@ const About = () => {
 
           <TLList>
             <TLTrackLine />
-            {milestones.map((milestone, index) => (
-              <TLItem
-                key={index}
-                as={motion.div}
-                initial={{ opacity: 0, y: 32 }}
-                animate={timelineInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: 0.1 + index * 0.09, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                {/* Left: numbered circle */}
-                <TLCircleCol>
-                  <TLCircle>
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </TLCircle>
-                </TLCircleCol>
+            {milestones.map((milestone, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <TLItem
+                  key={index}
+                  as={motion.div}
+                  initial={{ opacity: 0, y: 28 }}
+                  animate={timelineInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.55, delay: 0.1 + index * 0.09, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  {/* Left content (even items) or empty spacer */}
+                  <TLSide $align="right" data-side="left">
+                    {isLeft && (
+                      <TLBody>
+                        <TLYear>{milestone.year}</TLYear>
+                        <TLTitle>{milestone.title}</TLTitle>
+                        <TLDesc>{milestone.description}</TLDesc>
+                      </TLBody>
+                    )}
+                  </TLSide>
 
-                {/* Right: year + title + description */}
-                <TLBody>
-                  <TLYear>{milestone.year}</TLYear>
-                  <TLTitle>{milestone.title}</TLTitle>
-                  <TLDesc>{milestone.description}</TLDesc>
-                </TLBody>
-              </TLItem>
-            ))}
+                  {/* Center circle */}
+                  <TLCircleCol>
+                    <TLCircle>
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                    </TLCircle>
+                  </TLCircleCol>
+
+                  {/* Right content (odd items) — on mobile ALL items show here */}
+                  <TLSide $align="left" data-side="right">
+                    <TLBody>
+                      {/* On desktop only odd items show here; on mobile all items show here */}
+                      {(!isLeft) && (
+                        <>
+                          <TLYear>{milestone.year}</TLYear>
+                          <TLTitle>{milestone.title}</TLTitle>
+                          <TLDesc>{milestone.description}</TLDesc>
+                        </>
+                      )}
+                      {/* Mobile fallback: even items also render here (hidden on desktop) */}
+                      {isLeft && (
+                        <TLMobileBody>
+                          <TLYear>{milestone.year}</TLYear>
+                          <TLTitle>{milestone.title}</TLTitle>
+                          <TLDesc>{milestone.description}</TLDesc>
+                        </TLMobileBody>
+                      )}
+                    </TLBody>
+                  </TLSide>
+                </TLItem>
+              );
+            })}
           </TLList>
         </Container>
       </TimelineSection>
@@ -616,44 +551,70 @@ const About = () => {
 
       {/* CTA Section */}
       <CTASection>
+        <CTAOrb className="orb1" />
+        <CTAOrb className="orb2" />
         <Container>
-          <CTACard
+          <CTAWrap
             as={motion.div}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
           >
-            <CTAGrid>
-              <CTAContent>
-                <CTALabel>Begin Your Transformation</CTALabel>
-                <CTATitle>Ready to Experience True Wellness?</CTATitle>
-                <CTADescription>
-                  Whether you seek stress relief, emotional balance, gut health improvement, 
-                  or sustainable weight management, BK Shikha is here to guide you with 
-                  compassion and expertise.
-                </CTADescription>
-                <CTAFeatures>
-                  <CTAFeature><FiCheck /> Personalized Approach</CTAFeature>
-                  <CTAFeature><FiCheck /> 15+ Years Experience</CTAFeature>
-                  <CTAFeature><FiCheck /> Virtual & In-Person</CTAFeature>
-                  <CTAFeature><FiCheck /> Holistic Healing</CTAFeature>
-                </CTAFeatures>
-                <CTAButtons>
-                  <PrimaryButton to="/contact">
-                    Book Free Consultation
-                    <FiArrowRight />
-                  </PrimaryButton>
-                  <SecondaryButton to="/services">
-                    Explore Programs
-                  </SecondaryButton>
-                </CTAButtons>
-              </CTAContent>
-              <CTAImageSide>
-                <CTAImage src={aboutImages.meditation} alt="Start your wellness journey" />
-              </CTAImageSide>
-            </CTAGrid>
-          </CTACard>
+            {/* Left — Text */}
+            <CTALeft>
+              <CTABadge>Begin Your Transformation</CTABadge>
+              <CTATitle>Ready to Experience True Wellness?</CTATitle>
+              <CTADescription>
+                Whether you seek stress relief, emotional balance, gut health improvement,
+                or sustainable weight management, BK Shikha is here to guide you with
+                compassion and expertise.
+              </CTADescription>
+
+              <CTAStats>
+                <CTAStat>
+                  <CTAStatNum>5000+</CTAStatNum>
+                  <CTAStatLabel>Lives Transformed</CTAStatLabel>
+                </CTAStat>
+                <CTAStatDivider />
+                <CTAStat>
+                  <CTAStatNum>12+</CTAStatNum>
+                  <CTAStatLabel>Years Experience</CTAStatLabel>
+                </CTAStat>
+                <CTAStatDivider />
+                <CTAStat>
+                  <CTAStatNum>98%</CTAStatNum>
+                  <CTAStatLabel>Happy Clients</CTAStatLabel>
+                </CTAStat>
+              </CTAStats>
+
+              <CTAButtons>
+                <PrimaryButton to="/contact">
+                  Book Free Consultation
+                  <FiArrowRight />
+                </PrimaryButton>
+                <SecondaryButton to="/services">
+                  Explore Programs
+                </SecondaryButton>
+              </CTAButtons>
+            </CTALeft>
+
+            {/* Right — Image */}
+            <CTARight
+              as={motion.div}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <CTAImageCard>
+                <CTAImage
+                  src="/2/About%20(%20Ready%20to%20Experience%20True%20Wellness.png"
+                  alt="Ready to Experience True Wellness – BK Shikha"
+                />
+              </CTAImageCard>
+            </CTARight>
+          </CTAWrap>
         </Container>
       </CTASection>
     </PageWrapper>
@@ -702,29 +663,29 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 8rem 0 10rem;
+  padding: calc(8rem + var(--navbar-h)) 0 10rem;
   overflow: hidden;
   
   /* Extra small phones */
   @media (max-width: 360px) {
     min-height: auto;
-    padding: 5rem 0 6rem;
+    padding: calc(5rem + var(--navbar-h)) 0 6rem;
   }
 
   @media (max-width: 768px) {
     min-height: 90vh;
-    padding: 6rem 0 8rem;
+    padding: calc(6rem + var(--navbar-h)) 0 8rem;
   }
   
   /* Landscape mobile */
   @media (max-width: 896px) and (orientation: landscape) {
     min-height: auto;
-    padding: 4rem 0 5rem;
+    padding: calc(4rem + var(--navbar-h)) 0 5rem;
   }
   
   /* Large screens */
   @media (min-width: 1536px) {
-    padding: 10rem 0 12rem;
+    padding: calc(10rem + var(--navbar-h)) 0 12rem;
   }
 `;
 
@@ -1593,20 +1554,21 @@ const TLSubtitle = styled.p`
   }
 `;
 
-/* Outer list wrapper — holds the absolute track line */
+/* Outer list wrapper — holds the absolute center track line */
 const TLList = styled.div`
   position: relative;
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
 `;
 
-/* The continuous vertical line running through all circles */
+/* Vertical line down the center */
 const TLTrackLine = styled.div`
   position: absolute;
-  left: 23px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 24px;
   bottom: 24px;
-  width: 1.5px;
+  width: 2px;
   background: linear-gradient(
     to bottom,
     rgba(194, 89, 100, 0) 0%,
@@ -1617,44 +1579,54 @@ const TLTrackLine = styled.div`
     rgba(194, 89, 100, 0) 100%
   );
 
-  @media (max-width: 480px) {
-    left: 19px;
+  /* Mobile: left-aligned track */
+  @media (max-width: 640px) {
+    left: 22px;
+    transform: none;
   }
 `;
 
-/* One milestone row */
+/* One milestone row — three columns: left | circle | right */
 const TLItem = styled.div`
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  align-items: center;
   gap: 2rem;
-  padding: 2rem 0;
-  border-bottom: 1px solid rgba(245, 197, 202, 0.35);
-  cursor: default;
-  transition: background 0.25s ease;
-  border-radius: 12px;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid rgba(245, 197, 202, 0.25);
 
-  &:last-child {
-    border-bottom: none;
-  }
+  &:last-child { border-bottom: none; }
 
-  &:hover {
-    background: rgba(245, 197, 202, 0.06);
-  }
-
-  @media (max-width: 480px) {
+  /* Mobile: two-column — circle + content */
+  @media (max-width: 640px) {
+    grid-template-columns: 48px 1fr;
     gap: 1.25rem;
-    padding: 1.5rem 0.25rem;
+    padding: 1.5rem 0;
   }
 `;
 
-/* Left column: contains only the numbered circle */
+/* Left or right content column */
+const TLSide = styled.div`
+  text-align: ${({ $align }) => $align};
+
+  /* On mobile: hide the LEFT side column entirely (circle + right column remain) */
+  @media (max-width: 640px) {
+    &[data-side="left"] { display: none; }
+    &[data-side="right"] { text-align: left; }
+  }
+`;
+
+/* Center column: circle */
 const TLCircleCol = styled.div`
-  flex-shrink: 0;
   display: flex;
-  align-items: flex-start;
-  padding-top: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  @media (max-width: 640px) {
+    justify-content: flex-start;
+  }
 `;
 
 /* The numbered circle */
@@ -1687,10 +1659,17 @@ const TLCircle = styled.div`
   }
 `;
 
-/* Right column: year + title + description */
 const TLBody = styled.div`
-  flex: 1;
   padding-top: 0.15rem;
+`;
+
+/* Visible only on mobile — shows even-index content in the right column */
+const TLMobileBody = styled.div`
+  display: none;
+
+  @media (max-width: 640px) {
+    display: block;
+  }
 `;
 
 const TLYear = styled.span`
@@ -1857,12 +1836,15 @@ const QADescription = styled.p`
 
 const QAGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 700px;
   }
 
   @media (max-width: 600px) {
@@ -1887,9 +1869,10 @@ const QAVideoCard = styled.div`
 const QAVideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  background: #6D4BCB;
+  padding-top: 140%; /* slightly wider to reduce cropping */
+  background: #f4e9ec;
   overflow: hidden;
+  max-height: 600px;
 `;
 
 const QAThumbnail = styled.img`
@@ -1898,7 +1881,8 @@ const QAThumbnail = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #f4e9ec;
 `;
 
 const VideoPlayer = styled.video`
@@ -1918,16 +1902,16 @@ const QAPlayOverlay = styled.div`
   justify-content: center;
   background: linear-gradient(
     135deg,
-    rgba(109, 75, 203, 0.45),
-    rgba(58, 31, 35, 0.65)
+    rgba(109, 75, 203, 0.18),
+    rgba(58, 31, 35, 0.25)
   );
   transition: all 0.3s ease;
 
   ${QAVideoCard}:hover & {
     background: linear-gradient(
       135deg,
-      rgba(109, 75, 203, 0.35),
-      rgba(58, 31, 35, 0.55)
+      rgba(109, 75, 203, 0.12),
+      rgba(58, 31, 35, 0.2)
     );
   }
 `;
@@ -2192,122 +2176,189 @@ const QuoteOrb = styled.div`
 
 // CTA Section
 const CTASection = styled.section`
-  padding: 6rem 0;
-  background: #FFF7F8;
+  padding: 7rem 0;
+  background: linear-gradient(135deg, #FFF7F8 0%, #FFF0F2 50%, #FDE8EC 100%);
+  position: relative;
+  overflow: hidden;
 
   @media (max-width: 768px) {
+    padding: 5rem 0;
+  }
+
+  @media (max-width: 480px) {
     padding: 4rem 0;
   }
 `;
 
-const CTACard = styled.div`
-  background: white;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(194, 89, 100, 0.14);
+const CTAOrb = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.35;
+
+  &.orb1 {
+    width: 500px;
+    height: 500px;
+    background: #F5C5CA;
+    top: -150px;
+    right: 10%;
+  }
+
+  &.orb2 {
+    width: 400px;
+    height: 400px;
+    background: #E7A3AB;
+    bottom: -120px;
+    left: 5%;
+  }
 `;
 
-const CTAGrid = styled.div`
+const CTAWrap = styled.div`
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 5rem;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    gap: 3.5rem;
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 `;
 
-const CTAContent = styled.div`
-  padding: 4rem;
-
-  @media (max-width: 768px) {
-    padding: 2.5rem;
-  }
+const CTALeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 `;
 
-const CTALabel = styled.span`
-  display: inline-block;
+const CTABadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: ${theme.fonts.body};
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #A3404B;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 1rem;
+  background: rgba(194, 89, 100, 0.1);
+  border: 1px solid rgba(194, 89, 100, 0.2);
+  border-radius: 100px;
+  width: fit-content;
 `;
 
 const CTATitle = styled.h2`
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 400;
   color: #3A1F23;
-  line-height: 1.2;
-  margin: 0 0 1rem;
+  line-height: 1.15;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.01em;
 `;
 
 const CTADescription = styled.p`
   font-family: ${theme.fonts.body};
   font-size: 1.0625rem;
-  line-height: 1.8;
+  line-height: 1.85;
   color: #6D4A4E;
-  margin: 0 0 1.5rem;
-`;
-
-const CTAFeatures = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin: 0 0 2.25rem;
 
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+    font-size: 0.9375rem;
+    margin-bottom: 1.75rem;
   }
 `;
 
-const CTAFeature = styled.span`
+const CTAStats = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: ${theme.fonts.body};
-  font-size: 0.9375rem;
-  color: #C25964;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 
-  svg {
-    font-size: 0.875rem;
+  @media (max-width: 480px) {
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
+`;
+
+const CTAStat = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+`;
+
+const CTAStatNum = styled.span`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #A3404B;
+  line-height: 1;
+`;
+
+const CTAStatLabel = styled.span`
+  font-family: ${theme.fonts.body};
+  font-size: 0.75rem;
+  color: #9A6B6E;
+  letter-spacing: 0.04em;
+`;
+
+const CTAStatDivider = styled.div`
+  width: 1px;
+  height: 36px;
+  background: rgba(194, 89, 100, 0.2);
 `;
 
 const CTAButtons = styled.div`
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    a {
+      justify-content: center;
+      text-align: center;
+    }
+  }
 `;
 
-const CTAImageSide = styled.div`
+const CTARight = styled.div`
   position: relative;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #FFF7F8 0%, #ffffff 100%);
+`;
+
+const CTAImageCard = styled.div`
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: #FADADD;
+  line-height: 0;
 
   @media (max-width: 900px) {
-    display: none;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 480px) {
+    border-radius: 16px;
   }
 `;
 
 const CTAImage = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
-  object-position: center;
-  border-radius: 12px;
-`;
-
-const CTAImageOverlay = styled.div`
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(194, 89, 100, 0.15), rgba(212, 132, 140, 0.1));
 `;
 
 // Buttons
@@ -2324,6 +2375,7 @@ const PrimaryButton = styled(Link)`
   text-decoration: none;
   border-radius: 100px;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(163, 64, 75, 0.3);
 
   svg {
     transition: transform 0.3s ease;
@@ -2331,9 +2383,9 @@ const PrimaryButton = styled(Link)`
 
   &:hover {
     background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
-    color: #000000 !important;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(194, 89, 100, 0.28);
+    box-shadow: 0 14px 32px rgba(194, 89, 100, 0.4);
 
     svg {
       transform: translateX(4px);
@@ -2347,8 +2399,8 @@ const SecondaryButton = styled(Link)`
   gap: 0.5rem;
   padding: 1rem 2rem;
   background: transparent;
-  color: #C25964;
-  border: 2px solid #C25964;
+  color: #A3404B;
+  border: 1.5px solid #C25964;
   font-family: ${theme.fonts.body};
   font-size: 1rem;
   font-weight: 500;
@@ -2358,7 +2410,9 @@ const SecondaryButton = styled(Link)`
 
   &:hover {
     background: #C25964;
-    color: #000000 !important;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(194, 89, 100, 0.3);
   }
 `;
 

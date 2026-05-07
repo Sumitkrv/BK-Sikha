@@ -589,12 +589,12 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 8rem 0 10rem;
+  padding: calc(8rem + var(--navbar-h)) 0 10rem;
   overflow: hidden;
 
   @media (max-width: 768px) {
     min-height: 70vh;
-    padding: 6rem 0 8rem;
+    padding: calc(6rem + var(--navbar-h)) 0 8rem;
   }
 `;
 

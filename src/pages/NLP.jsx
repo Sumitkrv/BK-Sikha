@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiCheckCircle, FiHeart, FiMessageCircle, FiTarget, FiUserCheck } from 'react-icons/fi';
+import { FiArrowRight, FiCheckCircle, FiHeart, FiMessageCircle, FiStar, FiTarget, FiUserCheck, FiZap } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
 import SectionTitle from '../components/shared/SectionTitle';
-import { CircularTestimonials } from '../components/ui/CircularTestimonials';
-
 const benefits = [
   {
     title: 'Stress Reduction',
@@ -48,30 +46,6 @@ const processSteps = [
   { number: '05', title: 'Follow-Up', description: 'Structured reinforcement to sustain growth and prevent pattern relapse.' },
 ];
 
-const testimonials = [
-  {
-    quote: 'I came with panic, self-doubt, and emotional fatigue. NLP sessions helped me reset my thought patterns and feel in control again.',
-    name: 'Neha Gupta',
-    designation: 'Working Professional',
-    location: 'Delhi NCR',
-    src: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=900&auto=format&fit=crop&q=80',
-  },
-  {
-    quote: 'My communication and confidence improved in just a few weeks. The process felt gentle, practical, and deeply healing.',
-    name: 'Ritika Jain',
-    designation: 'Business Owner',
-    location: 'Jaipur',
-    src: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=900&auto=format&fit=crop&q=80',
-  },
-  {
-    quote: 'I had years of emotional blocks. This approach gave me clarity and helped me move forward without fear.',
-    name: 'Aman Verma',
-    designation: 'Student',
-    location: 'Pune',
-    src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&auto=format&fit=crop&q=80',
-  },
-];
-
 const NLP = () => {
   useEffect(() => {
     document.title = 'NLP Coaching | BK Shikha';
@@ -106,36 +80,59 @@ const NLP = () => {
               <PrimaryCTA to="/contact">
                 Book Consultation <FiArrowRight />
               </PrimaryCTA>
-              <SecondaryCTA to="/services">Explore All Services</SecondaryCTA>
             </HeroActions>
           </HeroContent>
         </div>
       </HeroSection>
 
-      <AboutSection className="section">
+      <AboutSection>
         <div className="container">
           <AboutGrid>
-            <AboutCopy>
-              <SectionTitle subtitle="About NLP" align="left">
-                Rewriting the Story Your Mind Repeats
-              </SectionTitle>
-              <AboutText>
-                NLP (Neuro-Linguistic Programming) is a therapeutic coaching approach that studies how your language,
-                thought patterns, and emotional memory shape behavior. Through personalized sessions, BK Shikha helps you
-                shift internal patterns that keep you stuck in stress, self-doubt, fear, and emotional overwhelm.
-              </AboutText>
-              <AboutText>
-                The process focuses on emotional transformation, mindset rewiring, confidence development, and healing-led
-                growth. It is practical, compassionate, and designed to integrate into real daily life.
-              </AboutText>
+
+            <AboutCopy
+              as={motion.div}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
+            >
+              <AboutLabel>About NLP</AboutLabel>
+              <AboutHeading>Rewriting the Story<br />Your Mind Repeats</AboutHeading>
+              <AboutDivider />
+              <AboutBody>
+                NLP (Neuro-Linguistic Programming) is a therapeutic coaching approach that studies how your
+                language, thought patterns, and emotional memory shape behavior. Through personalized sessions,
+                BK Shikha helps you shift internal patterns that keep you stuck in stress, self-doubt, fear,
+                and emotional overwhelm.
+              </AboutBody>
+              <AboutBody>
+                The process focuses on emotional transformation, mindset rewiring, confidence development, and
+                healing-led growth — practical, compassionate, and designed for real daily life.
+              </AboutBody>
+              <AboutPoints>
+                {['Emotional Transformation', 'Mindset Rewiring', 'Confidence Growth', 'Daily Integration'].map((pt, i) => (
+                  <AboutPoint key={i}>
+                    <AboutPointDot />
+                    {pt}
+                  </AboutPoint>
+                ))}
+              </AboutPoints>
             </AboutCopy>
-            <AboutImageWrap>
-              <AboutImage
-                src="https://images.unsplash.com/photo-1474418397713-5dd5f6f39a5e?w=1200&auto=format&fit=crop&q=80"
-                alt="Meditation and emotional healing session"
+
+            <AboutImgCol
+              as={motion.div}
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, delay: 0.1 }}
+            >
+              <AboutImg
+                src="/2/NLP ( 1).jpg (2).jpeg"
+                alt="NLP Coaching — BK Shikha"
                 loading="lazy"
               />
-            </AboutImageWrap>
+            </AboutImgCol>
+
           </AboutGrid>
         </div>
       </AboutSection>
@@ -162,52 +159,68 @@ const NLP = () => {
         </div>
       </BenefitsSection>
 
-      <ProcessSection className="section">
+      <ProcessSection>
         <div className="container">
-          <SectionTitle subtitle="How It Works">Your NLP Journey in 5 Steps</SectionTitle>
-          <ProcessGrid>
-            {processSteps.map((step) => (
-              <StepCard
-                key={step.number}
-                as={motion.div}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
-              >
-                <StepNumber>{step.number}</StepNumber>
-                <StepTitle>{step.title}</StepTitle>
-                <StepDescription>{step.description}</StepDescription>
-              </StepCard>
-            ))}
-          </ProcessGrid>
-        </div>
-      </ProcessSection>
-
-      <TestimonialsSection className="section">
-        <div className="container">
-          <SectionTitle subtitle="Client Voices">Transformation Stories</SectionTitle>
-          <CircularTestimonials testimonials={testimonials} autoplay={true} autoplayInterval={5500} />
-        </div>
-      </TestimonialsSection>
-
-      <BannerCTASection>
-        <div className="container">
-          <BannerCard
+          <ProcessHeader
             as={motion.div}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.5 }}
           >
-            <BannerTitle>Ready to Feel Emotionally Strong, Clear, and Aligned?</BannerTitle>
-            <BannerText>
-              Start your guided NLP journey with BK Shikha and experience powerful internal change that lasts.
-            </BannerText>
-            <PrimaryCTA to="/contact">
-              Start My NLP Journey <FiArrowRight />
-            </PrimaryCTA>
-          </BannerCard>
+            <ProcessEyebrow>How It Works</ProcessEyebrow>
+            <ProcessTitle>Your NLP Journey in 5 Steps</ProcessTitle>
+          </ProcessHeader>
+
+          <StepTable>
+            <StepTableLine />
+            {processSteps.map((step, i) => (
+              <StepRow
+                key={step.number}
+                as={motion.div}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <StepNum>{step.number}</StepNum>
+                <StepDivider />
+                <StepName>{step.title}</StepName>
+                <StepDesc>{step.description}</StepDesc>
+                <StepIndex>{String(i + 1).padStart(2, '0')} / 05</StepIndex>
+              </StepRow>
+            ))}
+            <StepTableLine />
+          </StepTable>
+        </div>
+      </ProcessSection>
+
+      <BannerCTASection>
+        <div className="container">
+          <BannerStrip
+            as={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <BannerTopLine />
+            <BannerBody>
+              <BannerLeft>
+                <BannerEyebrow>Begin Your Journey</BannerEyebrow>
+                <BannerTitle>Ready to Feel<br />Emotionally Free?</BannerTitle>
+              </BannerLeft>
+              <BannerRight>
+                <BannerText>
+                  Start your guided NLP journey with BK Shikha and experience powerful internal change that lasts.
+                </BannerText>
+                <BannerCTA to="/contact">
+                  Start My NLP Journey <FiArrowRight />
+                </BannerCTA>
+              </BannerRight>
+            </BannerBody>
+            <BannerBottomLine />
+          </BannerStrip>
         </div>
       </BannerCTASection>
     </PageWrapper>
@@ -218,13 +231,14 @@ const PageWrapper = styled.div``;
 
 const HeroSection = styled.section`
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding-top: var(--navbar-h);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    min-height: calc(85vh - 65px);
+    min-height: 100dvh;
   }
 `;
 
@@ -252,8 +266,21 @@ const HeroContent = styled.div`
   max-width: 760px;
   padding: 7rem 0 5rem;
 
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    padding: 6rem 0 4rem;
+  }
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 5.5rem 0 3.5rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 4.5rem 0 3rem;
+  }
+
+  @media (max-width: 390px) {
+    padding: 4rem 0 2.5rem;
   }
 `;
 
@@ -299,13 +326,23 @@ const PrimaryCTA = styled(Link)`
   color: white;
   font-weight: 600;
   font-size: 0.95rem;
-  background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
-  box-shadow: 0 6px 20px rgba(109, 75, 203, 0.35);
+  background: linear-gradient(135deg, #A3404B 0%, #C25964 100%);
+  box-shadow: 0 6px 20px rgba(194, 89, 100, 0.3);
   transition: all ${theme.transitions.base};
 
+  svg {
+    transition: transform 0.3s ease;
+  }
+
   &:hover {
+    color: white;
+    background: linear-gradient(135deg, #C25964 0%, #D4848C 100%);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(109, 75, 203, 0.4);
+    box-shadow: 0 12px 30px rgba(194, 89, 100, 0.4);
+
+    svg {
+      transform: translateX(4px);
+    }
   }
 `;
 
@@ -322,45 +359,134 @@ const SecondaryCTA = styled(Link)`
   transition: all ${theme.transitions.base};
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #000000;
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.9);
+    color: white;
+    transform: translateY(-2px);
   }
 `;
 
+/* ── About Section ── */
 const AboutSection = styled.section`
-  background: ${theme.colors.background};
+  padding: 5rem 0;
+  background: #ffffff;
 `;
 
 const AboutGrid = styled.div`
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: center;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 `;
 
-const AboutCopy = styled.div``;
+const AboutCopy = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-const AboutText = styled.p`
-  color: ${theme.colors.text};
+const AboutLabel = styled.span`
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C25964;
+  margin-bottom: 1rem;
+  display: block;
+`;
+
+const AboutHeading = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-weight: 700;
+  color: #1A1214;
+  line-height: 1.15;
+  margin: 0 0 1.1rem;
+`;
+
+const AboutDivider = styled.div`
+  width: 2.5rem;
+  height: 3px;
+  background: #C25964;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+`;
+
+const AboutBody = styled.p`
+  font-size: 0.97rem;
+  color: #6B5860;
   line-height: 1.85;
-  margin-bottom: 1.1rem;
+  margin: 0 0 0.9rem;
 `;
 
-const AboutImageWrap = styled.div`
-  border-radius: ${theme.borderRadius['2xl']};
+const AboutPoints = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+`;
+
+const AboutPoint = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1A1214;
+`;
+
+const AboutPointDot = styled.span`
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C25964;
+  flex-shrink: 0;
+`;
+
+const AboutImgCol = styled.div`
+  border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: ${theme.shadows.lg};
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    order: -1;
+    aspect-ratio: 3 / 2;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    aspect-ratio: 4 / 3;
+    border-radius: 1rem;
+  }
 `;
 
-const AboutImage = styled.img`
+const AboutImg = styled.img`
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 70%;
+  display: block;
+`;
+
+const AboutBadgeStat = styled.span`
+  font-family: ${theme.fonts.heading};
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #A3404B;
+  line-height: 1;
+`;
+
+const AboutBadgeLabel = styled.span`
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #5A4A50;
+  letter-spacing: 0.04em;
 `;
 
 const BenefitsSection = styled.section`
@@ -421,80 +547,241 @@ const BenefitDescription = styled.p`
   color: ${theme.colors.text};
 `;
 
+/* ── Process / Timeline Section ── */
 const ProcessSection = styled.section`
-  background: white;
+  padding: 6rem 0 7rem;
+  background: #ffffff;
 `;
 
-const ProcessGrid = styled.div`
+const ProcessHeader = styled.div`
+  text-align: center;
+  margin-bottom: 4.5rem;
+`;
+
+const ProcessEyebrow = styled.span`
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C25964;
+  display: block;
+  margin-bottom: 0.75rem;
+`;
+
+const ProcessTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: #1A1214;
+  margin: 0;
+  line-height: 1.15;
+`;
+
+/* Wrapper for the step rows */
+const StepTable = styled.div`
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
+/* Top / bottom hairlines */
+const StepTableLine = styled.div`
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #C25964 30%, #C25964 70%, transparent);
+`;
+
+/* One step row */
+const StepRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: 90px 2px 1fr 2fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0.5rem;
+  border-bottom: 1px solid rgba(194, 89, 100, 0.1);
+  transition: background 0.25s ease;
+  cursor: default;
+
+  &:last-child { border-bottom: none; }
+
+  &:hover {
+    background: rgba(245, 197, 202, 0.07);
+    border-radius: 8px;
+  }
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 60px 2px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.75rem 1.25rem;
+    padding: 1.75rem 0.25rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 48px 2px 1fr;
+    gap: 0.6rem 1rem;
+    padding: 1.5rem 0.25rem;
   }
 `;
 
-const StepCard = styled.div`
-  background: ${theme.colors.background};
-  border: 1px solid rgba(245, 197, 202, 0.35);
-  border-radius: ${theme.borderRadius.lg};
-  padding: 1.4rem 1.2rem;
-`;
-
-const StepNumber = styled.span`
-  font-family: ${theme.fonts.body};
-  color: #F5C5CA;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  font-weight: 700;
-`;
-
-const StepTitle = styled.h4`
-  margin: 0.4rem 0 0.5rem;
-  font-size: 1.2rem;
+/* Oversized faded step number */
+const StepNum = styled.span`
   font-family: ${theme.fonts.heading};
-  color: #3A1F23;
+  font-size: clamp(2.8rem, 4vw, 3.8rem);
+  font-weight: 800;
+  color: rgba(194, 89, 100, 0.18);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  user-select: none;
 `;
 
-const StepDescription = styled.p`
+/* Rose vertical divider bar */
+const StepDivider = styled.div`
+  width: 2px;
+  height: 2.8rem;
+  background: linear-gradient(to bottom, #F5C5CA, #C25964);
+  border-radius: 2px;
+  flex-shrink: 0;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    height: 2rem;
+  }
+`;
+
+/* Step title */
+const StepName = styled.h4`
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  color: #1A1214;
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.7;
-  color: ${theme.colors.text};
+  line-height: 1.2;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
 `;
 
-const TestimonialsSection = styled.section`
-  background: ${theme.colors.background};
+/* Step description */
+const StepDesc = styled.p`
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: #7A6468;
+  line-height: 1.75;
+  margin: 0;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-left: 0;
+  }
 `;
 
+/* Small counter on the far right — hidden on mobile */
+const StepIndex = styled.span`
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: rgba(194, 89, 100, 0.35);
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
+/* ── Banner CTA: editorial strip ── */
 const BannerCTASection = styled.section`
-  padding: 0 0 6rem;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF7F8 100%);
+  padding: 5rem 0 6rem;
+  background: #FDFAF8;
 `;
 
-const BannerCard = styled.div`
-  text-align: center;
-  background: linear-gradient(135deg, #C25964 0%, #A3404B 100%);
-  border-radius: ${theme.borderRadius['2xl']};
-  padding: 3.2rem 2rem;
-  box-shadow: ${theme.shadows.lg};
+const BannerStrip = styled.div``;
+
+const BannerTopLine = styled.div`
+  height: 1px;
+  background: #1A1214;
+  margin-bottom: 2.5rem;
+`;
+
+const BannerBottomLine = styled.div`
+  height: 1px;
+  background: rgba(26, 18, 20, 0.12);
+  margin-top: 2.5rem;
+`;
+
+const BannerBody = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-end;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+`;
+
+const BannerLeft = styled.div``;
+
+const BannerEyebrow = styled.span`
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C25964;
+  margin-bottom: 1rem;
+  display: block;
 `;
 
 const BannerTitle = styled.h2`
-  color: white;
-  margin: 0 0 0.75rem;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-family: ${theme.fonts.heading};
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #1A1214;
+  line-height: 1.08;
+  margin: 0;
+`;
+
+const BannerRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 `;
 
 const BannerText = styled.p`
-  max-width: 700px;
-  margin: 0 auto 1.65rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.97rem;
+  color: #6B5860;
+  line-height: 1.8;
+  margin: 0;
+`;
+
+const BannerCTA = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: ${theme.borderRadius.full};
+  background: linear-gradient(135deg, #A3404B, #C25964);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 24px rgba(163, 64, 75, 0.35);
+  transition: all ${theme.transitions.base};
+  text-decoration: none;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(163, 64, 75, 0.45);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
 `;
 
 export default NLP;
