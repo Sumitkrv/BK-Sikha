@@ -543,10 +543,10 @@ const Container = styled.div`
 const HeroSection = styled.section`
   min-height: 55vh;
   background: 
-    linear-gradient(180deg, rgba(238, 244, 239, 0.92) 0%, rgba(220, 232, 222, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&h=1080&fit=crop&q=100');
+    linear-gradient(180deg, rgba(238, 244, 239, 0.88) 0%, rgba(220, 232, 222, 0.82) 100%),
+    url('/2/4.jpg.jpeg');
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   background-attachment: fixed;
   display: flex;
   align-items: center;

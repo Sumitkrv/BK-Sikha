@@ -63,8 +63,8 @@ const GutMissing = () => {
     <PageWrapper>
       <HeroSection>
         <HeroImage
-          src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=1800&auto=format&fit=crop&q=80"
-          alt="Healthy gut wellness and nutrition"
+          src="/2/1.jpeg"
+          alt="Gut healing wellness — BK Shikha"
           loading="eager"
         />
         <HeroOverlay />
@@ -284,18 +284,21 @@ const GutMissing = () => {
   );
 };
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+  padding-top: var(--navbar-h);
+`;
 
 const HeroSection = styled.section`
-  min-height: 100dvh;
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 100%;
   overflow: hidden;
-  padding-top: var(--navbar-h);
 
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    min-height: 100dvh;
+  height: calc(100vh - var(--navbar-h));
+  height: calc(100dvh - var(--navbar-h));
+
+  @media (max-width: 1024px) {
+    height: auto;
+    min-height: 55vh;
   }
 `;
 
@@ -318,14 +321,14 @@ const HeroContent = styled.div`
   position: relative;
   z-index: 2;
   max-width: 760px;
-  padding: 7rem 0 4.2rem;
+  padding: 6rem 0 5rem;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 6rem 0 3.5rem;
+    padding: 4rem 0 3.5rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding: 5rem 0 3rem;
+    padding: 3rem 0 2.5rem;
     max-width: 100%;
   }
 

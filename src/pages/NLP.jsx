@@ -56,8 +56,8 @@ const NLP = () => {
       <HeroSection>
         <HeroMedia>
           <HeroImage
-            src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=1800&auto=format&fit=crop&q=80"
-            alt="Mindset coaching and emotional wellness"
+            src="/2/2.jpeg"
+            alt="NLP coaching and emotional wellness — BK Shikha"
             loading="eager"
           />
           <HeroOverlay />
@@ -127,8 +127,8 @@ const NLP = () => {
               transition={{ duration: 0.65, delay: 0.1 }}
             >
               <AboutImg
-                src="/2/NLP ( 1).jpg (2).jpeg"
-                alt="NLP Coaching — BK Shikha"
+                src="/2/3.png"
+                alt="Rewriting the Story — BK Shikha NLP"
                 loading="lazy"
               />
             </AboutImgCol>
@@ -227,18 +227,23 @@ const NLP = () => {
   );
 };
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+  padding-top: var(--navbar-h);
+`;
 
 const HeroSection = styled.section`
   position: relative;
-  min-height: 100dvh;
-  display: flex;
-  align-items: center;
+  width: 100%;
   overflow: hidden;
-  padding-top: var(--navbar-h);
 
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    min-height: 100dvh;
+  /* Desktop: fill remaining viewport */
+  height: calc(100vh - var(--navbar-h));
+  height: calc(100dvh - var(--navbar-h));
+
+  /* Tablet and below: auto height, image shows naturally */
+  @media (max-width: 1024px) {
+    height: auto;
+    min-height: 55vh;
   }
 `;
 
@@ -251,36 +256,38 @@ const HeroImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 15%;
+
+  @media (max-width: 1024px) {
+    object-position: center 10%;
+  }
 `;
 
 const HeroOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(115deg, rgba(58, 31, 35, 0.84) 10%, rgba(109, 75, 203, 0.5) 55%, rgba(194, 89, 100, 0.22) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(28, 15, 18, 0.88) 0%,
+    rgba(58, 31, 35, 0.75) 40%,
+    rgba(109, 75, 203, 0.38) 70%,
+    rgba(194, 89, 100, 0.15) 100%
+  );
 `;
 
 const HeroContent = styled.div`
   position: relative;
   z-index: 2;
   max-width: 760px;
-  padding: 7rem 0 5rem;
+  padding: 6rem 0 5rem;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
-    padding: 6rem 0 4rem;
+    padding: 4rem 0 3.5rem;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    padding: 5.5rem 0 3.5rem;
+    padding: 3rem 0 2.5rem;
     max-width: 100%;
-  }
-
-  @media (max-width: 480px) {
-    padding: 4.5rem 0 3rem;
-  }
-
-  @media (max-width: 390px) {
-    padding: 4rem 0 2.5rem;
   }
 `;
 
@@ -297,9 +304,13 @@ const HeroLabel = styled.p`
 const HeroTitle = styled.h1`
   color: white;
   font-family: ${theme.fonts.heading};
-  font-size: clamp(2.4rem, 5vw, 4.3rem);
+  font-size: clamp(2rem, 5vw, 4.3rem);
   line-height: 1.1;
   margin: 0 0 1.25rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
+  }
 `;
 
 const HeroDescription = styled.p`
@@ -308,6 +319,11 @@ const HeroDescription = styled.p`
   line-height: 1.85;
   max-width: 640px;
   margin: 0;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
 `;
 
 const HeroActions = styled.div`
@@ -452,17 +468,24 @@ const AboutPointDot = styled.span`
 const AboutImgCol = styled.div`
   border-radius: 1.5rem;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  /* constrain height so it stays proportional to the text column */
+  max-height: 460px;
+  aspect-ratio: 3 / 4;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     order: -1;
-    aspect-ratio: 3 / 2;
+    max-height: 340px;
+    max-width: 260px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    aspect-ratio: 4 / 3;
+    max-height: 300px;
+    max-width: 220px;
     border-radius: 1rem;
+    aspect-ratio: 3 / 4;
   }
 `;
 
@@ -470,7 +493,7 @@ const AboutImg = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 70%;
+  object-position: center top;
   display: block;
 `;
 
