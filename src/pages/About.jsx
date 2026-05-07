@@ -1836,20 +1836,15 @@ const QADescription = styled.p`
 
 const QAGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2.5rem;
-  max-width: 800px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 960px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 700px;
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 640px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 100%;
   }
 `;
 
