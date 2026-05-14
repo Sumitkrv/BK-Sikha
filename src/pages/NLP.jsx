@@ -390,19 +390,21 @@ const AboutSection = styled.section`
 
 const AboutGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
   align-items: center;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3.5rem;
   }
 `;
 
 const AboutCopy = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: left;
 `;
 
 const AboutLabel = styled.span`
@@ -436,7 +438,8 @@ const AboutBody = styled.p`
   font-size: 0.97rem;
   color: #6B5860;
   line-height: 1.85;
-  margin: 0 0 0.9rem;
+  margin: 0 0 1.2rem;
+  text-align: justify;
 `;
 
 const AboutPoints = styled.ul`
@@ -468,24 +471,22 @@ const AboutPointDot = styled.span`
 const AboutImgCol = styled.div`
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-  /* constrain height so it stays proportional to the text column */
-  max-height: 460px;
-  aspect-ratio: 3 / 4;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  height: 600px;
+  max-height: none;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     order: -1;
-    max-height: 340px;
-    max-width: 260px;
+    height: 450px;
+    max-width: 400px;
     margin: 0 auto;
-    aspect-ratio: 3 / 4;
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    max-height: 300px;
-    max-width: 220px;
+    height: 380px;
+    max-width: 320px;
     border-radius: 1rem;
-    aspect-ratio: 3 / 4;
   }
 `;
 

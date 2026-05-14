@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiHeart, FiStar, FiUsers, FiAward, FiCheck, FiPlay, FiTarget, FiZap, FiFeather, FiSun, FiCalendar } from 'react-icons/fi';
+import { FiArrowRight, FiHeart, FiStar, FiUsers, FiAward, FiCheck, FiPlay, FiTarget, FiZap, FiFeather, FiSun, FiCalendar, FiShield, FiGlobe, FiCpu, FiTrendingUp } from 'react-icons/fi';
 import styled from 'styled-components';
 import { theme } from '../styles/theme';
 
@@ -43,43 +43,43 @@ const qaVideos = [
     id: 1,
     question: 'Wellness Q&A - Part 1',
     videoUrl: '/2/BK_Shikha 01_1.mp4',
-    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%201%20%29.jpg.jpeg',
+    thumbnail: '/more images/About ( thumbnail ( 1 ).jpg.jpeg',
   },
   {
     id: 2,
     question: 'Wellness Q&A - Part 2',
     videoUrl: '/2/BK_Shikha 02_1.mp4',
-    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%202%20%29.jpg.jpeg',
+    thumbnail: '/more images/About ( thumbnail ( 2 ) (2).jpg.jpeg',
   },
   {
     id: 3,
     question: 'Wellness Q&A - Part 3',
     videoUrl: '/2/BK_Shikha 03_1.mp4',
-    thumbnail: '/2/About%20%28%20video%20thumbnail%20%28%203%20%29.jpg.jpeg',
+    thumbnail: '/more images/About ( thumbnail ( 3 ).jpg.jpeg',
   },
 ];
 
 const values = [
   {
-    icon: <FiHeart />,
+    icon: <FiShield />,
     title: 'Root-Cause Healing',
     description: 'We address underlying causes, not just symptoms, for lasting transformation.',
     color: '#C25964',
   },
   {
-    icon: <FiSun />,
+    icon: <FiCpu />,
     title: 'Mind-First Approach',
     description: 'True healing begins with the mind. When calm, the body naturally transforms.',
     color: '#D4848C',
   },
   {
-    icon: <FiUsers />,
+    icon: <FiGlobe />,
     title: 'Holistic Integration',
     description: 'Combining ancient yogic wisdom with modern science for complete well-being.',
     color: '#E7A3AB',
   },
   {
-    icon: <FiFeather />,
+    icon: <FiHeart />,
     title: 'Compassionate Care',
     description: 'Every journey is unique. We provide personalized guidance with empathy.',
     color: '#C25964',
@@ -593,9 +593,6 @@ const About = () => {
                   Book Free Consultation
                   <FiArrowRight />
                 </PrimaryButton>
-                <SecondaryButton to="/services">
-                  Explore Programs
-                </SecondaryButton>
               </CTAButtons>
             </CTALeft>
 

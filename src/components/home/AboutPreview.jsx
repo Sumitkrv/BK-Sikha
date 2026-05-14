@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
+import { Link } from 'react-router-dom';
 
 const aboutImage = '/st/Our%20story%20(%20HOME%20Page)%20copy.jpg.jpeg';
 
@@ -166,7 +167,7 @@ const AboutPreview = () => {
           </motion.div>
           
           <motion.div variants={textVariants}>
-            <CTAButton type="button">
+            <CTAButton to="/about">
               Learn about our holistic approach
             </CTAButton>
           </motion.div>
@@ -1102,7 +1103,7 @@ const Description = styled.p`
   }
 `;
 
-const CTAButton = styled.button`
+const CTAButton = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;

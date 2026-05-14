@@ -9,11 +9,43 @@ const Contact = () => {
     name: '', email: '', phone: '', service: '', message: '',
   });
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      const formattedPhone = value.replace(/[^\d]/g, '');
+      if (formattedPhone.length <= 10) {
+        setFormData({ ...formData, [name]: formattedPhone });
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("Please enter a valid email format (e.g., name@gmail.com).");
+      return;
+    }
+
+    const domain = formData.email.split('@')[1]?.toLowerCase();
+    const fakeDomains = ['email.com', 'test.com', 'example.com', 'fake.com', 'abc.com', 'xyz.com', 'domain.com'];
+    if (fakeDomains.includes(domain)) {
+      alert(`Please provide a real email domain instead of ${domain}.`);
+      return;
+    }
+
+    if (formData.phone) {
+      if (formData.phone.length !== 10) {
+        alert("Please enter a valid 10-digit contact number.");
+        return;
+      }
+    }
+
     alert("Thank you! Your message has been sent. I'll be in touch soon. 🙏");
+    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
   };
 
   const services = [
@@ -28,7 +60,7 @@ const Contact = () => {
 
   const contactItems = [
     { icon: <FiInstagram />, label: 'Instagram', value: '@cyd_bkshikha', href: 'https://www.instagram.com/cyd_bkshikha', note: 'Daily wellness tips & inspiration' },
-    { icon: <FiMail />,      label: 'Email',     value: 'khnadelwalshikha1983@gmail.com', href: 'mailto:khnadelwalshikha1983@gmail.com', note: 'For detailed inquiries' },
+    { icon: <FiMail />,      label: 'Email',     value: 'khandelwalshikha1983@gmail.com', href: 'mailto:khandelwalshikha1983@gmail.com', note: 'For detailed enquiries' },
     { icon: <FiPhone />,     label: 'WhatsApp',  value: '+91 783 501 2335', href: 'tel:+917835012335', note: 'Direct booking & quick questions' },
     { icon: <FiMapPin />,    label: 'Location',  value: 'New Delhi, India 110007', href: 'https://maps.google.com/?q=New+Delhi+110007', note: 'Hindi (Fluent) & English' },
   ];
@@ -66,7 +98,15 @@ const Contact = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <HeroConsultBox>
+              <HeroConsultBox 
+                as="a" 
+                href="#contact-form" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                style={{ textDecoration: 'none', display: 'block', cursor: 'pointer' }}
+              >
                 <HeroConsultIcon>🌿</HeroConsultIcon>
                 <HeroConsultTitle>Free 15-Min Consultation</HeroConsultTitle>
                 <HeroConsultText>
@@ -81,7 +121,7 @@ const Contact = () => {
       </HeroSection>
 
       {/* ── Form + Info ── */}
-      <MainSection>
+      <MainSection id="contact-form">
         <div className="container">
           <MainGrid>
 
@@ -106,14 +146,34 @@ const Contact = () => {
                   </FormGroup>
                   <FormGroup>
                     <Label htmlFor="email">Email Address <Req>*</Req></Label>
-                    <Input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
+                    <Input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      value={formData.email} 
+                      onChange={handleChange} 
+                      placeholder="your@gmail.com" 
+                      pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                      title="Please enter a valid email address"
+                      required 
+                    />
                   </FormGroup>
                 </FormRow>
 
                 <FormRow>
                   <FormGroup>
                     <Label htmlFor="phone">Phone Number <Optional>(Optional)</Optional></Label>
-                    <Input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 XXX XXX XXXX" />
+                    <Input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      value={formData.phone} 
+                      onChange={handleChange} 
+                      placeholder="Enter 10-digit number" 
+                      pattern="^[0-9]{10}$"
+                      title="Please enter a valid 10-digit phone number"
+                      maxLength="10"
+                    />
                   </FormGroup>
                   <FormGroup>
                     <Label htmlFor="service">Service Interested In <Req>*</Req></Label>

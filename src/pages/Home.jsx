@@ -28,51 +28,37 @@ const Home = () => {
   );
 };
 
-const HomeWrapper = styled.div`
-  padding-top: var(--navbar-h);
-`;
+/* ─── Styled Components ─── */
+
+const HomeWrapper = styled.div``;
 
 const HeroSection = styled.section`
+  /* Push below the fixed navbar */
+  margin-top: var(--navbar-h);
   position: relative;
   width: 100%;
-  overflow: hidden;
-
-  /* Desktop: fill viewport, cover is fine (both landscape) */
-  height: calc(100vh - var(--navbar-h));
-  height: calc(100dvh - var(--navbar-h));
-
-  /* Tablet and below: auto height — video keeps its natural aspect ratio, no cropping */
-  @media (max-width: 1024px) {
-    height: auto;
-  }
+  background: #0a0a0a;
+  line-height: 0; /* remove inline gap below video */
 `;
 
 const HeroVideo = styled.video`
+  /* Normal flow element — the video determines the section height.
+     width: 100% scales it to the container; height: auto preserves
+     the native aspect ratio. NO cropping, NO cutting. */
   display: block;
   width: 100%;
-
-  /* Desktop: absolute fill + cover */
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-
-  /* Tablet and below: flow element, natural aspect ratio, no crop */
-  @media (max-width: 1024px) {
-    position: relative;
-    height: auto;
-    object-fit: contain;
-    object-position: center center;
-  }
+  height: auto;
 `;
 
 const HeroOverlay = styled.div`
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.05) 40%,
-    transparent 70%
+    rgba(10, 10, 10, 0.35) 0%,
+    rgba(10, 10, 10, 0.06) 35%,
+    transparent 65%
   );
   pointer-events: none;
 `;
